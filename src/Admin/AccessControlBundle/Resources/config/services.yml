@@ -1,0 +1,4 @@
+services:
+#    admin_access_control.example:
+#        class: Admin\AccessControlBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

@@ -23,6 +23,8 @@ class DefaultController extends Controller
      */
     public function testAction(Request $request)
     {
+        $package = new Package(new EmptyVersionStrategy());
+        $test = $package->getUrl("/image.png");
         return $this->render('default/test.html.twig',['test'=>$test]);
     }
 }

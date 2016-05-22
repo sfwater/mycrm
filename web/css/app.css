@@ -106,4 +106,8 @@ body {
 
 .navbar-inverse {
   background-color: #09C;
+  color:#fff;
+}
+.navbar-nav > li > a:hover {
+  background-color: #008fbf;
 }

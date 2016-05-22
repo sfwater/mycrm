@@ -104,3 +104,6 @@ body {
   border-radius: 50%;
 }
 
+.navbar-inverse {
+  background-color: #09C;
+}

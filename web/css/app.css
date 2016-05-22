@@ -107,6 +107,7 @@ body {
 .navbar-inverse {
   background-color: #09C;
   border-color: #09C;
+  border: 0px;
 }
 .navbar-inverse .navbar-brand {
   color:#fff;

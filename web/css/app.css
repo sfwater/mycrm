@@ -130,3 +130,6 @@ body {
 .nav-sidebar > .active > a {
   background-color: #22282e;
 }
+.nav-sidebar > .active > a:hover {
+  background-color: #37424f;
+}

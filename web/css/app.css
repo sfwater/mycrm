@@ -116,3 +116,8 @@ body {
 .navbar-inverse .navbar-nav > li > a:hover {
   background-color: #008fbf;
 }
+
+
+.sidebar {
+  background-color: #293038;
+}

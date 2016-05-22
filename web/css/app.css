@@ -104,9 +104,8 @@ body {
   border-radius: 50%;
 }
 
-.navbar-inverse a {
+.navbar-inverse {
   background-color: #09C;
-  color:#fff;
 }
 .navbar-inverse .navbar-nav > li > a:hover {
   background-color: #008fbf;

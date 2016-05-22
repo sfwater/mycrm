@@ -121,3 +121,9 @@ body {
 .sidebar {
   background-color: #293038;
 }
+.nav-sidebar > li > a {
+  color: #fff;
+}
+.nav-sidebar > li > a:hover {
+  background-color: #37424f;
+}

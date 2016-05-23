@@ -24,7 +24,7 @@ class AdminBaseController extends Controller
     		if( array_key_exists('category', $options) ){
     			$routes[$key] = $value;
     		}
-    		$value->order = intval($options["order"]);
+    		$value->order = isset($options['order']) ? intval($options['order']) : 0;
     	}
     	return $routes;
 	}

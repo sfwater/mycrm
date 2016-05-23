@@ -347,4 +347,52 @@ class User implements AdvancedUserInterface, \Serializable
     {
         $this->roles->removeElement($roles);
     }
+
+    /**
+     * Set isLocked
+     *
+     * @param boolean $isLocked
+     *
+     * @return User
+     */
+    public function setIsLocked($isLocked)
+    {
+        $this->isLocked = $isLocked;
+
+        return $this;
+    }
+
+    /**
+     * Get isLocked
+     *
+     * @return boolean
+     */
+    public function getIsLocked()
+    {
+        return $this->isLocked;
+    }
+
+    /**
+     * Set expireTime
+     *
+     * @param integer $expireTime
+     *
+     * @return User
+     */
+    public function setExpireTime($expireTime)
+    {
+        $this->expireTime = $expireTime;
+
+        return $this;
+    }
+
+    /**
+     * Get expireTime
+     *
+     * @return integer
+     */
+    public function getExpireTime()
+    {
+        return $this->expireTime;
+    }
 }

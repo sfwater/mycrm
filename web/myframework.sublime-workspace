@@ -11,14 +11,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "css/app.css",
-			"settings":
-			{
-				"buffer_size": 2130,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -44,7 +36,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 418.0
+		"width": 386.0
 	},
 	"console":
 	{
@@ -79,9 +71,10 @@
 	],
 	"file_history":
 	[
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/web/css/app.css",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/Default/index.html.twig",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/base.html.twig",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/web/js/console.js",
 		"/E/workspace/submission/src/Admin/DWZBackendBundle/Resources/public/js/dwz.min.js",
@@ -139,39 +132,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "css/app.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2130,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2099,
-								2099
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.sublime-syntax",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 2299.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

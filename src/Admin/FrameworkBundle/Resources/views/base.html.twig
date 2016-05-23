@@ -56,11 +56,6 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          {% for route in userRoutes %}
-          <ul class="nav nav-sidebar">
-            <li><a href="#"></a></li>
-          </ul>
-          {% endfor %}
           <ul class="nav nav-sidebar">
             <li class="active"><a href="#">Overview <span class="sr-only">(current)</span></a></li>
             <li><a href="#">Reports</a></li>
@@ -84,6 +79,7 @@
           <h1 class="page-header">Dashboard</h1>
           <div id="container">
             {% block body %}This is the body container.{% endblock %}
+            dump($userRoutes);
           </div>
         </div>
       </div>

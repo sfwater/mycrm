@@ -14,7 +14,9 @@ class DefaultController extends AdminBaseController
 {
     /**
      * 所有用户列表 
-     * @Route("/")
+     * @Route(
+     *      "/", name="users_index",
+     *   )
      * @Template("AdminUserBundle:Default:index.html.twig")
      */
     public function indexAction()

@@ -11,7 +11,7 @@
 			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
 			"settings":
 			{
-				"buffer_size": 392,
+				"buffer_size": 457,
 				"line_ending": "Windows"
 			}
 		}
@@ -40,7 +40,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 418.0
+		"width": 386.0
 	},
 	"console":
 	{
@@ -64,13 +64,17 @@
 		"/E/workspace/myframework-php",
 		"/E/workspace/myframework-php/src",
 		"/E/workspace/myframework-php/src/Admin",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/Default",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Tests"
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller"
 	],
 	"file_history":
 	[
+		"/E/workspace/submission/src/Admin/SubmissionBundle/Controller/ClientController.php",
+		"/E/workspace/submission/src/Admin/DWZBackendBundle/Controller/MainController.php",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/UserRepository.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/Role.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/User.php",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/base.html.twig",
 		"/E/workspace/feizhiyi-dev/.gitignore",
 		"/E/workspace/feizhiyi-dev/Application/Admin/Controller/Article/EvaluationController.class.php",
@@ -128,15 +132,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 392,
+						"buffer_size": 457,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								389,
-								389
+								455,
+								455
 							]
 						],
 						"settings":
@@ -144,7 +148,7 @@
 							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 198.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -159,7 +163,7 @@
 	},
 	"input":
 	{
-		"height": 0.0
+		"height": 40.0
 	},
 	"layout":
 	{

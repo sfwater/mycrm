@@ -4,11 +4,12 @@ namespace Admin\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Admin\AdminBaseController;
 
 /**
 * @Route("/users")
 */
-class DefaultController extends Controller
+class DefaultController extends AdminBaseController
 {
     /**
      * 所有用户列表 

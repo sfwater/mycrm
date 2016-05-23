@@ -17,6 +17,7 @@ class DefaultController extends AdminBaseController
      * @Route(
      *      "/", name="users_index",
      *   )
+     * @ParamConverter("post", options={"mapping": {"postSlug": "slug"}})
      * @Template("AdminUserBundle:Default:index.html.twig")
      */
     public function indexAction()

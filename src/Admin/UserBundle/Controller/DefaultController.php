@@ -17,7 +17,7 @@ class DefaultController extends AdminBaseController
      * 所有用户列表 
      * @Route(
      *      "/", name="users_index",
-     *      options = {name:"用户管理",description="所有用户列表页面"}
+     *      options = {"name":"用户管理","description":"所有用户列表页面"}
      *   )
      * 
      * @Template("AdminUserBundle:Default:index.html.twig")

@@ -134,3 +134,6 @@ body {
 .nav-sidebar > .active > a:hover {
   background-color: #37424f;
 }
+.nav > li > a:focus {
+  background-color: #37424f;
+}

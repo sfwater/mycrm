@@ -6,15 +6,20 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 
 /**
-* @Route("/user")
+* @Route("/users")
 */
 class DefaultController extends Controller
 {
     /**
+     * 所有用户列表 
      * @Route("/")
+     * @Template("AdminUserBundle:Default:index.html.twig")
      */
     public function indexAction()
     {
-        return $this->render('AdminUserBundle:Default:index.html.twig');
+    	$user = $this->getUser();
+
+
+        return $this->datas;
     }
 }

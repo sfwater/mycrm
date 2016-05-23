@@ -56,11 +56,11 @@
     <div class="container-fluid">
       <div class="row">
         <div class="col-sm-3 col-md-2 sidebar">
-          {% for key,route in userRoutes %}
+          {% for key,routes in userRoutes %}
           <ul class="nav nav-sidebar">
             <h2>{{ key }}</h2>
-            {% for r in route.options %}
-            <li><a href="#" title="{{ r.description }}">{{ r.name }}</a></li>
+            {% for r in routes %}
+            <li><a href="#" title="{{ r.options.description }}">{{ r.options.name }}</a></li>
             {% endfor %}
           </ul>
           {% endfor %}

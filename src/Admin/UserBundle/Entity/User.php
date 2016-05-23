@@ -1,6 +1,6 @@
 <?php
 
-namespace Admin\DWZBackendBundle\Entity;
+namespace Admin\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;

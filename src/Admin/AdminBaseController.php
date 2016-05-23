@@ -24,7 +24,43 @@ class AdminBaseController extends Controller
     		if( array_key_exists('category', $options) ){
     			$routes[$key] = $value;
     		}
+    		$value->order = intval($options["order"]);
     	}
     	return $routes;
+	}
+
+
+	/**
+	* 分组、排序用户路由
+	*/
+	protected function resolveUserRoutes($routes){
+		//排序数组
+		$groups = array();
+		for ($i=0; $i < count($routes); $i++) { 
+			for ($j=$i+1; $j < count($routes); $j++) { 
+				if( $routes[$i]->order > $routes[$j]->order ){
+					$tmp = $routes[$i];
+					$routes[$i] = $routes[$j];
+					$routes[$j] = $tmp;
+				}
+			}
+		}
+
+		foreach ($routes as $value) {
+			$options = $value->getOptions();
+			if( !array_key_exists($options['category'], $groups) ){
+				$groups[$options['category']] = array();
+			}
+		}
+
+		foreach ($groups as $group_key => $group) {
+			foreach ($routes as $key => $value) {
+				$options = $value->getOptions();
+				if( $options['category'] == $group_key ){
+					$groups[$group_key][] = $value;
+				}
+			}
+		}
+		return $groups;
 	}
 }

@@ -16,7 +16,8 @@ class DefaultController extends AdminBaseController
      */
     public function indexAction()
     {
-    	dump($this->getUserRoutes());
+        $routes = $this->resolveUserRoutes($this->getUserRoutes());
+    	dump($routes);
     	exit;
         return $this->render('AdminFrameworkBundle:Default:index.html.twig',array("userRoutes"=>$userRoutes));
     }

@@ -3,15 +3,19 @@
 	{
 		"selected_items":
 		[
+			[
+				"Adm",
+				"AdminBaseController"
+			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+			"file": "css/app.css",
 			"settings":
 			{
-				"buffer_size": 457,
+				"buffer_size": 2130,
 				"line_ending": "Windows"
 			}
 		}
@@ -40,7 +44,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 386.0
+		"width": 418.0
 	},
 	"console":
 	{
@@ -64,18 +68,29 @@
 		"/E/workspace/myframework-php",
 		"/E/workspace/myframework-php/src",
 		"/E/workspace/myframework-php/src/Admin",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller"
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/Default",
+		"/E/workspace/myframework-php/src/Admin/UserBundle",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller",
+		"/E/workspace/myframework-php/web"
 	],
 	"file_history":
 	[
-		"/E/workspace/submission/src/Admin/SubmissionBundle/Controller/ClientController.php",
-		"/E/workspace/submission/src/Admin/DWZBackendBundle/Controller/MainController.php",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/Default/index.html.twig",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/base.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/web/js/console.js",
+		"/E/workspace/submission/src/Admin/DWZBackendBundle/Resources/public/js/dwz.min.js",
+		"/E/workspace/submission/src/Admin/SubmissionBundle/Controller/ClientController.php",
+		"/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
+		"/E/workspace/submission/src/Admin/DWZBackendBundle/Controller/MainController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/UserRepository.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/Role.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/User.php",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/base.html.twig",
 		"/E/workspace/feizhiyi-dev/.gitignore",
 		"/E/workspace/feizhiyi-dev/Application/Admin/Controller/Article/EvaluationController.class.php",
 		"/E/workspace/feizhiyi-dev/Application/Admin/Controller/AdminController.class.php",
@@ -90,7 +105,7 @@
 	],
 	"find":
 	{
-		"height": 30.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -105,6 +120,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"target",
 			"DATA_CACHE_TYPE"
 		],
 		"highlight": true,
@@ -128,27 +144,29 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+					"file": "css/app.css",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 457,
+						"buffer_size": 2130,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								455,
-								455
+								2099,
+								2099
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 198.0,
+						"translation.y": 2299.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

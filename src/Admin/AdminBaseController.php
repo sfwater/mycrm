@@ -22,9 +22,10 @@ class AdminBaseController extends Controller
     	foreach ($userRoutes as $key => $value) {
     		$options = $value->getOptions();
     		if( array_key_exists('category', $options) ){
-    			$routes[$key] = $value;
+    			$routes[] = $value;
     		}
     		$value->order = isset($options['order']) ? intval($options['order']) : 0;
+    		$value->name = $key;
     	}
     	return $routes;
 	}

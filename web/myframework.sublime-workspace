@@ -8,10 +8,10 @@
 	"buffers":
 	[
 		{
-			"file": "/E/workspace/myframework-php/.gitignore",
+			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
 			"settings":
 			{
-				"buffer_size": 270,
+				"buffer_size": 392,
 				"line_ending": "Windows"
 			}
 		}
@@ -32,11 +32,15 @@
 				":w - Save"
 			],
 			[
+				":install",
+				"Package Control: Install Package"
+			],
+			[
 				"install",
 				"Package Control: Install Package"
 			]
 		],
-		"width": 458.0
+		"width": 418.0
 	},
 	"console":
 	{
@@ -57,10 +61,17 @@
 	},
 	"expanded_folders":
 	[
-		"/E/workspace/myframework-php"
+		"/E/workspace/myframework-php",
+		"/E/workspace/myframework-php/src",
+		"/E/workspace/myframework-php/src/Admin",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/Default",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Tests"
 	],
 	"file_history":
 	[
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/base.html.twig",
 		"/E/workspace/feizhiyi-dev/.gitignore",
 		"/E/workspace/feizhiyi-dev/Application/Admin/Controller/Article/EvaluationController.class.php",
 		"/E/workspace/feizhiyi-dev/Application/Admin/Controller/AdminController.class.php",
@@ -113,24 +124,24 @@
 			[
 				{
 					"buffer": 0,
-					"file": "/E/workspace/myframework-php/.gitignore",
-					"semi_transient": true,
+					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 270,
+						"buffer_size": 392,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								195,
-								195
+								389,
+								389
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

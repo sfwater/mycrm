@@ -17,8 +17,9 @@ class DefaultController extends AdminBaseController
      * 所有用户列表 
      * @Route(
      *      "/", name="users_index",
+     *      options = {name:"用户管理",description="所有用户列表页面"}
      *   )
-     * @ParamConverter("post", options={"mapping": {"postSlug": "slug"}})
+     * 
      * @Template("AdminUserBundle:Default:index.html.twig")
      */
     public function indexAction()

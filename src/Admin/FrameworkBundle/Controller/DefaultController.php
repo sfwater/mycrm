@@ -17,6 +17,9 @@ class DefaultController extends Controller
     {
     	$router = $this->get("router");
     	$allRoutes = $router->getRouteCollection();
-        return $this->render('AdminFrameworkBundle:Default:index.html.twig',array("userRoutes"=>$allRoutes->all()));
+    	$userRoutes = $allRoutes->all();
+    	dump($userRoutes);
+    	exit;
+        return $this->render('AdminFrameworkBundle:Default:index.html.twig',array("userRoutes"=>$userRoutes));
     }
 }

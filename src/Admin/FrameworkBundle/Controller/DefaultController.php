@@ -15,6 +15,8 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        return $this->render('AdminFrameworkBundle:Default:index.html.twig');
+    	$router = $this->get("router");
+    	$allRoutes = $router->getRouteCollection();
+        return $this->render('AdminFrameworkBundle:Default:index.html.twig',array("userRoutes"=>$allRoutes));
     }
 }

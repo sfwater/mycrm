@@ -14,13 +14,13 @@ class AdminBaseController extends Controller
 	* 获取用户所有的路由，在options选项中设置了category的为用户路由
 	*/
 	protected function getUserRoutes(){
-    	$router = $this->get("router");
+    	$router = $this->get('router');
     	$allRoutes = $router->getRouteCollection();
     	$userRoutes = $allRoutes->all();
     	$routes = array();
 
     	foreach ($userRoutes as $key => $value) {
-    		$options = $value->options;
+    		$options = $value->getOptions();
     		if( array_key_exists('category', $options) ){
     			$routes[$key] = $value;
     		}

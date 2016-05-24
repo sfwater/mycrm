@@ -147,4 +147,6 @@ body {
 .unitBox {
   background-color: #fff;
   overflow-y: auto;
+  padding: 10px;
+  margin: 0px 10px;
 }

@@ -34,7 +34,7 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   left: 0;
   z-index: 1000;
   display: block;
-  padding: 0px 20px;
+  padding: 40px 20px;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
   border-right: 1px solid #eee;

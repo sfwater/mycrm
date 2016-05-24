@@ -16,7 +16,7 @@ class DefaultController extends AdminBaseController
      */
     public function indexAction()
     {
-    	dump(__DIR__);
+    	dump(__DIR__.'/app/config');
     	exit;
         $routes = $this->resolveUserRoutes($this->getUserRoutes());
         return $this->render(

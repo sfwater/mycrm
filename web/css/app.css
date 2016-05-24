@@ -80,7 +80,6 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
  */
 
 .main {
-  padding: 10px;
   background-color: #eaedf1;
   overflow:hidden;
   position: absolute;
@@ -135,5 +134,4 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   background-color: #fff;
   overflow-y: auto;
   padding: 10px;
-  margin: 0px 10px;
 }

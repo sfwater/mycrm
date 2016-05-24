@@ -44,8 +44,9 @@ body {
     padding: 20px;
     overflow-x: hidden;
     overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-    background-color: #f5f5f5;
     border-right: 1px solid #eee;
+    background-color: #293038;
+    width: 180px;
   }
 }
 
@@ -80,8 +81,14 @@ body {
 }
 @media (min-width: 768px) {
   .main {
-    padding-right: 40px;
-    padding-left: 40px;
+    background-color: #eaedf1;
+    overflow:hidden;
+    position: absolute;
+    left: 20px;
+    right: 0px;
+    bottom: 0px;
+    top: 0px;
+    width: auto;
   }
 }
 .main .page-header {
@@ -124,7 +131,6 @@ body {
 
 
 .sidebar {
-  background-color: #293038;
 }
 .nav-sidebar > li > a, .nav-sidebar .nav > li > a {
   color: #fff;
@@ -143,4 +149,9 @@ body {
 }
 .nav-sidebar .nav > li > a {
   padding-left: 30px;
+}
+
+
+.main {
+
 }

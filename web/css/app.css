@@ -50,7 +50,7 @@ body {
 }
 
 /* Sidebar navigation */
-.nav-sidebar, .nav-sidebar .nav {
+.nav-sidebar {
   margin-right: -21px; /* 20px padding + 1px border */
   margin-bottom: 20px;
   margin-left: -20px;

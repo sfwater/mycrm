@@ -126,7 +126,7 @@ body {
 .sidebar {
   background-color: #293038;
 }
-.nav-sidebar > li > a {
+.nav-sidebar > li > a, .nav-sidebar .nav > li > a {
   color: #fff;
 }
 .nav-sidebar > li > a:hover {

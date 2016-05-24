@@ -44,6 +44,9 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .sidebar-collspan:before {
   content: '\e707';
 }
+.sidebar-collspan {
+  background-color: #37424f;
+}
 
 /* Sidebar navigation */
 .nav-sidebar {

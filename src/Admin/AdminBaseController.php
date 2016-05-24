@@ -70,7 +70,7 @@ class AdminBaseController extends Controller
 	*/
 	protected function getSystemConfig(){
 		$ymlContent = file_get_contents('./Resources/config/system.yml');	
-		$config = Yaml:parse($ymlContent);
+		$config = Yaml::parse($ymlContent);
 		return $config;
 	}
 }

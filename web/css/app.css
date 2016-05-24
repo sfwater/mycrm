@@ -80,7 +80,7 @@ body {
   left: 20px;
   right: 0px;
   bottom: 0px;
-  top: 0px;
+  top: 50px;
   width: auto;
 }
 .main .page-header {
@@ -144,6 +144,7 @@ body {
 }
 
 
-.main {
-
+.container {
+  background-color: #fff;
+  overflow-y: auto;
 }

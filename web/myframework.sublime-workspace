@@ -11,6 +11,22 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+			"settings":
+			{
+				"buffer_size": 2485,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/workspace/submission/src/Admin/SubmissionBundle/Controller/AgentController.php",
+			"settings":
+			{
+				"buffer_size": 7733,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -61,16 +77,13 @@
 		"/E/workspace/myframework-php/src",
 		"/E/workspace/myframework-php/src/Admin",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/Default",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default",
+		"/E/workspace/myframework-php/src/Admin/UserBundle",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller",
 		"/E/workspace/myframework-php/web"
 	],
 	"file_history":
 	[
+		"/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller/DefaultController.php",
 		"/E/workspace/submission/src/Admin/SubmissionBundle/Controller/AgentController.php",
@@ -80,7 +93,6 @@
 		"/E/workspace/myframework-php/web/js/console.js",
 		"/E/workspace/submission/src/Admin/DWZBackendBundle/Resources/public/js/dwz.min.js",
 		"/E/workspace/submission/src/Admin/SubmissionBundle/Controller/ClientController.php",
-		"/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
 		"/E/workspace/submission/src/Admin/DWZBackendBundle/Controller/MainController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/UserRepository.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/Role.php",
@@ -133,8 +145,69 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2485,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								491,
+								491
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 132.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/E/workspace/submission/src/Admin/SubmissionBundle/Controller/AgentController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7733,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4486,
+								2102
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1364.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
 			]
 		}
 	],

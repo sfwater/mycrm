@@ -18,9 +18,9 @@ class DefaultController extends AdminBaseController
      * 所有用户列表 
      * @Route(
      *      "/", name="admin_users_index",
-     *      options = {"name":"用户管理","description":"列出系统中所有管理员用户","category":"AdminUser","order":2}
+     *      options = {"name":"用户管理","description":"列出系统中所有管理员用户","category":"系统管理员","order":2}
      *   )
-     * @Method("GET")
+     * @Method("GET") 
      * @Template("AdminUserBundle:Default:index.html.twig")
      */
     public function indexAction()
@@ -35,7 +35,7 @@ class DefaultController extends AdminBaseController
      * 创建一个用户 
      * @Route(
      *      "/", name="admin_users_create",
-     *      options = {"name":"创建用户","description":"创建一个管理员用户账号","category":"AdminUser","order":1}
+     *      options = {"name":"创建用户","description":"创建一个管理员用户账号","category":"系统管理员","order":1}
      *   )
      * @Method("POST")
      * @Template("AdminUserBundle:Default:create.html.twig")

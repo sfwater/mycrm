@@ -117,7 +117,7 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   background-color: #37424f;
 }
 .nav-sidebar > .active > a, .nav-sidebar .nav > .active > a {
-  background-color: #22282e;
+  background-color: #0099cc;
 }
 .nav-sidebar > .active > a:hover, .nav-sidebar .nav > .active > a {
   background-color: #37424f;

@@ -58,10 +58,14 @@
         <div class="col-sm-3 col-md-2 sidebar">
           {% for key,routes in userRoutes %}
           <ul class="nav nav-sidebar">
-            <h2>{{ key }}</h2>
+            <li>
+            {{ key }}
+            <ul>
             {% for r in routes %}
             <li><a href="#" title="{{ r.options.description }}">{{ r.options.name }}</a></li>
             {% endfor %}
+            </ul>
+            </li>
           </ul>
           {% endfor %}
           <ul class="nav nav-sidebar">

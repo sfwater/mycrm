@@ -4,8 +4,20 @@
 		"selected_items":
 		[
 			[
+				"over",
+				"overflow"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"ov",
+				"overflow"
+			],
+			[
 				"padd",
-				"padding-left"
+				"padding"
 			],
 			[
 				"Adm",
@@ -62,7 +74,6 @@
 	"expanded_folders":
 	[
 		"/E/workspace/myframework-php",
-		"/E/workspace/myframework-php/src",
 		"/E/workspace/myframework-php/src/Admin",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources",
@@ -72,14 +83,15 @@
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default",
-		"/E/workspace/myframework-php/web",
-		"/E/workspace/myframework-php/web/css"
+		"/E/workspace/myframework-php/web"
 	],
 	"file_history":
 	[
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/web/css/app.css",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/base.html.twig",
+		"/E/workspace/submission/src/Admin/DWZBackendBundle/Resources/views/Main/index.html.twig",
+		"/E/workspace/myframework-php/web/dwz.frag.xml",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
 		"/E/workspace/submission/src/Admin/SubmissionBundle/Controller/AgentController.php",
 		"/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller/DefaultController.php",
@@ -120,6 +132,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"body {\n  padding-top: 50px;\n}\n",
+			".sidebar {\n  display: none;\n}",
+			"  margin-right: 20px;\n  position: absolute;\n  top: 50px;\n  bottom: 0px;\n  overflow: hidden;",
 			"target",
 			"DATA_CACHE_TYPE"
 		],
@@ -146,7 +161,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 40.0
+		"height": 106.0
 	},
 	"input":
 	{
@@ -192,6 +207,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"app.css",
+				"web\\css\\app.css"
+			]
 		],
 		"width": 0.0
 	},

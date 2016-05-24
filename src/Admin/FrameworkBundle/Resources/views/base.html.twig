@@ -62,7 +62,7 @@
             <a href="javascript:void(0);">{{ key }}</a>
             <ul class="nav">
             {% for r in routes %}
-            <li><a href="{{r.path}}" title="{{ r.options.description }}" target="navtab">{{ r.options.name }}</a></li>
+            <li><a href="{{path(r.name)}}" title="{{ r.options.description }}" target="navtab">{{ r.options.name }}</a></li>
             {% endfor %}
             </ul>
             </li>

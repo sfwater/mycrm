@@ -137,3 +137,6 @@ body {
 .nav > li > a:focus {
   background-color: #37424f;
 }
+.nav-sidebar .nav-sidebar > li > a {
+  padding-left: 30px;
+}

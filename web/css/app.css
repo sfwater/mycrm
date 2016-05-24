@@ -129,18 +129,18 @@ body {
 .nav-sidebar > li > a, .nav-sidebar .nav > li > a {
   color: #fff;
 }
-.nav-sidebar > li > a:hover {
+.nav-sidebar > li > a:hover, .nav-bar .nav > li > a:hover {
   background-color: #37424f;
 }
-.nav-sidebar > .active > a {
+.nav-sidebar > .active > a, .nav-sidebar .nav > .active > a {
   background-color: #22282e;
 }
-.nav-sidebar > .active > a:hover {
+.nav-sidebar > .active > a:hover, .nav-sidebar .nav > .active > a {
   background-color: #37424f;
 }
 .nav > li > a:focus {
   background-color: #37424f;
 }
-.nav-sidebar .nav-sidebar > li > a {
+.nav-sidebar .nav > li > a {
   padding-left: 30px;
 }

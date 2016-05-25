@@ -28,26 +28,10 @@
 	"buffers":
 	[
 		{
-			"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/DependencyInjection/AdminConsoleExtension.php",
+			"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
 			"settings":
 			{
-				"buffer_size": 1050,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php",
-			"settings":
-			{
-				"buffer_size": 15772,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/workspace/myframework-php/app/config/config.yml",
-			"settings":
-			{
-				"buffer_size": 2463,
+				"buffer_size": 664,
 				"line_ending": "Windows"
 			}
 		}
@@ -59,7 +43,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 310.0,
+		"height": 375.0,
 		"last_filter": ":w",
 		"selected_items":
 		[
@@ -107,25 +91,33 @@
 		"/E/workspace/myframework-php/src",
 		"/E/workspace/myframework-php/src/Admin",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/DependencyInjection",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/config",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views",
+		"/E/workspace/myframework-php/vendor/swiftmailer/swiftmailer",
+		"/E/workspace/myframework-php/vendor/swiftmailer/swiftmailer/lib",
+		"/E/workspace/myframework-php/vendor/symfony/swiftmailer-bundle",
+		"/E/workspace/myframework-php/vendor/symfony/swiftmailer-bundle/DependencyInjection",
+		"/E/workspace/myframework-php/vendor/symfony/swiftmailer-bundle/DependencyInjection/Compiler",
 		"/E/workspace/myframework-php/web"
 	],
 	"file_history":
 	[
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/DependencyInjection/Configuration.php",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/DependencyInjection/AdminConsoleExtension.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/config/config.yml",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/DependencyInjection/Configuration.php",
 		"/E/workspace/myframework-php/app/config/config.yml",
+		"/E/workspace/submission/src/Admin/VerifyBundle/Controller/MainController.php",
+		"/E/workspace/submission/src/Admin/VerifyBundle/DependencyInjection/AdminVerifyExtension.php",
+		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php",
 		"/E/workspace/submission/src/Admin/VerifyBundle/DependencyInjection/Configuration.php",
 		"/E/workspace/submission/src/Admin/SubmissionBundle/DependencyInjection/AdminSubmissionExtension.php",
-		"/E/workspace/submission/src/Admin/VerifyBundle/DependencyInjection/AdminVerifyExtension.php",
 		"/E/workspace/submission/src/Admin/SubmissionBundle/DependencyInjection/Configuration.php",
 		"/E/workspace/submission/app/config/config.yml",
 		"/E/workspace/submission/src/Admin/VerifyBundle/Resources/config/services.yml",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/DependencyInjection/AdminConsoleExtension.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
-		"/E/workspace/submission/src/Admin/VerifyBundle/Controller/MainController.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/config/services.yml",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Default/index.html.twig",
 		"/E/workspace/myframework-php/app/config/routing.yml",
@@ -202,24 +194,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/DependencyInjection/AdminConsoleExtension.php",
+					"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1050,
+						"buffer_size": 664,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1040,
-								1040
+								457,
+								457
 							]
 						],
 						"settings":
@@ -230,69 +222,9 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/DependencyInjection/Loader/YamlFileLoader.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 15772,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								13921,
-								13921
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 7854.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/E/workspace/myframework-php/app/config/config.yml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2463,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1356,
-								1356
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/YAML/YAML.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]

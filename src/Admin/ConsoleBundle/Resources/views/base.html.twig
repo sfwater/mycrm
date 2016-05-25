@@ -63,7 +63,7 @@
             <span class="sidebar-title-icon icon-arrow-down"></span>
             {{ key }}
             </a>
-            <ul class="nav collapse" id="id_{{ key }}">
+            <ul class="nav collapse in" id="id_{{ key }}">
             {% for r in routes %}
             <li><a href="{{path(r.name)}}" title="{{ r.options.description }}" target="navtab">{{ r.options.name }}</a></li>
             {% endfor %}

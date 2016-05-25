@@ -154,5 +154,15 @@ body {
 .icon-arrow-down:before {
   content: "\e608";
 }
+.sidebar-title-icon {
+  display: inline-block;
+  margin: 0 8px 0 20px;
+  vertical-align: middle;
+  transition: transform 0.12s;
+  -o-transition: -o-transform 0.12s;
+  -ms-transition: -ms-transform 0.12s;
+  -moz-transition: -moz-transform 0.12s;
+  -webkit-transition: -webkit-transform 0.12s
+}
 
 

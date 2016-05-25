@@ -24,13 +24,9 @@ class AdminConsoleExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
         $loader->load('config.yml');
+        $configuration = new Configuration();
+        $config = $this->processConfiguration($configuration, $configs);
     }
-    public function getConfiguration(array $config, ContainerBuilder $container)
-    {
-        return new Configuration();
-    }
-
-
 }
 class Configuration implements ConfigurationInterface
 {

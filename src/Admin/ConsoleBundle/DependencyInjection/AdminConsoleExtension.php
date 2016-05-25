@@ -23,4 +23,8 @@ class AdminConsoleExtension extends Extension
         $loader->load('services.yml');
         $loader->load('config.yml');
     }
+    public function getConfiguration(array $config, ContainerBuilder $container)
+    {
+        return new Configuration();
+    }
 }

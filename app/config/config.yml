@@ -70,5 +70,5 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
-admin_console:
+admin-console:
   name: Console

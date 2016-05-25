@@ -27,14 +27,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
-			"settings":
-			{
-				"buffer_size": 1590,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -49,6 +41,10 @@
 		[
 			[
 				":w",
+				":w - Save"
+			],
+			[
+				":W",
 				":w - Save"
 			],
 			[
@@ -82,14 +78,39 @@
 	"expanded_folders":
 	[
 		"/E/workspace/myframework-php",
-		"/E/workspace/myframework-php/app/config",
+		"/E/workspace/myframework-php/app/Resources",
 		"/E/workspace/myframework-php/src",
 		"/E/workspace/myframework-php/src/Admin",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Default",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/DependencyInjection",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/config",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views",
 		"/E/workspace/myframework-php/web"
 	],
 	"file_history":
 	[
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Default/index.html.twig",
+		"/E/workspace/myframework-php/app/config/config.yml",
+		"/E/workspace/myframework-php/app/config/routing.yml",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/app/AppKernel.php",
+		"/E/workspace/submission/src/Admin/VerifyBundle/DependencyInjection/AdminVerifyExtension.php",
+		"/E/workspace/submission/app/config/config.yml",
+		"/E/workspace/submission/src/Admin/VerifyBundle/Controller/MainController.php",
+		"/E/workspace/submission/src/Admin/VerifyBundle/Resources/config/services.yml",
+		"/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/DependencyInjection/AdminFrameworkExtension.php",
+		"/E/workspace/submission/src/Admin/SubmissionBundle/DependencyInjection/AdminSubmissionExtension.php",
+		"/E/workspace/submission/src/Admin/SubmissionBundle/DependencyInjection/Configuration.php",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/config/services.yml",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/AdminFrameworkBundle.php",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/DependencyInjection/FrameworkExtension.php",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/config/framework.yml",
 		"/E/workspace/myframework-php/web/css/app.css",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/base.html.twig",
@@ -97,8 +118,6 @@
 		"/E/workspace/myframework-php/web/dwz.frag.xml",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
 		"/E/workspace/submission/src/Admin/SubmissionBundle/Controller/AgentController.php",
-		"/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/Default/index.html.twig",
 		"/E/workspace/myframework-php/web/js/console.js",
 		"/E/workspace/submission/src/Admin/DWZBackendBundle/Resources/public/js/dwz.min.js",
@@ -158,37 +177,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1590,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1518,
-								1518
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 528.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

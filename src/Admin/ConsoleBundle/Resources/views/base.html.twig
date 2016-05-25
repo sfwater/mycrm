@@ -59,8 +59,10 @@
           {% for key,routes in userRoutes %}
           <ul class="nav nav-sidebar">
             <li data-toggle="collapse" data-target="#id_{{ key }}">
+            <a href="javascript:void(0);">
             <span class="sidebar-title-icon icon-arrow-down"></span>
-            <a href="javascript:void(0);">{{ key }}</a>
+            {{ key }}
+            </a>
             <ul class="nav collapse" id="id_{{ key }}">
             {% for r in routes %}
             <li><a href="{{path(r.name)}}" title="{{ r.options.description }}" target="navtab">{{ r.options.name }}</a></li>

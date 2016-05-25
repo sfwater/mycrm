@@ -1,0 +1,4 @@
+services:
+#    admin_console.example:
+#        class: Admin\ConsoleBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

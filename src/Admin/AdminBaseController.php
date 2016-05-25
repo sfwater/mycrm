@@ -64,13 +64,4 @@ class AdminBaseController extends Controller
 		}
 		return $groups;
 	}
-
-	/**
-	* 获取系统配置
-	*/
-	protected function getSystemConfig(){
-		$ymlContent = file_get_contents('./Resources/config/system.yml');	
-		$config = Yaml::parse($ymlContent);
-		return $config;
-	}
 }

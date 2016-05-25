@@ -176,3 +176,9 @@ li.collapsed .sidebar-title-icon{
   -o-transform: rotate(-90deg)
 }
 
+.icon-setup:before {
+  content: "\e662";
+}
+.icon-unfold:before {
+  content: "\e707";
+}

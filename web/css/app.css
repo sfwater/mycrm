@@ -139,7 +139,10 @@ body {
   padding: 10px;
   height: 100%;
 }
-
+@font-face {
+  font-family: 'aliyun-console-font';
+  src: url('../fonts/aliyun-console-font.ttf');
+}
 [class^="icon-"],[class*="icon-"] {
   font-family: 'aliyun-console-font';
   speak: none;

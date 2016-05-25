@@ -15,9 +15,12 @@ class DefaultController extends AdminBaseController
      */
     public function indexAction()
     {
+        dump($this->container);
+        exit;
         $routes = $this->resolveUserRoutes($this->getUserRoutes());
         return $this->render(
         	'AdminConsoleBundle:Default:index.html.twig',
-        	array('userRoutes'=>$routes));
+        	array('userRoutes'=>$routes)
+            );
     }
 }

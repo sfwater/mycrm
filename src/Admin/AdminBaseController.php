@@ -64,4 +64,11 @@ class AdminBaseController extends Controller
 		}
 		return $groups;
 	}
+
+	/**
+	* 获取系统配置信息
+	*/
+	protected function getSystemConfig(){
+
+	}
 }

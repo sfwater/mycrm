@@ -27,6 +27,14 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
+			"settings":
+			{
+				"buffer_size": 1590,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -52,7 +60,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 418.0
+		"width": 386.0
 	},
 	"console":
 	{
@@ -74,19 +82,15 @@
 	"expanded_folders":
 	[
 		"/E/workspace/myframework-php",
+		"/E/workspace/myframework-php/app/config",
+		"/E/workspace/myframework-php/src",
 		"/E/workspace/myframework-php/src/Admin",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views",
-		"/E/workspace/myframework-php/src/Admin/UserBundle",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default",
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller",
 		"/E/workspace/myframework-php/web"
 	],
 	"file_history":
 	[
+		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/config/framework.yml",
 		"/E/workspace/myframework-php/web/css/app.css",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/base.html.twig",
 		"/E/workspace/submission/src/Admin/DWZBackendBundle/Resources/views/Main/index.html.twig",
@@ -154,8 +158,37 @@
 	"groups":
 	[
 		{
+			"selected": 0,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1590,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1518,
+								1518
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 528.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
 			]
 		}
 	],

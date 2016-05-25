@@ -139,3 +139,20 @@ body {
   padding: 10px;
   height: 100%;
 }
+
+[class^="icon-"],[class*="icon-"] {
+  font-family: 'aliyun-console-font';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+.icon-arrow-down:before {
+  content: "\e608";
+}
+
+

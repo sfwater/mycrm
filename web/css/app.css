@@ -141,7 +141,8 @@ body {
 }
 @font-face {
   font-family: 'aliyun-console-font';
-  src: url('../fonts/aliyun-console-font.ttf');
+  src: url('../fonts/aliyun-console-font.eot');
+  src: url('../fonts/aliyun-console-font.ttf') format('truetype');
 }
 [class^="icon-"],[class*="icon-"] {
   font-family: 'aliyun-console-font';

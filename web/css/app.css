@@ -121,7 +121,7 @@ body {
 .nav-sidebar > li > a {
   background-color: #22282e;
 }
-.nav-sidebar > li.collasped > a {
+.nav-sidebar > li.collapsed > a {
   background-color: #37424f;
 }
 .nav-sidebar > li > a, .nav-sidebar .nav > li > a {

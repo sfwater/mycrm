@@ -188,5 +188,9 @@ li.collapsed .sidebar-title-icon{
   position: absolute;
   height: 40px;
   width: 40px;
-  right: 0
+  right: 0px;
+  top: 0px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 14px;
 }

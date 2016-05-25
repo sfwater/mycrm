@@ -13,11 +13,6 @@ admin_user:
     type:     annotation
     prefix:   /
 
-admin_framework:
-    resource: "@AdminFrameworkBundle/Controller/"
-    type:     annotation
-    prefix:   /
-
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

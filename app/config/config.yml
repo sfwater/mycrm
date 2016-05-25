@@ -2,7 +2,6 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: "@AdminFrameworkBundle/Resources/config/services.yml" }
     - { resource: "@AdminUserBundle/Resources/config/services.yml" }
     - { resource: "@AdminAccessControlBundle/Resources/config/services.yml" }
     - { resource: "@AdminConsoleBundle/Resources/config/services.yml" }

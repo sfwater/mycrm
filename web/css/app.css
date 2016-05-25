@@ -12,6 +12,11 @@ body, h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 body {
   font-size: 12px;
 }
+@font-face {
+  font-family: 'aliyun-console-font';
+  src: url('../fonts/aliyun-console-font.eot');
+  src: url('../fonts/aliyun-console-font.ttf') format('truetype');
+}
 .sub-header {
   padding-bottom: 10px;
   border-bottom: 1px solid #eee;
@@ -139,11 +144,7 @@ body {
   padding: 10px;
   height: 100%;
 }
-@font-face {
-  font-family: 'aliyun-console-font';
-  src: url('../fonts/aliyun-console-font.eot');
-  src: url('../fonts/aliyun-console-font.ttf') format('truetype');
-}
+
 [class^="icon-"],[class*="icon-"] {
   font-family: 'aliyun-console-font';
   speak: none;
@@ -158,6 +159,13 @@ body {
 .icon-arrow-down:before {
   content: "\e608";
 }
+.icon-setup:before {
+  content: "\e662";
+}
+.icon-unfold:before {
+  content: "\e707";
+}
+
 .sidebar-title-icon {
   display: inline-block;
   margin: 0 8px 0 0px;
@@ -175,10 +183,10 @@ li.collapsed .sidebar-title-icon{
   -ms-transform: rotate(-90deg);
   -o-transform: rotate(-90deg)
 }
-
-.icon-setup:before {
-  content: "\e662";
-}
-.icon-unfold:before {
-  content: "\e707";
+.sidebar-manage {
+  vertical-align: middle;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  right: 0
 }

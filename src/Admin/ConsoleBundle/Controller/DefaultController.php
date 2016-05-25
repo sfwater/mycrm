@@ -15,12 +15,11 @@ class DefaultController extends AdminBaseController
      */
     public function indexAction()
     {
-        dump($this->container);
-        exit;
+        $configs = $this->container->getParameter('admin_console');
         $routes = $this->resolveUserRoutes($this->getUserRoutes());
-        return $this->render(
-        	'AdminConsoleBundle:Default:index.html.twig',
-        	array('userRoutes'=>$routes)
-            );
+        return $this->render('AdminConsoleBundle:Default:index.html.twig', array(
+            'userRoutes'=>$routes,
+            'configs'=>$configs,
+            ));
     }
 }

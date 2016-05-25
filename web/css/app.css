@@ -118,9 +118,11 @@ body {
 
 .sidebar {
 }
+.nav-sidebar > li > a {
+  background-color: #22282e;
+}
 .nav-sidebar > li > a, .nav-sidebar .nav > li > a {
   color: #fff;
-  background-color: #22282e;
 }
 .nav-sidebar > li > a:hover, .nav-sidebar .nav > li > a:hover {
   background-color: #37424f;

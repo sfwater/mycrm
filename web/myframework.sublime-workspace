@@ -35,7 +35,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 375.0,
+		"height": 310.0,
 		"last_filter": ":w",
 		"selected_items":
 		[
@@ -78,31 +78,25 @@
 	"expanded_folders":
 	[
 		"/E/workspace/myframework-php",
-		"/E/workspace/myframework-php/app/Resources",
-		"/E/workspace/myframework-php/src",
-		"/E/workspace/myframework-php/src/Admin",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Default",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/DependencyInjection",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/config",
-		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/config",
 		"/E/workspace/myframework-php/web"
 	],
 	"file_history":
 	[
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Default/index.html.twig",
+		"/E/workspace/submission/src/Admin/VerifyBundle/DependencyInjection/AdminVerifyExtension.php",
+		"/E/workspace/submission/src/Admin/VerifyBundle/DependencyInjection/Configuration.php",
+		"/E/workspace/submission/src/Admin/VerifyBundle/Controller/MainController.php",
 		"/E/workspace/myframework-php/app/config/config.yml",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/config/config.yml",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/config/services.yml",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Default/index.html.twig",
 		"/E/workspace/myframework-php/app/config/routing.yml",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/app/AppKernel.php",
-		"/E/workspace/submission/src/Admin/VerifyBundle/DependencyInjection/AdminVerifyExtension.php",
 		"/E/workspace/submission/app/config/config.yml",
-		"/E/workspace/submission/src/Admin/VerifyBundle/Controller/MainController.php",
 		"/E/workspace/submission/src/Admin/VerifyBundle/Resources/config/services.yml",
 		"/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/DependencyInjection/AdminFrameworkExtension.php",
@@ -140,7 +134,7 @@
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 30.0
 	},
 	"find_in_files":
 	{
@@ -184,7 +178,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 106.0
+		"height": 30.0
 	},
 	"input":
 	{

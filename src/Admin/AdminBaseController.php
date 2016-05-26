@@ -65,4 +65,18 @@ class AdminBaseController extends Controller
 		}
 		return $groups;
 	}
+
+	/**
+	* 执行成功方法
+	*/
+	protected function success($info=''){
+
+	}
+
+	/**
+	* 执行失败方法
+	*/
+	protected function error($info=''){
+
+	}
 }

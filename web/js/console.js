@@ -10,6 +10,7 @@ var CONSOLE;
 			DELETE: 46, BACKSPACE:8
 		},
 		container:{},
+		titleHeader:{},
 		eventType: {
 			pageClear:"pageClear",	// 用于重新ajaxLoad、关闭nabTab, 关闭dialog时，去除xheditor等需要特殊处理的资源
 			resizeGrid:"resizeGrid"	// 用于窗口或dialog大小调整
@@ -125,13 +126,14 @@ var CONSOLE;
 		},
 		init:function(pageFrag, options){
 			var op = $.extend({
-					loginUrl:"login.html", loginTitle:null, callback:null, debug:false,containerId:"#mainContainer", 
+					loginUrl:"login.html", loginTitle:null, callback:null, debug:false,containerId:"#consoleContainer",headerId:"#consoleHeader",
 					statusCode:{}, keys:{}
 				}, options);
 			this._set.loginUrl = op.loginUrl;
 			this._set.loginTitle = op.loginTitle;
 			this._set.debug = op.debug;
 			this.container = $(op.containerId);
+			this.titleHeader = $(op.headerId);
 			$.extend(CONSOLE.statusCode, op.statusCode);
 			$.extend(CONSOLE.keys, op.keys);
 			$.extend(CONSOLE.pageInfo, op.pageInfo);
@@ -162,7 +164,8 @@ var CONSOLE;
 				var external = eval($this.attr("external") || "false");
 				var method = $this.attr("method") || "GET";
 				var url = unescape($this.attr("href"));
-				CONSOLE.open(url,{title:title, fresh:fresh, external:external, type:method});
+				var name = $this.text();
+				CONSOLE.open(url,{title:title, fresh:fresh, external:external, type:method, name:name});
 
 				event.preventDefault();
 			});

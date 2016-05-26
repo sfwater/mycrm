@@ -29,6 +29,9 @@ body {
 .navbar-fixed-top {
   border: 0;
 }
+.navbar-nav {
+  background-color: #008fbf;
+}
 
 /*
  * Sidebar

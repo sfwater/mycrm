@@ -1,4 +1,152 @@
 (function($){
+	var CONSOLE = {
+		regPlugins: [], // [function($parent){} ...] 
+		// sbar: show sidebar
+		keyCode: {
+			ENTER: 13, ESC: 27, END: 35, HOME: 36,
+			SHIFT: 16, TAB: 9,
+			LEFT: 37, RIGHT: 39, UP: 38, DOWN: 40,
+			DELETE: 46, BACKSPACE:8
+		},
+		container:{},
+		eventType: {
+			pageClear:"pageClear",	// 用于重新ajaxLoad、关闭nabTab, 关闭dialog时，去除xheditor等需要特殊处理的资源
+			resizeGrid:"resizeGrid"	// 用于窗口或dialog大小调整
+		},
+		isOverAxis: function(x, reference, size) {
+			//Determines when x coordinate is over "b" element axis
+			return (x > reference) && (x < (reference + size));
+		},
+		isOver: function(y, x, top, left, height, width) {
+			//Determines when x, y coordinates is over "b" element
+			return this.isOverAxis(y, top, height) && this.isOverAxis(x, left, width);
+		},
+		
+		pageInfo: {pageNum:"pageNum", numPerPage:"numPerPage", orderField:"orderField", orderDirection:"orderDirection"},
+		statusCode: {ok:200, error:500, timeout:502},
+		keys: {statusCode:"statusCode", message:"message"},
+		ui:{
+			sbar:true,
+			hideMode:'display' //navTab组件切换的隐藏方式，支持的值有’display’，’offsets’负数偏移位置的值，默认值为’display’
+		},
+		frag:{}, //page fragment
+		_msg:{}, //alert message
+		_set:{
+			loginUrl:"", //session timeout
+			loginTitle:"", //if loginTitle open a login dialog
+			debug:false
+		},
+		msg:function(key, args){
+			var _format = function(str,args) {
+				args = args || [];
+				var result = str || "";
+				for (var i = 0; i < args.length; i++){
+					result = result.replace(new RegExp("\\{" + i + "\\}", "g"), args[i]);
+				}
+				return result;
+			}
+			return _format(this._msg[key], args);
+		},
+		debug:function(msg){
+			if (this._set.debug) {
+				if (typeof(console) != "undefined") console.log(msg);
+				else alert(msg);
+			}
+		},
+		loadLogin:function(){
+			if ($.pdialog && CONSOLE._set.loginTitle) {
+				$.pdialog.open(CONSOLE._set.loginUrl, "login", CONSOLE._set.loginTitle, {mask:true,width:520,height:260});
+			} else {
+				window.location = CONSOLE._set.loginUrl;
+			}
+		},
+		
+		/*
+		 * json to string
+		 */
+		obj2str:function(o) {
+			var r = [];
+			if(typeof o =="string") return "\""+o.replace(/([\'\"\\])/g,"\\$1").replace(/(\n)/g,"\\n").replace(/(\r)/g,"\\r").replace(/(\t)/g,"\\t")+"\"";
+			if(typeof o == "object"){
+				if(!o.sort){
+					for(var i in o)
+						r.push(i+":"+CONSOLE.obj2str(o[i]));
+					if(!!document.all && !/^\n?function\s*toString\(\)\s*\{\n?\s*\[native code\]\n?\s*\}\n?\s*$/.test(o.toString)){
+						r.push("toString:"+o.toString.toString());
+					}
+					r="{"+r.join()+"}"
+				}else{
+					for(var i =0;i<o.length;i++) {
+						r.push(CONSOLE.obj2str(o[i]));
+					}
+					r="["+r.join()+"]"
+				}
+				return r;
+			}
+			return o.toString();
+		},
+		jsonEval:function(data) {
+			try{
+				if ($.type(data) == 'string')
+					return eval('(' + data + ')');
+				else return data;
+			} catch (e){
+				return {};
+			}
+		},
+		ajaxError:function(xhr, ajaxOptions, thrownError){
+			if (alertMsg) {
+				alertMsg.error("<div>Http status: " + xhr.status + " " + xhr.statusText + "</div>" 
+					+ "<div>ajaxOptions: "+ajaxOptions + "</div>"
+					+ "<div>thrownError: "+thrownError + "</div>"
+					+ "<div>"+xhr.responseText+"</div>");
+			} else {
+				alert("Http status: " + xhr.status + " " + xhr.statusText + "\najaxOptions: " + ajaxOptions + "\nthrownError:"+thrownError + "\n" +xhr.responseText);
+			}
+		},
+		ajaxDone:function(json){
+			if(json[CONSOLE.keys.statusCode] == CONSOLE.statusCode.error) {
+				if(json[CONSOLE.keys.message] && alertMsg) alertMsg.error(json[CONSOLE.keys.message]);
+			} else if (json[CONSOLE.keys.statusCode] == CONSOLE.statusCode.timeout) {
+				if(alertMsg) alertMsg.error(json[CONSOLE.keys.message] || CONSOLE.msg("sessionTimout"), {okCall:CONSOLE.loadLogin});
+				else CONSOLE.loadLogin();
+			} else if (json[CONSOLE.keys.statusCode] == CONSOLE.statusCode.ok){
+				if(json[CONSOLE.keys.message] && alertMsg) alertMsg.correct(json[CONSOLE.keys.message]);
+			};
+		},
+		open:function(url,options){
+			this.container.ajaxUrl({
+				type:options.type, url:url, data:options.data, callback:function(){
+					if( $.isFunction(options.callback) )
+						options.callback();
+				}
+			});
+		},
+		init:function(pageFrag, options){
+			var op = $.extend({
+					loginUrl:"login.html", loginTitle:null, callback:null, debug:false,containerId:"#mainContainer", 
+					statusCode:{}, keys:{}
+				}, options);
+			this._set.loginUrl = op.loginUrl;
+			this._set.loginTitle = op.loginTitle;
+			this._set.debug = op.debug;
+			this.container = $(op.containerId);
+			$.extend(CONSOLE.statusCode, op.statusCode);
+			$.extend(CONSOLE.keys, op.keys);
+			$.extend(CONSOLE.pageInfo, op.pageInfo);
+			$.extend(CONSOLE.ui, op.ui);
+			
+			var _doc = $(document);
+			if (!_doc.isBind(CONSOLE.eventType.pageClear)) {
+				_doc.bind(CONSOLE.eventType.pageClear, function(event){
+					var box = event.target;
+					if ($.fn.xheditor) {
+						$("textarea.editor", box).xheditor(false);
+					}
+				});
+			}
+		}
+	};
 	function initUI(_box){
 		var $p = $(_box || document);
 
@@ -11,13 +159,8 @@
 				var fresh = eval($this.attr("fresh") || "true");
 				var external = eval($this.attr("external") || "false");
 				var method = $this.attr("method") || "GET";
-				var url = unescape($this.attr("href")).replaceTmById($(event.target).parents(".unitBox:first"));
-				DWZ.debug(url);
-				if (!url.isFinishedTm()) {
-					alertMsg.error($this.attr("warn") || DWZ.msg("alertSelectMsg"));
-					return false;
-				}
-				navTab.openTab(tabid, url,{title:title, fresh:fresh, external:external, type:method});
+				var url = unescape($this.attr("href"));
+				CONSOLE.open(url,{title:title, fresh:fresh, external:external, type:method});
 
 				event.preventDefault();
 			});
@@ -45,9 +188,9 @@
 				options.param = $this.attr("param") || "";
 
 				var url = unescape($this.attr("href")).replaceTmById($(event.target).parents(".unitBox:first"));
-				DWZ.debug(url);
+				CONSOLE.debug(url);
 				if (!url.isFinishedTm()) {
-					alertMsg.error($this.attr("warn") || DWZ.msg("alertSelectMsg"));
+					alertMsg.error($this.attr("warn") || CONSOLE.msg("alertSelectMsg"));
 					return false;
 				}
 				$.pdialog.open(url, rel, title, options);
@@ -79,7 +222,7 @@
 		ajaxUrl: function(op){
 			var $this = $(this);
 
-			$this.trigger(DWZ.eventType.pageClear);
+			$this.trigger(CONSOLE.eventType.pageClear);
 			
 			$.ajax({
 				type: op.type || 'GET',
@@ -87,29 +230,29 @@
 				data: op.data,
 				cache: false,
 				success: function(response){
-					var json = DWZ.jsonEval(response);
+					var json = CONSOLE.jsonEval(response);
 					
-					if (json[DWZ.keys.statusCode]==DWZ.statusCode.error){
-						if (json[DWZ.keys.message]) alertMsg.error(json[DWZ.keys.message]);
+					if (json[CONSOLE.keys.statusCode]==CONSOLE.statusCode.error){
+						if (json[CONSOLE.keys.message]) alertMsg.error(json[CONSOLE.keys.message]);
 					} else {
 						$this.html(response).initUI();
 						if ($.isFunction(op.callback)) op.callback(response);
 					}
 					
-					if (json[DWZ.keys.statusCode]==DWZ.statusCode.timeout){
+					if (json[CONSOLE.keys.statusCode]==CONSOLE.statusCode.timeout){
 						if ($.pdialog) $.pdialog.checkTimeout();
 						if (navTab) navTab.checkTimeout();
 	
-						alertMsg.error(json[DWZ.keys.message] || DWZ.msg("sessionTimout"), {okCall:function(){
-							DWZ.loadLogin();
+						alertMsg.error(json[CONSOLE.keys.message] || CONSOLE.msg("sessionTimout"), {okCall:function(){
+							CONSOLE.loadLogin();
 						}});
 					} 
 					
 				},
-				error: DWZ.ajaxError,
+				error: CONSOLE.ajaxError,
 				statusCode: {
 					503: function(xhr, ajaxOptions, thrownError) {
-						alert(DWZ.msg("statusCode_503") || thrownError);
+						alert(CONSOLE.msg("statusCode_503") || thrownError);
 					}
 				}
 			});
@@ -120,81 +263,6 @@
 		initUI: function(){
 			return this.each(function(){
 				if($.isFunction(initUI)) initUI(this);
-			});
-		},
-		/**
-		 * adjust component inner reference box height
-		 * @param {Object} refBox: reference box jQuery Obj
-		 */
-		layoutH: function($refBox){
-			return this.each(function(){
-				var $this = $(this);
-				if (! $refBox) $refBox = $this.parents("div.layoutBox:first");
-				var iRefH = $refBox.height();
-				var iLayoutH = parseInt($this.attr("layoutH"));
-				var iH = iRefH - iLayoutH > 50 ? iRefH - iLayoutH : 50;
-				
-				if ($this.isTag("table")) {
-					$this.removeAttr("layoutH").wrap('<div layoutH="'+iLayoutH+'" style="overflow:auto;height:'+iH+'px"></div>');
-				} else {
-					$this.height(iH).css("overflow","auto");
-				}
-			});
-		},
-		hoverClass: function(className, speed){
-			var _className = className || "hover";
-			return this.each(function(){
-				var $this = $(this), mouseOutTimer;
-				$this.hover(function(){
-					if (mouseOutTimer) clearTimeout(mouseOutTimer);
-					$this.addClass(_className);
-				},function(){
-					mouseOutTimer = setTimeout(function(){$this.removeClass(_className);}, speed||10);
-				});
-			});
-		},
-		focusClass: function(className){
-			var _className = className || "textInputFocus";
-			return this.each(function(){
-				$(this).focus(function(){
-					$(this).addClass(_className);
-				}).blur(function(){
-					$(this).removeClass(_className);
-				});
-			});
-		},
-		inputAlert: function(){
-			return this.each(function(){
-				
-				var $this = $(this);
-				
-				function getAltBox(){
-					return $this.parent().find("label.alt");
-				}
-				function altBoxCss(opacity){
-					var position = $this.position();
-					return {
-						width:$this.width(),
-						top:position.top+'px',
-						left:position.left +'px',
-						opacity:opacity || 1
-					};
-				}
-				if (getAltBox().size() < 1) {
-					if (!$this.attr("id")) $this.attr("id", $this.attr("name") + "_" +Math.round(Math.random()*10000));
-					var $label = $('<label class="alt" for="'+$this.attr("id")+'">'+$this.attr("alt")+'</label>').appendTo($this.parent());
-					
-					$label.css(altBoxCss(1));
-					if ($this.val()) $label.hide();
-				}
-				
-				$this.focus(function(){
-					getAltBox().css(altBoxCss(0.3));
-				}).blur(function(){
-					if (!$(this).val()) getAltBox().show().css("opacity",1);
-				}).keydown(function(){
-					getAltBox().hide();
-				});
 			});
 		},
 		isTag:function(tn) {

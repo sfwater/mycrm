@@ -64,7 +64,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 386.0
+		"width": 418.0
 	},
 	"console":
 	{
@@ -86,8 +86,6 @@
 	"expanded_folders":
 	[
 		"/E/workspace/myframework-php",
-		"/E/workspace/myframework-php/app",
-		"/E/workspace/myframework-php/app/config",
 		"/E/workspace/myframework-php/src",
 		"/E/workspace/myframework-php/src/Admin",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle",
@@ -96,15 +94,12 @@
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/config",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views",
-		"/E/workspace/myframework-php/vendor/swiftmailer/swiftmailer",
-		"/E/workspace/myframework-php/vendor/swiftmailer/swiftmailer/lib",
-		"/E/workspace/myframework-php/vendor/symfony/swiftmailer-bundle",
-		"/E/workspace/myframework-php/vendor/symfony/swiftmailer-bundle/DependencyInjection",
-		"/E/workspace/myframework-php/vendor/symfony/swiftmailer-bundle/DependencyInjection/Compiler",
 		"/E/workspace/myframework-php/web"
 	],
 	"file_history":
 	[
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/base.html.twig",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/DependencyInjection/AdminConsoleExtension.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/config/config.yml",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/DependencyInjection/Configuration.php",
@@ -117,7 +112,6 @@
 		"/E/workspace/submission/src/Admin/SubmissionBundle/DependencyInjection/Configuration.php",
 		"/E/workspace/submission/app/config/config.yml",
 		"/E/workspace/submission/src/Admin/VerifyBundle/Resources/config/services.yml",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/config/services.yml",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Default/index.html.twig",
 		"/E/workspace/myframework-php/app/config/routing.yml",
@@ -200,7 +194,7 @@
 				{
 					"buffer": 0,
 					"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
-					"semi_transient": false,
+					"semi_transient": true,
 					"settings":
 					{
 						"buffer_size": 664,
@@ -210,8 +204,8 @@
 						"selection":
 						[
 							[
-								457,
-								457
+								0,
+								0
 							]
 						],
 						"settings":

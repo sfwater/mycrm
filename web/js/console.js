@@ -146,6 +146,7 @@ var CONSOLE;
 					}
 				});
 			}
+			_doc.initUI();
 		}
 	};
 	function initUI(_box){

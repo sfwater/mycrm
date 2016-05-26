@@ -1,4 +1,6 @@
 services:
-#    admin_console.example:
-#        class: Admin\ConsoleBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+    admin_console.twig_filter_extesion:
+        class: Admin\ConsoleBundle\Extension\TwigFilterExtension
+        public: true 
+        tags:
+            - { name: twig.extension }

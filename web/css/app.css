@@ -50,6 +50,9 @@ body {
   margin-left: 1px;
   font-size: 14px;
 }
+.navbar-brand {
+  background-color: #0087b4;
+}
 
 /*
  * Sidebar

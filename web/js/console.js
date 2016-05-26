@@ -1,5 +1,6 @@
+var CONSOLE;
 (function($){
-	var CONSOLE = {
+	CONSOLE = {
 		regPlugins: [], // [function($parent){} ...] 
 		// sbar: show sidebar
 		keyCode: {

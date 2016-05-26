@@ -48,6 +48,7 @@ body {
 .navbar-nav > li > a {
   background-color: #09C;
   margin-left: 1px;
+  font-size: 14px;
 }
 
 /*

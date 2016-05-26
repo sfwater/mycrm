@@ -60,7 +60,7 @@
             </a>
             <ul class="nav collapse in" id="id_{{ key }}">
             {% for r in routes|showRoutes %}
-            <li><a href="{{path(r.name)}}" title="{{ r.options.description }}" target="navtab">{{ r.options.name }}</a></li>
+            <li><a href="javascript:" title="{{ r.options.description }}" target="navtab">{{ r.options.name }}</a></li>
             {% endfor %}
             </ul>
             </li>

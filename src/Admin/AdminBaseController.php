@@ -26,6 +26,7 @@ class AdminBaseController extends Controller
     		}
     		$value->order = isset($options['order']) ? intval($options['order']) : 0;
     		$value->name = $key;
+    		$value->show = isset($options['show']) ? $options['show'] : false;
     	}
     	return $routes;
 	}

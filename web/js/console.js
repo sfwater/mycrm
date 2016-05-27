@@ -118,9 +118,11 @@ var CONSOLE;
 		},
 		open:function(url,options){
 			this.container.ajaxUrl({
-				type:options.type, url:url, data:options.data, callback:function(){
+				type:options.type, url:url, data:options.data, callback:function(response){
+					//设置标题
+					this.titleHeader.text(options.name);
 					if( $.isFunction(options.callback) )
-						options.callback();
+						options.callback(response);
 				}
 			});
 		},
@@ -164,7 +166,7 @@ var CONSOLE;
 				var external = eval($this.attr("external") || "false");
 				var method = $this.attr("method") || "GET";
 				var url = unescape($this.attr("href"));
-				var name = $this.text();
+				var name = $this.text() || "";
 				CONSOLE.open(url,{title:title, fresh:fresh, external:external, type:method, name:name});
 
 				event.preventDefault();

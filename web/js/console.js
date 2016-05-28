@@ -134,7 +134,7 @@ var CONSOLE;
 				type:options.type, url:url, data:options.data, callback:function(response){
 					//设置标题
 					$this.titleHeader.text(options.name);
-					$this.titleHeader.find('small').text(options.description || '');
+					$this.titleHeader.find('small').text(options.title || '');
 					if( $.isFunction(options.callback) )
 						options.callback(response);
 				}

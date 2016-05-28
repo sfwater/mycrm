@@ -10,6 +10,7 @@ var CONSOLE;
 			DELETE: 46, BACKSPACE:8
 		},
 		okText:'确定',
+		cancelText:'取消',
 		container:{},
 		titleHeader:{},
 		eventType: {
@@ -254,7 +255,13 @@ var CONSOLE;
 			modal.find('.modal-body').html(msg);
 
 			$(buttons).each(function(){
-				modal.find('.modal-footer').append('<button type="button" class="btn btn-primary">Save changes</button>');
+				var button = $('<button type="button" class="'+this.css+'">'+this.name+'</button>');
+				button.click(function(){
+					if( $.isFunction(this.call) ){
+						this.call();
+					}
+				});
+				modal.find('.modal-footer').append(button);
 			});
 			modal.modal();
 		},
@@ -280,7 +287,7 @@ var CONSOLE;
 			var op = {okName:CONSOLE.okText, okCall:null};
 			$.extend(op, options);
 			var buttons = [
-				{name:op.okName, call: op.okCall, keyCode:CONSOLE.keyCode.ENTER}
+				{name:op.okName, call: op.okCall, keyCode:CONSOLE.keyCode.ENTER, css:'btn btn-default'}
 			];
 			this._open(type, msg, buttons);
 		},
@@ -290,11 +297,11 @@ var CONSOLE;
 		 * @param {Object} options {okName, okCal, cancelName, cancelCall}
 		 */
 		confirm: function(msg, options) {
-			var op = {okName:$.regional.alertMsg.butMsg.ok, okCall:null, cancelName:$.regional.alertMsg.butMsg.cancel, cancelCall:null};
+			var op = {okName:CONSOLE.okText, okCall:null, cancelName:CONSOLE.cancelText, cancelCall:null};
 			$.extend(op, options);
 			var buttons = [
-				{name:op.okName, call: op.okCall, keyCode:DWZ.keyCode.ENTER},
-				{name:op.cancelName, call: op.cancelCall, keyCode:DWZ.keyCode.ESC}
+				{name:op.okName, call: op.okCall, keyCode:DWZ.keyCode.ENTER, css:'btn btn-primary'},
+				{name:op.cancelName, call: op.cancelCall, keyCode:DWZ.keyCode.ESC, css:'btn btn-default'}
 			];
 			this._open(this._types.confirm, msg, buttons);
 		}

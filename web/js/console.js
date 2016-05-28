@@ -270,9 +270,9 @@ var CONSOLE;
 		},
 		init: function(){
 			this.modal = $(this._boxId);
-			this.modalTitle = modal.find('.modal-title');
-			this.modalBody = modal.find('.modal-body');
-			this.modalFooter = modal.find('.modal-footer');
+			this.modalTitle = this.modal.find('.modal-title');
+			this.modalBody = this.modal.find('.modal-body');
+			this.modalFooter = this.modal.find('.modal-footer');
 		},
 		close: function(){
 			this.modal('hide');

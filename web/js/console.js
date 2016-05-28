@@ -261,9 +261,10 @@ var CONSOLE;
 
 			$(buttons).each(function(){
 				var button = $('<button type="button" class="'+this.css+'">'+this.name+'</button>');
+				var $this = this;
 				button.click(function(){
-					if( $.isFunction(this.call) ){
-						this.call();
+					if( $.isFunction($this.call) ){
+						$this.call();
 					}
 				});
 				modal.find('.modal-footer').append(button);

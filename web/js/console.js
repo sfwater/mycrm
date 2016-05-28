@@ -252,9 +252,9 @@ var CONSOLE;
 			var modal = $(this._boxId);
 		  	modal.find('.modal-title').text(type);
 			modal.find('.modal-body').html(msg);
-			
-			$(buttons).each(function(){
 
+			$(buttons).each(function(){
+				modal.find('.modal-footer').append('<button type="button" class="btn btn-primary">Save changes</button>');
 			});
 			modal.modal();
 		},

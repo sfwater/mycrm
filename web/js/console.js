@@ -261,8 +261,8 @@ var CONSOLE;
 				button.click(function(){
 					if( $.isFunction(callback) ){
 						callback();
-						alertMsg.close();
 					}
+					alertMsg.close();
 				});
 				modal.find('.modal-footer').append(button);
 			});

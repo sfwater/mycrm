@@ -289,7 +289,7 @@ var CONSOLE;
 			this._alert(this._types.correct, msg, options);
 		},
 		_alert: function(type, msg, options) {
-			var op = {okName:CONSOLE.okText, okCall:this.close, modalOption:{backdrop:'static'}};
+			var op = {okName:CONSOLE.okText, okCall:alertMsg.close, modalOption:{backdrop:'static'}};
 			$.extend(op, options);
 			var buttons = [
 				{name:op.okName, call: op.okCall, keyCode:CONSOLE.keyCode.ENTER, css:'btn btn-default'}

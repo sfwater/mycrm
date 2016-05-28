@@ -250,8 +250,7 @@ var CONSOLE;
 		 * @param {Object} buttons [button1, button2]
 		 */
 		_open: function(type, msg, buttons, options){
-
-			var $this= this;
+			var modal = this.modal;
 		  	this.modalTitle.text(type);
 			this.modalBody.html(msg);
 			this.modalFooter.find('button').remove();
@@ -264,7 +263,7 @@ var CONSOLE;
 						$this.call();
 					}
 				});
-				$this.modal.find('.modal-footer').append(button);
+				modal.find('.modal-footer').append(button);
 			});
 			this.modal.modal(options);
 		},

@@ -130,9 +130,17 @@ var CONSOLE;
 				}
 			});
 		},
+		showLoading: function(){
+			this.loader.show();
+		},
+		hideLoading: function(){
+			this.loader.hide();
+		},
 		init:function(pageFrag, options){
 			var op = $.extend({
-					loginUrl:"login.html", loginTitle:null, callback:null, debug:false,containerId:"#consoleContainer",headerId:"#consoleHeader",
+					loginUrl:"login.html", loginTitle:null, callback:null, 
+					debug:false,containerId:"#consoleContainer",headerId:"#consoleHeader",
+					loaderId:'.loading',
 					statusCode:{}, keys:{}
 				}, options);
 			this._set.loginUrl = op.loginUrl;
@@ -140,6 +148,7 @@ var CONSOLE;
 			this._set.debug = op.debug;
 			this.container = $(op.containerId);
 			this.titleHeader = $(op.headerId);
+			this.loader = $(op.loaderId);
 			$.extend(CONSOLE.statusCode, op.statusCode);
 			$.extend(CONSOLE.keys, op.keys);
 			$.extend(CONSOLE.pageInfo, op.pageInfo);
@@ -329,6 +338,7 @@ var CONSOLE;
 				data: op.data,
 				cache: false,
 				success: function(response){
+					CONSOLE.hideLoading();
 					var json = CONSOLE.jsonEval(response);
 					
 					if (json[CONSOLE.keys.statusCode]==CONSOLE.statusCode.error){
@@ -349,7 +359,7 @@ var CONSOLE;
 					
 				},
 				beforeSend: function(){
-					$('.loading').show();
+					CONSOLE.showLoading();
 				},
 				error: CONSOLE.ajaxError,
 				statusCode: {

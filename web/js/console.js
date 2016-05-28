@@ -250,14 +250,11 @@ var CONSOLE;
 		 * @param {Object} buttons [button1, button2]
 		 */
 		_open: function(type, msg, buttons, options){
-			var modal = $(this._boxId);
-			var modalTitle = modal.find('.modal-title');
-			var modalBody = modal.find('.modal-body');
-			var modalFooter = modal.find('.modal-footer');
 
-		  	modalTitle.text(type);
-			modalBody.html(msg);
-			modalFooter.find('button').remove();
+
+		  	this.modalTitle.text(type);
+			this.modalBody.html(msg);
+			this.modalFooter.find('button').remove();
 
 			$(buttons).each(function(){
 				var button = $('<button type="button" class="'+this.css+'">'+this.name+'</button>');
@@ -269,13 +266,16 @@ var CONSOLE;
 				});
 				modal.find('.modal-footer').append(button);
 			});
-			modal.modal(options);
+			this.modal.modal(options);
 		},
 		init: function(){
-
+			this.modal = $(this._boxId);
+			this.modalTitle = modal.find('.modal-title');
+			this.modalBody = modal.find('.modal-body');
+			this.modalFooter = modal.find('.modal-footer');
 		},
 		close: function(){
-			$(this._boxId).modal('hide');
+			this.modal('hide');
 		},
 		error: function(msg, options) {
 			this._alert(this._types.error, msg, options);

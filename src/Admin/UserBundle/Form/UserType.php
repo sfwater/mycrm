@@ -11,6 +11,7 @@ class UserType extends AbstractType
     {
         $builder
             ->add("username")
+            ;
     }
     public function configureOptions(OptionsResolver $resolver)
     {

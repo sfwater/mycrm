@@ -269,7 +269,7 @@ var CONSOLE;
 				});
 				modal.find('.modal-footer').append(button);
 			});
-			modal.modal({backdrop:false});
+			modal.modal({backdrop:'static'});
 		},
 		init: function(){
 

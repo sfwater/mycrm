@@ -12,7 +12,7 @@ use Admin\AccessControlBundle\Form\UserType;
 /**
  * User controller.
  *
- * @Route("/user")
+ * @Route("/access/user")
  */
 class UserController extends Controller
 {

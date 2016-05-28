@@ -21,11 +21,6 @@ class UserType extends AbstractType
             'data_class' => 'Admin\UserBundle\Entity\User',
         ));
     }
-
-    public function getName()
-    {
-        return 'adminUserBundleUser';
-    }
 }
 
 

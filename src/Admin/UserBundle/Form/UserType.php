@@ -15,7 +15,7 @@ class UserType extends AbstractType
             ->add("email","email")
             ->add('save', 'submit', array('label' => 'Create User'));
     }
-    public function configureOptions(OptionsResolver $resolver)
+    public function configureOptions(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
             'data_class' => 'Admin\UserBundle\Entity\User',

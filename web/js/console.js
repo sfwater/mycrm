@@ -9,6 +9,7 @@ var CONSOLE;
 			LEFT: 37, RIGHT: 39, UP: 38, DOWN: 40,
 			DELETE: 46, BACKSPACE:8
 		},
+		okText:'确定',
 		container:{},
 		titleHeader:{},
 		eventType: {
@@ -221,7 +222,75 @@ var CONSOLE;
 			});
 		});
 	}
+	var alertMsg = {
+		_boxId: "#alertMsgBox",
+		_bgId: "#alertBackground",
+		_closeTimer: null,
 
+		_types: {error:"error", info:"info", warn:"warn", correct:"correct", confirm:"confirm"},
+
+		_getTitle: function(key){
+			return $.regional.alertMsg.title[key];
+		},
+
+		_keydownOk: function(event){
+			if (event.keyCode == DWZ.keyCode.ENTER) event.data.target.trigger("click");
+			return false;
+		},
+		_keydownEsc: function(event){
+			if (event.keyCode == DWZ.keyCode.ESC) event.data.target.trigger("click");
+		},
+		/**
+		 * 
+		 * @param {Object} type
+		 * @param {Object} msg
+		 * @param {Object} buttons [button1, button2]
+		 */
+		_open: function(type, msg, buttons){
+			$(this._boxId).modal();
+		},
+		close: function(){
+			$(document).unbind("keydown", this._keydownOk).unbind("keydown", this._keydownEsc);
+			$(this._boxId).animate({top:-$(this._boxId).height()}, 500, function(){
+				$(this).remove();
+			});
+			$(this._bgId).hide();
+		},
+		error: function(msg, options) {
+			this._alert(this._types.error, msg, options);
+		},
+		info: function(msg, options) {
+			this._alert(this._types.info, msg, options);
+		},
+		warn: function(msg, options) {
+			this._alert(this._types.warn, msg, options);
+		},
+		correct: function(msg, options) {
+			this._alert(this._types.correct, msg, options);
+		},
+		_alert: function(type, msg, options) {
+			var op = {okName:CONSOLE.okText, okCall:null};
+			$.extend(op, options);
+			var buttons = [
+				{name:op.okName, call: op.okCall, keyCode:CONSOLE.keyCode.ENTER}
+			];
+			this._open(type, msg, buttons);
+		},
+		/**
+		 * 
+		 * @param {Object} msg
+		 * @param {Object} options {okName, okCal, cancelName, cancelCall}
+		 */
+		confirm: function(msg, options) {
+			var op = {okName:$.regional.alertMsg.butMsg.ok, okCall:null, cancelName:$.regional.alertMsg.butMsg.cancel, cancelCall:null};
+			$.extend(op, options);
+			var buttons = [
+				{name:op.okName, call: op.okCall, keyCode:DWZ.keyCode.ENTER},
+				{name:op.cancelName, call: op.cancelCall, keyCode:DWZ.keyCode.ESC}
+			];
+			this._open(this._types.confirm, msg, buttons);
+		}
+	};
 
 	$.fn.extend({
 		/**

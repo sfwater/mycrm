@@ -17,8 +17,6 @@ class DefaultController extends AdminBaseController
     {
         $configs = $this->container->getParameter('admin_console');
         $routes = $this->resolveUserRoutes($this->getUserRoutes());
-        dump($routes);
-        exit;
         return $this->render('AdminConsoleBundle:Default:index.html.twig', array(
             'userRoutes'=>$routes,
             'configs'=>$configs,

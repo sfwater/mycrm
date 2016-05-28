@@ -348,6 +348,9 @@ var CONSOLE;
 					} 
 					
 				},
+				beforeSend: function(){
+					$('.loading').show();
+				},
 				error: CONSOLE.ajaxError,
 				statusCode: {
 					503: function(xhr, ajaxOptions, thrownError) {

@@ -11,6 +11,7 @@ var CONSOLE;
 		},
 		okText:'确定',
 		cancelText:'取消',
+		timeoutText:'请求超时',
 		container:{},
 		titleHeader:{},
 		eventType: {
@@ -99,6 +100,7 @@ var CONSOLE;
 			}
 		},
 		ajaxError:function(xhr, ajaxOptions, thrownError){
+			this.hideLoading();
 			if (alertMsg) {
 				alertMsg.error("<div>Http status: " + xhr.status + " " + xhr.statusText + "</div>" 
 					+ "<div>ajaxOptions: "+ajaxOptions + "</div>"
@@ -106,6 +108,14 @@ var CONSOLE;
 					+ "<div>"+xhr.responseText+"</div>");
 			} else {
 				alert("Http status: " + xhr.status + " " + xhr.statusText + "\najaxOptions: " + ajaxOptions + "\nthrownError:"+thrownError + "\n" +xhr.responseText);
+			}
+		},
+		ajaxTimeout: function(){
+			this.hideLoading();
+			if (alertMsg) {
+				alertMsg.error(timeoutText);
+			} else {
+				alert(timeoutText);
 			}
 		},
 		ajaxDone:function(json){
@@ -362,6 +372,7 @@ var CONSOLE;
 					CONSOLE.showLoading();
 				},
 				error: CONSOLE.ajaxError,
+				timeout: CONSOLE.ajaxTimeout,
 				statusCode: {
 					503: function(xhr, ajaxOptions, thrownError) {
 						alert(CONSOLE.msg("statusCode_503") || thrownError);

@@ -133,8 +133,7 @@ var CONSOLE;
 			this.container.ajaxUrl({
 				type:options.type, url:url, data:options.data, callback:function(response){
 					//设置标题
-					$this.titleHeader.text(options.name);
-					$this.titleHeader.find('small').text(options.title || '');
+					$this.titleHeader.html(options.name+'<small>'+options.title+'</small>');
 					if( $.isFunction(options.callback) )
 						options.callback(response);
 				}

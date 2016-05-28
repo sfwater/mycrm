@@ -100,7 +100,7 @@ var CONSOLE;
 			}
 		},
 		ajaxError:function(xhr, ajaxOptions, thrownError){
-			this.hideLoading();
+			CONSOLE.hideLoading();
 			if (alertMsg) {
 				alertMsg.error("<div>Http status: " + xhr.status + " " + xhr.statusText + "</div>" 
 					+ "<div>ajaxOptions: "+ajaxOptions + "</div>"
@@ -111,7 +111,7 @@ var CONSOLE;
 			}
 		},
 		ajaxTimeout: function(){
-			this.hideLoading();
+			CONSOLE.hideLoading();
 			if (alertMsg) {
 				alertMsg.error(timeoutText);
 			} else {

@@ -251,9 +251,14 @@ var CONSOLE;
 		 */
 		_open: function(type, msg, buttons){
 			var modal = $(this._boxId);
-		  	modal.find('.modal-title').text(type);
-			modal.find('.modal-body').html(msg);
-			modal.find('.model-footer').children('button').remove();
+			var modalTitle = modal.find('.modal-title');
+			var modalBody = modal.find('.modal-body');
+			var modalFooter = modal.find('.modal-footer');
+
+		  	modalTitle.text(type);
+			modalBody.html(msg);
+			modalFooter.find('button').remove();
+
 			$(buttons).each(function(){
 				var button = $('<button type="button" class="'+this.css+'">'+this.name+'</button>');
 				button.click(function(){

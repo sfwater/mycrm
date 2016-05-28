@@ -269,7 +269,7 @@ var CONSOLE;
 				});
 				modal.find('.modal-footer').append(button);
 			});
-			modal.modal();
+			modal.modal({backdrop:false});
 		},
 		init: function(){
 

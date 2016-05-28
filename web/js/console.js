@@ -274,7 +274,7 @@ var CONSOLE;
 			this.modalFooter = this.modal.find('.modal-footer');
 		},
 		close: function(){
-			this.modal('hide');
+			this.modal.modal('hide');
 		},
 		error: function(msg, options) {
 			this._alert(this._types.error, msg, options);

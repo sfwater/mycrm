@@ -249,7 +249,7 @@ var CONSOLE;
 		 * @param {Object} msg
 		 * @param {Object} buttons [button1, button2]
 		 */
-		_open: function(type, msg, buttons){
+		_open: function(type, msg, buttons, options){
 			var modal = $(this._boxId);
 			var modalTitle = modal.find('.modal-title');
 			var modalBody = modal.find('.modal-body');
@@ -269,7 +269,7 @@ var CONSOLE;
 				});
 				modal.find('.modal-footer').append(button);
 			});
-			modal.modal({backdrop:'static'});
+			modal.modal(options);
 		},
 		init: function(){
 
@@ -290,12 +290,12 @@ var CONSOLE;
 			this._alert(this._types.correct, msg, options);
 		},
 		_alert: function(type, msg, options) {
-			var op = {okName:CONSOLE.okText, okCall:this.close};
+			var op = {okName:CONSOLE.okText, okCall:this.close, modalOption:{backdrop:'static'}};
 			$.extend(op, options);
 			var buttons = [
 				{name:op.okName, call: op.okCall, keyCode:CONSOLE.keyCode.ENTER, css:'btn btn-default'}
 			];
-			this._open(type, msg, buttons);
+			this._open(type, msg, buttons, op.modalOption);
 		},
 		/**
 		 * 
@@ -309,7 +309,7 @@ var CONSOLE;
 				{name:op.okName, call: op.okCall, keyCode:DWZ.keyCode.ENTER, css:'btn btn-primary'},
 				{name:op.cancelName, call: op.cancelCall, keyCode:DWZ.keyCode.ESC, css:'btn btn-default'}
 			];
-			this._open(this._types.confirm, msg, buttons);
+			this._open(this._types.confirm, msg, buttons, options.modalOption);
 		}
 	};
 

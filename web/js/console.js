@@ -251,7 +251,7 @@ var CONSOLE;
 		 */
 		_open: function(type, msg, buttons, options){
 
-
+			var $this= this;
 		  	this.modalTitle.text(type);
 			this.modalBody.html(msg);
 			this.modalFooter.find('button').remove();
@@ -264,7 +264,7 @@ var CONSOLE;
 						$this.call();
 					}
 				});
-				modal.find('.modal-footer').append(button);
+				$this.modal.find('.modal-footer').append(button);
 			});
 			this.modal.modal(options);
 		},

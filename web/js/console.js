@@ -253,7 +253,7 @@ var CONSOLE;
 			var modal = $(this._boxId);
 		  	modal.find('.modal-title').text(type);
 			modal.find('.modal-body').html(msg);
-
+			modal.children().remove();
 			$(buttons).each(function(){
 				var button = $('<button type="button" class="'+this.css+'">'+this.name+'</button>');
 				button.click(function(){

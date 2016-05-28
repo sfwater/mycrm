@@ -252,6 +252,10 @@ var CONSOLE;
 			var modal = $(this._boxId);
 		  	modal.find('.modal-title').text(type);
 			modal.find('.modal-body').html(msg);
+			
+			$(buttons).each(function(){
+
+			});
 			modal.modal();
 		},
 		init: function(){

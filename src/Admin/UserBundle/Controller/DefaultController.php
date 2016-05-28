@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Admin\AdminBaseController;
 use Admin\UserBundle\Entity\User;
 use Admin\UserBundle\Form\UserType;
+use Symfony\Component\HttpFoundation\Request;
 
 /**
 * @Route("/users")
@@ -42,7 +43,7 @@ class DefaultController extends AdminBaseController
      * @Method("POST")
      * @Template("AdminUserBundle:Default:create.html.twig")
      */
-    public function createAction(){
+    public function createAction(Request $request){
         $entity = new User();
         $form = $this->createForm('Admin\UserBundle\Form\UserType',$entity);
         $form->handleRequest($request);

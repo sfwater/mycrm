@@ -256,7 +256,7 @@ var CONSOLE;
 		},
 		init: function(){
 
-		}
+		},
 		close: function(){
 			$(this._boxId).modal('hide');
 		},

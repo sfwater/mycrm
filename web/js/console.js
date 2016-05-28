@@ -261,6 +261,7 @@ var CONSOLE;
 				button.click(function(){
 					if( $.isFunction(callback) ){
 						callback();
+						alertMsg.close();
 					}
 				});
 				modal.find('.modal-footer').append(button);
@@ -289,7 +290,7 @@ var CONSOLE;
 			this._alert(this._types.correct, msg, options);
 		},
 		_alert: function(type, msg, options) {
-			var op = {okName:CONSOLE.okText, okCall:alertMsg.close, modalOption:{backdrop:'static'}};
+			var op = {okName:CONSOLE.okText, okCall:null, modalOption:{backdrop:'static'}};
 			$.extend(op, options);
 			var buttons = [
 				{name:op.okName, call: op.okCall, keyCode:CONSOLE.keyCode.ENTER, css:'btn btn-default'}

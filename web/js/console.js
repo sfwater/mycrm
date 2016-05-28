@@ -257,10 +257,10 @@ var CONSOLE;
 
 			$(buttons).each(function(){
 				var button = $('<button type="button" class="'+this.css+'">'+this.name+'</button>');
-				var $this = this;
+				var callback = this.call;
 				button.click(function(){
-					if( $.isFunction($this.call) ){
-						$this.call();
+					if( $.isFunction(callback) ){
+						callback();
 					}
 				});
 				modal.find('.modal-footer').append(button);

@@ -124,6 +124,7 @@ var CONSOLE;
 				type:options.type, url:url, data:options.data, callback:function(response){
 					//设置标题
 					$this.titleHeader.text(options.name);
+					$this.titleHeader.text(options.description || '');
 					if( $.isFunction(options.callback) )
 						options.callback(response);
 				}

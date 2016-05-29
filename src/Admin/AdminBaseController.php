@@ -72,7 +72,7 @@ class AdminBaseController extends Controller
 	*/
 	protected function success($info='数据保存成功'){
 		$data = new \StdClass();
-		$data->status = true;
+		$data->statusCode = 200;
 		$data->message = $info;
 		return new JsonResponse($data);
 	}
@@ -82,8 +82,8 @@ class AdminBaseController extends Controller
 	*/
 	protected function error($info='数据保存失败'){
 		$data = new \StdClass();
-		$data->status = true;
+		$data->statusCode = 500;
 		$data->message = $info;
-		return new JsonResponse($data, 500);
+		return new JsonResponse($data);
 	}
 }

@@ -223,3 +223,9 @@ li.collapsed .sidebar-title-icon{
   line-height: 40px;
   font-size: 14px;
 }
+
+
+
+.form-control {
+  max-width: 200px;
+}

@@ -245,9 +245,13 @@ var CONSOLE;
 			});
 		});
 
+		//required
+		$('input[required="required"]',$p).siblings('label').each(function(){
+			this.text(this.text()+'*');
+		});
+
 
 		//validate 
-
 		$("form", $p).validate({
 			highlight:function(element,errorClass,validClass){
 				$(element).parent().addClass(errorClass);

@@ -227,8 +227,11 @@ li.collapsed .sidebar-title-icon{
 
 /*form about*/
 .form-control {
+  display: inline-block;
   max-width: 400px;
 }
+.form-group label {
+  display: block;
+}
 .form-group > span {
-  display: inline-block;
 }

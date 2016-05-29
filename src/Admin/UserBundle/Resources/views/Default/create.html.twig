@@ -5,17 +5,28 @@
     {{ form_widget(form.username ) }}
   </div>
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+    {{ form_label(form.nickname,'昵称') }}
+    {{ form_widget(form.nickname) }}
   </div>
   <div class="form-group">
-    <label for="exampleInputFile">File input</label>
-    <input type="file" id="exampleInputFile">
-    <p class="help-block">Example block-level help text here.</p>
+    {{ form_label(form.password,'密码') }}
+    {{ form_widget(form.password) }}
+  </div>
+  <div class="form-group">
+    {{ form_label(form.roles,'用户组'}}
+    {{ form_widget(form.roles) }}
+  </div>
+  <div class="form-group">
+    {{ form_label(form.email,'邮箱'}}
+    {{ form_widget(form.email) }}
+  </div>
+  <div class="form-group">
+    {{ form_label(form.expireTime,'过期时间'}}
+    {{ form_widget(form.expireTime) }}
   </div>
   <div class="checkbox">
     <label>
-      <input type="checkbox"> Check me out
+      {{ form_widget(form.isActive) }} 默认激活
     </label>
   </div>
 {% endblock %}

@@ -12,6 +12,12 @@ class UserType extends AbstractType
     {
         $builder
             ->add("username",TextType::class,array(
+                'attr'=>array('class'=>'form-control','placeholder'=>'6-16位英文与数字组合','label'=>'6-16位英文与数字组合')
+                ))
+            ->add("nickname",TextType::class,array(
+                'attr'=>array('class'=>'form-control')
+                ))
+            ->add("nickname",TextType::class,array(
                 'attr'=>array('class'=>'form-control')
                 ))
             ;

@@ -34,6 +34,9 @@
 	});
 	$.setRegional("alertMsg", {
 		title:{error:"错误", info:"提示", warn:"警告", correct:"成功", confirm:"确认提示"},
-		butMsg:{ok:"确定", yes:"是", no:"否", cancel:"取消"}
+		butMsg:{ok:"确定", yes:"是", no:"否", cancel:"取消", close:"关闭"},
+		messages:{
+			timeout:"请求超时了,请检查您的网络是否通畅!",
+		}
 	});
 })(jQuery);

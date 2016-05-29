@@ -13,9 +13,6 @@ var CONSOLE;
 			LEFT: 37, RIGHT: 39, UP: 38, DOWN: 40,
 			DELETE: 46, BACKSPACE:8
 		},
-		okText:'确定',
-		cancelText:'取消',
-		timeoutText:'请求超时',
 		container:{},
 		titleHeader:{},
 		eventType: {
@@ -117,9 +114,9 @@ var CONSOLE;
 		ajaxTimeout: function(){
 			CONSOLE.hideLoading();
 			if (alertMsg) {
-				alertMsg.error(timeoutText);
+				alertMsg.error($.regional.messages.timeout);
 			} else {
-				alert(timeoutText);
+				alert($.regional.messages.timeout);
 			}
 		},
 		ajaxDone:function(json){
@@ -313,7 +310,7 @@ var CONSOLE;
 			this._alert(this._types.correct, msg, options);
 		},
 		_alert: function(type, msg, options) {
-			var op = {okName:CONSOLE.okText, okCall:null, modalOption:{backdrop:'static'}};
+			var op = {okName:$.regional.alertMsg.butMsg.close, okCall:null, modalOption:{backdrop:'static'}};
 			$.extend(op, options);
 			var buttons = [
 				{name:op.okName, call: op.okCall, keyCode:CONSOLE.keyCode.ENTER, css:'btn btn-default'}
@@ -326,7 +323,7 @@ var CONSOLE;
 		 * @param {Object} options {okName, okCal, cancelName, cancelCall}
 		 */
 		confirm: function(msg, options) {
-			var op = {okName:CONSOLE.okText, okCall:null, cancelName:CONSOLE.cancelText, cancelCall:null};
+			var op = {okName:$.regional.alertMsg.butMsg.ok, okCall:null, cancelName:$.regional.alertMsg.butMsg.cancel, cancelCall:null};
 			$.extend(op, options);
 			var buttons = [
 				{name:op.okName, call: op.okCall, keyCode:DWZ.keyCode.ENTER, css:'btn btn-primary'},

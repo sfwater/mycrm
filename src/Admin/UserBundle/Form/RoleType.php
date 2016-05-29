@@ -32,6 +32,7 @@ class RoleType extends AbstractType
                     '删除'=>4,
                     ),
                 'label'=>'权限',
+                'multiple'=>true,
                 ))
             ;
     }

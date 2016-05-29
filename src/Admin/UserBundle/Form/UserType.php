@@ -34,6 +34,7 @@ class UserType extends AbstractType
                 'mapped'=>false,
                 ))
             ->add('roles',ChoiceType::class,array(
+                'attr'=>array('class'=>'form-control','placeholder'=>'选择一个用户组','label'=>'选择一个用户组'),
                 'mapped'=>false,
                 'label'=>'用户组',
                 'choices'=>array()

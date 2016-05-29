@@ -1,5 +1,5 @@
 <?php
-namespace Admin\RoleBundle\Form;
+namespace Admin\UserBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

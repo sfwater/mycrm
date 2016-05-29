@@ -45,7 +45,7 @@ class RoleController extends AdminBaseController
      */
     public function createAction(Request $request){
         $entity = new Role();
-        $form = $this->createForm('Admin\UserBundle\Form\RoleType',$entity);
+        $form = $this->createForm('Admin\UserBundle\Form\RoleType',$entity, array('class'=>'pageForm required-validate'));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {

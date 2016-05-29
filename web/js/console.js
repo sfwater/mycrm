@@ -243,11 +243,12 @@ var CONSOLE;
 
 				event.preventDefault({
 					hightlight:function(element,errorClass,validClass){
-						$(element).addClass(errorClass);
+						$(element).parent().addClass(errorClass);
 					},
 					unhightlight:function(element,errorClass,validClass){
-						$(element).removeClass(errorClass);
-					}
+						$(element).parent().removeClass(errorClass);
+					},
+					errorClass:'has-error'
 				});
 			});
 		});

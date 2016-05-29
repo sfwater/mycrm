@@ -252,7 +252,7 @@ var CONSOLE;
 
 
 		//validate 
-		$("form", $p).validate({
+		$("form.required-validate", $p).validate({
 			highlight:function(element,errorClass,validClass){
 				$(element).parent().addClass(errorClass);
 			},
@@ -263,6 +263,7 @@ var CONSOLE;
 				$(form).ajaxSubmit();
 				return false;
 			},
+			onsubmit:false,
 			errorClass:'has-error'
 		});
 	}

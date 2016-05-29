@@ -241,7 +241,14 @@ var CONSOLE;
 					});
 				}
 
-				event.preventDefault();
+				event.preventDefault({
+					hightlight:function(element,errorClass,validClass){
+						$(element).addClass(errorClass);
+					},
+					unhightlight:function(element,errorClass,validClass){
+						$(element).removeClass(errorClass);
+					}
+				});
 			});
 		});
 

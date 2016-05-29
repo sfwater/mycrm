@@ -21,7 +21,7 @@ class RoleController extends AdminBaseController
      * 所有用户组列表 
      * @Route(
      *      "/", name="admin_roles_index",
-     *      options = {"name":"用户组管理","description":"列出系统中所有用户组","category":"系统管理员","order":2, "show":true}
+     *      options = {"name":"用户组管理","description":"列出系统中所有用户组","category":"系统管理员","order":6, "show":true}
      *   )
      * @Method("GET") 
      * @Template("AdminUserBundle:Role:index.html.twig")
@@ -38,7 +38,7 @@ class RoleController extends AdminBaseController
      * 创建一个用户组 
      * @Route(
      *      "/", name="admin_roles_create",
-     *      options = {"name":"创建用户组","description":"创建一个用户组","category":"系统管理员","order":1, "show":true}
+     *      options = {"name":"创建用户组","description":"创建一个用户组","category":"系统管理员","order":5, "show":true}
      *   )
      * @Method("POST")
      * @Template("AdminUserBundle:Role:create.html.twig")
@@ -74,7 +74,7 @@ class RoleController extends AdminBaseController
      * 编辑一个用户组 
      * @Route(
      *      "/{id}", name="admin_roles_edit",
-     *      options = {"name":"编辑用户组","description":"编辑一个用户组","category":"系统管理员","order":3 }
+     *      options = {"name":"编辑用户组","description":"编辑一个用户组","category":"系统管理员","order":7 }
      *   )
      * @Method("POST")
      * @Template("AdminUserBundle:Role:edit.html.twig")
@@ -111,7 +111,7 @@ class RoleController extends AdminBaseController
      * 删除用户组
      * @Route(
      *      "/", name="admin_roles_delete",
-     *      options = {"name":"删除用户组","description":"删除一个用户组","category":"系统管理员","order":4 }
+     *      options = {"name":"删除用户组","description":"删除一个用户组","category":"系统管理员","order":8 }
      *   )
      * @Method("DELETE")
      */

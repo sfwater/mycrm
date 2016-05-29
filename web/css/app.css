@@ -225,7 +225,10 @@ li.collapsed .sidebar-title-icon{
 }
 
 
-
+/*form about*/
 .form-control {
   max-width: 400px;
+}
+.form-group > span {
+  display: inline-block;
 }

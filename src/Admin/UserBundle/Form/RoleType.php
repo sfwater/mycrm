@@ -25,7 +25,7 @@ class RoleType extends AbstractType
                 'label'=>'用户组标识',
                 ))
             ->add("mask",ChoiceType::class,array(
-                'attr'=>array('class'=>'form-control','placeholder'=>'权限','label'=>'权限'),
+                'attr'=>array('placeholder'=>'权限','label'=>'权限'),
                 'choices'=>array(
                     '新增'=>1,
                     '编辑'=>2,
@@ -34,6 +34,7 @@ class RoleType extends AbstractType
                 'label'=>'权限',
                 'multiple'=>true,
                 'expanded'=>true,
+                'mapped'=>false,
                 ))
             ;
     }

@@ -261,6 +261,7 @@ var CONSOLE;
 			},
 			submitHandler: function(form){
 				$(form).ajaxSubmit();
+				return false;
 			},
 			errorClass:'has-error'
 		});

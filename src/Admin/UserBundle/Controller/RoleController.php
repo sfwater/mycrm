@@ -51,8 +51,6 @@ class RoleController extends AdminBaseController
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->getConnection()->beginTransaction();
-
-            $entity->setRegisterTime(time());
             try{
                 $em->persist($entity);
                 $em->flush();

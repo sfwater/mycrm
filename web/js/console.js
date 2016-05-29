@@ -259,6 +259,9 @@ var CONSOLE;
 			unhighlight:function(element,errorClass,validClass){
 				$(element).parent().removeClass(errorClass);
 			},
+			submitHandler: function(form){
+				$(form).ajaxSubmit();
+			},
 			errorClass:'has-error'
 		});
 	}

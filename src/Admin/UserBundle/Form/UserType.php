@@ -31,6 +31,7 @@ class UserType extends AbstractType
             ->add("repassword",PasswordType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'确认密码','label'=>'确认密码'),
                 'label'=>'确认密码',
+                'mapped'=>false,
                 ))
             ->add("isActive",CheckboxType::class,array(
                 'label'=>'默认启用',

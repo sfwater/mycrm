@@ -360,7 +360,7 @@ function _iframeResponse(iframe, callback){
 				var callback = $form.attr('onsuccess');
 
 				var	_callback = function(json){
-						$form.find('#btnReset').button('reset');
+						$('#btnReset',$form).button('reset');
 						if( callback ){
 							CONSOLE.hideLoading();
 							callback(json);
@@ -370,7 +370,7 @@ function _iframeResponse(iframe, callback){
 						}
 					};
 				var _errorCallback = function(xhr, ajaxOptions, thrownError){
-					$form.find('#btnReset').button('reset');
+					$('#btnReset', $form).button('reset');
 					CONSOLE.ajaxError(xhr, ajaxOptions, thrownError);
 				}
 				var _submitFn = function(){

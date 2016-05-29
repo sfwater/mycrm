@@ -1,25 +1,29 @@
 {% extends 'AdminConsoleBundle::page_edit.html.twig' %}
 {% block formContent %}
   <div class="form-group">
-    {{ form_label(form.username,'用户名') }}
+    {{ form_label(form.username) }}
     {{ form_widget(form.username ) }}
   </div>
   <div class="form-group">
-    {{ form_label(form.nickname,'昵称') }}
+    {{ form_label(form.nickname) }}
     {{ form_widget(form.nickname) }}
   </div>
   <div class="form-group">
-    {{ form_label(form.password,'密码') }}
+    {{ form_label(form.password) }}
     {{ form_widget(form.password) }}
   </div>
   <div class="form-group">
+    {{ form_label(form.repassword) }}
+    {{ form_widget(form.repassword) }}
   </div>
   <div class="form-group">
-    {{ form_label(form.email,'邮箱') }}
+  </div>
+  <div class="form-group">
+    {{ form_label(form.email) }}
     {{ form_widget(form.email) }}
   </div>
   <div class="form-group">
-    {{ form_label(form.expireTime,'过期时间') }}
+    {{ form_label(form.expireTime) }}
     {{ form_widget(form.expireTime) }}
   </div>
   <div class="checkbox">

@@ -17,23 +17,27 @@ class UserType extends AbstractType
     {
         $builder
             ->add("username",TextType::class,array(
-                'attr'=>array('class'=>'form-control','placeholder'=>'6-16位英文与数字组合','label'=>'6-16位英文与数字组合')
+                'attr'=>array('class'=>'form-control','placeholder'=>'6-16位英文与数字组合','label'=>'6-16位英文与数字组合'),
+                'label'=>'用户名',
                 ))
             ->add("nickname",TextType::class,array(
-                'attr'=>array('class'=>'form-control')
-                ))
-            ->add("nickname",TextType::class,array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control','placeholder'=>'中文名称','label'=>'中文名称'),
+                'label'=>'昵称',
                 ))
             ->add("password",PasswordType::class,array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control','placeholder'=>'6-16位密码','label'=>'6-16位密码'),
+                'label'=>'密码',
+                ))
+            ->add("repassword",PasswordType::class,array(
+                'attr'=>array('class'=>'form-control','placeholder'=>'确认密码','label'=>'确认密码'),
+                'label'=>'确认密码',
                 ))
             ->add("isActive",CheckboxType::class,array(
-                'attr'=>array('class'=>'form-control'),
                 'label'=>'默认启用',
                 ))
             ->add("email",EmailType::class,array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control','placeholder'=>'有效的邮箱地址,可不填写','label'=>'有效的邮箱地址,可不填写'),
+                'label'=>'邮箱'
                 ))
             ->add("expireTime",DateType::class,array(
                 'attr'=>array('class'=>'form-control')

@@ -26,7 +26,7 @@ class RoleType extends AbstractType
                 ))
             ->add("mask",ChoiceType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'权限','label'=>'权限'),
-                'choices'=array(
+                'choices'=>array(
                     '新增'=>1,
                     '编辑'=>2,
                     '删除'=>4,

@@ -393,7 +393,7 @@ function _iframeResponse(iframe, callback){
 			errorClass:'has-error'
 		});
 		$("form.required-validate", $p).find('#btnReset').click(function(){
-			$(this).parent('form.required-validate').reset();
+			$(this).parent('form.required-validate')[0].reset();
 		});
 	}
 	var alertMsg = {

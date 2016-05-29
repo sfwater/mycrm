@@ -16,6 +16,7 @@ class RoleType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->setAttribute('class','required-validate')
             ->add("name",TextType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'中文组名','label'=>'中文组名'),
                 'label'=>'组名',

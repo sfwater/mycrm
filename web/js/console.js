@@ -1,5 +1,9 @@
 var CONSOLE;
 (function($){
+	$.setRegional = function(key, value){
+		if (!$.regional) $.regional = {};
+		$.regional[key] = value;
+	};
 	CONSOLE = {
 		regPlugins: [], // [function($parent){} ...] 
 		// sbar: show sidebar

@@ -1,9 +1,103 @@
 var CONSOLE;
+/**
+ * 普通ajax表单提交
+ * @param {Object} form
+ * @param {Object} callback
+ * @param {String} confirmMsg 提示确认信息
+ */
+function validateCallback(form, callback, confirmMsg) {
+	var $form = $(form);
+
+	if (!$form.valid()) {
+		return false;
+	}
+	
+	var _submitFn = function(){
+		$.ajax({
+			type: form.method || 'POST',
+			url:$form.attr("action"),
+			data:$form.serializeArray(),
+			dataType:"json",
+			cache: false,
+			success: callback || DWZ.ajaxDone,
+			error: DWZ.ajaxError
+		});
+	}
+	
+	if (confirmMsg) {
+		alertMsg.confirm(confirmMsg, {okCall: _submitFn});
+	} else {
+		_submitFn();
+	}
+	
+	return false;
+}
+/**
+ * 带文件上传的ajax表单提交
+ * @param {Object} form
+ * @param {Object} callback
+ */
+function iframeCallback(form, callback){
+	var $form = $(form), $iframe = $("#callbackframe");
+	if(!$form.valid()) {return false;}
+
+	if ($iframe.size() == 0) {
+		$iframe = $("<iframe id='callbackframe' name='callbackframe' src='about:blank' style='display:none'></iframe>").appendTo("body");
+	}
+	if(!form.ajax) {
+		$form.append('<input type="hidden" name="ajax" value="1" />');
+	}
+	form.target = "callbackframe";
+	
+	_iframeResponse($iframe[0], callback || DWZ.ajaxDone);
+}
+function _iframeResponse(iframe, callback){
+	var $iframe = $(iframe), $document = $(document);
+	
+	$document.trigger("ajaxStart");
+	
+	$iframe.bind("load", function(event){
+		$iframe.unbind("load");
+		$document.trigger("ajaxStop");
+		
+		if (iframe.src == "javascript:'%3Chtml%3E%3C/html%3E';" || // For Safari
+			iframe.src == "javascript:'<html></html>';") { // For FF, IE
+			return;
+		}
+
+		var doc = iframe.contentDocument || iframe.document;
+
+		// fixing Opera 9.26,10.00
+		if (doc.readyState && doc.readyState != 'complete') return; 
+		// fixing Opera 9.64
+		if (doc.body && doc.body.innerHTML == "false") return;
+	   
+		var response;
+		
+		if (doc.XMLDocument) {
+			// response is a xml document Internet Explorer property
+			response = doc.XMLDocument;
+		} else if (doc.body){
+			try{
+				response = $iframe.contents().find("body").text();
+				response = jQuery.parseJSON(response);
+			} catch (e){ // response is html document or plain text
+				response = doc.body.innerHTML;
+			}
+		} else {
+			// response is a xml document
+			response = doc;
+		}
+		
+		callback(response);
+	});
+}
 (function($){
 	$.setRegional = function(key, value){
 		if (!$.regional) $.regional = {};
 		$.regional[key] = value;
 	};
+
 	CONSOLE = {
 		regPlugins: [], // [function($parent){} ...] 
 		// sbar: show sidebar
@@ -260,7 +354,7 @@ var CONSOLE;
 				$(element).parent().removeClass(errorClass);
 			},
 			submitHandler: function(form){
-				$(form).ajaxSubmit();
+				var $form = $(form);
 				return false;
 			},
 			errorClass:'has-error'

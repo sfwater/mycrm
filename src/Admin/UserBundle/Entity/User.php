@@ -10,7 +10,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * User
  *
  * @ORM\Table(name="admins")
- * @ORM\Entity(repositoryClass="Admin\DWZBackendBundle\Entity\UserRepository")
+ * @ORM\Entity(repositoryClass="Admin\UserBundle\Entity\UserRepository")
  */
 class User implements AdvancedUserInterface, \Serializable
 {
@@ -328,10 +328,10 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Add roles
      *
-     * @param \Admin\DWZBackendBundle\Entity\Role $roles
+     * @param \Admin\UserBundle\Entity\Role $roles
      * @return User
      */
-    public function addRole(\Admin\DWZBackendBundle\Entity\Role $roles)
+    public function addRole(\Admin\UserBundle\Entity\Role $roles)
     {
         $this->roles[] = $roles;
 
@@ -341,9 +341,9 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * Remove roles
      *
-     * @param \Admin\DWZBackendBundle\Entity\Role $roles
+     * @param \Admin\UserBundle\Entity\Role $roles
      */
-    public function removeRole(\Admin\DWZBackendBundle\Entity\Role $roles)
+    public function removeRole(\Admin\UserBundle\Entity\Role $roles)
     {
         $this->roles->removeElement($roles);
     }

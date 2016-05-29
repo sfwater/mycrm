@@ -246,7 +246,7 @@ var CONSOLE;
 		});
 
 		//required
-		$('input[required="required"]',$p).siblings('label').each(function(){
+		$('label.required',$p).each(function(){
 			$(this).text($(this).text()+'*');
 		});
 

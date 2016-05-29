@@ -244,6 +244,11 @@ var CONSOLE;
 				event.preventDefault();
 			});
 		});
+
+
+		//validate 
+
+		$("form", $p).validate();
 	}
 	var alertMsg = {
 		_boxId: "#alertMsgBox",

@@ -33,7 +33,7 @@ class UserType extends AbstractType
                 'label'=>'确认密码',
                 'mapped'=>false,
                 ))
-            ->add('roles',ChoiceType:class)
+            ->add('roles',ChoiceType::class)
             ->add("isActive",CheckboxType::class,array(
                 'label'=>'默认启用',
                 ))

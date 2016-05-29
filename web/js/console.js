@@ -355,6 +355,38 @@ function _iframeResponse(iframe, callback){
 			},
 			submitHandler: function(form){
 				var $form = $(form);
+				var confirmMsg = $form.attr('confirm');
+				var callback = $form.attr('onsuccess');
+				var _callback;
+				if( callback ){
+					_callback = function(){
+						CONSOLE.hideLoading();
+						if( callback ){
+							callback();
+						}
+					}
+				}
+				var _submitFn = function(){
+					$.ajax({
+						type: form.method || 'POST',
+						url:$form.attr("action"),
+						data:$form.serializeArray(),
+						dataType:"json",
+						cache: false,
+						beforeSend: function(){
+							CONSOLE.showLoading();
+						},
+						success: _callback || CONSOLE.ajaxDone,
+						error: CONSOLE.ajaxError
+					});
+				}
+				
+				if (confirmMsg) {
+					alertMsg.confirm(confirmMsg, {okCall: _submitFn});
+				} else {
+					_submitFn();
+				}
+	
 				return false;
 			},
 			errorClass:'has-error'

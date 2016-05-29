@@ -263,7 +263,6 @@ var CONSOLE;
 				$(form).ajaxSubmit();
 				return false;
 			},
-			onsubmit:false,
 			errorClass:'has-error'
 		});
 	}

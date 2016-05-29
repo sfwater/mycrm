@@ -378,7 +378,7 @@ function _iframeResponse(iframe, callback){
 						type: form.method || 'POST',
 						url:$form.attr("action"),
 						data:$form.serializeArray(),
-						// dataType:"json",
+						dataType:"json",
 						cache: false,
 						beforeSend: function(){
 							$form.find('#btnSubmit').button('loading');

@@ -48,13 +48,12 @@ class DefaultController extends AdminBaseController
         $form = $this->createForm('Admin\UserBundle\Form\UserType',$entity);
         $form->handleRequest($request);
 
-        if ($form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->getConnection()->beginTransaction();
 
             $entity->setRegisterTime(time());
             try{
-                $entity->setUser($user);
                 $em->persist($entity);
                 $em->flush();
                 $em->getConnection()->commit();

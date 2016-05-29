@@ -214,6 +214,7 @@ function _iframeResponse(iframe, callback){
 			}
 		},
 		ajaxDone:function(json){
+			CONSOLE.hideLoading();
 			if(json[CONSOLE.keys.statusCode] == CONSOLE.statusCode.error) {
 				if(json[CONSOLE.keys.message] && alertMsg) alertMsg.error(json[CONSOLE.keys.message]);
 			} else if (json[CONSOLE.keys.statusCode] == CONSOLE.statusCode.timeout) {
@@ -357,14 +358,20 @@ function _iframeResponse(iframe, callback){
 				var $form = $(form);
 				var confirmMsg = $form.attr('confirm');
 				var callback = $form.attr('onsuccess');
-				var _callback;
-				if( callback ){
-					_callback = function(){
-						CONSOLE.hideLoading();
+
+				var	_callback = function(json){
+						$form.find('#btnReset').button('reset');
 						if( callback ){
-							callback();
+							CONSOLE.hideLoading();
+							callback(json);
 						}
-					}
+						else{
+							CONSOLE.ajaxDone(json);
+						}
+					};
+				var _errorCallback = function(xhr, ajaxOptions, thrownError){
+					$form.find('#btnReset').button('reset');
+					CONSOLE.ajaxError(xhr, ajaxOptions, thrownError);
 				}
 				var _submitFn = function(){
 					$.ajax({
@@ -377,8 +384,8 @@ function _iframeResponse(iframe, callback){
 							$form.find('#btnSubmit').button('loading');
 							CONSOLE.showLoading();
 						},
-						success: _callback || CONSOLE.ajaxDone,
-						error: CONSOLE.ajaxError
+						success: _callback,
+						error: _errorCallback
 					});
 				}
 				

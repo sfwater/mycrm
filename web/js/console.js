@@ -249,14 +249,15 @@ var CONSOLE;
 		//validate 
 
 		$("form", $p).validate({
-					hightlight:function(element,errorClass,validClass){
-						$(element).parent().addClass(errorClass);
-					},
-					unhightlight:function(element,errorClass,validClass){
-						$(element).parent().removeClass(errorClass);
-					},
-					errorClass:'has-error'
-				});
+			hightlight:function(element,errorClass,validClass){
+				alert($(element).parent());
+				$(element).parent().addClass(errorClass);
+			},
+			unhightlight:function(element,errorClass,validClass){
+				$(element).parent().removeClass(errorClass);
+			},
+			errorClass:'has-error'
+		});
 	}
 	var alertMsg = {
 		_boxId: "#alertMsgBox",

@@ -31,7 +31,6 @@ class RoleType extends AbstractType
                     '编辑'=>2,
                     '删除'=>4,
                     ),
-                'choice_attr'=>function(){return array('class'=>'checkbox-inline');},
                 'label'=>'权限',
                 'multiple'=>true,
                 'expanded'=>true,

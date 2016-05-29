@@ -28,11 +28,12 @@ class UserType extends AbstractType
                 'attr'=>array('class'=>'form-control')
                 ))
             ->add("isActive",CheckboxType::class,array(
-                'attr'=>array('class'=>'form-control')
+                'attr'=>array('class'=>'form-control'),
+                'label'=>'默认启用',
                 ))
             ->add("roles",ChoiceType::class,array(
                 'attr'=>array('class'=>'form-control'),
-                'choices'=>array('1'=>'1v'),
+                'choices'=>array('1'=>true),
                 ))
             ->add("email",EmailType::class,array(
                 'attr'=>array('class'=>'form-control')

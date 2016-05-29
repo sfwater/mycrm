@@ -38,7 +38,7 @@ class RoleType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Admin\RoleBundle\Entity\Role',
+            'data_class' => 'Admin\UserBundle\Entity\Role',
         ));
     }
 }

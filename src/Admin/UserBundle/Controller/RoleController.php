@@ -55,7 +55,12 @@ class RoleController extends AdminBaseController
             $em = $this->getDoctrine()->getManager();
             $em->getConnection()->beginTransaction();
             try{
-                $entity->setMask(0);
+                $masks = $form->get('mask')->getData();
+                $mask = 0;
+                foreach ($masks as $value) {
+                    $mask |= $value;
+                }
+                $entity->setMask($mask);
                 $em->persist($entity);
                 $em->flush();
                 $em->getConnection()->commit();

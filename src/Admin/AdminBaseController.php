@@ -84,6 +84,6 @@ class AdminBaseController extends Controller
 		$data = new \StdClass();
 		$data->statusCode = 500;
 		$data->message = $info;
-		return new JsonResponse($data);
+		return new JsonResponse($data, 500);
 	}
 }

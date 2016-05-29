@@ -33,6 +33,7 @@ class RoleType extends AbstractType
                     ),
                 'label'=>'权限',
                 'multiple'=>true,
+                'expanded'=>true,
                 ))
             ;
     }

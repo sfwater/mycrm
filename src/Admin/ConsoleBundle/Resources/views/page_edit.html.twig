@@ -1,6 +1,10 @@
 {% extends 'AdminConsoleBundle::page.html.twig' %}
 {% form_theme form 'bootstrap_3_layout.html.twig' %}
 {% block pageContent %}
+<div class="table-viewer-header clearfix">
+<span class="table-viewer-topbar-title"><span></span></span>
+</div>
+<div class="table-content">
 	{{ form_start(form) }}	
 		<div class="pageFormContent">
 			{% block formContent %} {% endblock %}
@@ -9,4 +13,5 @@
 		<button type="button" id="btnReset" class="btn btn-default">重置</button>
 		</div>
 	{{ form_end(form) }}	
+</div>
 {% endblock %}

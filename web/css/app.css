@@ -245,3 +245,23 @@ li.collapsed .sidebar-title-icon{
 .form-group > span.has-error {
   color: red;
 }
+.table-viewer-header {
+    margin-top: 10px;
+    margin-bottom: -1px;
+    height: 40px;
+    background: #F5f6FA;
+    line-height: 38px;
+    border: 1px solid #e1e6eb;
+    position: relative;
+    border-left: 4px solid #6d7781;
+}
+.table-viewer-header .table-viewer-topbar-title {
+    font-size: 14px;
+    color: #333333;
+    display: inline-block;
+    margin-left: 16px;
+}
+.table-content {
+    border: 1px solid #ddd;
+    padding: 20px;
+}

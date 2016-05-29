@@ -247,7 +247,7 @@ var CONSOLE;
 
 		//required
 		$('input[required="required"]',$p).siblings('label').each(function(){
-			this.text(this.text()+'*');
+			$(this).text($(this).text()+'*');
 		});
 
 

@@ -34,6 +34,9 @@ class UserType extends AbstractType
             ->add("email",EmailType::class,array(
                 'attr'=>array('class'=>'form-control')
                 ))
+            ->add("expireTime",DateType::class,array(
+                'attr'=>array('class'=>'form-control')
+                ))
             ;
     }
     public function configureOptions(OptionsResolver $resolver)

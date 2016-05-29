@@ -42,6 +42,7 @@ class UserType extends AbstractType
                 ))
             ->add("expireTime",DateType::class,array(
                 'attr'=>array('class'=>'form-control'),
+                'widget'=>'single_text',
                 'label'=>'过期时间',
                 ))
             ;

@@ -13,6 +13,7 @@ body {
   font-size: 12px;
   line-height: 14px;
 }
+
 .page-header > h1,.page-header > h2 {
   margin: 0px;
 }
@@ -235,6 +236,7 @@ li.collapsed .sidebar-title-icon{
   max-width: 400px;
 }
 .form-group > label {
+  font-size: 14px;
   display: block;
 }
 .form-group > span {

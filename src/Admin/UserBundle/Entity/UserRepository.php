@@ -4,6 +4,8 @@ namespace Admin\UserBundle\Entity;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Security\Core\User\UserProviderInterface;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
+use Symfony\Component\Security\Core\Exception\AccountExpiredException;
+use Symfony\Component\Security\Core\Exception\AccountStatusException;
 use Symfony\Component\Security\Core\Exception\UnsupportedUserException;
 use Doctrine\ORM\EntityRepository;
 
@@ -26,6 +28,18 @@ class UserRepository extends EntityRepository implements UserProviderInterface
                 $username
             );
             throw new UsernameNotFoundException($message);
+        }
+        //用户账号过期
+        if( $user->getExpireTime() < time() ){
+            $ex = new AccountExpiredException();
+            $ex->setUser($user);
+            throw $ex;
+        }
+        //用户状态禁用
+        if( !$user->getIsActive() ){
+            $ex = new AccountStatusException();
+            $ex->setUser($user);
+            throw $ex;
         }
 
         return $user;

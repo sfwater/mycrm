@@ -18,13 +18,13 @@ use Symfony\Component\HttpFoundation\Request;
 class RoleController extends AdminBaseController
 {
     /**
-     * 所有用户列表 
+     * 所有用户组列表 
      * @Route(
      *      "/", name="admin_roles_index",
-     *      options = {"name":"用户管理","description":"列出系统中所有管理员用户","category":"系统管理员","order":2, "show":true}
+     *      options = {"name":"用户组管理","description":"列出系统中所有用户组","category":"系统管理员","order":2, "show":true}
      *   )
      * @Method("GET") 
-     * @Template("AdminUserBundle:Default:index.html.twig")
+     * @Template("AdminUserBundle:Role:index.html.twig")
      */
     public function indexAction()
     {
@@ -35,17 +35,17 @@ class RoleController extends AdminBaseController
     }
 
     /**
-     * 创建一个用户 
+     * 创建一个用户组 
      * @Route(
      *      "/", name="admin_roles_create",
-     *      options = {"name":"创建用户","description":"创建一个管理员用户账号","category":"系统管理员","order":1, "show":true}
+     *      options = {"name":"创建用户组","description":"创建一个用户组","category":"系统管理员","order":1, "show":true}
      *   )
      * @Method("POST")
-     * @Template("AdminUserBundle:Default:create.html.twig")
+     * @Template("AdminUserBundle:Role:create.html.twig")
      */
     public function createAction(Request $request){
         $entity = new User();
-        $form = $this->createForm('Admin\UserBundle\Form\UserType',$entity);
+        $form = $this->createForm('Admin\UserBundle\Form\RoleType',$entity);
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -71,26 +71,26 @@ class RoleController extends AdminBaseController
         );
     }
     /**
-     * 编辑一个用户 
+     * 编辑一个用户组 
      * @Route(
      *      "/{id}", name="admin_roles_edit",
-     *      options = {"name":"编辑用户","description":"编辑一个管理员用户账号","category":"系统管理员","order":3 }
+     *      options = {"name":"编辑用户组","description":"编辑一个用户组","category":"系统管理员","order":3 }
      *   )
      * @Method("POST")
-     * @Template("AdminUserBundle:Default:edit.html.twig")
+     * @Template("AdminUserBundle:Role:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AdminConsoleBundle:User')->find($id);
+        $entity = $em->getRepository('AdminConsoleBundle:Role')->find($id);
 
         if (!$entity) {
-            throw $this->createNotFoundException('Unable to find User entity.');
+            throw $this->createNotFoundException('Unable to find Role entity.');
         }
 
 
-        $editForm = $this->createEditForm($entity);
+        $editForm= $this->createForm('Admin\UserBundle\Form\RoleType',$entity);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
@@ -108,10 +108,10 @@ class RoleController extends AdminBaseController
         );
     }
     /**
-     * 禁用用户 
+     * 删除用户组
      * @Route(
-     *      "/", name="admin_roles_disabled",
-     *      options = {"name":"编辑用户","description":"编辑一个管理员用户账号","category":"系统管理员","order":4 }
+     *      "/", name="admin_roles_delete",
+     *      options = {"name":"删除用户组","description":"删除一个用户组","category":"系统管理员","order":4 }
      *   )
      * @Method("DELETE")
      */
@@ -127,7 +127,7 @@ class RoleController extends AdminBaseController
         if( count($ids)>0 ){
             $doctrine = $this->getDoctrine();
             $em = $doctrine->getManager();
-            $repo = $doctrine->getRepository("AdminUserBundle:User");
+            $repo = $doctrine->getRepository("AdminUserBundle:Role");
             $query = $repo->createQueryBuilder("r")
                 ->where("r.id in (:ids)")
                 ->setParameter(":ids", $ids)
@@ -136,7 +136,7 @@ class RoleController extends AdminBaseController
             $result = $query->getResult();
 
             foreach($result as $item){
-                $em->setIsActive(FALSE);
+                $em->remove($item);
                 $em->flush();
             }
 
@@ -144,17 +144,5 @@ class RoleController extends AdminBaseController
         }
 
         return $this->error("delete_failure");   
-    }
-
-    private function createEditForm(User $entity)
-    {
-        $form = $this->createForm(new UserType(), $entity, array(
-            'action' => $this->generateUrl('admin_roles_edit', array('id' => $entity->getId())),
-            'method' => 'POST',
-            "attr" => array("class"=>"pageForm required-validate","onsubmit"=>"return validateCallback(this,navTabAjaxDone);")
-        ));
-
-
-        return $form;
     }
 }

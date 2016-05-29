@@ -1,7 +1,3 @@
-admin_access_control_user:
-    resource: "@AdminAccessControlBundle/Controller/UserController.php"
-    type:     annotation
-
 admin_console:
     resource: "@AdminConsoleBundle/Controller/"
     type:     annotation

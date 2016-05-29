@@ -15,6 +15,10 @@ body {
 .page-header > h1,.page-header > h2 {
   margin: 0px;
 }
+.main .page-header {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
 @font-face {
   font-family: 'aliyun-console-font';
   src: url('../fonts/aliyun-console-font.eot');
@@ -136,10 +140,6 @@ body {
   top: 50px;
   width: auto;
 }
-.main .page-header {
-  margin-top: 0;
-}
-
 
 
 .sidebar {

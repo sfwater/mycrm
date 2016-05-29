@@ -234,4 +234,8 @@ li.collapsed .sidebar-title-icon{
   display: block;
 }
 .form-group > span {
+  text-indent: 20px;
+}
+.form-group > span.has-error {
+  color: red;
 }

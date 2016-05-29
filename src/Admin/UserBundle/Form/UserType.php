@@ -10,7 +10,7 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add("username")
+            ->add("username",TextType::class)
             ;
     }
     public function configureOptions(OptionsResolver $resolver)

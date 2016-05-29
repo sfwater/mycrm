@@ -41,7 +41,7 @@ class UserType extends AbstractType
                 'label'=>'邮箱'
                 ))
             ->add("expireTime",DateType::class,array(
-                'attr'=>array('class'=>'form-control'),
+                'attr'=>array('class'=>'form-control','placeholder'=>'账号过期时间，过期后账号将不可用','label'=>'账号过期时间，过期后账号将不可用'),
                 'widget'=>'single_text',
                 'label'=>'过期时间',
                 ))

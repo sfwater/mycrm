@@ -32,7 +32,7 @@ class UserType extends AbstractType
                 'label'=>'默认启用',
                 ))
             ->add("roles",ChoiceType::class,array(
-                'choices'=>array('1'=>true),
+                'attr'=>array('class'=>'form-control'),
                 ))
             ->add("email",EmailType::class,array(
                 'attr'=>array('class'=>'form-control')

@@ -34,9 +34,7 @@ class RoleType extends AbstractType
                 'multiple'=>true,
                 'expanded'=>true,
                 'mapped'=>false,
-                'choice_attr'=>function($val,$key,$index){
-                    return ['class'=>'checkbox-inline'];
-                },
+                'choice_attr'=>array('class'=>'checkbox-inline'),
                 ))
             ;
     }

@@ -35,6 +35,8 @@ class UserType extends AbstractType
                 ))
             ->add('roles',ChoiceType::class,array(
                 'mapped'=>false,
+                'label'=>'用户组',
+                'choices'=>array()
                 ))
             ->add("isActive",CheckboxType::class,array(
                 'label'=>'默认启用',

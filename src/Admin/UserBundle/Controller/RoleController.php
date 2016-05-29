@@ -8,7 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Admin\AdminBaseController;
-use Admin\UserBundle\Entity\User;
+use Admin\UserBundle\Entity\Role;
 use Admin\UserBundle\Form\UserType;
 use Symfony\Component\HttpFoundation\Request;
 
@@ -44,7 +44,7 @@ class RoleController extends AdminBaseController
      * @Template("AdminUserBundle:Role:create.html.twig")
      */
     public function createAction(Request $request){
-        $entity = new User();
+        $entity = new Role();
         $form = $this->createForm('Admin\UserBundle\Form\RoleType',$entity);
         $form->handleRequest($request);
 

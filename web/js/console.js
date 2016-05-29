@@ -241,7 +241,14 @@ var CONSOLE;
 					});
 				}
 
-				event.preventDefault({
+				event.preventDefault();
+			});
+		});
+
+
+		//validate 
+
+		$("form", $p).validate({
 					hightlight:function(element,errorClass,validClass){
 						$(element).parent().addClass(errorClass);
 					},
@@ -250,13 +257,6 @@ var CONSOLE;
 					},
 					errorClass:'has-error'
 				});
-			});
-		});
-
-
-		//validate 
-
-		$("form", $p).validate();
 	}
 	var alertMsg = {
 		_boxId: "#alertMsgBox",

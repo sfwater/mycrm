@@ -4,6 +4,7 @@ namespace Admin;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 /**
 * 管理员控制器基类
@@ -69,14 +70,20 @@ class AdminBaseController extends Controller
 	/**
 	* 执行成功方法
 	*/
-	protected function success($info=''){
-
+	protected function success($info='数据保存成功'){
+		$data = new \StdClass();
+		$data->status = true;
+		$data->message = $info;
+		return new JsonResponse($data);
 	}
 
 	/**
 	* 执行失败方法
 	*/
-	protected function error($info=''){
-
+	protected function error($info='数据保存失败'){
+		$data = new \StdClass();
+		$data->status = true;
+		$data->message = $info;
+		return new JsonResponse($data, 500);
 	}
 }

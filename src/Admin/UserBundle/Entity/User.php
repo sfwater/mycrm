@@ -66,7 +66,7 @@ class User implements AdvancedUserInterface, \Serializable
     private $isLocked;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Role", inversedBy="admins")
+     * @ORM\ManyToMany(targetEntity="Role", inversedBy="users")
      *
      */
     private $roles;

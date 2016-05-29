@@ -374,6 +374,7 @@ function _iframeResponse(iframe, callback){
 						dataType:"json",
 						cache: false,
 						beforeSend: function(){
+							$form.find('#btnSubmit').button('loading');
 							CONSOLE.showLoading();
 						},
 						success: _callback || CONSOLE.ajaxDone,

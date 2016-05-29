@@ -392,6 +392,9 @@ function _iframeResponse(iframe, callback){
 			},
 			errorClass:'has-error'
 		});
+		$("form.required-validate", $p).find('#btnReset').click(function(){
+			this.reset();
+		});
 	}
 	var alertMsg = {
 		_boxId: "#alertMsgBox",

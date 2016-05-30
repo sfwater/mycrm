@@ -1,36 +1,12 @@
 {% extends 'AdminConsoleBundle::page_edit.html.twig' %}
 {% block formContent %}
-  <div class="form-group">
-    {{ form_label(form.username) }}
-    {{ form_widget(form.username ) }}
-  </div>
-  <div class="form-group">
-    {{ form_label(form.nickname) }}
-    {{ form_widget(form.nickname) }}
-  </div>
-  <div class="form-group">
-    {{ form_label(form.password) }}
-    {{ form_widget(form.password) }}
-  </div>
-  <div class="form-group">
-    {{ form_label(form.repassword) }}
-    {{ form_widget(form.repassword) }}
-  </div>
-  <div class="form-group">
-    {{ form_label(form.roles) }}
-    {{ form_widget(form.roles) }}
-  </div>
-  <div class="form-group">
-    {{ form_label(form.email) }}
-    {{ form_widget(form.email) }}
-  </div>
-  <div class="form-group">
-    {{ form_label(form.expireTime) }}
-    {{ form_widget(form.expireTime) }}
-  </div>
-  <div class="checkbox">
-    <label>
-      {{ form_widget(form.isActive) }} 默认激活
-    </label>
+    {{ form_row(form.username ) }}
+    {{ form_row(form.nickname) }}
+    {{ form_row(form.password) }}
+    {{ form_row(form.repassword) }}
+    {{ form_row(form.roles) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.expireTime) }}
+    {{ form_row(form.isActive) }}
   </div>
 {% endblock %}

@@ -231,6 +231,9 @@ li.collapsed .sidebar-title-icon{
 
 
 /*form about*/
+.pageFormContent {
+  margin-right: 13%;
+}
 .form-control {
   display: inline-block;
   border-radius: 0px;

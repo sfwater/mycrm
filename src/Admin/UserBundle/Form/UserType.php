@@ -59,7 +59,6 @@ class UserType extends AbstractType
                 'attr'=>array('class'=>'form-control','placeholder'=>'账号过期时间，过期后账号将不可用','label'=>'账号过期时间，过期后账号将不可用',
                     'data-date-format'=>'yyyy-mm-dd'
                     ),
-                'widget'=>'single_text',
                 'label'=>'过期时间',
                 ))
             ;

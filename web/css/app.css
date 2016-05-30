@@ -245,8 +245,9 @@ li.collapsed .sidebar-title-icon{
 .form-group > span {
   margin-left: 20px;
 }
-.form-group > span.has-error {
+.form-group  span.has-error {
   color: red;
+  padding: 0px 5px;
 }
 .table-viewer-header {
     margin-top: 10px;

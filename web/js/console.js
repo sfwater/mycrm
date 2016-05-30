@@ -409,7 +409,9 @@ function _iframeResponse(iframe, callback){
 		});
 
 		//datepicker
-		$('.datepicker').datepicker();
+		$('.datepicker').datepicker().on('changeDate',function(ev){
+			$(this).hide();
+		});
 	}
 	var alertMsg = {
 		_boxId: "#alertMsgBox",

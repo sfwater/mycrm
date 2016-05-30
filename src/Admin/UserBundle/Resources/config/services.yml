@@ -4,3 +4,8 @@ services:
         public: true 
         tags:
             - { name: twig.extension }
+    admin_user.form.type.user:
+        class: Admin\UserBundle\Form\TaskType
+        arguments: ["@doctrine"]
+        tags:
+            - { name: form.type }

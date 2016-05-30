@@ -14,8 +14,8 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 class UserType extends AbstractType
 {
     var $em;
-    public function __construct($em){
-        $this->em = $em;
+    public function __construct($doctrine){
+        $this->em = $doctrine->getManager();
     }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {

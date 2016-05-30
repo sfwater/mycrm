@@ -47,7 +47,7 @@
 			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Form/UserType.php",
 			"settings":
 			{
-				"buffer_size": 2892,
+				"buffer_size": 2918,
 				"line_ending": "Windows"
 			}
 		},
@@ -128,10 +128,6 @@
 		"/E/workspace/myframework-php",
 		"/E/workspace/myframework-php/src",
 		"/E/workspace/myframework-php/src/Admin",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Extension",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/config",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views",
 		"/E/workspace/myframework-php/src/Admin/UserBundle",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Extension",
@@ -273,8 +269,8 @@
 						"selection":
 						[
 							[
-								993,
-								993
+								1587,
+								1587
 							]
 						],
 						"settings":
@@ -296,15 +292,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2892,
+						"buffer_size": 2918,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1874,
-								1874
+								676,
+								676
 							]
 						],
 						"settings":
@@ -314,7 +310,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 337.0,
+						"translation.y": 1188.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
@@ -344,7 +340,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 132.0,
+						"translation.y": 44.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,

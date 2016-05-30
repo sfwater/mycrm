@@ -407,6 +407,9 @@ function _iframeResponse(iframe, callback){
 		$("form.required-validate", $p).find('#btnReset').click(function(){
 			$(this).parents('form.required-validate')[0].reset();
 		});
+
+		//datepicker
+		$('.datepicker').datepicker();
 	}
 	var alertMsg = {
 		_boxId: "#alertMsgBox",

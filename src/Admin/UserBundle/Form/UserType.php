@@ -53,13 +53,15 @@ class UserType extends AbstractType
                 ))
             ->add("email",EmailType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'有效的邮箱地址,可不填写','label'=>'有效的邮箱地址,可不填写'),
-                'label'=>'邮箱'
+                'label'=>'邮箱',
+                'required'=>false,
                 ))
             ->add("expireTime",TextType::class,array(
-                'attr'=>array('class'=>'form-control','placeholder'=>'账号过期时间，过期后账号将不可用','label'=>'账号过期时间，过期后账号将不可用',
+                'attr'=>array('class'=>'form-control datepicker','placeholder'=>'账号过期时间，过期后账号将不可用','label'=>'账号过期时间，过期后账号将不可用',
                     'data-date-format'=>'yyyy-mm-dd'
                     ),
                 'label'=>'过期时间',
+                'required'=>false,
                 ))
             ;
     }

@@ -45,7 +45,10 @@ class DefaultController extends AdminBaseController
      */
     public function createAction(Request $request){
         $entity = new User();
-        $form = $this->createForm('Admin\UserBundle\Form\UserType',$entity);
+        $form = $this->createForm('Admin\UserBundle\Form\UserType',$entity,array(
+            'attr'=>array('class'=>'pageForm required-validate'),
+            'action'=>$this->generateUrl('admin_users_create')
+            ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -144,17 +147,5 @@ class DefaultController extends AdminBaseController
         }
 
         return $this->error("delete_failure");   
-    }
-
-    private function createEditForm(User $entity)
-    {
-        $form = $this->createForm(new UserType(), $entity, array(
-            'action' => $this->generateUrl('admin_users_edit', array('id' => $entity->getId())),
-            'method' => 'POST',
-            "attr" => array("class"=>"pageForm required-validate","onsubmit"=>"return validateCallback(this,navTabAjaxDone);")
-        ));
-
-
-        return $form;
     }
 }

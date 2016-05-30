@@ -39,10 +39,10 @@ class UserType extends AbstractType
                 'label'=>'用户组',
                 'choices'=>array()
                 ))
-            ->add("isActive",ChoiceType::class,array(
+            ->add("isActive",CheckboxType::class,array(
                 'label'=>'默认启用',
-                'choices'=>['1'=>'激活','0'=>'鎖定'],
-                'expanded'=>true,
+                'value'=>1,
+                'required'=>false,
                 ))
             ->add("email",EmailType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'有效的邮箱地址,可不填写','label'=>'有效的邮箱地址,可不填写'),

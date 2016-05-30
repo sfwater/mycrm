@@ -109,7 +109,7 @@ function _iframeResponse(iframe, callback){
 		},
 		container:{},
 		titleHeader:{},
-		subTitle:{},
+		subHeader:{},
 		eventType: {
 			pageClear:"pageClear",	// 用于重新ajaxLoad、关闭nabTab, 关闭dialog时，去除xheditor等需要特殊处理的资源
 			resizeGrid:"resizeGrid"	// 用于窗口或dialog大小调整

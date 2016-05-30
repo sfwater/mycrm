@@ -233,7 +233,7 @@ li.collapsed .sidebar-title-icon{
 /*form about*/
 .form-control {
   display: inline-block;
-  max-width: 400px;
+  border-radius: 0px;
 }
 .form-group > label {
   font-size: 14px;

@@ -55,8 +55,16 @@ class DefaultController extends AdminBaseController
             $em = $this->getDoctrine()->getManager();
             $em->getConnection()->beginTransaction();
 
-            $entity->setRegisterTime(time());
             try{
+                //過期時間
+                if( $expireTime = $form->get('expireTime')->getData() ){
+                    $entity->setExpireTime(strtotime($expireTime));
+                }
+                if( $roleId = $form->get('roles')->getData() ){
+                    $role = $em->getRepository('AdminUserBundle:Role')->find($roleId);
+                    $entity->addRole($role);
+                }
+                $entity->setRegisterTime(time());
                 $em->persist($entity);
                 $em->flush();
                 $em->getConnection()->commit();

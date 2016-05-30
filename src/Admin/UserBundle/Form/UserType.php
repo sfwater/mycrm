@@ -44,7 +44,8 @@ class UserType extends AbstractType
                 'choices'=>$this->getAllRoles(),
                 'choice_label'=>function($role,$key,$index){
                     return $role->getName();
-                }
+                },
+                'mapped'=>false,
                 ))
             ->add("isActive",CheckboxType::class,array(
                 'label'=>'默认启用',
@@ -62,6 +63,7 @@ class UserType extends AbstractType
                     ),
                 'label'=>'过期时间',
                 'required'=>false,
+                'mapped'=>false,
                 ))
             ;
     }

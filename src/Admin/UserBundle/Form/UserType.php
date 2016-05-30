@@ -13,6 +13,10 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class UserType extends AbstractType
 {
+    var $em;
+    public function __construct($em){
+        $this->em = $em;
+    }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -37,7 +41,7 @@ class UserType extends AbstractType
                 'attr'=>array('class'=>'form-control','placeholder'=>'选择一个用户组','label'=>'选择一个用户组'),
                 'mapped'=>false,
                 'label'=>'用户组',
-                'choices'=>array()
+                'choices'=>$this->getAllRoles(),
                 ))
             ->add("isActive",CheckboxType::class,array(
                 'label'=>'默认启用',
@@ -60,6 +64,12 @@ class UserType extends AbstractType
         $resolver->setDefaults(array(
             'data_class' => 'Admin\UserBundle\Entity\User',
         ));
+    }
+
+
+    private function getAllRoles(){
+        $em = $this->em;
+        return $em->getRepository('AdminUserBundle:Role')->findAll();
     }
 }
 

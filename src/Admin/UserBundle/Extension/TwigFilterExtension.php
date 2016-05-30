@@ -39,7 +39,7 @@ class TwigFilterExtension extends \Twig_Extension{
 
 
 	public function getName(){
-		return "TwigFilterExtension";
+		return "UserTwigFilterExtension";
 	}
 }
 

@@ -247,7 +247,7 @@ li.collapsed .sidebar-title-icon{
 }
 .form-group  span.has-error {
   color: red;
-  padding: 0px 5px;
+  padding: 5px 0px;
 }
 .table-viewer-header {
     margin-top: 10px;

@@ -1,0 +1,7 @@
+{% extends 'AdminConsoleBundle::page.html.twig' %}
+{% block pageContent %}
+<table class="table table-striped table-hover">
+	<thead> <tr> {% block tableHeader %}{% endblock %} </tr> </thead>
+	<tbody>{% block tableBody %}{% endblock %}</tbody>
+</table>
+{% endblock %}

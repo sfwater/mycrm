@@ -28,10 +28,9 @@ class RoleController extends AdminBaseController
      */
     public function indexAction()
     {
-    	$user = $this->getUser();
+        $roles = $this->getDoctrine()->getRepository("AdminUserBundle:Role")->findAll();
 
-
-        return $this->datas;
+        return $roles;
     }
 
     /**

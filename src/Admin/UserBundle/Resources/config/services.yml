@@ -5,7 +5,7 @@ services:
         tags:
             - { name: twig.extension }
     admin_user.form.type.user:
-        class: Admin\UserBundle\Form\TaskType
+        class: Admin\UserBundle\Form\UserType
         arguments: ["@doctrine"]
         tags:
             - { name: form.type }

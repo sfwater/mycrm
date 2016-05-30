@@ -354,6 +354,7 @@ function _iframeResponse(iframe, callback){
 		$("form.required-validate", $p).validate({
 			highlight:function(element,errorClass,validClass){
 				$(element).parent().addClass(errorClass);
+				$(element).fadeOut().fadeIn();
 			},
 			unhighlight:function(element,errorClass,validClass){
 				$(element).parent().removeClass(errorClass);

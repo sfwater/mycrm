@@ -228,10 +228,11 @@ function _iframeResponse(iframe, callback){
 		open:function(url,options){
 			var $this = this;
 			this.container.ajaxUrl({
-				type:options.type, url:url, data:options.data, callback:function(response){
-					//设置标题
+				type:options.type, url:url, data:options.data, callback:function(response, target){
+					//设置CONSOLE标题
 					$this.titleHeader.html(options.name+'<small>'+options.title+'</small>');
-					$this.subHeader.text(options.name);
+					//设置内容标题
+					target.find($this.subHeaderId).text(options.name);
 					if( $.isFunction(options.callback) )
 						options.callback(response);
 				}
@@ -515,7 +516,7 @@ function _iframeResponse(iframe, callback){
 						if (json[CONSOLE.keys.message]) alertMsg.error(json[CONSOLE.keys.message]);
 					} else {
 						$this.html(response).initUI();
-						if ($.isFunction(op.callback)) op.callback(response);
+						if ($.isFunction(op.callback)) op.callback(response, $this);
 					}
 					
 					if (json[CONSOLE.keys.statusCode]==CONSOLE.statusCode.timeout){

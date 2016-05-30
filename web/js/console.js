@@ -109,6 +109,7 @@ function _iframeResponse(iframe, callback){
 		},
 		container:{},
 		titleHeader:{},
+		subTitle:{},
 		eventType: {
 			pageClear:"pageClear",	// 用于重新ajaxLoad、关闭nabTab, 关闭dialog时，去除xheditor等需要特殊处理的资源
 			resizeGrid:"resizeGrid"	// 用于窗口或dialog大小调整
@@ -230,6 +231,7 @@ function _iframeResponse(iframe, callback){
 				type:options.type, url:url, data:options.data, callback:function(response){
 					//设置标题
 					$this.titleHeader.html(options.name+'<small>'+options.title+'</small>');
+					$this.subHeader.text(options.name);
 					if( $.isFunction(options.callback) )
 						options.callback(response);
 				}
@@ -244,7 +246,7 @@ function _iframeResponse(iframe, callback){
 		init:function(pageFrag, options){
 			var op = $.extend({
 					loginUrl:"login.html", loginTitle:null, callback:null, 
-					debug:false,containerId:"#consoleContainer",headerId:"#consoleHeader",
+					debug:false,containerId:"#consoleContainer",headerId:"#consoleHeader",subHeaderId:".subHeader"
 					loaderId:'.loading',
 					statusCode:{}, keys:{}
 				}, options);
@@ -253,6 +255,7 @@ function _iframeResponse(iframe, callback){
 			this._set.debug = op.debug;
 			this.container = $(op.containerId);
 			this.titleHeader = $(op.headerId);
+			this.subHeader = $(op.subHeaderId);
 			this.loader = $(op.loaderId);
 			$.extend(CONSOLE.statusCode, op.statusCode);
 			$.extend(CONSOLE.keys, op.keys);
@@ -499,8 +502,6 @@ function _iframeResponse(iframe, callback){
 		ajaxUrl: function(op){
 			var $this = $(this);
 
-			$this.trigger(CONSOLE.eventType.pageClear);
-			
 			$.ajax({
 				type: op.type || 'GET',
 				url: op.url,

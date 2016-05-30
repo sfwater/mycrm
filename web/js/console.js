@@ -405,7 +405,7 @@ function _iframeResponse(iframe, callback){
 		});
 		//表单重置
 		$("form.required-validate", $p).find('#btnReset').click(function(){
-			$(this).parent('form.required-validate')[0].reset();
+			$(this).parents('form.required-validate')[0].reset();
 		});
 	}
 	var alertMsg = {

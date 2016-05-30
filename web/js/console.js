@@ -246,7 +246,7 @@ function _iframeResponse(iframe, callback){
 		init:function(pageFrag, options){
 			var op = $.extend({
 					loginUrl:"login.html", loginTitle:null, callback:null, 
-					debug:false,containerId:"#consoleContainer",headerId:"#consoleHeader",subHeaderId:".subHeader"
+					debug:false,containerId:"#consoleContainer",headerId:"#consoleHeader",subHeaderId:".subHeader",
 					loaderId:'.loading',
 					statusCode:{}, keys:{}
 				}, options);

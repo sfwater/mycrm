@@ -30,7 +30,7 @@ class RoleController extends AdminBaseController
     {
         $roles = $this->getDoctrine()->getRepository("AdminUserBundle:Role")->findAll();
 
-        return $roles;
+        return array('roles'=>$roles);
     }
 
     /**

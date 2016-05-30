@@ -42,7 +42,7 @@ class UserType extends AbstractType
                 'mapped'=>false,
                 'label'=>'用户组',
                 'choices'=>$this->getAllRoles(),
-                'choice_name'=>function($role,$key,$index){
+                'choice_label'=>function($role,$key,$index){
                     return $role->getName();
                 }
                 ))

@@ -109,7 +109,7 @@ function _iframeResponse(iframe, callback){
 		},
 		container:{},
 		titleHeader:{},
-		subHeader:{},
+		subHeaderId:null,
 		eventType: {
 			pageClear:"pageClear",	// 用于重新ajaxLoad、关闭nabTab, 关闭dialog时，去除xheditor等需要特殊处理的资源
 			resizeGrid:"resizeGrid"	// 用于窗口或dialog大小调整
@@ -256,7 +256,7 @@ function _iframeResponse(iframe, callback){
 			this._set.debug = op.debug;
 			this.container = $(op.containerId);
 			this.titleHeader = $(op.headerId);
-			this.subHeader = $(op.subHeaderId);
+			this.subHeaderId = op.subHeaderId;
 			this.loader = $(op.loaderId);
 			$.extend(CONSOLE.statusCode, op.statusCode);
 			$.extend(CONSOLE.keys, op.keys);

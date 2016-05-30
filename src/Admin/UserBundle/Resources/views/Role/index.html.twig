@@ -10,7 +10,7 @@
 		<tr>
 			<td>{{ role.name }}</td>
 			<td>{{ role.role }}</td>
-			<td>{{ role.mask }}</td>
+			<td>{{ role.mask| printUserMask }}</td>
 			<td>{{ role.users|length }}</td>
 		</tr>
 	{% endfor %}

@@ -1,9 +1,9 @@
 {% extends 'AdminConsoleBundle::page_list.html.twig' %}
 {% block tableHeader %}
-	<td>组名</td>
-	<td>用户组标识</td>
-	<td>权限</td>
-	<td>用户数</td>
+	<th>组名</th>
+	<th>用户组标识</th>
+	<th>权限</th>
+	<th>用户数</th>
 {% endblock %}
 {% block tableBody %}
 	{% for role in roles %}

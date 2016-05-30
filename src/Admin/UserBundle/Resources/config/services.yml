@@ -1,4 +1,6 @@
 services:
-#    admin_user.example:
-#        class: Admin\UserBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+    admin_user.twig_filter_extesion:
+        class: Admin\UserBundle\Extension\TwigFilterExtension
+        public: true 
+        tags:
+            - { name: twig.extension }

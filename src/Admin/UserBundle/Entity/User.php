@@ -93,7 +93,7 @@ class User implements AdvancedUserInterface, \Serializable
 
     /**
     * @var integer
-    * @ORM\Column(name="mask", type="integer")
+    * @ORM\Column(name="mask", type="integer", nullable=true)
     *
     */
     private $mask;

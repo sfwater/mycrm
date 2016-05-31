@@ -9,6 +9,11 @@ services:
         arguments: ["@doctrine"]
         tags:
             - { name: form.type }
+    admin_user.form.type.usersearch:
+        class: Admin\UserBundle\Form\UserSearchType
+        arguments: ["@router"]
+        tags:
+            - { name: form.type }
     admin_user.form.type.rolesearch:
         class: Admin\UserBundle\Form\RoleSearchType
         arguments: ["@router"]

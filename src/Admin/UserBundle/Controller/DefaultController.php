@@ -28,7 +28,9 @@ class DefaultController extends AdminBaseController
      */
     public function indexAction()
     {
-        return array('users'=>$users);
+        $users = $this->getDoctrine()->getRepository("AdminUserBundle:User")->findAll();
+        $form = $this->createForm(UserSearchType::class);
+        return array('users'=>$users,'searchForm'=>$form->createView());
     }
 
     /**

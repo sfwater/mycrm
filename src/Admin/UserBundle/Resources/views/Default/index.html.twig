@@ -1,17 +1,34 @@
 {% extends 'AdminConsoleBundle::page_list.html.twig' %}
+{% block searchContent %}
+{{ form_row(searchForm.name) }}
+{% endblock %}
 {% block tableHeader %}
-	<th>组名</th>
-	<th>用户组标识</th>
-	<th>权限</th>
-	<th>用户数</th>
+	<th>用户名</th>
+	<th>别名</th>
+	<th>邮箱</th>
+	<th>用户组</th>
+	<th>过期时间</th>
+	<th>注册时间</th>
+	<th>激活</th>
 {% endblock %}
 {% block tableBody %}
-	{% for role in roles %}
+	{% for entity in users %}
 		<tr>
-			<td>{{ role.name }}</td>
-			<td>{{ role.role }}</td>
-			<td>{{ role.mask| printUserMask }}</td>
-			<td>{{ role.users|length }}</td>
+			<td>
+			<input type="checkbox" name="ckbox" id="ckbox" value="{{ entity.id }}"></td>
+			<td>{{ entity.name }}</td>
+			<td>{{ entity.nickname }}</td>
+			<td>{{ entity.email }}</td>
+			<td>{{ entity.roles[0].name }}</td>
+			<td>{{ entity.expireTime }}</td>
+			<td>{{ entity.registerTime }}</td>
+			<td>{{ entity.isActive }}</td>
+            <td class="text-right">
+            <a href="">编辑</a>
+            </td>
 		</tr>
 	{% endfor %}
+{% endblock %}
+{% block tableAction %}
+<button type="button" class="btn btn-default">批量删除！</button>
 {% endblock %}

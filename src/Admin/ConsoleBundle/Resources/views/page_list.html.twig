@@ -17,6 +17,7 @@
 	<tr> 
 	<th> <input type="checkbox" name="ckSelectAll" id="ckSelectAll"> </th>
 	{% block tableHeader %}{% endblock %} 
+    <th class="text-right">操作</th>
 	</tr> 
 	</thead>
 	<tbody>{% block tableBody %}{% endblock %}</tbody>
@@ -28,7 +29,7 @@
             <td colspan="100">
                 <div class="pull-left">
                 {% block tableAction %}
-              	<button id="renew" type="button" class="btn btn-default" data-spm-click="gostr=/aliyun;locaid=d1">域名续费</button>
+
                 {% endblock %}
                 </div>
                 <div class="pull-right page-box">

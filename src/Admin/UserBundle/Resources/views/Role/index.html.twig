@@ -17,6 +17,12 @@
 			<td>{{ role.role }}</td>
 			<td>{{ role.mask| printUserMask }}</td>
 			<td>{{ role.users|length }}</td>
+            <td>
+            <a href="">编辑</a>
+            </td>
 		</tr>
 	{% endfor %}
+{% endblock %}
+{% block tableAction %}
+<button type="button" class="btn btn-default">批量删除！</button>
 {% endblock %}

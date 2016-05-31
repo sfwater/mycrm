@@ -237,6 +237,7 @@ li.collapsed .sidebar-title-icon{
 .form-control {
   display: inline-block;
   border-radius: 0px;
+  font-size: 12px;
 }
 .form-group > span {
   margin-left: 20px;

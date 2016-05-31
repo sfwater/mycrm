@@ -10,7 +10,7 @@ services:
         tags:
             - { name: form.type }
     admin_user.form.type.rolesearch:
-        class: Admin\UserBundle\Form\UserSearchType
+        class: Admin\UserBundle\Form\RoleSearchType
         arguments: ["@router"]
         tags:
             - { name: form.type }

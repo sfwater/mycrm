@@ -16,6 +16,12 @@ class RoleSearchType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
+            ->add("name",TextType::class,array(
+                'attr'=>array('class'=>'form-control','placeholder'=>'组名、标识','label'=>'组名、标识'),
+                'label'=>'组名、标识',
+                'required'=>false,
+                'mapped'=>false,
+            ))
             ;
     }
     public function configureOptions(OptionsResolver $resolver)

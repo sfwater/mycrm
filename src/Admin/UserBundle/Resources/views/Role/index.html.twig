@@ -1,43 +1,6 @@
 {% extends 'AdminConsoleBundle::page_list.html.twig' %}
 {% block searchContent %}
-            <div class="form-group">
-                <label class="control-label">域名类型：</label>
-                <select id="domainType" name="domainType" class="select form-control">
-                    <option selected="selected" value="0">全部</option>
-                    <option value="1">国际域名</option>
-                    <option value="2">国内域名</option>
-                    
-                    
-                    <option value="5">网址</option>
-                    <option value="6">微博域名</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label class="control-label">自定义分组：</label>
-                <select id="orderGroupID" name="orderGroupID" class="select form-control inline-block">
-                    <option value="" selected="selected">选择分组</option>
-                    <optgroup label="-----------------">
-	                    
-                    </optgroup>
-                    <optgroup label="-----------------">
-                		<option value="">分组管理</option>
-                	</optgroup>
-                </select>
-            </div>
-        
-            
-                <div class="form-group">
-                <label class="control-label">域名到期日期：</label>
-                <input type="text" id="startDate" name="startDate" size="13" class="ipt form-control hasDatepicker"><span class="date-step-span">至</span>
-                <input type="text" id="endDate" name="endDate" size="13" class="ipt form-control hasDatepicker">
-               </div>
-            
-            <div class="form-group">
-                <label class="control-label">域名：</label>
-                <input id="relatedName" name="relatedName" type="text" size="30" placeholder="输入域名进行搜索" class="ipt form-control">
-                
-                <button type="button" class="btn btn-default" id="btnSearch">搜索</button>
-            </div>
+{{ form_row(searchForm.name) }}
 {% endblock %}
 {% block tableHeader %}
 	<th>组名</th>

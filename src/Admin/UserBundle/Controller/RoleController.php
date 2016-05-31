@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Admin\AdminBaseController;
 use Admin\UserBundle\Entity\Role;
 use Admin\UserBundle\Form\UserType;
+use Admin\UserBundle\Form\UserSearchType;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -29,11 +30,7 @@ class RoleController extends AdminBaseController
     public function indexAction()
     {
         $roles = $this->getDoctrine()->getRepository("AdminUserBundle:Role")->findAll();
-        $form = $this->createForm('Admin\UserBundle\Form\RoleSearchType',NULL, array(
-            'attr'=>array('class'=>'form-inline'),
-            'method'=>"GET",
-            'action'=>$this->generateUrl('admin_roles_index')
-        ));
+        $form = $this->createForm(RoleSearchType::class,NULL);
         return array('roles'=>$roles,'searchForm'=>$form->createView());
     }
 

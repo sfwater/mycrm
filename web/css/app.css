@@ -323,6 +323,13 @@ tfoot, .bg-color-f56 {
 .pagination-goto .btn {
     padding: 8px;
 }
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 0px;
+    vertical-align: middle;
+    border-radius: 0px;
+}
 
 /*button*/
 .btn {

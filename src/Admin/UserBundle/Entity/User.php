@@ -40,7 +40,7 @@ class User implements AdvancedUserInterface, \Serializable
     /**
      * @var string
      *
-     * @ORM\Column(name="email", type="string", length=60, unique=true)
+     * @ORM\Column(name="email", type="string", length=60, unique=true, nullable=true)
      */
     private $email;
 
@@ -86,7 +86,7 @@ class User implements AdvancedUserInterface, \Serializable
 
     /**
     * @var integer
-    * @ORM\Column(name="expireTime", type="integer")
+    * @ORM\Column(name="expireTime", type="integer", nullable=true)
     */
     private $expireTime;
 

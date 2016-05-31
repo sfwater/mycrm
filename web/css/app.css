@@ -239,9 +239,6 @@ li.collapsed .sidebar-title-icon{
   border-radius: 0px;
   font-size: 12px;
 }
-.form-group > span {
-  margin-left: 20px;
-}
 label.control-label {
     font-weight: normal;
     font-size: 12px;
@@ -281,7 +278,9 @@ label.control-label {
     text-align: center;
     line-height: 32px;
 }
-
+.ipt, .form-inline .ipt {
+    width: 120px;
+}
 
 /*table*/
 .table {

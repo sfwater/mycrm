@@ -51,6 +51,8 @@ class DefaultController extends AdminBaseController
             ));
         $form->handleRequest($request);
 
+        dump($form);
+        exit;
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->getConnection()->beginTransaction();

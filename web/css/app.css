@@ -300,3 +300,32 @@ tfoot, .bg-color-f56 {
     border-bottom: 1px solid #e1e6eb;
     vertical-align: middle;
 }
+.pull-left {
+    float: left !important;
+}
+.pull-right {
+    float: right !important;
+}
+.pagination-info {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    padding: 0px 16px;
+    color: #888;
+}
+.pagination-goto {
+    display: -moz-inline-stack;
+    display: inline-block;
+    vertical-align: middle;
+    zoom: 1;
+    padding: 0px 15px;
+}
+.pagination-goto input.ipt {
+    width: 40px;
+    display: inline-block;
+    margin-right: 6px;
+}
+.pagination-goto .btn {
+    padding: 8px;
+}

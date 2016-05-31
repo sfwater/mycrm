@@ -8,6 +8,8 @@
 {% block tableBody %}
 	{% for role in roles %}
 		<tr>
+			<td>
+			<input type="checkbox" name="ckbox" id="ckbox" value="{{ role.id }}"></td>
 			<td>{{ role.name }}</td>
 			<td>{{ role.role }}</td>
 			<td>{{ role.mask| printUserMask }}</td>

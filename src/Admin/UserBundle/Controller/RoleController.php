@@ -34,7 +34,7 @@ class RoleController extends AdminBaseController
             'method'=>"GET",
             'action'=>$this->generateUrl('admin_roles_index')
         ));
-        return array('roles'=>$roles,'searchForm'=>$form);
+        return array('roles'=>$roles,'searchForm'=>$form->createView());
     }
 
     /**

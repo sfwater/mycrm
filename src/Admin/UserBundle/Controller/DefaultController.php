@@ -28,10 +28,7 @@ class DefaultController extends AdminBaseController
      */
     public function indexAction()
     {
-    	$user = $this->getUser();
-
-
-        return $this->datas;
+        return array('users'=>$users);
     }
 
     /**

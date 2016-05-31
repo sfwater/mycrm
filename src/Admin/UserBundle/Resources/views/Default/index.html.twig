@@ -1,0 +1,17 @@
+{% extends 'AdminConsoleBundle::page_list.html.twig' %}
+{% block tableHeader %}
+	<th>组名</th>
+	<th>用户组标识</th>
+	<th>权限</th>
+	<th>用户数</th>
+{% endblock %}
+{% block tableBody %}
+	{% for role in roles %}
+		<tr>
+			<td>{{ role.name }}</td>
+			<td>{{ role.role }}</td>
+			<td>{{ role.mask| printUserMask }}</td>
+			<td>{{ role.users|length }}</td>
+		</tr>
+	{% endfor %}
+{% endblock %}

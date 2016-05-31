@@ -34,7 +34,7 @@ class RoleSearchType extends AbstractType
             'data_class' => 'Admin\UserBundle\Entity\Role',
             'method'=>'GET',
             'attr'=>array('class'=>'form-inline'),
-            'action'=>$this->router->generateUrl('admin_roles_index')
+            'action'=>$this->router->generate('admin_roles_index')
         ));
     }
 }

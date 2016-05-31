@@ -270,3 +270,21 @@ li.collapsed .sidebar-title-icon{
     border: 1px solid #ddd;
     padding: 20px;
 }
+
+
+/*table*/
+.table thead tr th {
+  padding: 8px 8px;
+  font-weight: normal;
+  color: #999;
+  border-bottom: 1px solid #e1e6eb;
+  background-color: #F5F6FA;
+}
+tfoot, .bg-color-f56 {
+    background-color: #f5f6fa;
+}
+.table tfoot tr td {
+    padding: 12px 8px;
+    border-bottom: 1px solid #e1e6eb;
+    vertical-align: middle;
+}

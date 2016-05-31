@@ -50,7 +50,11 @@ class RoleController extends AdminBaseController
         ));
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted()) {
+            //表单没有验证通过
+            if( !$form->isValid() ){
+                return $this->error($form->getErrors());
+            }
             $em = $this->getDoctrine()->getManager();
             $em->getConnection()->beginTransaction();
             try{

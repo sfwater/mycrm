@@ -409,7 +409,7 @@ function _iframeResponse(iframe, callback){
 		});
 
 		//datepicker
-		$('.datepicker').datepicker().on('changeDate',function(ev){
+		$('.datepicker',$p).datepicker().on('changeDate',function(ev){
 			$(this).datepicker('hide');
 		});
 	}

@@ -273,6 +273,15 @@ li.collapsed .sidebar-title-icon{
 
 
 /*table*/
+.table {
+    background: #FFF;
+    font-size: 12px;
+    border-top: 1px solid #e1e6eb;
+    margin-top: 8px;
+    border: 1px solid #e1e6eb;
+    width: 100%;
+    margin-bottom: 20px;
+}
 .table thead tr th {
   padding: 8px 8px;
   font-weight: normal;

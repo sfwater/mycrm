@@ -238,6 +238,7 @@ li.collapsed .sidebar-title-icon{
   display: inline-block;
   border-radius: 0px;
   font-size: 12px;
+  height: 32px;
 }
 label.control-label {
     font-weight: normal;

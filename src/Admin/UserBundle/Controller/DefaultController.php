@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Admin\AdminBaseController;
 use Admin\UserBundle\Entity\User;
 use Admin\UserBundle\Form\UserType;
+use Admin\UserBundle\Form\UserSearchType;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

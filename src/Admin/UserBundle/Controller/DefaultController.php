@@ -51,9 +51,12 @@ class DefaultController extends AdminBaseController
             ));
         $form->handleRequest($request);
 
-        dump($form);
-        exit;
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted()) {
+            //表单没有验证通过
+            if( !$form->isValid() ){
+                dump($form->getErrors());
+                exit;
+            }
             $em = $this->getDoctrine()->getManager();
             $em->getConnection()->beginTransaction();
 

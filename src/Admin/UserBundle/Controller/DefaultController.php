@@ -55,6 +55,7 @@ class DefaultController extends AdminBaseController
             $em = $this->getDoctrine()->getManager();
             $em->getConnection()->beginTransaction();
 
+            exit;
             try{
                 //過期時間
                 if( $expireTime = $form->get('expireTime')->getData() ){

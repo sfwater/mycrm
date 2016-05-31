@@ -29,8 +29,12 @@ class RoleController extends AdminBaseController
     public function indexAction()
     {
         $roles = $this->getDoctrine()->getRepository("AdminUserBundle:Role")->findAll();
-
-        return array('roles'=>$roles);
+        $form = $this->createForm('Admin\UserBundle\Form\RoleSearchType',NULL, array(
+            'attr'=>array('class'=>'form-inline'),
+            'method'=>"GET",
+            'action'=>$this->generateUrl('admin_roles_index')
+        ));
+        return array('roles'=>$roles,'searchForm'=>$form);
     }
 
     /**

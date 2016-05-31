@@ -13,6 +13,10 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class RoleSearchType extends AbstractType
 {
+    var $router;
+    public function __construct($router){
+        $this->router = $router;
+    }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -30,6 +34,7 @@ class RoleSearchType extends AbstractType
             'data_class' => 'Admin\UserBundle\Entity\Role',
             'method'=>'GET',
             'attr'=>array('class'=>'form-inline'),
+            'action'=>$this->router->generateUrl('admin_roles_index')
         ));
     }
 }

@@ -330,6 +330,9 @@ tfoot, .bg-color-f56 {
     vertical-align: middle;
     border-radius: 0px;
 }
+.margin-top, .margin-top-1 {
+    margin-top: 8px !important;
+}
 
 /*button*/
 .btn {

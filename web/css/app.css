@@ -300,12 +300,6 @@ tfoot, .bg-color-f56 {
     border-bottom: 1px solid #e1e6eb;
     vertical-align: middle;
 }
-.pull-left {
-    float: left !important;
-}
-.pull-right {
-    float: right !important;
-}
 .pagination-info {
     display: -moz-inline-stack;
     display: inline-block;
@@ -342,4 +336,9 @@ tfoot, .bg-color-f56 {
     color: #333;
     border: 1px solid #ddd;
     background-color: #f7f7f7;
+}
+.btn-default:hover {
+    color: #333;
+    border: 1px solid #ddd;
+    background-color: #fff;
 }

@@ -272,6 +272,15 @@ label.control-label {
     border: 1px solid #ddd;
     padding: 20px;
 }
+.form-inline .form-group {
+    margin: 4px 8px 4px 0px;
+}
+.date-step-span {
+    display: inline-block;
+    width: 32px;
+    text-align: center;
+    line-height: 32px;
+}
 
 
 /*table*/

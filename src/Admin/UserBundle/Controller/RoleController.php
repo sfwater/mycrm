@@ -53,7 +53,7 @@ class RoleController extends AdminBaseController
         if ($form->isSubmitted()) {
             //表单没有验证通过
             if( !$form->isValid() ){
-                return $this->error($form->getErrors());
+                return $this->error($form->getErrors()->__toString());
             }
             $em = $this->getDoctrine()->getManager();
             $em->getConnection()->beginTransaction();

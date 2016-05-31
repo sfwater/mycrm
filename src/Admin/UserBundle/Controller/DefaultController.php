@@ -68,6 +68,7 @@ class DefaultController extends AdminBaseController
                     $role = $em->getRepository('AdminUserBundle:Role')->find($roleId);
                     $entity->addRole($role);
                 }
+                $entity->setIsLocked(FALSE);
                 $entity->setRegisterTime(time());
                 $em->persist($entity);
                 $em->flush();

@@ -49,8 +49,8 @@ class AdminBaseController extends Controller
 
         $query = $em->createQuery($dql);
         $query->setParameters($parameters);
-        $query->setFirstResult(($this->page-1)*$this->pageSize);
-        $query->setMaxResults($this->pageSize);
+        $query->setFirstResult(($page-1)*$pageSize);
+        $query->setMaxResults($pageSize);
         $pager = new Paginator($query, TRUE);
         $counts = count($pager);
         $results = $query->getResult();

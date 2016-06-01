@@ -37,7 +37,7 @@ class AdminBaseController extends Controller
 	/**
 	* 获取不带访问控制条件的数据列表
 	*/
-	protected function getPagedEntities($class, $conditions, $parameters = array(), $sort='dist.id DESC', $join=''){
+	protected function getPagedEntities($class, $conditions='', $parameters = array(), $sort='dist.id DESC', $join=''){
         $request = $this->get("request_stack")->getCurrentRequest();
         $pager = $this->get("admin_console.pager");
         $em = $this->getDoctrine()->getManager();

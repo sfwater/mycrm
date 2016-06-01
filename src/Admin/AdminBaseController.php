@@ -56,8 +56,8 @@ class AdminBaseController extends Controller
         $query->setParameters($parameters);
         $query->setFirstResult(($page-1)*$pageSize);
         $query->setMaxResults($pageSize);
-        $pager = new Paginator($query, TRUE);
-        $counts = count($pager);
+        $paginator = new Paginator($query, TRUE);
+        $counts = count($paginator);
         $results = $query->getResult();
 
         return array('counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination(1));

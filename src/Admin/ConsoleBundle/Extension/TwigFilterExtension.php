@@ -12,6 +12,8 @@ class TwigFilterExtension extends \Twig_Extension{
 	public function getFilters(){
 		return array(
 				new \Twig_SimpleFilter("showRoutes",array($this,"showRoutes")),
+				new \Twig_SimpleFilter("notInGroup",array($this,"notInGroup")),
+				new \Twig_SimpleFilter("inGroup",array($this,"inGroup")),
 			);
 	}
 
@@ -19,8 +21,28 @@ class TwigFilterExtension extends \Twig_Extension{
 	public function showRoutes($routes, $type='menu'){
 		$newRoutes = array();
 		foreach ($routes as $item) {
-			if( $item->category != 'console' && $item->show && $item->type == $type ){
+			if( $item->show && $item->type == $type ){
 				$newRoutes[] = $item;
+			}
+		}
+		return $newRoutes;
+	}
+
+	public function notInGroup($routes, $group='console'){
+		$newRoutes = array();
+		foreach ($routes as $key=>$item) {
+			if( $key != $group ){
+				$newRoutes[$key] = $item;
+			}
+		}
+		return $newRoutes;
+	}
+
+	public function inGroup($routes, $group='console'){
+		$newRoutes = array();
+		foreach ($routes as $key=>$item) {
+			if( $key == $group ){
+				$newRoutes[$key] = $item;
 			}
 		}
 		return $newRoutes;

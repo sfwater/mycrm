@@ -43,7 +43,7 @@ class PagerExtension
     private $pageAmount; //页码的总数
     private $currentPage; //当前的页码
     private $offset = 4; //页码偏移量
-    private $pageString = 'p'; //页码在URL中的名字
+    private $pageString = 'page'; //页码在URL中的名字
     private $classHere = 'class="here"'; //当前页链接的class样式类名，默认为here
     private $nextText = '下一页';
     private $preText = '上一页';

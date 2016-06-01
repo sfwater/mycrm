@@ -79,7 +79,6 @@ class AdminBaseController extends Controller
         		$baseUrl .= "$key=$value&";
         	}
         }
-        $baseUrl .= "page=";
         $pager->setBaseUrl($baseUrl);
 
         return array('counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination('1'));

@@ -200,7 +200,7 @@ class XmlFileLoaderTest extends \PHPUnit_Framework_TestCase
             $service = $container->getDefinition($id);
         }
         $this->assertEquals('BizClass', $service->getClass(), '->load() uses the same configuration as for the anonymous ones');
-        $this->assertFalse($service->isPublic());
+        $this->assertTrue($service->isPublic());
 
         // anonymous services are shared when using decoration definitions
         $container->compile();
@@ -526,5 +526,36 @@ class XmlFileLoaderTest extends \PHPUnit_Framework_TestCase
         $loader->load('services23.xml');
 
         $this->assertTrue($container->getDefinition('bar')->isAutowired());
+    }
+
+    /**
+     * @group legacy
+     */
+    public function testAliasDefinitionContainsUnsupportedElements()
+    {
+        $container = new ContainerBuilder();
+        $loader = new XmlFileLoader($container, new FileLocator(self::$fixturesPath.'/xml'));
+
+        $deprecations = array();
+        set_error_handler(function ($type, $msg) use (&$deprecations) {
+            if (E_USER_DEPRECATED !== $type) {
+                restore_error_handler();
+
+                return call_user_func_array('PHPUnit_Util_ErrorHandler::handleError', func_get_args());
+            }
+
+            $deprecations[] = $msg;
+        });
+
+        $loader->load('legacy_invalid_alias_definition.xml');
+
+        restore_error_handler();
+
+        $this->assertTrue($container->has('bar'));
+
+        $this->assertCount(3, $deprecations);
+        $this->assertContains('Using the attribute "class" is deprecated for alias definition "bar"', $deprecations[0]);
+        $this->assertContains('Using the element "tag" is deprecated for alias definition "bar"', $deprecations[1]);
+        $this->assertContains('Using the element "factory" is deprecated for alias definition "bar"', $deprecations[2]);
     }
 }

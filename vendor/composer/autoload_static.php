@@ -41,6 +41,10 @@ class ComposerStaticInitd788c5cbe4684038dbf97ebf8a95fc85
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
             'Sensio\\Bundle\\DistributionBundle\\' => 33,
         ),
+        'P' => 
+        array (
+            'Psr\\Cache\\' => 10,
+        ),
         'M' => 
         array (
             'Monolog\\' => 8,
@@ -131,6 +135,10 @@ class ComposerStaticInitd788c5cbe4684038dbf97ebf8a95fc85
         'Sensio\\Bundle\\DistributionBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/sensio/distribution-bundle',
+        ),
+        'Psr\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
         'Monolog\\' => 
         array (

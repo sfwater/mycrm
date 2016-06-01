@@ -7,6 +7,18 @@ in 3.0 minor versions.
 To get the diff for a specific change, go to https://github.com/symfony/symfony/commit/XXX where XXX is the change hash
 To get the diff between two versions, go to https://github.com/symfony/symfony/compare/v3.0.0...v3.0.1
 
+* 3.0.6 (2016-05-10)
+
+ * security #18736 Fixed issue with blank password with Ldap (csarrazi)
+ * security #18733 limited the maximum length of a submitted username (fabpot)
+ * bug #18730 [FrameworkBundle] prevent calling get() for service_container service (xabbuh)
+ * bug #18705 added a conflict between Monolog bridge 2.8 and HTTP Kernel 3.0+ (fabpot)
+ * bug #18709 [DependencyInjection] top-level anonymous services must be public (xabbuh)
+ * bug #18388 [EventDispatcher] check for method to exist (xabbuh)
+ * bug #18699 [DependencyInjection] Use the priority of service decoration on service with parent (hason)
+ * bug #18692 add @Event annotation for KernelEvents (Haehnchen)
+ * bug #18246 [DependencyInjection] fix ambiguous services schema (backbone87)
+
 * 3.0.5 (2016-05-03)
 
  * bug #18180 [Form] fixed BC break with pre selection of choices with `ChoiceType` and its children (HeahDude)
@@ -319,7 +331,7 @@ To get the diff between two versions, go to https://github.com/symfony/symfony/c
  * bug #16312 [HttpKernel] clearstatcache() so the Cache sees when a .lck file has been released (mpdude)
  * bug #16351 [WIP] [Form] [TwigBridge] Bootstrap horizontal theme missing tests (pieter2627)
  * feature #16715 [Form] Remove choices_as_values option on ChoiceType (nicolas-grekas)
- * feature #16692 [Form] Drop remaing CsrfProviderAdapter/Interface mentions (nicolas-grekas)
+ * feature #16692 [Form] Drop remaining CsrfProviderAdapter/Interface mentions (nicolas-grekas)
  * feature #16719 [Security] remove deprecated HTTP digest auth key  (xabbuh)
  * bug #16685 [Form] Fixed: Duplicate choice labels are remembered when using "choices_as_values" = false (webmozart)
  * feature #16709 [Bridge\PhpUnit] Display the stack trace of a deprecation on-demand (nicolas-grekas)

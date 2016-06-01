@@ -54,6 +54,7 @@ class PagerExtension
     public function __construct($param)
     {
         dump($param);
+        exit;
         $this->setOptions($param);
     }
 

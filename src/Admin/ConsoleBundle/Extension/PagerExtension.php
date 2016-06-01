@@ -53,6 +53,7 @@ class PagerExtension
     //初始化当前页码，记录总条数，每页多少条记录
     public function __construct($param)
     {
+        dump($param);
         $this->setOptions($param);
     }
 

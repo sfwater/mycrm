@@ -300,7 +300,7 @@ class PagerExtension
                 }
             }
  
-            return $left.'<li><a href="'.$this->url.$this->currentPage.'" class="here">'.$this->currentPage.'</a></li>'.$right;
+            return $left.'<li><a class="active">'.$this->currentPage.'</a></li>'.$right;
         }
         else
         {

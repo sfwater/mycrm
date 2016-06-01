@@ -60,6 +60,25 @@ class AdminBaseController extends Controller
         $counts = count($paginator);
         $results = $query->getResult();
 
+
+        $pager->setTotalRows($counts);
+        $pager->setCurrentPage($page);
+
+        //取得所有当前的参数列表
+        $qs = $request->query->all();
+
+        if( array_key_exists('page', $qs) ){
+        	unset($qs['page']);
+        }
+        $baseUrl = '?';
+        if( count($qs) > 0 ){
+        	foreach ($qs as $key => $value) {
+        		$baseUrl .= "$key=$value&";
+        	}
+        }
+        $baseUrl .= "page=";
+        $pager->setBaseUrl($baseUrl);
+
         return array('counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination(1));
 	}
 

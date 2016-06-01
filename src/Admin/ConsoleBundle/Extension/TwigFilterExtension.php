@@ -25,6 +25,7 @@ class TwigFilterExtension extends \Twig_Extension{
 				$newRoutes[] = $item;
 			}
 		}
+		dump($newRoutes);
 		return $newRoutes;
 	}
 

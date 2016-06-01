@@ -46,6 +46,10 @@ class AdminBaseController extends Controller
         $page = intval($request->query->get('page'));
         $pageSize = $pager->getPageSize();
 
+        if( $conditions == '' ){
+        	$conditions = '1=1';
+        }
+
         $dql = "SELECT dist FROM $class dist $join WHERE $conditions ORDER BY $sort";
 
         $query = $em->createQuery($dql);

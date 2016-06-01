@@ -57,7 +57,7 @@ class PagerExtension
     }
 
     private function setOptions($param){
-        $this->pageSize = $param['pageSize'];
+        $this->pageSize = intval($param['pageSize']);
         $this->totalRows = $param['totalRows'];
         $this->url = $param['baseUrl'];
         $this->offset = !empty($param['offset'])?$param['offset']:$this->offset;

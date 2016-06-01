@@ -9,16 +9,16 @@ use Admin\AdminAclController;
 /**
 * @Route("/acls")
 */
-class DefaultController extends AdminAclController
+class DataAccessController extends AdminAclController
 {
     /**
      * 所有访问控制列表
      * @Route(
-     *      "/pages/", name="admin_acls_pages_index",
-     *      options = {"name":"页面控制","description":"为用户或用户组分配页面访问权限","category":"访问控制","order":1, "show":true}
+     *      "/datas", name="admin_acls_datas_index",
+     *      options = {"name":"数据控制","description":"建立用户关系实现数据访问控制","category":"访问控制","order":2, "show":true}
      *   )
      * @Method("GET") 
-     * @Template("AdminAccessControlBundle:Default:index.html.twig")
+     * @Template("AdminAccessControlBundle:DataAccess:index.html.twig")
      */
     public function indexAction()
     {

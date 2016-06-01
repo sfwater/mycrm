@@ -235,7 +235,7 @@ class PagerExtension
     private function nextPage()
     {
         if($this->currentPage == $this->pageAmount) return;
-        return '<li><a href="'.$this->url.( $this->currentPage + 1 ).'" class="target">'.$this->nextPage.'</a></li>';
+        return '<li><a href="'.$this->url.( $this->currentPage + 1 ).'" class="target">'.$this->nextText.'</a></li>';
     }
      
     /**

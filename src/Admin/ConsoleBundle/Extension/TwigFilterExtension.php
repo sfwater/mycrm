@@ -35,8 +35,6 @@ class TwigFilterExtension extends \Twig_Extension{
 				$newRoutes[$key] = $item;
 			}
 		}
-		dump($newRoutes);
-		exit;
 		return $newRoutes;
 	}
 
@@ -47,6 +45,8 @@ class TwigFilterExtension extends \Twig_Extension{
 				$newRoutes[$key] = $item;
 			}
 		}
+		dump($newRoutes);
+		exit;
 		return $newRoutes;
 	}
 

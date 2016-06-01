@@ -22,14 +22,14 @@ class AdminBaseController extends Controller
 
     	foreach ($userRoutes as $key => $value) {
     		$options = $value->getOptions();
-    		if( array_key_exists('category', $options) ){
-    			$routes[] = $value;
-    		}
     		$value->order = isset($options['order']) ? intval($options['order']) : 0;
     		$value->name = $key;
     		$value->show = isset($options['show']) ? $options['show'] : false;
     		$value->type = isset($options['type']) ? $options['type'] : 'menu';
     		$value->target = isset($options['target']) ? $options['target'] : 'navTab';
+    		if( array_key_exists('category', $options) ){
+    			$routes[] = $value;
+    		}
     	}
     	return $routes;
 	}

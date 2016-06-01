@@ -78,8 +78,6 @@ class AdminBaseController extends Controller
         }
         $baseUrl .= "page=";
         $pager->setBaseUrl($baseUrl);
-        dump($pager);
-        exit;
 
         return array('counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination('1'));
 	}

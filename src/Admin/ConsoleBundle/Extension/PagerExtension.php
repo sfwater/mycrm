@@ -308,7 +308,12 @@ class PagerExtension
             //当页码总数小于需要显示的链接数量时候，则全部显示出来
             for($j = 1; $j <= $this->pageAmount; $j++)
             {
-                 $allLink.='<li class="'.($j == $this->currentPage?'active':'').'"><a href="'.$this->url.$j.'" '.($j == $this->currentPage?$this->classHere:'').'>'.$j.'</a></li>';
+                if( $j == $this->currentPage){
+                    $allLink.='<li class="active"><a>'.$j.'</a></li>';
+                }
+                else{
+                    $allLink.='<li><a href="'.$this->url.$j.'" '.($j == $this->currentPage?$this->classHere:'').'>'.$j.'</a></li>';
+                }
             }
             return $allLink;
         }

@@ -34,8 +34,9 @@
                 </div>
                 <div class="pull-right page-box">
                     <div class="pagination-info">共有{{ counts }}条，每页显示：{{ pageSize }}条</div>
+                    <ul class="pagination">
                     {{ pager|raw }}
-                    <ul class="pagination"><li class="disabled" page-index="1"><a>«</a></li><li class="disabled" page-index="0"><a>‹</a></li><li class="active" page-index="1"><a>1</a></li><li class="disabled" page-index="2"><a>›</a></li><li class="disabled" page-index="1"><a>»</a></li></ul>
+                    </ul>
                     <div class="pagination-goto">
                         <input type="text" class="ipt form-control" id="gotoPageNo">
                         <button type="button" class="btn btn-default" id="goBtn">GO</button>

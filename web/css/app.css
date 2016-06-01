@@ -341,6 +341,10 @@ tfoot, .bg-color-f56 {
     vertical-align: middle;
     border-radius: 0px;
 }
+.pagination li.active a, .pagination li.active span {
+    background-color: #09C;
+    border: 1px solid #09C;
+}
 .margin-top, .margin-top-1 {
     margin-top: 8px !important;
 }

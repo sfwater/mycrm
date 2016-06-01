@@ -208,7 +208,7 @@ class PagerExtension
     private function indexPage()
     {
         if($this->currentPage == 1) return;
-        return '<a href="'.$this->url.'1">'.$this->firstText.'</a>';
+        return '<li><a href="'.$this->url.'1">'.$this->firstText.'</a></li>';
     }
      
     /**
@@ -217,7 +217,7 @@ class PagerExtension
     private function endPage()
     {
         if($this->currentPage == $this->pageAmount) return;
-        return '<a href="'.$this->url.$this->pageAmount.'">'.$this->lastText.'</a>';
+        return '<li><a href="'.$this->url.$this->pageAmount.'">'.$this->lastText.'</a></li>';
     }
      
     /**
@@ -226,7 +226,7 @@ class PagerExtension
     private function prevPage()
     {
         if($this->currentPage == 1) return;
-        return '<a href="'.$this->url.( $this->currentPage - 1 ).'">'.$this->preText.'</a>';
+        return '<li><a href="'.$this->url.( $this->currentPage - 1 ).'">'.$this->preText.'</a></li>';
     }
      
     /**
@@ -235,7 +235,7 @@ class PagerExtension
     private function nextPage()
     {
         if($this->currentPage == $this->pageAmount) return;
-        return '<a href="'.$this->url.( $this->currentPage + 1 ).'">'.$this->nextPage.'</a>';
+        return '<li><a href="'.$this->url.( $this->currentPage + 1 ).'">'.$this->nextPage.'</a></li>';
     }
      
     /**
@@ -262,13 +262,13 @@ class PagerExtension
                 //左边的链接
                 for($i = $leftNum; $i >= 1 ; $i--)
                 {
-                    $left .= '<a href="'.$this->url.( $this->currentPage - $i ).'">'.( $this->currentPage - $i ).'</a>';
+                    $left .= '<li><a href="'.$this->url.( $this->currentPage - $i ).'">'.( $this->currentPage - $i ).'</a></li>';
                 }
                  
                 //右边的链接
                 for($j = 1; $j <= ($this->offset * 2 - $leftNum); $j++)
                 {
-                    $right .= '<a href="'.$this->url.( $this->currentPage + $j ).'">'.( $this->currentPage + $j ).'</a>';
+                    $right .= '<li><a href="'.$this->url.( $this->currentPage + $j ).'">'.( $this->currentPage + $j ).'</a></li>';
                 }
             }
             else if($rightNum < $this->offset)
@@ -276,13 +276,13 @@ class PagerExtension
                 //左边的链接
                 for($i = ($this->offset * 2 - $rightNum); $i >= 1 ; $i--)
                 {
-                    $left .= '<a href="'.$this->url.( $this->currentPage - $i ).'">'.( $this->currentPage - $i ).'</a>';
+                    $left .= '<li><a href="'.$this->url.( $this->currentPage - $i ).'">'.( $this->currentPage - $i ).'</a></li>';
                 }
                  
                 //右边的链接
                 for($j = 1; $j <= $rightNum; $j++)
                 {
-                    $right .= '<a href="'.$this->url.( $this->currentPage + $j ).'">'.( $this->currentPage + $j ).'</a>';
+                    $right .= '<li><a href="'.$this->url.( $this->currentPage + $j ).'">'.( $this->currentPage + $j ).'</a></li>';
                 }
             }
             else
@@ -290,17 +290,17 @@ class PagerExtension
                 //当前链接左边的链接
                 for($i = $this->offset; $i >= 1 ; $i--)
                 {
-                    $left .= '<a href="'.$this->url.( $this->currentPage - $i ).'">'.( $this->currentPage - $i ).'</a>'; 
+                    $left .= '<li><a href="'.$this->url.( $this->currentPage - $i ).'">'.( $this->currentPage - $i ).'</a></li>'; 
                 }
                  
                 //当前链接右边的链接
                 for($j = 1; $j <= $this->offset; $j++)
                 {
-                    $right .= '<a href="'.$this->url.( $this->currentPage + $j ).'">'.( $this->currentPage + $j ).'</a>';
+                    $right .= '<li><a href="'.$this->url.( $this->currentPage + $j ).'">'.( $this->currentPage + $j ).'</a></li>';
                 }
             }
  
-            return $left.'<a href="'.$this->url.$this->currentPage.'" class="here">'.$this->currentPage.'</a>'.$right;
+            return $left.'<li><a href="'.$this->url.$this->currentPage.'" class="here">'.$this->currentPage.'</a></li>'.$right;
         }
         else
         {
@@ -308,7 +308,7 @@ class PagerExtension
             //当页码总数小于需要显示的链接数量时候，则全部显示出来
             for($j = 1; $j <= $this->pageAmount; $j++)
             {
-                 $allLink.='<a href="'.$this->url.$j.'" '.($j == $this->currentPage?$this->classHere:'').'>'.$j.'</a>';
+                 $allLink.='<li><a href="'.$this->url.$j.'" '.($j == $this->currentPage?$this->classHere:'').'>'.$j.'</a></li>';
             }
             return $allLink;
         }

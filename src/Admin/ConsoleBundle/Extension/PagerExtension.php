@@ -312,7 +312,7 @@ class PagerExtension
                     $allLink.='<li class="active"><a>'.$j.'</a></li>';
                 }
                 else{
-                    $allLink.='<li><a href="'.$this->url.$j.'" '.($j == $this->currentPage?$this->classHere:'').'>'.$j.'</a></li>';
+                    $allLink.='<li><a href="'.$this->url.$j.'" '.($j == $this->currentPage?$this->classHere:'').' target="navTab">'.$j.'</a></li>';
                 }
             }
             return $allLink;

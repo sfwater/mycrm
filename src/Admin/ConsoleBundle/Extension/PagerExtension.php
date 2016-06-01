@@ -35,7 +35,7 @@ namespace Admin\ConsoleBundle\Extension;
  * @link http://blog.sina.com.cn/yanyinghq
  *
  */
-class Page
+class PagerExtension
 {
     private $pageSize; //您的网站每一页显示的列表条数
     private $totalRows; //通过数据库查询返回的总的记录条数

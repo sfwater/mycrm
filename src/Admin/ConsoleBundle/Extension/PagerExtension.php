@@ -208,7 +208,7 @@ class PagerExtension
     private function indexPage()
     {
         if($this->currentPage == 1) return;
-        return '<li><a href="'.$this->url.'1">'.$this->firstText.'</a></li>';
+        return '<li><a href="'.$this->url.'1" class="target">'.$this->firstText.'</a></li>';
     }
      
     /**
@@ -217,7 +217,7 @@ class PagerExtension
     private function endPage()
     {
         if($this->currentPage == $this->pageAmount) return;
-        return '<li><a href="'.$this->url.$this->pageAmount.'">'.$this->lastText.'</a></li>';
+        return '<li><a href="'.$this->url.$this->pageAmount.'" class="target">'.$this->lastText.'</a></li>';
     }
      
     /**
@@ -226,7 +226,7 @@ class PagerExtension
     private function prevPage()
     {
         if($this->currentPage == 1) return;
-        return '<li><a href="'.$this->url.( $this->currentPage - 1 ).'">'.$this->preText.'</a></li>';
+        return '<li><a href="'.$this->url.( $this->currentPage - 1 ).'" class="target">'.$this->preText.'</a></li>';
     }
      
     /**
@@ -235,7 +235,7 @@ class PagerExtension
     private function nextPage()
     {
         if($this->currentPage == $this->pageAmount) return;
-        return '<li><a href="'.$this->url.( $this->currentPage + 1 ).'">'.$this->nextPage.'</a></li>';
+        return '<li><a href="'.$this->url.( $this->currentPage + 1 ).'" class="target">'.$this->nextPage.'</a></li>';
     }
      
     /**
@@ -262,13 +262,13 @@ class PagerExtension
                 //左边的链接
                 for($i = $leftNum; $i >= 1 ; $i--)
                 {
-                    $left .= '<li><a href="'.$this->url.( $this->currentPage - $i ).'">'.( $this->currentPage - $i ).'</a></li>';
+                    $left .= '<li><a href="'.$this->url.( $this->currentPage - $i ).'" class="target">'.( $this->currentPage - $i ).'</a></li>';
                 }
                  
                 //右边的链接
                 for($j = 1; $j <= ($this->offset * 2 - $leftNum); $j++)
                 {
-                    $right .= '<li><a href="'.$this->url.( $this->currentPage + $j ).'">'.( $this->currentPage + $j ).'</a></li>';
+                    $right .= '<li><a href="'.$this->url.( $this->currentPage + $j ).'" class="target">'.( $this->currentPage + $j ).'</a></li>';
                 }
             }
             else if($rightNum < $this->offset)
@@ -276,13 +276,13 @@ class PagerExtension
                 //左边的链接
                 for($i = ($this->offset * 2 - $rightNum); $i >= 1 ; $i--)
                 {
-                    $left .= '<li><a href="'.$this->url.( $this->currentPage - $i ).'">'.( $this->currentPage - $i ).'</a></li>';
+                    $left .= '<li><a href="'.$this->url.( $this->currentPage - $i ).'" class="target">'.( $this->currentPage - $i ).'</a></li>';
                 }
                  
                 //右边的链接
                 for($j = 1; $j <= $rightNum; $j++)
                 {
-                    $right .= '<li><a href="'.$this->url.( $this->currentPage + $j ).'">'.( $this->currentPage + $j ).'</a></li>';
+                    $right .= '<li><a href="'.$this->url.( $this->currentPage + $j ).'" class="target">'.( $this->currentPage + $j ).'</a></li>';
                 }
             }
             else
@@ -290,13 +290,13 @@ class PagerExtension
                 //当前链接左边的链接
                 for($i = $this->offset; $i >= 1 ; $i--)
                 {
-                    $left .= '<li><a href="'.$this->url.( $this->currentPage - $i ).'">'.( $this->currentPage - $i ).'</a></li>'; 
+                    $left .= '<li><a href="'.$this->url.( $this->currentPage - $i ).'" class="target">'.( $this->currentPage - $i ).'</a></li>'; 
                 }
                  
                 //当前链接右边的链接
                 for($j = 1; $j <= $this->offset; $j++)
                 {
-                    $right .= '<li><a href="'.$this->url.( $this->currentPage + $j ).'">'.( $this->currentPage + $j ).'</a></li>';
+                    $right .= '<li><a href="'.$this->url.( $this->currentPage + $j ).'" class="target">'.( $this->currentPage + $j ).'</a></li>';
                 }
             }
  

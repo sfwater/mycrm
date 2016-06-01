@@ -4,3 +4,8 @@ services:
         public: true 
         tags:
             - { name: twig.extension }
+    admin_console.pager:
+        class: Admin\ConsoleBundle\Extension\PagerExtension
+        public: true 
+        arguments:
+          {pageSize: 20, firstText: <<, lastText: >>, preText: <, nextText: >}

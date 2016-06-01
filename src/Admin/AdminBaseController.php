@@ -34,6 +34,30 @@ class AdminBaseController extends Controller
     	return $routes;
 	}
 
+	/**
+	* 获取不带访问控制条件的数据列表
+	*/
+	protected function getPagedEntities($class, $conditions, $parameters = array(), $sort='dist.id DESC', $join=''){
+        $request = $this->get("request_stack")->getCurrentRequest();
+        $pager = $this->get("admin_console.pager");
+        $em = $this->getDoctrine()->getManager();
+
+        $page = intval($request->query->get('page'));
+        $pageSize = $pager->getPageSize();
+
+        $dql = "SELECT dist FROM $class dist $join WHERE $conditions ORDER BY $sort";
+
+        $query = $em->createQuery($dql);
+        $query->setParameters($parameters);
+        $query->setFirstResult(($this->page-1)*$this->pageSize);
+        $query->setMaxResults($this->pageSize);
+        $pager = new Paginator($query, TRUE);
+        $counts = count($pager);
+        $results = $query->getResult();
+
+        return array('counts'=>$counts, 'results'=>$results);
+	}
+
 
 	/**
 	* 分组、排序用户路由

@@ -9,7 +9,7 @@
 	<th>用户数</th>
 {% endblock %}
 {% block tableBody %}
-	{% for role in roles %}
+	{% for role in results %}
 		<tr>
 			<td>
 			<input type="checkbox" name="ckbox" id="ckbox" value="{{ role.id }}"></td>

@@ -40,26 +40,10 @@
 	"buffers":
 	[
 		{
-			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/index.html.twig",
+			"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
 			"settings":
 			{
-				"buffer_size": 376,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
-			"settings":
-			{
-				"buffer_size": 4986,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Entity/UserRepository.php",
-			"settings":
-			{
-				"buffer_size": 2146,
+				"buffer_size": 1387,
 				"line_ending": "Windows"
 			}
 		}
@@ -116,6 +100,11 @@
 		"/E/workspace/myframework-php",
 		"/E/workspace/myframework-php/src",
 		"/E/workspace/myframework-php/src/Admin",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Extension",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Default",
 		"/E/workspace/myframework-php/src/Admin/UserBundle",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity",
@@ -129,26 +118,31 @@
 	],
 	"file_history":
 	[
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Role/index.html.twig",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/base.html.twig",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/ConsoleController.php",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/RoleController.php",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Extension/TwigFilterExtension.php",
+		"/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/index.html.twig",
+		"/E/workspace/submission/src/Admin/DWZBackendBundle/Controller/MainController.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Extension/TwigFilterExtension.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/UserRepository.php",
+		"/E/workspace/submission/src/Admin/DWZBackendBundle/Controller/DWZBaseController.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Role/index.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/UserType.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/User.php",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/RoleController.php",
-		"/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
 		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/Form/FormErrorIterator.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Role/create.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/create.html.twig",
 		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/Form/Form.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/config/services.yml",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/base.html.twig",
 		"/E/workspace/myframework-php/web/js/console.js",
 		"/E/workspace/myframework-php/web/css/app.css",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/RoleType.php",
 		"/E/workspace/myframework-php/web/js/dwz.regional.zh.js",
 		"/E/workspace/myframework-php/web/js/bootstrap-datepicker.js",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/index.html.twig",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Extension/TwigFilterExtension.php",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Extension/TwigFilterExtension.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/page_list.html.twig",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/page_edit.html.twig",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/page.html.twig",
@@ -162,7 +156,6 @@
 		"/E/workspace/submission/src/Admin/SubmissionBundle/Extension/TwigFilterExtension.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/AdminConsoleBundle.php",
 		"/E/workspace/myframework-php/app/Resources/views/base.html.twig",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/DependencyInjection/AdminConsoleExtension.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/config/config.yml",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/DependencyInjection/Configuration.php",
@@ -190,8 +183,6 @@
 		"/E/workspace/myframework-php/src/Admin/FrameworkBundle/Resources/views/Default/index.html.twig",
 		"/E/workspace/submission/src/Admin/DWZBackendBundle/Resources/public/js/dwz.min.js",
 		"/E/workspace/submission/src/Admin/SubmissionBundle/Controller/ClientController.php",
-		"/E/workspace/submission/src/Admin/DWZBackendBundle/Controller/MainController.php",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/UserRepository.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/Role.php",
 		"/E/workspace/feizhiyi-dev/.gitignore",
 		"/E/workspace/feizhiyi-dev/Application/Admin/Controller/Article/EvaluationController.class.php",
@@ -222,6 +213,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"    /**\n     * 创建一个用户组 \n     * @Route(\n     *      \"/\", name=\"admin_roles_create\",\n     *      options = {\"name\":\"创建用户组\",\"description\":\"创建一个用户组\",\"category\":\"系统管理员\",\"order\":5, \"show\":true}\n     *   )\n     * @Method(\"POST\")\n     * @Template(\"AdminUserBundle:Role:create.html.twig\")\n     */\n    public function createAction(Request $request){\n        $entity = new Role();\n        $form = $this->createForm('Admin\\UserBundle\\Form\\RoleType',$entity, array(\n            'attr'=>array('class'=>'pageForm required-validate'),\n            'action'=>$this->generateUrl('admin_roles_create')\n        ));\n        $form->handleRequest($request);\n\n        if ($form->isSubmitted()) {\n            //表单没有验证通过\n            if( !$form->isValid() ){\n                return $this->error($form->getErrors()->__toString());\n            }\n            $em = $this->getDoctrine()->getManager();\n            $em->getConnection()->beginTransaction();\n            try{\n                $masks = $form->get('mask')->getData();\n                $mask = 0;\n                foreach ($masks as $value) {\n                    $mask |= $value;\n                }\n                $entity->setMask($mask);\n                $em->persist($entity);\n                $em->flush();\n                $em->getConnection()->commit();\n                return $this->success();\n            }catch(Exception $e){\n                $em->getConnection()->rollback();\n                $em->close();\n                throw $e;\n            }\n        }\n\n        return array(\n            'entity' => $entity,\n            'form'   => $form->createView(),\n        );\n    }",
 			"_widget",
 			"	public function materielStateFlowFilter($state){\n		$states = array(\"退回\",\"申请中\",\"完成\");\n		return $states[$state];\n	}\n	public function materielStateFilter($state){\n		$states = array(\"待确认\",\"申请中\",\"完成\");\n		return $states[$state];\n	}\n	public function codeTypeFilter($code){\n		$newValue = \"--\";\n\n		if( isset($this->codeTypes[$code]) ){\n			$newValue = $this->codeTypes[$code];\n		}\n\n		return $newValue;\n\n	}\n	public function picsFilter($pics){\n		if( empty($pics) ){\n			return \"--\";\n		}\n\n		$picArr = explode(\"|\", trim($pics,'|'));\n\n		$returnValue = \"\";\n		foreach ($picArr as $key => $value) {\n			if( !empty($value) ){\n				$returnValue .= \"<img src='$value' width='100' height='80' style='margin:5px;float:left;' />\";\n			}\n		}\n\n		$returnValue .= \"<div class='clearfix' style='clear:both'></div>\";\n		return $returnValue;\n	}\n\n	public function getCodeTypes(){\n		return $this->codeTypes;\n	}",
 			"body {\n  padding-top: 50px;\n}\n",
@@ -247,53 +239,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/index.html.twig",
+					"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 376,
+						"buffer_size": 1387,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								376,
-								376
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Twig/Syntaxes/HTML (Twig).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4986,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1513,
-								1513
+								1005,
+								1005
 							]
 						],
 						"settings":
@@ -303,40 +266,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 198.0,
+						"translation.y": 66.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Entity/UserRepository.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2146,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1579,
-								1579
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 396.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -344,7 +277,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 30.0
+		"height": 1052.0
 	},
 	"input":
 	{

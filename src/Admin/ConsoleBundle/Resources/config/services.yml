@@ -8,4 +8,4 @@ services:
         class: Admin\ConsoleBundle\Extension\PagerExtension
         public: true 
         arguments:
-          {pageSize: 20, firstText: '<<', lastText: '>>', preText: '<', nextText: '>'}
+          {pageSize: 20, firstText: '<<', lastText: '>>', preText: '<', nextText: '>', className: ''}

@@ -60,7 +60,7 @@ class AdminBaseController extends Controller
         $counts = count($pager);
         $results = $query->getResult();
 
-        return array('counts'=>$counts, 'results'=>$results);
+        return array('counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination(1));
 	}
 
 

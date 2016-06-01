@@ -16,10 +16,10 @@ class TwigFilterExtension extends \Twig_Extension{
 	}
 
 
-	public function showRoutes($routes){
+	public function showRoutes($routes, $type='menu'){
 		$newRoutes = array();
 		foreach ($routes as $item) {
-			if( $item->show ){
+			if( $item->show && $item->type == $type ){
 				$newRoutes[] = $item;
 			}
 		}

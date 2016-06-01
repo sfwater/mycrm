@@ -22,4 +22,19 @@ class DefaultController extends AdminBaseController
             'configs'=>$configs,
             ));
     }
+
+
+
+    /**
+     * 退出登陆
+     * @Route(
+     *      "/logout", name="admin_logout",
+     *      options = {"name":"退出","description":"退出登陆","category":"","order":9, "type":"console" }
+     *   )
+     * @Method("GET")
+     */
+    public function logoutAction()
+    {
+    }
+
 }

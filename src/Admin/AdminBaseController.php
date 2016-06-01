@@ -28,6 +28,8 @@ class AdminBaseController extends Controller
     		$value->order = isset($options['order']) ? intval($options['order']) : 0;
     		$value->name = $key;
     		$value->show = isset($options['show']) ? $options['show'] : false;
+    		$value->type = isset($options['type']) ? $options['type'] : 'menu';
+    		$value->target = isset($options['target']) ? $options['target'] : 'navTab';
     	}
     	return $routes;
 	}

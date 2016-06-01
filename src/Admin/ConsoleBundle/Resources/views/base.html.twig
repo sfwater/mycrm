@@ -50,10 +50,11 @@
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">Settings</a></li>
-            <li><a href="#">Profile</a></li>
-            <li><a href="#">Help</a></li>
+            {% for key,routes in userRoutes %}
+            {% for r in routes|showRoutes('console') %}
+            <li><a href="{{ path(r.name) }}" title="{{ r.options.description }}" target="{{ r.target }}">{{ r.options.name }}</a></li>
+            {% endfor %}
+            {% endfor %}
           </ul>
         </div>
       </div>
@@ -75,7 +76,7 @@
             </a>
             <ul class="nav collapse in" id="id_{{ key }}">
             {% for r in routes|showRoutes %}
-            <li><a href="{{ path(r.name) }}" title="{{ r.options.description }}" target="navtab" method="{{ r.methods[0] }}">{{ r.options.name }}</a></li>
+            <li><a href="{{ path(r.name) }}" title="{{ r.options.description }}" target="{{ r.target }}" method="{{ r.methods[0] }}">{{ r.options.name }}</a></li>
             {% endfor %}
             </ul>
             </li>

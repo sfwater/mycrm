@@ -52,7 +52,7 @@
           <ul class="nav navbar-nav navbar-right">
             {% for key,routes in userRoutes|inGroup %}
             {% for r in routes|showRoutes('console') %}
-            <li><a href="{{ path(r.name) }}" title="{{ r.options.description }}" target="{{ r.target }}">{{ r.options.name }}</a></li>
+            <li><a href="{{ path(r.name) }}" title="{{ r.options.description }}" target="{{ r.target }}" method="{{ r.methods[0] }}">{{ r.options.name }}</a></li>
             {% endfor %}
             {% endfor %}
           </ul>

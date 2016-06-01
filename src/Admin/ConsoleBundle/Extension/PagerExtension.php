@@ -53,19 +53,14 @@ class PagerExtension
     //初始化当前页码，记录总条数，每页多少条记录
     public function __construct($param)
     {
-        dump($param);
-        exit;
         $this->setOptions($param);
     }
 
     private function setOptions($param){
         $this->pageSize = intval($param['pageSize']);
-        $this->totalRows = $param['totalRows'];
-        $this->url = $param['baseUrl'];
         $this->offset = !empty($param['offset'])?$param['offset']:$this->offset;
         $this->pageString =  !empty($param['pageString'])?$param['pageString']:$this->pageString;
         $this->classHere = !empty($param['className'])?$param['className']:$this->classHere;
-        $this->currentPage = (int)$param['currentPage'];
         $this->firstText = $param['firstText'];
         $this->lastText = $param['lastText'];
         $this->preText = $param['preText'];

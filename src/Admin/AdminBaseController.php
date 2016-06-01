@@ -44,6 +44,9 @@ class AdminBaseController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $page = intval($request->query->get('page'));
+        if( $page < 1 ){
+        	$page = 1;
+        }
         $pageSize = $pager->getPageSize();
 
         if( $conditions == '' ){

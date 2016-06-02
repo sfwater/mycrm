@@ -481,16 +481,22 @@ function _getPagerForm($parent, args) {
 		});
 		//排序
 		$("th.sortable", $p).click(function(ev){
+			var icon = $(this).find("span");
+			if( !icon ){
+				icon = $("<span></span>");
+				$(this).append(icon);
+			}
 			var direction = $(this).data("direction") || 'desc';
+			var field = $(this).data("order-field");
 			if( direction == 'desc' ){
 				direction = "asc";
-				$(this).removeClass("desc").data("direction",direction).addClass(direction);
+				icon.removeClass("desc").data("direction",direction).addClass(direction);
 			}
 			else{
 				direction = "desc";
-				$(this).removeClass("asc").data("direction",direction).addClass(direction);
+				icon.removeClass("asc").data("direction",direction).addClass(direction);
 			}
-			consolePageBreak({data:{orderField:feild, orderDirection:direction}});
+			consolePageBreak({data:{orderField:field, orderDirection:direction}});
 			ev.preventDefault();
 		});
 

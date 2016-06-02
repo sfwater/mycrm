@@ -708,7 +708,7 @@ function _getPagerForm($parent, args) {
 			var $parent = parent ? parent : CONSOLE.container;	
 			function _getIds(selectedIds, rel){
 				var ids = "";
-				var $box = rel == "" ? $parent : $(rel);
+				var $box = rel == undefined ? $parent : $(rel);
 				$box.find("input:checked").filter("[name='"+selectedIds+"']").each(function(i){
 					var val = $(this).val();
 					ids += i==0 ? val : ","+val;

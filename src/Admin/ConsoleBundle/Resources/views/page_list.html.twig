@@ -2,7 +2,7 @@
 {% block pageContent %}
 <div class=" margin-top clearfix">
 <div class="searchForm pull-left">
-<form class="searchForm form-inline" id="searchForm" method="GET">
+<form class="searchForm form-inline" id="searchForm" method="GET" action="{{ app.request.pathinfo }}">
 	{% block searchContent %}
     {% endblock %}
     <input name="orderField" type="hidden" />

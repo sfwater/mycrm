@@ -92,6 +92,38 @@ function _iframeResponse(iframe, callback){
 		callback(response);
 	});
 }
+/**
+ * 处理navTab中的分页和排序
+ * targetType: navTab 或 dialog
+ * rel: 可选 用于局部刷新div id号
+ * data: pagerForm参数 {pageNum:"n", numPerPage:"n", orderField:"xxx", orderDirection:""}
+ * callback: 加载完成回调函数
+ */
+function consolePageBreak(options){
+	var op = $.extend({ rel:"", data:{page:"", orderField:"", orderDirection:""}, callback:null}, options);
+	var $box = op.rel == "" ? CONSOLE.getCurrentPanel() : $(op.rel);
+	var form = _getPagerForm($box,$op.data);
+
+	if (form) {
+		$box.ajaxUrl({type:$(form).attr("method"), url:$(form).attr("action"), data: $(form).serializeArray(), callback:op.callback});
+	}
+}
+/**
+ * 
+ * @param {Object} args {pageNum:"",numPerPage:"",orderField:"",orderDirection:""}
+ * @param String formId 分页表单选择器，非必填项默认值是 "pagerForm"
+ */
+function _getPagerForm($parent, args) {
+	var form = $("form.pagerForm", $parent).get(0);
+
+	if (form) {
+		if (args["pageNum"]) form[CONSOLE.pageInfo.pageNum].value = args["pageNum"];
+		if (args["orderField"]) form[CONSOLE.pageInfo.orderField].value = args["orderField"];
+		if (args["orderDirection"] && form[CONSOLE.pageInfo.orderDirection]) form[DWZ.pageInfo.orderDirection].value = args["orderDirection"];
+	}
+	
+	return form;
+}
 (function($){
 	$.setRegional = function(key, value){
 		if (!$.regional) $.regional = {};
@@ -123,7 +155,7 @@ function _iframeResponse(iframe, callback){
 			return this.isOverAxis(y, top, height) && this.isOverAxis(x, left, width);
 		},
 		
-		pageInfo: {pageNum:"pageNum", numPerPage:"numPerPage", orderField:"orderField", orderDirection:"orderDirection"},
+		pageInfo: {pageNum:"page", orderField:"orderField", orderDirection:"orderDirection"},
 		statusCode: {ok:200, error:500, timeout:502},
 		keys: {statusCode:"statusCode", message:"message"},
 		ui:{
@@ -238,6 +270,9 @@ function _iframeResponse(iframe, callback){
 				}
 			});
 		},
+		getCurrentPanel: function(){
+			return this.container;
+		}
 		showLoading: function(){
 			this.loader.show();
 		},
@@ -416,8 +451,10 @@ function _iframeResponse(iframe, callback){
 
 		//搜索表单
 		$("form.searchForm", $p).submit(function(){
+			var $this = $(this);
+			consolePageBreak({data:$this.serializeArray(),callback: $this.attr("onsuccess")});
 			return false;
-		});
+		}).pagerForm({parentBox: $p});
 	}
 	var alertMsg = {
 		_boxId: "#alertMsgBox",
@@ -579,6 +616,24 @@ function _iframeResponse(iframe, callback){
 		log:function(msg){
 			return this.each(function(){
 				if (console) console.log("%s: %o", msg, this);
+			});
+		},
+		pagerForm: function(options){
+			var op = $.extend({pagerForm$:"#pagerForm", parentBox:document}, options);
+			var frag = '<input type="hidden" name="#name#" value="#value#" />';
+			return this.each(function(){
+				var $searchForm = $(this), $pagerForm = $(op.pagerForm$, op.parentBox);
+				var actionUrl = $pagerForm.attr("action").replaceAll("#rel#", $searchForm.attr("action"));
+				$pagerForm.attr("action", actionUrl);
+				$searchForm.find(":input").each(function(){
+					var $input = $(this), name = $input.attr("name");
+					if (name && (!$input.is(":checkbox,:radio") || $input.is(":checked"))){
+						if ($pagerForm.find(":input[name='"+name+"']").length == 0) {
+							var inputFrag = frag.replaceAll("#name#", name).replaceAll("#value#", $input.val());
+							$pagerForm.append(inputFrag);
+						}
+					}
+				});
 			});
 		}
 	});

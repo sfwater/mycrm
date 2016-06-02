@@ -84,9 +84,9 @@ class AdminBaseController extends Controller
 
         //构造分页表单
         $route = $router->matchRequest($request);
-        $action = $router->generate($route['_route']);
+        $action = '#rel#'; 
         $pagerForm = $this->createFormBuilder()->setMethod('GET')->setAction($action)
-        	->setAttributes(array('class'=>'pagerForm'))
+        	->setAttributes(array('class'=>'pagerForm','id'=>'pagerForm'))
         	->getForm();
 
         return array('counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination('1'),'pagerForm'=>$pagerForm->createView());

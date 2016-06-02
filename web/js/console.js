@@ -462,7 +462,7 @@ function _getPagerForm($parent, args) {
 		//搜索表单
 		$("form.searchForm", $p).submit(function(){
 			var $this = $(this);
-			// consolePageBreak({data:$this.serializeArray(),callback: $this.attr("onsuccess")});
+			consolePageBreak({data:{pageNum:1}});
 			return false;
 		});
 

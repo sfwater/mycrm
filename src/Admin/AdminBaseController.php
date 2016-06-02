@@ -86,7 +86,7 @@ class AdminBaseController extends Controller
         $route = $router->matchRequest($request);
         $action = '#rel#'; 
         $pagerForm = $this->createFormBuilder()->setMethod('GET')->setAction($action)
-        	->setAttribute('class','pagerForm')
+        	->setAttribute('attr',array('class'=>'pagerForm'))
         	->getForm();
 
         return array('counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination('1'),'pagerForm'=>$pagerForm->createView());

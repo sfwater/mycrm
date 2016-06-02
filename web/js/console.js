@@ -278,23 +278,12 @@ function _getPagerForm($parent, args) {
 					$this.titleHeader.html(options.name+'<small>'+options.title+'</small>');
 					//设置内容标题
 					target.find($this.subHeaderId).text(options.name);
-					$this.container.data("url",url);
-					$this.container.data("options",options);
 					if( $.isFunction(options.callback) )
 						options.callback(response);
 				}
 			});
 		},
 		realod:function(){
-			var $this = this;
-			var url = $this.container.data("url");
-			var options = $this.container.data("options");
-			this.container.ajaxUrl({
-				type:options.type, url:url, data:options.data, callback:function(response, target){
-					if( $.isFunction(options.callback) )
-						options.callback(response);
-				}
-			});
 		},
 		getCurrentPanel: function(){
 			return this.container;
@@ -651,6 +640,8 @@ function _getPagerForm($parent, args) {
 				cache: false,
 				success: function(response){
 					CONSOLE.hideLoading();
+					$this.data("url",op.url);
+					$this.data("options", op);
 					var json = CONSOLE.jsonEval(response);
 					
 					if (json[CONSOLE.keys.statusCode]==CONSOLE.statusCode.error){
@@ -681,6 +672,10 @@ function _getPagerForm($parent, args) {
 					}
 				}
 			});
+		},
+		reload: function(){
+			var url = $(this).data("url");
+			var options = $(options).data("options");
 		},
 		loadUrl: function(url,data,callback){
 			$(this).ajaxUrl({url:url, data:data, callback:callback});
@@ -746,10 +741,12 @@ function _getPagerForm($parent, args) {
 				var postType = $this.attr("postType") || "map";
 				var action = $this.attr("action");
 
+
 				$this.click(function(){
 					var rel = $this.attr("rel");
 					var ids = _getIds(selectedIds, rel);
 					var href= $this.attr('href');
+					var $box = rel == undefined ? $parent : $(rel);
 					if (!ids) {
 						alertMsg.error($this.attr("warn") || CONSOLE.msg("alertSelectMsg"));
 						return false;
@@ -781,7 +778,10 @@ function _getPagerForm($parent, args) {
 									return _data;
 								}
 							}(),
-							success: _callback,
+							success: function(response){
+								$box.reload();
+								_callback(response);
+							},
 							error: CONSOLE.ajaxError
 						});
 					}

@@ -474,7 +474,7 @@ function _getPagerForm($parent, args) {
 		});
 
 		$(":button.checkbox-all, :checkbox.checkbox-all", $p).checkboxCtrl($p);
-		$(":button.selectedTodo, :a.selectedTodo", $p).selectedTodo($p);
+		$(":button.selectedTodo, a.selectedTodo", $p).selectedTodo($p);
 	}
 	var alertMsg = {
 		_boxId: "#alertMsgBox",

@@ -100,12 +100,22 @@ function _iframeResponse(iframe, callback){
  * callback: 加载完成回调函数
  */
 function consolePageBreak(options){
-	var op = $.extend({ rel:"", data:{page:"", orderField:"", orderDirection:""}, callback:null}, options);
+	var op = $.extend({ rel:"", data:{pageNum:"", orderField:"", orderDirection:""}, callback:null}, options);
 	var $box = op.rel == "" ? CONSOLE.getCurrentPanel() : $(op.rel);
 	var form = _getPagerForm($box,$op.data);
 
+	var callback = function(response){
+		if( $.isFunction(op.callback) ){
+			op.callback(response);
+		}
+		var _callback = $(form).attr('onsuccess');
+		if( $.isFunction(_callback) ){
+			_callback(response);
+		}
+	}
+
 	if (form) {
-		$box.ajaxUrl({type:$(form).attr("method"), url:$(form).attr("action"), data: $(form).serializeArray(), callback:op.callback});
+		$box.ajaxUrl({type:$(form).attr("method"), url:$(form).attr("action"), data: $(form).serializeArray(), callback:callback});
 	}
 }
 /**
@@ -458,8 +468,8 @@ function _getPagerForm($parent, args) {
 
 		//分页
 		$(".pagination a", $p).click(function(ev){
-			var form = _getPagerForm($p, {pageNum: $(this).attr('page-index')});
-			form.submit();
+			var page = $(this).attr("page-index");
+			consolePageBreak({data:{pageNum:page}});
 			ev.preventDefault();
 		});
 	}

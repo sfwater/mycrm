@@ -11,8 +11,7 @@
 {% block tableBody %}
 	{% for role in results %}
 		<tr>
-			<td>
-			<input type="checkbox" name="ids[]"  value="{{ role.id }}"></td>
+			<td> <input type="checkbox" name="ids[]"  value="{{ role.id }}" /> </td>
 			<td>{{ role.name }}</td>
 			<td>{{ role.role }}</td>
 			<td>{{ role.mask| printUserMask }}</td>

@@ -495,14 +495,10 @@ function _getPagerForm($parent, args) {
 				else{
 					icon.addClass("icon-arrow-up");
 				}
+				$this.data("direction",direction);
 			}
 
 			return $this.click(function(){
-				var icon = $this.find("span");
-				if( icon.length == 0 ){
-					icon = $("<span></span>");
-					$this.append(icon);
-				}
 				var direction = $this.data("direction") || 'asc';
 				var field = $this.attr("order-field");
 				if( direction == 'desc' ){

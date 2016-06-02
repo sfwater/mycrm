@@ -278,8 +278,8 @@ function _getPagerForm($parent, args) {
 					$this.titleHeader.html(options.name+'<small>'+options.title+'</small>');
 					//设置内容标题
 					target.find($this.subHeaderId).text(options.name);
-					$this.data("url",url);
-					$this.data("options",options);
+					$this.container.data("url",url);
+					$this.container.data("options",options);
 					if( $.isFunction(options.callback) )
 						options.callback(response);
 				}
@@ -287,8 +287,8 @@ function _getPagerForm($parent, args) {
 		},
 		realod:function(){
 			var $this = this;
-			var url = $this.data("url");
-			var options = $this.data("options");
+			var url = $this.container.data("url");
+			var options = $this.container.data("options");
 			this.container.ajaxUrl({
 				type:options.type, url:url, data:options.data, callback:function(response, target){
 					if( $.isFunction(options.callback) )

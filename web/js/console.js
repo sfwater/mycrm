@@ -481,8 +481,6 @@ function _getPagerForm($parent, args) {
 		$(":button[target=selectedTodo], a[target=selectedTodo]", $p).selectedTodo($p);
 	}
 	var alertMsg = {
-		_boxId: "#alertMsgBox",
-		_bgId: "#alertBackground",
 		_closeTimer: null,
 
 		_types: {error:"error", info:"info", warn:"warn", correct:"correct", confirm:"confirm"},
@@ -492,11 +490,11 @@ function _getPagerForm($parent, args) {
 		},
 
 		_keydownOk: function(event){
-			if (event.keyCode == DWZ.keyCode.ENTER) event.data.target.trigger("click");
+			if (event.keyCode == CONSOLE.keyCode.ENTER) event.data.target.trigger("click");
 			return false;
 		},
 		_keydownEsc: function(event){
-			if (event.keyCode == DWZ.keyCode.ESC) event.data.target.trigger("click");
+			if (event.keyCode == CONSOLE.keyCode.ESC) event.data.target.trigger("click");
 		},
 		/**
 		 * 
@@ -505,52 +503,39 @@ function _getPagerForm($parent, args) {
 		 * @param {Object} buttons [button1, button2]
 		 */
 		_open: function(type, msg, buttons, options){
-			var modal = this.modal;
-		  	this.modalTitle.text(type);
-			this.modalBody.html(msg);
-			this.modalFooter.find('button').remove();
-
-			$(buttons).each(function(){
-				var button = $('<button type="button" class="'+this.css+'">'+this.name+'</button>');
-				var callback = this.call;
-				button.click(function(){
-					if( $.isFunction(callback) ){
-						callback();
-					}
-					alertMsg.close();
-				});
-				modal.find('.modal-footer').append(button);
-			});
-			this.modal.modal(options);
+			BootstrapDialog.show({
+                type: options.type,
+                title: type,
+                message: msg,
+                buttons: buttons
+            });
 		},
 		init: function(){
-			this.modal = $(this._boxId);
-			this.modalTitle = this.modal.find('.modal-title');
-			this.modalBody = this.modal.find('.modal-body');
-			this.modalFooter = this.modal.find('.modal-footer');
 		},
 		close: function(){
 			this.modal.modal('hide');
 		},
 		error: function(msg, options) {
-			this._alert(this._types.error, msg, options);
+			this._alert(this._types.error, msg, $.extend(options,{type:BootstrapDialog.TYPE_INFO});
 		},
 		info: function(msg, options) {
-			this._alert(this._types.info, msg, options);
+			this._alert(this._types.info, msg, $.extend(options,{type:BootstrapDialog.TYPE_INFO}));
 		},
 		warn: function(msg, options) {
-			this._alert(this._types.warn, msg, options);
+			this._alert(this._types.warn, msg, $.extend(options,{type:BootstrapDialog.TYPE_WARNING}));
 		},
 		correct: function(msg, options) {
-			this._alert(this._types.correct, msg, options);
+			this._alert(this._types.correct, msg, $.extend(options,{type:BootstrapDialog.TYPE_SUCCESS}));
 		},
 		_alert: function(type, msg, options) {
-			var op = {okName:$.regional.alertMsg.butMsg.close, okCall:null, modalOption:{backdrop:'static'}};
-			$.extend(op, options);
+			var op = $.extend({okName:$.regional.alertMsg.butMsg.close, okCall:null, type:BootstrapDialog.TYPE_DEFAULT}, options);
 			var buttons = [
-				{name:op.okName, call: op.okCall, keyCode:CONSOLE.keyCode.ENTER, css:'btn btn-default'}
+				{
+					label:op.okName,
+					action: okCall
+				} 
 			];
-			this._open(type, msg, buttons, op.modalOption);
+			this._open(type, msg, buttons, options);
 		},
 		/**
 		 * 
@@ -558,13 +543,12 @@ function _getPagerForm($parent, args) {
 		 * @param {Object} options {okName, okCal, cancelName, cancelCall}
 		 */
 		confirm: function(msg, options) {
-			var op = {okName:$.regional.alertMsg.butMsg.ok, okCall:null, cancelName:$.regional.alertMsg.butMsg.cancel, cancelCall:null};
-			$.extend(op, options);
+			var op = $.extend({okName:$.regional.alertMsg.butMsg.ok, okCall:null, cancelName:$.regional.alertMsg.butMsg.cancel, cancelCall:null}, options);
 			var buttons = [
-				{name:op.okName, call: op.okCall, keyCode:DWZ.keyCode.ENTER, css:'btn btn-primary'},
-				{name:op.cancelName, call: op.cancelCall, keyCode:DWZ.keyCode.ESC, css:'btn btn-default'}
+				{label:op.okName, action: okCall},
+				{label:op.cancelName, action: cancelCall}
 			];
-			this._open(this._types.confirm, msg, buttons, options.modalOption);
+			this._open(this._types.confirm, msg, buttons, options);
 		}
 	};
 	$.fn.extend({

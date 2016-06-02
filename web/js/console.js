@@ -472,6 +472,8 @@ function _getPagerForm($parent, args) {
 			consolePageBreak({data:{pageNum:page}});
 			ev.preventDefault();
 		});
+
+		$(":button.checkbox-all, :checkbox.checkbox-all", $p).checkboxCtrl($p);
 	}
 	var alertMsg = {
 		_boxId: "#alertMsgBox",
@@ -560,7 +562,52 @@ function _getPagerForm($parent, args) {
 			this._open(this._types.confirm, msg, buttons, options.modalOption);
 		}
 	};
-
+	$.fn.extend({
+		checkboxCtrl: function(parent){
+			return this.each(function(){
+				var $trigger = $(this);
+				$trigger.click(function(){
+					var group = $trigger.attr("group");
+					if ($trigger.is(":checkbox")) {
+						var type = $trigger.is(":checked") ? "all" : "none";
+						if (group) $.checkbox.select(group, type, parent);
+					} else {
+						if (group) $.checkbox.select(group, $trigger.attr("selectType") || "all", parent);
+					}
+					
+				});
+			});
+		}
+	});
+	$.checkbox = {
+		selectAll: function(_name, _parent){
+			this.select(_name, "all", _parent);
+		},
+		unSelectAll: function(_name, _parent){
+			this.select(_name, "none", _parent);
+		},
+		selectInvert: function(_name, _parent){
+			this.select(_name, "invert", _parent);
+		},
+		select: function(_name, _type, _parent){
+			$parent = $(_parent || document);
+			$checkboxLi = $parent.find(":checkbox[name='"+_name+"']");
+			switch(_type){
+				case "invert":
+					$checkboxLi.each(function(){
+						$checkbox = $(this);
+						$checkbox.attr('checked', !$checkbox.is(":checked"));
+					});
+					break;
+				case "none":
+					$checkboxLi.attr('checked', false);
+					break;
+				default:
+					$checkboxLi.attr('checked', true);
+					break;
+			}
+		}
+	};
 	$.fn.extend({
 		/**
 		 * @param {Object} op: {type:GET/POST, url:ajax请求地址, data:ajax请求参数列表, callback:回调函数 }

@@ -458,7 +458,8 @@ function _getPagerForm($parent, args) {
 
 		//分页
 		$(".pagination a", $p).click(function(ev){
-			var $form = _getPagerForm($p, {pageNum: $(this).attr('page-index')});
+			var form = _getPagerForm($p, {pageNum: $(this).attr('page-index')});
+			form.submit();
 			ev.preventDefault();
 		});
 	}

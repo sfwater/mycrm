@@ -76,7 +76,6 @@ class AdminBaseController extends Controller
         }
         $baseUrl = '?';
         dump($qs);
-        exit;
         if( count($qs) > 0 ){
         	foreach ($qs as $key => $value) {
         		$baseUrl .= "$key=$value&";

@@ -484,7 +484,7 @@ function _getPagerForm($parent, args) {
 			var icon = $(this).find("span");
 			if( icon.length == 0 ){
 				icon = $("<span></span>");
-				$(this).append(icon);
+				$(this).appendChild(icon);
 			}
 			var direction = $(this).data("direction") || 'desc';
 			var field = $(this).attr("order-field");

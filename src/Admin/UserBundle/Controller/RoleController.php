@@ -29,7 +29,9 @@ class RoleController extends AdminBaseController
      */
     public function indexAction()
     {
-        return array_merge(array(),
+        $form = $this->createForm(RoleSearchType::class);
+        return array_merge(
+            array('searchForm'=>$form->createView()),
             $this->getPagedEntities(Role::class)
             );
     }

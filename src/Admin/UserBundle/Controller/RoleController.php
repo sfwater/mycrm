@@ -30,6 +30,10 @@ class RoleController extends AdminBaseController
     public function indexAction()
     {
         $form = $this->createForm(RoleSearchType::class);
+        if( $form->isValid() ){
+            dump($form);
+            exit;
+        }
         return array_merge(
             array('searchForm'=>$form->createView()),
             $this->getPagedEntities(Role::class)

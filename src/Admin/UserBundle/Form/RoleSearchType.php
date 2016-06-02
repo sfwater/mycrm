@@ -28,8 +28,8 @@ class RoleSearchType extends AbstractType
                 'mapped'=>false,
             ))
             ;
-        // dump($options);
-        // exit;
+        dump($options);
+        exit;
     }
     public function configureOptions(OptionsResolver $resolver)
     {

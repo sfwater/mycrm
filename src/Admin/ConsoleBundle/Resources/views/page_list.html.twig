@@ -7,7 +7,7 @@
 	{% block searchContent %}
     {% endblock %}
     <input name="orderField" type="hidden" value="{% if query.orderField is defined %}{{ query.orderField }}{% endif %}" />
-    <input name="orderDirection" type="hidden" value="{% if query.orderDirection defined %}{{ query.orderDirection }}{% endif %}" />
+    <input name="orderDirection" type="hidden" value="{% if query.orderDirection is defined %}{{ query.orderDirection }}{% endif %}" />
     <input name="page" type="hidden" value="{% if query.page is defined %}{{ query.page }}{% endif %}" />
     <button type="submit" class="btn btn-default" id="btnSearch">搜索</button>
 </form>

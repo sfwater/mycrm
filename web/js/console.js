@@ -483,11 +483,14 @@ function _getPagerForm($parent, args) {
 		$("th.sortable", $p).click(function(ev){
 			var direction = $(this).data("direction") || 'desc';
 			if( direction == 'desc' ){
-				$(this).data("direction","asc").removeClass("desc").addClass("asc");
+				direction = "asc";
+				$(this).removeClass("desc").data("direction",direction).addClass(direction);
 			}
 			else{
-				$(this).data("direction","desc").removeClass("asc").addClass("desc");
+				direction = "desc";
+				$(this).removeClass("asc").data("direction",direction).addClass(direction);
 			}
+			consolePageBreak({data:{orderField:feild, orderDirection:direction}});
 			ev.preventDefault();
 		});
 

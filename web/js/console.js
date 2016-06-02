@@ -730,6 +730,7 @@ function _getPagerForm($parent, args) {
 				$this.click(function(){
 					var rel = $this.attr("rel");
 					var ids = _getIds(selectedIds, rel);
+					var href= $this.attr('href');
 					if (!ids) {
 						alertMsg.error($this.attr("warn") || CONSOLE.msg("alertSelectMsg"));
 						return false;
@@ -743,7 +744,6 @@ function _getPagerForm($parent, args) {
 						return false;
 					}
 
-					var href= $this.attr('href');
 					
 					var _callback = $this.attr("callback") || CONSOLE.ajaxDone;
 					var method = $this.attr("method") || "DELETE";

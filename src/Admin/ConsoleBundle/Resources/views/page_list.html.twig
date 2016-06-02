@@ -6,9 +6,9 @@
 {{ form_start(searchForm) }}
 	{% block searchContent %}
     {% endblock %}
-    <input name="orderField" type="hidden" />
-    <input name="orderDirection" type="hidden" />
-    <input name="page" type="hidden" />
+    <input name="orderField" type="hidden" value="{{ orderField }}" />
+    <input name="orderDirection" type="hidden" value="{{ orderDirection }}" />
+    <input name="page" type="hidden" value="{{ page }}" />
     <button type="submit" class="btn btn-default" id="btnSearch">搜索</button>
 </form>
 </div>

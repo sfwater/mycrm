@@ -39,8 +39,9 @@ class AdminBaseController extends Controller
 	* 获取不带访问控制条件的数据列表
 	*/
 	protected function getPagedEntities($class, $conditions='', $parameters = array(), $sort='dist.id DESC', $join=''){
-        $request = $this->get("request_stack")->getCurrentRequest();
-        $pager = $this->get("admin_console.pager");
+        $request = $this->get('request_stack')->getCurrentRequest();
+        $router = $this->get('router');
+        $pager = $this->get('admin_console.pager');
         $em = $this->getDoctrine()->getManager();
 
         $page = intval($request->query->get('page'));
@@ -82,6 +83,7 @@ class AdminBaseController extends Controller
         $pager->setBaseUrl($baseUrl);
 
         //构造分页表单
+        $route = $router->match($request->getPathInfo());
         $pagerForm = $this->createFormBuilder()->setMethod('GET')->setAction('')->getForm();
 
         return array('counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination('1'),'pagerForm'=>$pagerForm->createView());

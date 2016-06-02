@@ -102,7 +102,7 @@ function _iframeResponse(iframe, callback){
 function consolePageBreak(options){
 	var op = $.extend({ rel:"", data:{pageNum:"", orderField:"", orderDirection:""}, callback:null}, options);
 	var $box = op.rel == "" ? CONSOLE.getCurrentPanel() : $(op.rel);
-	var form = _getPagerForm($box,$op.data);
+	var form = _getPagerForm($box, op.data);
 
 	var callback = function(response){
 		if( $.isFunction(op.callback) ){

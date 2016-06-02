@@ -93,10 +93,14 @@ class AdminBaseController extends Controller
         $action = $router->generate($route['_route']);
 
 
-        return array_merge(
-        	array('searchAction'=>$action,'counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination('1')),
-        	$request->query->all()
-        	);
+        return array(
+            'counts'=>$counts, 
+            'results'=>$results, 
+            'pageSize'=>$pageSize, 
+            'pager'=>$pager->pagination('1'),
+            'pageLength'=>$pager->pageAmount(),
+            'query'=>$request->query,
+            );
 	}
 
 

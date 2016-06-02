@@ -6,9 +6,9 @@
 {{ form_start(searchForm) }}
 	{% block searchContent %}
     {% endblock %}
-    <input name="orderField" type="hidden" value="{{ orderField }}" />
-    <input name="orderDirection" type="hidden" value="{{ orderDirection }}" />
-    <input name="page" type="hidden" value="{{ page }}" />
+    <input name="orderField" type="hidden" value="{% if orderField is not empty %}{{ orderField }}{% endif %}" />
+    <input name="orderDirection" type="hidden" value="{% if orderDirection is not empty %}{{ orderDirection }}{% endif %}" />
+    <input name="page" type="hidden" value="{% if page is not empty %}{{ page }}{% endif %}" />
     <button type="submit" class="btn btn-default" id="btnSearch">搜索</button>
 </form>
 </div>

@@ -30,7 +30,7 @@ class RoleController extends AdminBaseController
     public function indexAction(Request $request)
     {
         $form = $this->createForm(RoleSearchType::class, $request->query->all());
-        $form->setData('name',"123");
+        $form->get('name')->setData('123');
         if( $form->isValid() ){
             dump($form);
             exit;

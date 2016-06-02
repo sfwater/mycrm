@@ -137,14 +137,9 @@ class RoleController extends AdminBaseController
      */
     public function deleteAction(Request $request)
     {
-        $id = intval($request->query->get("id"));
+        $ids = $request->request->get('ids');
 
-        $ids = $request->request->get("ids");
-
-        if( $id > 0 ){
-            $ids[] = $id;
-        }
-        if( count($ids)>0 ){
+        if( count($ids) > 0 ){
             $doctrine = $this->getDoctrine();
             $em = $doctrine->getManager();
             $repo = $doctrine->getRepository("AdminUserBundle:Role");

@@ -725,6 +725,7 @@ function _getPagerForm($parent, args) {
 				var $this = $(this);
 				var selectedIds = $this.attr('group') || "ids[]";
 				var postType = $this.attr("postType") || "map";
+				var action = $this.attr("action");
 
 				$this.click(function(){
 					var rel = $this.attr("rel");
@@ -737,11 +738,15 @@ function _getPagerForm($parent, args) {
 						alertMsg.error(CONSOLE.msg("alertSelectHrefMsg"));
 						return false;
 					}
+					if( !action ){
+						alertMsg.error(CONSOLE.msg("selectActionMsg"));
+						return false;
+					}
 
 					var href= $this.attr('href');
 					
 					var _callback = $this.attr("callback") || CONSOLE.ajaxDone;
-					var method = $this.attr("method") || "POST";
+					var method = $this.attr("method") || "DELETE";
 					if (! $.isFunction(_callback)) _callback = eval('(' + _callback + ')');
 					function _doPost(){
 						$.ajax({

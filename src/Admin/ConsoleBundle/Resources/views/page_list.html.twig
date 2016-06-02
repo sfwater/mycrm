@@ -3,7 +3,7 @@
 <div class=" margin-top clearfix">
 <div class="searchForm pull-left">
 {{ dump(app) }}
-<form class="searchForm form-inline" id="searchForm" method="GET" action="{{ app.request.pathinfo }}">
+<form class="searchForm form-inline" id="searchForm" method="GET" action="{{ searchAction }}">
 	{% block searchContent %}
     {% endblock %}
     <input name="orderField" type="hidden" />

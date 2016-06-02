@@ -41,6 +41,7 @@ class AdminBaseController extends Controller
 	protected function getPagedEntities($class, $conditions='', $parameters = array(), $sort='dist.id DESC', $join=''){
         $request = $this->get('request_stack')->getCurrentRequest();
         $pager = $this->get('admin_console.pager');
+        $router = $this->get('router');
         $em = $this->getDoctrine()->getManager();
 
         $page = intval($request->query->get('page'));
@@ -81,7 +82,12 @@ class AdminBaseController extends Controller
         }
         $pager->setBaseUrl($baseUrl);
 
-        return array_merge(array('counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination('1')),
+        $route = $router->matchRequest($request);
+        $action = $router->generate($route['_route']);
+
+
+        return array_merge(
+        	array('searchAction'=>$action,'counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination('1')),
         	$request->query->all()
         	);
 	}

@@ -567,9 +567,9 @@ function _getPagerForm($parent, args) {
 	            btnOKClass: 'btn-warning', // <-- If you didn't specify it, dialog type will be used,
 	            callback: function(result) {
 	                if(result) {
-	                	$.isFunction(op.okCall) || op.okCall();
+	                	$.isFunction(op.okCall) && op.okCall();
 	                }else {
-	                	$.isFunction(op.cancelCall) || op.cancelCall();
+	                	$.isFunction(op.cancelCall) && op.cancelCall();
 	                }
 	            }
 	        });

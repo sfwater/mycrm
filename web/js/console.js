@@ -603,6 +603,7 @@ function _getPagerForm($parent, args) {
 					$checkboxLi.removeAttr('checked');
 					break;
 				default:
+					alert(_name);
 					$checkboxLi.attr('checked', 'checked');
 					break;
 			}

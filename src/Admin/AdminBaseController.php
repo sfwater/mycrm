@@ -83,8 +83,9 @@ class AdminBaseController extends Controller
         $pager->setBaseUrl($baseUrl);
 
         //构造分页表单
-        $route = $router->match($request->getPathInfo());
-        $pagerForm = $this->createFormBuilder()->setMethod('GET')->setAction('')->getForm();
+        $route = $router->matchRequest($request);
+        $action = $router->generate($route['_route']);
+        $pagerForm = $this->createFormBuilder()->setMethod('GET')->setAction($action)->getForm();
 
         return array('counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination('1'),'pagerForm'=>$pagerForm->createView());
 	}

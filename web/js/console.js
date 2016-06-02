@@ -114,7 +114,7 @@ function consolePageBreak(options){
  * @param String formId 分页表单选择器，非必填项默认值是 "pagerForm"
  */
 function _getPagerForm($parent, args) {
-	var form = $("form.pagerForm", $parent).get(0);
+	var form = $("form.searchForm", $parent).get(0);
 
 	if (form) {
 		if (args["pageNum"]) form[CONSOLE.pageInfo.pageNum].value = args["pageNum"];
@@ -454,7 +454,12 @@ function _getPagerForm($parent, args) {
 			var $this = $(this);
 			consolePageBreak({data:$this.serializeArray(),callback: $this.attr("onsuccess")});
 			return false;
-		}).pagerForm({parentBox: $p});
+		});
+
+		$(".pagination a", $p).click(function(){
+			var $form = _getPagerForm($p, {pageNum: $(this).attr('page-index')});
+			ev.preventDefault();
+		});
 	}
 	var alertMsg = {
 		_boxId: "#alertMsgBox",

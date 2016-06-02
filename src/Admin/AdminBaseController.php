@@ -81,7 +81,10 @@ class AdminBaseController extends Controller
         }
         $pager->setBaseUrl($baseUrl);
 
-        return array('counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination('1'));
+        //构造分页表单
+        $pagerForm = $this->createFormBuilder()->setMethod('GET')->setAction('')->getForm();
+
+        return array('counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination('1'),'pagerForm'=>$pagerForm->createView());
 	}
 
 

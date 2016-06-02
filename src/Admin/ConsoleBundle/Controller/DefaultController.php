@@ -49,4 +49,14 @@ class DefaultController extends AdminBaseController
     {
     }
 
+    /**
+    * @Route('/test')
+    */
+    public function testAction(){
+        $router = $this->get("router");
+        $request = $this->getCurrentRequest();
+        $route = $router->matche($request);
+        dump($route);
+        exit;
+    }
 }

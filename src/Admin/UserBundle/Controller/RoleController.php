@@ -34,8 +34,8 @@ class RoleController extends AdminBaseController
         $conditions = '';
         $parameters = array();
         if( $form->get('name')->getData() ){
-            $conditions .= 'dist.name=:name';
-            $parameters['name'] = $form->get('name')->getData();
+            $conditions .= '(dist.name LIKE :name OR dist.name LIKE :name)';
+            $parameters['name'] = '%'.$form->get('name')->getData().'%';
         }
         return array_merge(
             array('searchForm'=>$form->createView()),

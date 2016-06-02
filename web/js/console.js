@@ -129,7 +129,7 @@ function _getPagerForm($parent, args) {
 	if (form) {
 		if (args["pageNum"]) form[CONSOLE.pageInfo.pageNum].value = args["pageNum"];
 		if (args["orderField"]) form[CONSOLE.pageInfo.orderField].value = args["orderField"];
-		if (args["orderDirection"] && form[CONSOLE.pageInfo.orderDirection]) form[DWZ.pageInfo.orderDirection].value = args["orderDirection"];
+		if (args["orderDirection"] && form[CONSOLE.pageInfo.orderDirection]) form[CONSOLE.pageInfo.orderDirection].value = args["orderDirection"];
 	}
 	
 	return form;

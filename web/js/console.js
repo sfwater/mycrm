@@ -600,11 +600,10 @@ function _getPagerForm($parent, args) {
 					});
 					break;
 				case "none":
-					$checkboxLi.attr('checked', false);
+					$checkboxLi.removeAttr('checked');
 					break;
 				default:
-					alert($checkboxLi.length);
-					$checkboxLi.attr('checked', true);
+					$checkboxLi.attr('checked', 'checked');
 					break;
 			}
 		}

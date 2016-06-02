@@ -27,15 +27,15 @@ class RoleSearchType extends AbstractType
                 'required'=>false,
                 'mapped'=>false,
             ))
-            -add('orderField',HiddenType::class,array(
+            ->add('orderField',HiddenType::class,array(
                 'required'=>false,
                 'mapped'=>false
                 ))
-            -add('page',HiddenType::class,array(
+            ->add('page',HiddenType::class,array(
                 'required'=>false,
                 'mapped'=>false
                 ))
-            -add('orderDirection',HiddenType::class,array(
+            ->add('orderDirection',HiddenType::class,array(
                 'required'=>false,
                 'mapped'=>false
                 ))

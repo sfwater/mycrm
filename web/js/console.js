@@ -549,7 +549,13 @@ function _getPagerForm($parent, args) {
 		 * @param {Object} options {okName, okCal, cancelName, cancelCall}
 		 */
 		confirm: function(msg, options) {
-			var op = $.extend({okName:$.regional.alertMsg.butMsg.ok, okCall:null, cancelName:$.regional.alertMsg.butMsg.cancel, cancelCall:null}, options);
+			var op = $.extend({
+				okName:$.regional.alertMsg.butMsg.ok, 
+				okCall:null, 
+				cancelName:$.regional.alertMsg.butMsg.cancel, 
+				cancelCall:null, 
+				type: BootstrapDialog.TYPE_WARNING}, 
+				options);
 	        BootstrapDialog.confirm({
 	            title: this._types.confirm,
 	            message: msg,

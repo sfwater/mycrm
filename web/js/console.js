@@ -487,7 +487,7 @@ function _getPagerForm($parent, args) {
 			var orderField = form[CONSOLE.pageInfo.orderField].value;
 
 			if( orderField == $this.attr("order-field") ){
-				var icon = $('<span class="icon-sortable sort"></span>');
+				var icon = $('<span class="icon-arrow-down sort"></span>');
 				$this.append(icon);
 				if( direction == "asc" ){
 					$this.addClass("asc");

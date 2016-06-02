@@ -720,6 +720,7 @@ function _getPagerForm($parent, args) {
 				$this.click(function(){
 					var rel = $this.attr("rel");
 					var ids = _getIds(selectedIds, rel);
+					alert(ids);
 					if (!ids) {
 						alertMsg.error($this.attr("warn") || CONSOLE.msg("alertSelectMsg"));
 						return false;

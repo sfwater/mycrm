@@ -75,6 +75,8 @@ class AdminBaseController extends Controller
         	unset($qs['page']);
         }
         $baseUrl = '?';
+        dump($qs);
+        exit;
         if( count($qs) > 0 ){
         	foreach ($qs as $key => $value) {
         		$baseUrl .= "$key=$value&";

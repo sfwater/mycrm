@@ -482,7 +482,7 @@ function _getPagerForm($parent, args) {
 		//排序
 		$("th.sortable", $p).click(function(ev){
 			var icon = $(this).find("span");
-			if( !icon ){
+			if( icon.length == 0 ){
 				icon = $("<span></span>");
 				$(this).append(icon);
 			}

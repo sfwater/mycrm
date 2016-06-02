@@ -603,7 +603,7 @@ function _getPagerForm($parent, args) {
 					$checkboxLi.attr('checked', false);
 					break;
 				default:
-					alert($checkboxLi.length());
+					alert($checkboxLi.length);
 					$checkboxLi.attr('checked', true);
 					break;
 			}

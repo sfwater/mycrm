@@ -483,8 +483,8 @@ function _getPagerForm($parent, args) {
 		$("th.sortable", $p).each(function(){
 			var $this = $(this);
 			var form = _getPagerForm($p,null);
-			var direction = form[CONSOLE.pageInfo.orderDirection];
-			var orderField = form[CONSOLE.pageInfo.orderField];
+			var direction = form[CONSOLE.pageInfo.orderDirection].value;
+			var orderField = form[CONSOLE.pageInfo.orderField].value;
 
 			if( orderField == $this.attr("order-field") ){
 				var icon = $("<span></span>");

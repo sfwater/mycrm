@@ -57,7 +57,7 @@ class DefaultController extends AdminBaseController
         $request = $this->get("request_stack")->getCurrentRequest();
         $route = $router->match($request->getPathInfo());
 
-        dump($router->generate($route));
+        dump($route);
         exit;
     }
 }

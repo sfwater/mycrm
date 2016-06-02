@@ -168,6 +168,10 @@ body {
 }
 .nav-sidebar .nav > li > a {
   padding-left: 30px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  overflow: hidden;
 }
 
 

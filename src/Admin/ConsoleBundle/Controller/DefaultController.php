@@ -55,8 +55,8 @@ class DefaultController extends AdminBaseController
     public function testAction(){
         $router = $this->get("router");
         $request = $this->get("request_stack")->getCurrentRequest();
-        $route = $router->match($request);
-        dump($route);
+        // $route = $router->match($request);
+        dump($request);
         exit;
     }
 }

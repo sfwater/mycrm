@@ -3,15 +3,17 @@
 {% block pageContent %}
 <div class=" margin-top clearfix">
 <div class="searchForm pull-left">
-	{{ form_start(searchForm) }}
+<form class="searchForm form-inline" id="searchForm" method="GET">
 	{% block searchContent %}
-
     {% endblock %}
+    <input name="orderField" type="hidden" />
+    <input name="page" type="hidden" />
+    <input name="orderDirection" type="hidden" />
     <button type="submit" class="btn btn-default" id="btnSearch">搜索</button>
-	{{ form_end(searchForm) }}
+</form>
 </div>
 <div class="pagerForm">
-{{ form_start(pagerForm) }}{{ form_end(pagerForm) }}
+<form class="pagerForm" id="pagerForm" method="GET"></form>
 </div>
 </div>
 <div class="margin-top">

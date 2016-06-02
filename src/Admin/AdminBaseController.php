@@ -40,7 +40,6 @@ class AdminBaseController extends Controller
 	*/
 	protected function getPagedEntities($class, $conditions='', $parameters = array(), $sort='dist.id DESC', $join=''){
         $request = $this->get('request_stack')->getCurrentRequest();
-        $router = $this->get('router');
         $pager = $this->get('admin_console.pager');
         $em = $this->getDoctrine()->getManager();
 
@@ -82,15 +81,9 @@ class AdminBaseController extends Controller
         }
         $pager->setBaseUrl($baseUrl);
 
-        //构造分页表单
-        $route = $router->matchRequest($request);
-        $action = '#rel#'; 
-        $pagerForm = $this->createFormBuilder(NULL, array(
-        	'attr'=>array('class'=>'pagerForm','id'=>'pagerForm')))
-        	->setMethod('GET')->setAction($action)
-        	->getForm();
-
-        return array('counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination('1'),'pagerForm'=>$pagerForm->createView());
+        return array_merge(array('counts'=>$counts, 'results'=>$results, 'pageSize'=>$pageSize,'pager'=>$pager->pagination('1')),
+        	$request->query->all()
+        	);
 	}
 
 

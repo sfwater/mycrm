@@ -50,7 +50,7 @@ class DefaultController extends AdminBaseController
     }
 
     /**
-    * @Route('/test')
+    * @Route("/test")
     */
     public function testAction(){
         $router = $this->get("router");

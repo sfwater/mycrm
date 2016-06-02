@@ -501,7 +501,7 @@ function _getPagerForm($parent, args) {
 			return $this.click(function(){
 				var direction = $this.data("direction") || 'asc';
 				var field = $this.attr("order-field");
-				consolePageBreak({data:{orderField:field, orderDirection:direction}});				
+				consolePageBreak({data:{orderField:field, orderDirection:direction == "asc" ? "desc":"asc"}});				
 			});
 		});
 

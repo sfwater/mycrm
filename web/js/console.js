@@ -412,6 +412,12 @@ function _iframeResponse(iframe, callback){
 		$('.datepicker',$p).datepicker().on('changeDate',function(ev){
 			$(this).datepicker('hide');
 		});
+
+
+		//搜索表单
+		$("form.searchForm", $p).submit(function(){
+			return false;
+		});
 	}
 	var alertMsg = {
 		_boxId: "#alertMsgBox",

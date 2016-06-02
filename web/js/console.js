@@ -272,7 +272,7 @@ function _getPagerForm($parent, args) {
 		},
 		getCurrentPanel: function(){
 			return this.container;
-		}
+		},
 		showLoading: function(){
 			this.loader.show();
 		},

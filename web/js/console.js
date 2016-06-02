@@ -340,7 +340,8 @@ function _getPagerForm($parent, args) {
 				var url = unescape($this.attr("href"));
 				var name = $this.text() || "";
 				CONSOLE.open(url,{title:title, fresh:fresh, external:external, type:method, name:name});
-
+				$("a[target=navTab]", $p).removeClass("active");
+				$this.addClass("active");
 				event.preventDefault();
 			});
 		});

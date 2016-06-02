@@ -516,7 +516,6 @@ function _getPagerForm($parent, args) {
 		init: function(){
 		},
 		close: function(){
-			this.modal.modal('hide');
 		},
 		error: function(msg, options) {
 			this._alert(this._types.error, msg, $.extend(options,{type:BootstrapDialog.TYPE_DANGER}));
@@ -531,7 +530,7 @@ function _getPagerForm($parent, args) {
 			this._alert(this._types.correct, msg, $.extend(options,{type:BootstrapDialog.TYPE_SUCCESS}));
 		},
 		_alert: function(type, msg, options) {
-			var op = $.extend({okName:$.regional.alertMsg.butMsg.close, okCall:null, type:BootstrapDialog.TYPE_DEFAULT}, options);
+			var op = $.extend({okName:$.regional.alertMsg.butMsg.ok, okCall:null, type:BootstrapDialog.TYPE_DEFAULT}, options);
 	        BootstrapDialog.alert({
 	            title: type,
 	            message: msg,

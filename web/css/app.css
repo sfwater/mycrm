@@ -198,7 +198,16 @@ body {
 .icon-unfold:before {
   content: "\e707";
 }
-
+.collapsed .sidebar-title-icon {
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+}
+.nav-sidebar li.active a {
+    background: #0099cc;
+}
 .sidebar-title-icon {
   display: inline-block;
   margin: 0 8px 0 0px;

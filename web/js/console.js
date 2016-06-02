@@ -480,24 +480,38 @@ function _getPagerForm($parent, args) {
 			ev.preventDefault();
 		});
 		//排序
-		$("th.sortable", $p).click(function(ev){
-			var icon = $(this).find("span");
-			if( icon.length == 0 ){
-				icon = $("<span></span>");
-				$(this).append(icon);
+		$("th.sortable", $p).each(function(){
+			var $this = $(this);
+			var form = _getPagerForm($p,null);
+			var direction = form[CONSOLE.pageInfo.orderDirection];
+			var orderField = form[CONSOLE.pageInfo.orderField];
+
+			if( orderField == $this.attr("order-field") ){
+				var icon = $("<span></span>");
+				$this.append(icon);
+				if( direction == "asc" ){
+					icon.addClass("asc");
+				}
 			}
-			var direction = $(this).data("direction") || 'desc';
-			var field = $(this).attr("order-field");
-			if( direction == 'desc' ){
-				direction = "asc";
-				icon.removeClass("desc").data("direction",direction).addClass(direction);
-			}
-			else{
-				direction = "desc";
-				icon.removeClass("asc").data("direction",direction).addClass(direction);
-			}
-			consolePageBreak({data:{orderField:field, orderDirection:direction}});
-			ev.preventDefault();
+
+			return $this.click(function(){
+				var icon = $this.find("span");
+				if( icon.length == 0 ){
+					icon = $("<span></span>");
+					$this.append(icon);
+				}
+				var direction = $this.data("direction") || 'desc';
+				var field = $this.attr("order-field");
+				if( direction == 'desc' ){
+					direction = "asc";
+					icon.removeClass("desc").data("direction",direction).addClass(direction);
+				}
+				else{
+					direction = "desc";
+					icon.removeClass("asc").data("direction",direction).addClass(direction);
+				}
+				consolePageBreak({data:{orderField:field, orderDirection:direction}});				
+			});
 		});
 
 		$(":button.checkbox-all, :checkbox.checkbox-all", $p).checkboxCtrl($p);

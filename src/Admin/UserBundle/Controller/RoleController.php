@@ -27,9 +27,9 @@ class RoleController extends AdminBaseController
      * @Method("GET") 
      * @Template("AdminUserBundle:Role:index.html.twig")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $form = $this->createForm(RoleSearchType::class);
+        $form = $this->createForm(RoleSearchType::class, $request->query->all());
         if( $form->isValid() ){
             dump($form);
             exit;

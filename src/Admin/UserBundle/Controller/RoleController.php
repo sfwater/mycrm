@@ -37,9 +37,18 @@ class RoleController extends AdminBaseController
             $conditions .= '(dist.name LIKE :name OR dist.role LIKE :name)';
             $parameters['name'] = '%'.$form->get('name')->getData().'%';
         }
+
+
+        $sort = "dist.id DESC";
+        $orderField = $request->query->get('orderField');
+        $orderDirection = $request->query->get('orderDirection');
+        if( !empty($orderField) && !empty($orderDirection) ){
+            $sort = "dist.$orderField $orderDirection";
+        }
         return array_merge(
             array('searchForm'=>$form->createView()),
-            $this->getPagedEntities(Role::class, $conditions, $parameters)
+            $this->getPagedEntities(Role::class, $conditions, $parameters),
+            $sort
             );
     }
 

@@ -50,14 +50,14 @@ class DefaultController extends AdminBaseController
     }
 
     /**
-    * @Route("/test")
+    * @Route("/test",name="console_test")
     */
     public function testAction(){
         $router = $this->get("router");
         $request = $this->get("request_stack")->getCurrentRequest();
         $route = $router->match($request->getPathInfo());
 
-        dump($route->getRoute());
+        dump($route->getName());
         exit;
     }
 }

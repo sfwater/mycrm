@@ -202,6 +202,20 @@ body {
 .icon-unfold:before {
   content: "\e707";
 }
+
+.sortable {
+  cursor: pointer;
+}
+.icon-sortable:after {
+  content: '\e608';
+}
+.icon-sortable.asc {
+    transform: rotate(-180deg);
+    -webkit-transform: rotate(-180deg);
+    -moz-transform: rotate(-180deg);
+    -ms-transform: rotate(-180deg);
+    -o-transform: rotate(-180deg);
+}
 .collapsed .sidebar-title-icon {
     transform: rotate(-90deg);
     -webkit-transform: rotate(-90deg);

@@ -479,6 +479,17 @@ function _getPagerForm($parent, args) {
 			consolePageBreak({data:{pageNum:page}});
 			ev.preventDefault();
 		});
+		//排序
+		$("th.sortable", $p).click(function(ev){
+			var direction = $(this).data("direction") || 'desc';
+			if( direction == 'desc' ){
+				$(this).data("direction","asc").removeClass("desc").addClass("asc");
+			}
+			else{
+				$(this).data("direction","desc").removeClass("asc").addClass("desc");
+			}
+			ev.preventDefault();
+		});
 
 		$(":button.checkbox-all, :checkbox.checkbox-all", $p).checkboxCtrl($p);
 		$(":button[target=selectedTodo], a[target=selectedTodo]", $p).selectedTodo($p);

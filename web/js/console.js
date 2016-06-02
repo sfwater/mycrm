@@ -483,7 +483,7 @@ function _getPagerForm($parent, args) {
 	var alertMsg = {
 		_closeTimer: null,
 
-		_types: {error:"error", info:"info", warn:"warn", correct:"correct", confirm:"confirm"},
+		_types: {error:"发生错误!", info:"提示信息", warn:"警告!", correct:"操作成功", confirm:"请您确认？！"},
 
 		_getTitle: function(key){
 			return $.regional.alertMsg.title[key];

@@ -714,7 +714,7 @@ function _getPagerForm($parent, args) {
 			}
 			return this.each(function(){
 				var $this = $(this);
-				var selectedIds = $this.attr('group') || "ids[]";
+				var selectedIds = $this.attr('group') || "ids";
 				var postType = $this.attr("postType") || "map";
 
 				$this.click(function(){

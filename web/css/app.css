@@ -209,7 +209,7 @@ body {
 .icon-sortable:after {
   content: '\e608';
 }
-.asc .icon-sortable {
+.asc .sort {
     transform: rotate(-180deg);
     -webkit-transform: rotate(-180deg);
     -moz-transform: rotate(-180deg);

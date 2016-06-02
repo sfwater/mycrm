@@ -2,6 +2,7 @@
 {% block pageContent %}
 <div class=" margin-top clearfix">
 <div class="searchForm pull-left">
+{{ dump(app) }}
 <form class="searchForm form-inline" id="searchForm" method="GET" action="{{ app.request.pathinfo }}">
 	{% block searchContent %}
     {% endblock %}

@@ -456,7 +456,8 @@ function _getPagerForm($parent, args) {
 			return false;
 		});
 
-		$(".pagination a", $p).click(function(){
+		//分页
+		$(".pagination a", $p).click(function(ev){
 			var $form = _getPagerForm($p, {pageNum: $(this).attr('page-index')});
 			ev.preventDefault();
 		});

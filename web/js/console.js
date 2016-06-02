@@ -487,10 +487,13 @@ function _getPagerForm($parent, args) {
 			var orderField = form[CONSOLE.pageInfo.orderField].value;
 
 			if( orderField == $this.attr("order-field") ){
-				var icon = $('<span class="icon-arrow-down sort"></span>');
+				var icon = $('<span></span>');
 				$this.append(icon);
-				if( direction == "asc" ){
-					$this.addClass("asc");
+				if( direction == "desc" ){
+					icon.addClass("icon-arrow-down");
+				}
+				else{
+					icon.addClass("icon-arrow-up");
 				}
 			}
 
@@ -500,7 +503,7 @@ function _getPagerForm($parent, args) {
 					icon = $("<span></span>");
 					$this.append(icon);
 				}
-				var direction = $this.data("direction") || 'desc';
+				var direction = $this.data("direction") || 'asc';
 				var field = $this.attr("order-field");
 				if( direction == 'desc' ){
 					direction = "asc";

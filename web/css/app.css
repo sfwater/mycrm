@@ -196,6 +196,9 @@ body {
 .icon-arrow-down:before {
   content: "\e608";
 }
+.icon-arrow-up:before {
+    content: "\e60b";
+}
 .icon-setup:before {
   content: "\e662";
 }

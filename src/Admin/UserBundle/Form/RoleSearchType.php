@@ -10,6 +10,7 @@ use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 
 class RoleSearchType extends AbstractType
 {
@@ -26,6 +27,18 @@ class RoleSearchType extends AbstractType
                 'required'=>false,
                 'mapped'=>false,
             ))
+            -add('orderField',HiddenType::class,array(
+                'required'=>false,
+                'mapped'=>false
+                ))
+            -add('page',HiddenType::class,array(
+                'required'=>false,
+                'mapped'=>false
+                ))
+            -add('orderDirection',HiddenType::class,array(
+                'required'=>false,
+                'mapped'=>false
+                ))
             ;
     }
     public function configureOptions(OptionsResolver $resolver)

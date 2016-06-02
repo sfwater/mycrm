@@ -205,7 +205,7 @@ body {
     -ms-transform: rotate(-90deg);
     -o-transform: rotate(-90deg);
 }
-.nav-sidebar li.active a {
+.nav-sidebar .nav > li a.active {
     background: #0099cc;
 }
 .sidebar-title-icon {

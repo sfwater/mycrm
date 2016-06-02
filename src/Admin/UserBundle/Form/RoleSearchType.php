@@ -32,7 +32,7 @@ class RoleSearchType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Admin\UserBundle\Entity\Role',
+            'data_class' => NULL,
             'method'=>'GET',
             'attr'=>array('class'=>'form-inline searchForm','id'=>'searchForm'),
             'action'=>$this->router->generate('admin_roles_index')

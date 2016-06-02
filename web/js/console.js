@@ -516,7 +516,7 @@ function _getPagerForm($parent, args) {
 			this.modal.modal('hide');
 		},
 		error: function(msg, options) {
-			this._alert(this._types.error, msg, $.extend(options,{type:BootstrapDialog.TYPE_INFO}));
+			this._alert(this._types.error, msg, $.extend(options,{type:BootstrapDialog.TYPE_ERROR}));
 		},
 		info: function(msg, options) {
 			this._alert(this._types.info, msg, $.extend(options,{type:BootstrapDialog.TYPE_INFO}));

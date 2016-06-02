@@ -166,7 +166,7 @@ class PagerExtension
         if( $page == $this->currentPage){
             return '<li class="active"><a>'.$text.'</a></li>';
         }
-        return '<li><a href="'.$url.'" page-index="'.$page.'">'.$text.'</a></li>';
+        return '<li><a href="javascript:void(0);" page-index="'.$page.'">'.$text.'</a></li>';
     }
     /**
      * 判断基准链接是否携带参数

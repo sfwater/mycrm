@@ -490,7 +490,7 @@ function _getPagerForm($parent, args) {
 				var icon = $('<span class="icon-sortable"></span>');
 				$this.append(icon);
 				if( direction == "asc" ){
-					icon.addClass("asc");
+					$this.addClass("asc");
 				}
 			}
 

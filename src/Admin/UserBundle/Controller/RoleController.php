@@ -47,8 +47,7 @@ class RoleController extends AdminBaseController
         }
         return array_merge(
             array('searchForm'=>$form->createView()),
-            $this->getPagedEntities(Role::class, $conditions, $parameters),
-            $sort
+            $this->getPagedEntities(Role::class, $conditions, $parameters, $sort)
             );
     }
 

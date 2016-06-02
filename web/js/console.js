@@ -487,7 +487,7 @@ function _getPagerForm($parent, args) {
 				$(this).append(icon);
 			}
 			var direction = $(this).data("direction") || 'desc';
-			var field = $(this).data("order-field");
+			var field = $(this).attr("order-field");
 			if( direction == 'desc' ){
 				direction = "asc";
 				icon.removeClass("desc").data("direction",direction).addClass(direction);

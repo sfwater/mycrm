@@ -501,14 +501,6 @@ function _getPagerForm($parent, args) {
 			return $this.click(function(){
 				var direction = $this.data("direction") || 'asc';
 				var field = $this.attr("order-field");
-				if( direction == 'desc' ){
-					direction = "asc";
-					icon.removeClass("desc").data("direction",direction).addClass(direction);
-				}
-				else{
-					direction = "desc";
-					icon.removeClass("asc").data("direction",direction).addClass(direction);
-				}
 				consolePageBreak({data:{orderField:field, orderDirection:direction}});				
 			});
 		});

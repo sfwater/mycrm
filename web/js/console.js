@@ -341,7 +341,8 @@ function _getPagerForm($parent, args) {
 				var method = $this.attr("method") || "GET";
 				var url = unescape($this.attr("href"));
 				var name = $this.text() || "";
-				CONSOLE.open(url,{title:title, fresh:fresh, external:external, type:method, name:name});
+				var testCallback = function(){alert('test callback');};
+				CONSOLE.open(url,{title:title, fresh:fresh, external:external, type:method, name:name, callback:testCallback});
 				$("a[target=navTab]", $p).removeClass("active");
 				$this.addClass("active");
 				event.preventDefault();

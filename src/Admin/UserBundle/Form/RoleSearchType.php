@@ -20,16 +20,17 @@ class RoleSearchType extends AbstractType
     }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $data = $options['data'];
+        $entity = isset($data['role_search']) ? $data['role_search'] : NULL;
         $builder
             ->add("name",TextType::class,array(
                 'attr'=>array('class'=>'form-control ipt','placeholder'=>'组名、标识','label'=>'组名、标识'),
                 'label'=>'组名、标识：',
                 'required'=>false,
                 'mapped'=>false,
+                'data'=> $entity == NULL ? '' : $entity['name'],
             ))
             ;
-        dump($options);
-        exit;
     }
     public function configureOptions(OptionsResolver $resolver)
     {

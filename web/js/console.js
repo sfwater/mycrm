@@ -604,9 +604,6 @@ function _getPagerForm($parent, args) {
 					break;
 				default:
 					$checkboxLi.attr('checked', 'checked');
-					$checkboxLi.each(function(){
-						$(this).attr('checked',true);
-					});
 					break;
 			}
 		}

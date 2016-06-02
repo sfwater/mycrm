@@ -173,7 +173,10 @@ function _getPagerForm($parent, args) {
 			hideMode:'display' //navTab组件切换的隐藏方式，支持的值有’display’，’offsets’负数偏移位置的值，默认值为’display’
 		},
 		frag:{}, //page fragment
-		_msg:{}, //alert message
+		_msg:{
+			alertSelectMsg:'请至少选中一条数据！',
+			alertSelectHrefMsg: '没有设置处理网址',
+		}, //alert message
 		_set:{
 			loginUrl:"", //session timeout
 			loginTitle:"", //if loginTitle open a login dialog
@@ -727,13 +730,19 @@ function _getPagerForm($parent, args) {
 						alertMsg.error($this.attr("warn") || CONSOLE.msg("alertSelectMsg"));
 						return false;
 					}
+					if (!href) {
+						alertMsg.error(CONSOLE.msg("alertSelectHrefMsg"));
+						return false;
+					}
+
+					var href= $this.attr('href');
 					
 					var _callback = $this.attr("callback") || CONSOLE.ajaxDone;
 					var method = $this.attr("method") || "POST";
 					if (! $.isFunction(_callback)) _callback = eval('(' + _callback + ')');
 					function _doPost(){
 						$.ajax({
-							type:method, url:$this.attr('href'), dataType:'json', cache: false,
+							type:method, url:href, dataType:'json', cache: false,
 							data: function(){
 								if (postType == 'map'){
 									return $.map(ids.split(','), function(val, i) {

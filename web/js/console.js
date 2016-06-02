@@ -570,6 +570,7 @@ function _getPagerForm($parent, args) {
 					var group = $trigger.attr("group");
 					if ($trigger.is(":checkbox")) {
 						var type = $trigger.is(":checked") ? "all" : "none";
+						alert(type);
 						if (group) $.checkbox.select(group, type, parent);
 					} else {
 						if (group) $.checkbox.select(group, $trigger.attr("selectType") || "all", parent);

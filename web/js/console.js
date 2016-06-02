@@ -529,13 +529,19 @@ function _getPagerForm($parent, args) {
 		},
 		_alert: function(type, msg, options) {
 			var op = $.extend({okName:$.regional.alertMsg.butMsg.close, okCall:null, type:BootstrapDialog.TYPE_DEFAULT}, options);
-			var buttons = [
-				{
-					label:op.okName,
-					action:op.okCall
-				} 
-			];
-			this._open(type, msg, buttons, options);
+	        BootstrapDialog.alert({
+	            title: type,
+	            message: msg,
+	            type: op.type, // <-- Default value is BootstrapDialog.TYPE_PRIMARY
+	            closable: true, // <-- Default value is false
+	            draggable: false, // <-- Default value is false
+	            buttonLabel: op.okName, // <-- Default value is 'OK',
+	            callback: function(result) {
+	            	if( $.isFunction(op.okCall) ){
+	            		op.okCall(result);
+	            	}
+	            }
+	        });
 		},
 		/**
 		 * 
@@ -544,11 +550,23 @@ function _getPagerForm($parent, args) {
 		 */
 		confirm: function(msg, options) {
 			var op = $.extend({okName:$.regional.alertMsg.butMsg.ok, okCall:null, cancelName:$.regional.alertMsg.butMsg.cancel, cancelCall:null}, options);
-			var buttons = [
-				{label:op.okName, action: okCall},
-				{label:op.cancelName, action: cancelCall}
-			];
-			this._open(this._types.confirm, msg, buttons, options);
+	        BootstrapDialog.confirm({
+	            title: this._types.confirm,
+	            message: msg,
+	            type: op.type, // <-- Default value is BootstrapDialog.TYPE_PRIMARY
+	            closable: true, // <-- Default value is false
+	            draggable: true, // <-- Default value is false
+	            btnCancelLabel:op.cancelName, // <-- Default value is 'Cancel',
+	            btnOKLabel: op.okName, // <-- Default value is 'OK',
+	            btnOKClass: 'btn-warning', // <-- If you didn't specify it, dialog type will be used,
+	            callback: function(result) {
+	                if(result) {
+	                	$.isFunction(op.okCall) || op.okCall();
+	                }else {
+	                	$.isFunction(op.cancelCall) || op.cancelCall();
+	                }
+	            }
+	        });
 		}
 	};
 	$.fn.extend({

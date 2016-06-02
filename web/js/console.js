@@ -532,7 +532,7 @@ function _getPagerForm($parent, args) {
 			var buttons = [
 				{
 					label:op.okName,
-					action: okCall
+					action:op.okCall
 				} 
 			];
 			this._open(type, msg, buttons, options);

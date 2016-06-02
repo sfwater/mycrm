@@ -474,6 +474,7 @@ function _getPagerForm($parent, args) {
 		});
 
 		$(":button.checkbox-all, :checkbox.checkbox-all", $p).checkboxCtrl($p);
+		$(":button.selectedTodo, :a.selectedTodo", $p).selectedTodo($p);
 	}
 	var alertMsg = {
 		_boxId: "#alertMsgBox",
@@ -596,7 +597,7 @@ function _getPagerForm($parent, args) {
 				case "invert":
 					$checkboxLi.each(function(){
 						$checkbox = $(this);
-						$checkbox.attr('checked', !$checkbox.is(":checked"));
+						$checkbox.prop('checked', !$checkbox.is(":checked"));
 					});
 					break;
 				case "none":
@@ -698,6 +699,62 @@ function _getPagerForm($parent, args) {
 						}
 					}
 				});
+			});
+		},
+		selectedTodo: function(parent){
+			var $parent = parent ? parent : CONSOLE.container;	
+			function _getIds(selectedIds, rel){
+				var ids = "";
+				var $box = rel == "" ? $parent : $(rel);
+				$box.find("input:checked").filter("[name='"+selectedIds+"']").each(function(i){
+					var val = $(this).val();
+					ids += i==0 ? val : ","+val;
+				});
+				return ids;
+			}
+			return this.each(function(){
+				var $this = $(this);
+				var selectedIds = $this.attr('group') || "ids[]";
+				var postType = $this.attr("postType") || "map";
+
+				$this.click(function(){
+					var rel = $this.attr("rel");
+					var ids = _getIds(selectedIds, rel);
+					if (!ids) {
+						alertMsg.error($this.attr("warn") || CONSOLE.msg("alertSelectMsg"));
+						return false;
+					}
+					
+					var _callback = $this.attr("callback") || CONSOLE.ajaxDone;
+					var method = $this.attr("method") || "POST";
+					if (! $.isFunction(_callback)) _callback = eval('(' + _callback + ')');
+					function _doPost(){
+						$.ajax({
+							type:method, url:$this.attr('href'), dataType:'json', cache: false,
+							data: function(){
+								if (postType == 'map'){
+									return $.map(ids.split(','), function(val, i) {
+										return {name: selectedIds, value: val};
+									})
+								} else {
+									var _data = {};
+									_data[selectedIds] = ids;
+									return _data;
+								}
+							}(),
+							success: _callback,
+							error: CONSOLE.ajaxError
+						});
+					}
+					var title = $this.attr("title");
+					if (title) {
+						alertMsg.confirm(title, {okCall: _doPost});
+					} else {
+						_doPost();
+					}
+					return false;
+				});
+				
 			});
 		}
 	});

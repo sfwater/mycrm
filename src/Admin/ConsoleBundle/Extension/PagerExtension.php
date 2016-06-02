@@ -161,6 +161,13 @@ class PagerExtension
         return $this->pageAmount;
     }
      
+
+    private function buildLink($url, $page, $text){
+        if( $page == $this->currentPage){
+            return '<li class="active"><a>'.$text.'</a></li>';
+        }
+        return '<li><a href="'.$url.'" page-index="'.$page.'">'.$text.'</a></li>';
+    }
     /**
      * 判断基准链接是否携带参数
      * 
@@ -208,7 +215,7 @@ class PagerExtension
     private function indexPage()
     {
         if($this->currentPage == 1) return;
-        return '<li><a href="'.$this->url.'1" class="target">'.$this->firstText.'</a></li>';
+        return $this->buildLink($this->url.'1', 1, $this->firstText);
     }
      
     /**
@@ -217,7 +224,7 @@ class PagerExtension
     private function endPage()
     {
         if($this->currentPage == $this->pageAmount) return;
-        return '<li><a href="'.$this->url.$this->pageAmount.'" class="target">'.$this->lastText.'</a></li>';
+        return $this->buildLink($this->url.$this->pageAmount, $this->pageAmount, $this->lastText);
     }
      
     /**
@@ -226,7 +233,7 @@ class PagerExtension
     private function prevPage()
     {
         if($this->currentPage == 1) return;
-        return '<li><a href="'.$this->url.( $this->currentPage - 1 ).'" class="target">'.$this->preText.'</a></li>';
+        return $this->buildLink($this->url.($this->currentPage - 1), $this->currentPage-1, $this->preText);
     }
      
     /**
@@ -235,7 +242,7 @@ class PagerExtension
     private function nextPage()
     {
         if($this->currentPage == $this->pageAmount) return;
-        return '<li><a href="'.$this->url.( $this->currentPage + 1 ).'" class="target">'.$this->nextText.'</a></li>';
+        return $this->buildLink($this->url.($this->currentPage+1),$this->currentPage+1,$this->nextText);
     }
      
     /**
@@ -262,13 +269,14 @@ class PagerExtension
                 //左边的链接
                 for($i = $leftNum; $i >= 1 ; $i--)
                 {
-                    $left .= '<li><a href="'.$this->url.( $this->currentPage - $i ).'" class="target">'.( $this->currentPage - $i ).'</a></li>';
+                    $left .= $this->buildLink($this->url.($this->currentPage-$i), $this->currentPage-$i,($this->currentPage - $i));
                 }
                  
                 //右边的链接
                 for($j = 1; $j <= ($this->offset * 2 - $leftNum); $j++)
                 {
-                    $right .= '<li><a href="'.$this->url.( $this->currentPage + $j ).'" class="target">'.( $this->currentPage + $j ).'</a></li>';
+                    $page = $this->currentPage+$j;
+                    $right .= $this->buildLink($this->url.$page, $page, $page);
                 }
             }
             else if($rightNum < $this->offset)
@@ -276,13 +284,15 @@ class PagerExtension
                 //左边的链接
                 for($i = ($this->offset * 2 - $rightNum); $i >= 1 ; $i--)
                 {
-                    $left .= '<li><a href="'.$this->url.( $this->currentPage - $i ).'" class="target">'.( $this->currentPage - $i ).'</a></li>';
+                    $page = $this->currentPage - $i;
+                    $left .= $this->buildLink($this->url.$page, $page, $page);
                 }
                  
                 //右边的链接
                 for($j = 1; $j <= $rightNum; $j++)
                 {
-                    $right .= '<li><a href="'.$this->url.( $this->currentPage + $j ).'" class="target">'.( $this->currentPage + $j ).'</a></li>';
+                    $page = $this->currentPage + $j;
+                    $right .= $this->buildLink($this->url.$page, $page, $page);
                 }
             }
             else
@@ -290,17 +300,19 @@ class PagerExtension
                 //当前链接左边的链接
                 for($i = $this->offset; $i >= 1 ; $i--)
                 {
-                    $left .= '<li><a href="'.$this->url.( $this->currentPage - $i ).'" class="target">'.( $this->currentPage - $i ).'</a></li>'; 
+                    $page = $this->currentPage - $i;
+                    $left .= $this->buildLink($this->url.$page, $page, $page);
                 }
                  
                 //当前链接右边的链接
                 for($j = 1; $j <= $this->offset; $j++)
                 {
-                    $right .= '<li><a href="'.$this->url.( $this->currentPage + $j ).'" class="target">'.( $this->currentPage + $j ).'</a></li>';
+                    $page = $this->currentPage + $j;
+                    $right .= $this->buildLink($this->url.$page, $page, $page);
                 }
             }
  
-            return $left.'<li class="active"><a>'.$this->currentPage.'</a></li>'.$right;
+            return $left.$this->buildLink('',$this->currentPage, $this->currentPage).$right;
         }
         else
         {
@@ -309,10 +321,10 @@ class PagerExtension
             for($j = 1; $j <= $this->pageAmount; $j++)
             {
                 if( $j == $this->currentPage){
-                    $allLink.='<li class="active"><a>'.$j.'</a></li>';
+                    $allLink.=$this->buildLink('',$j,$j);
                 }
                 else{
-                    $allLink.='<li><a href="'.$this->url.$j.'" '.($j == $this->currentPage?$this->classHere:'').' target="navTab">'.$j.'</a></li>';
+                    $allLink.=$this->buildLink($this->url.$j, $j, $j);
                 }
             }
             return $allLink;

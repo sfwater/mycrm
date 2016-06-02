@@ -99,7 +99,7 @@ class AdminBaseController extends Controller
             'pageSize'=>$pageSize, 
             'pager'=>$pager->pagination('1'),
             'pageLength'=>$pager->pageAmount(),
-            'query'=>$request->query,
+            'query'=>$request->query->all(),
             );
 	}
 

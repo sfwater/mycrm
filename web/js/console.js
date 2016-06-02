@@ -676,6 +676,7 @@ function _getPagerForm($parent, args) {
 		reload: function(){
 			var url = $(this).data("url");
 			var options = $(options).data("options");
+			this.loadUrl(url, op.data, op.callback);
 		},
 		loadUrl: function(url,data,callback){
 			$(this).ajaxUrl({url:url, data:data, callback:callback});

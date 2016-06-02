@@ -23,5 +23,5 @@
 	{% endfor %}
 {% endblock %}
 {% block tableAction %}
-<button type="button" href="{{ path('admin_roles_delete') }}" class="btn btn-default" target="selectedTodo" action="delete" method="DELETE">批量删除！</button>
+<button type="button" href="{{ path('admin_roles_delete') }}" class="btn btn-default" target="selectedTodo" action="delete" method="DELETE" title="确定要删除选中的用户组吗？">批量删除！</button>
 {% endblock %}

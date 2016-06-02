@@ -126,7 +126,7 @@ function consolePageBreak(options){
 function _getPagerForm($parent, args) {
 	var form = $("form.searchForm", $parent).get(0);
 
-	if (form) {
+	if (form && args) {
 		if (args["pageNum"]) form[CONSOLE.pageInfo.pageNum].value = args["pageNum"];
 		if (args["orderField"]) form[CONSOLE.pageInfo.orderField].value = args["orderField"];
 		if (args["orderDirection"] && form[CONSOLE.pageInfo.orderDirection]) form[CONSOLE.pageInfo.orderDirection].value = args["orderDirection"];

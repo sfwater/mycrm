@@ -75,11 +75,16 @@ class AdminBaseController extends Controller
         	unset($qs['page']);
         }
         $baseUrl = '?';
-        dump($qs);
-        exit;
         if( count($qs) > 0 ){
         	foreach ($qs as $key => $value) {
-        		$baseUrl .= "$key=$value&";
+        		if( is_array($value) ){
+        			foreach ($value as $k => $v) {
+        				$baseUrl .= "$k=$v&";
+        			}
+        		}
+        		else{
+	        		$baseUrl .= "$key=$value&";
+        		}
         	}
         }
         $pager->setBaseUrl($baseUrl);

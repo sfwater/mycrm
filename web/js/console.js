@@ -598,13 +598,16 @@ function _getPagerForm($parent, args) {
 					$checkboxLi.each(function(){
 						$checkbox = $(this);
 						$checkbox.prop('checked', !$checkbox.is(":checked"));
+						$checkbox.attr('checked', !$checkbox.is(":checked"));
 					});
 					break;
 				case "none":
 					$checkboxLi.prop('checked', false);
+					$checkboxLi.attr('checked', false);
 					break;
 				default:
 					$checkboxLi.prop('checked', true);
+					$checkboxLi.attr('checked', true);
 					break;
 			}
 		}

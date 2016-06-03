@@ -15,9 +15,13 @@ class TwigFilterExtension extends \Twig_Extension{
 	public function getFilters(){
 		return array(
 				new \Twig_SimpleFilter("printUserMask",array($this,"printUserMask")),
+				new \Twig_SimpleFilter("userActive",array($this,"userActive")),
 			);
 	}
 
+	public function userAction($value){
+		return $value == 1 ? '是':'否';
+	}
 
 	public function printUserMask($mask){
 		$masks = array();

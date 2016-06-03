@@ -19,12 +19,15 @@ class UserSearchType extends AbstractType
     }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $data = $options['data'];
+        $entity = isset($data['role_search']) ? $data['role_search'] : NULL;
         $builder
             ->add("name",TextType::class,array(
                 'attr'=>array('class'=>'form-control ipt','placeholder'=>'用户名、别名、邮箱','label'=>'用户名、别名、邮箱'),
                 'label'=>'名称：',
                 'required'=>false,
                 'mapped'=>false,
+                'data'=> $entity == NULL ? '' : $entity['name']
             ))
             ;
     }

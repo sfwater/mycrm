@@ -29,9 +29,26 @@ class DefaultController extends AdminBaseController
      */
     public function indexAction()
     {
-        $users = $this->getDoctrine()->getRepository("AdminUserBundle:User")->findAll();
-        $form = $this->createForm(UserSearchType::class);
-        return array('users'=>$users,'searchForm'=>$form->createView());
+        $form = $this->createForm(UserSearchType::class, $request->query->all());
+
+        $conditions = '';
+        $parameters = array();
+        if( $form->get('name')->getData() ){
+            $conditions .= '(dist.username LIKE :name OR dist.nickanme LIKE :name OR dist.email LIKE :name)';
+            $parameters['name'] = '%'.$form->get('name')->getData().'%';
+        }
+
+
+        $sort = "dist.id DESC";
+        $orderField = $request->query->get('orderField');
+        $orderDirection = $request->query->get('orderDirection');
+        if( !empty($orderField) && !empty($orderDirection) ){
+            $sort = "dist.$orderField $orderDirection";
+        }
+        return array_merge(
+            array('searchForm'=>$form->createView()),
+            $this->getPagedEntities(UserType::class, $conditions, $parameters, $sort)
+            );
     }
 
     /**
@@ -156,10 +173,10 @@ class DefaultController extends AdminBaseController
                 $em->flush();
             }
 
-            return $this->success("delete_success");
+            return $this->success("multi_action_success");
         }
 
-        return $this->error("delete_failure");   
+        return $this->error("multi_action_failure");   
     }
 
 }

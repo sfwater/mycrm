@@ -169,7 +169,7 @@ class DefaultController extends AdminBaseController
             $result = $query->getResult();
 
             foreach($result as $item){
-                $em->setIsActive(FALSE);
+                $item->setIsActive(FALSE);
                 $em->flush();
             }
 

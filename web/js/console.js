@@ -480,8 +480,8 @@ function _getPagerForm($parent, args) {
 			ev.preventDefault();
 		});
 		$(".pagination button").click(function(){
-			var page = $("#gotoPageNo").val();
-			if( $.isNumber(page) ){
+			var page = parseInt($("#gotoPageNo").val());
+			if( page > 0 ){
 				consolePageBreak({data:{pageNum:page}});
 				ev.preventDefault();
 			}

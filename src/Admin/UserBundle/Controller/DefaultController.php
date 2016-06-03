@@ -34,7 +34,7 @@ class DefaultController extends AdminBaseController
         $conditions = '';
         $parameters = array();
         if( $form->get('name')->getData() ){
-            $conditions .= '(dist.username LIKE :name OR dist.nickanme LIKE :name OR dist.email LIKE :name)';
+            $conditions .= '(dist.username LIKE :name OR dist.nickname LIKE :name OR dist.email LIKE :name)';
             $parameters['name'] = '%'.$form->get('name')->getData().'%';
         }
 

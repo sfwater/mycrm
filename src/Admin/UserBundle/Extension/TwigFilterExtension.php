@@ -19,7 +19,7 @@ class TwigFilterExtension extends \Twig_Extension{
 			);
 	}
 
-	public function userAction($value){
+	public function userActive($value){
 		return $value == 1 ? '是':'否';
 	}
 

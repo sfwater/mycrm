@@ -27,7 +27,7 @@ class DefaultController extends AdminBaseController
      * @Method("GET") 
      * @Template("AdminUserBundle:Default:index.html.twig")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $form = $this->createForm(UserSearchType::class, $request->query->all());
 

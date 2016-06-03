@@ -483,7 +483,6 @@ function _getPagerForm($parent, args) {
 			var page = parseInt($("#gotoPageNo").val());
 			if( page > 0 ){
 				consolePageBreak({data:{pageNum:page}});
-				ev.preventDefault();
 			}
 		});
 		//排序

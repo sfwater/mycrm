@@ -47,7 +47,7 @@ class DefaultController extends AdminBaseController
         }
         return array_merge(
             array('searchForm'=>$form->createView()),
-            $this->getPagedEntities(UserType::class, $conditions, $parameters, $sort)
+            $this->getPagedEntities(User::class, $conditions, $parameters, $sort)
             );
     }
 

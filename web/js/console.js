@@ -479,6 +479,13 @@ function _getPagerForm($parent, args) {
 			consolePageBreak({data:{pageNum:page}});
 			ev.preventDefault();
 		});
+		$(".pagination button").click(function(){
+			var page = $("#gotoPageNo").val();
+			if( $.isNumber(page) ){
+				consolePageBreak({data:{pageNum:page}});
+				ev.preventDefault();
+			}
+		});
 		//排序
 		$("th.sortable", $p).each(function(){
 			var $this = $(this);

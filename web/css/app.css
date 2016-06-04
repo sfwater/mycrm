@@ -444,4 +444,6 @@ tfoot, .bg-color-f56 {
     border-left: 1px solid #ddd;
     border-right: 1px solid #ddd;
     z-index: 3;
+    border-radius: 0px;
+    margin-right: 0px;
 }

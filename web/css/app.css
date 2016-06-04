@@ -456,7 +456,7 @@ tfoot, .bg-color-f56 {
     border-right: 1px solid #ddd;
     z-index: 1;
 }
-nav-tabs>li>a, .nav-tabs>li>a:focus {
+.nav-tabs>li>a, .nav-tabs>li>a:focus {
     color: #666;
     border-left: 0px;
     border-right: 0px;
@@ -464,4 +464,8 @@ nav-tabs>li>a, .nav-tabs>li>a:focus {
     padding: 10px 16px;
     background: #FBFAF8;
     border-bottom: 0px;
+}
+.nav-tabs>li>a:hover {
+    background-color: #FFF;
+    color: #09C;
 }

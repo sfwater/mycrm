@@ -1,1 +1,118 @@
-{{dump(routes)}}
+{% extends 'AdminConsoleBundle::page.html.twig' %}
+{% block pageContent %}
+<div data-ng-repeat="col in categories" class="topbar-nav-col ng-scope">
+	<!-- ngRepeat: category in col -->
+	<div ng-repeat="category in col" class="topbar-nav-item ng-scope">
+		<p class="topbar-nav-item-title ng-binding">弹性计算</p>
+		<ul>
+			<!-- ngRepeat: product in category.products -->
+			<li ng-repeat="product in category.products" ng-class="{'topbar-unservice':!product.openStatus}" class="ng-scope">
+				<a ng-href="https://ecs.console.aliyun.com" target="_self" aliyun-console-spm="" spm-id="30ecs" data-spm-click="gostr=/aliyun;locaid=d30ecs;;" href="https://ecs.console.aliyun.com" data-spm-anchor-id="5176.2020520001.101.4">
+					<span class="topbar-nav-item-icon icon-ecs"></span>
+					<span class="ng-binding">云服务器 ECS</span>
+					<span class="topbar-nav-item-short ng-binding"></span>
+				</a>
+			</li>
+			<!-- end ngRepeat: product in category.products -->
+			<li ng-repeat="product in category.products" ng-class="{'topbar-unservice':!product.openStatus}" class="ng-scope">
+				<a ng-href="https://essnew.console.aliyun.com" target="_self" aliyun-console-spm="" spm-id="30ess" data-spm-click="gostr=/aliyun;locaid=d30ess;;" href="https://essnew.console.aliyun.com" data-spm-anchor-id="5176.2020520001.101.5">
+					<span class="topbar-nav-item-icon icon-ess"></span>
+					<span class="ng-binding">弹性伸缩</span>
+					<span class="topbar-nav-item-short ng-binding"></span>
+				</a>
+			</li>
+			<!-- end ngRepeat: product in category.products -->
+			<li ng-repeat="product in category.products" ng-class="{'topbar-unservice':!product.openStatus}" class="ng-scope">
+				<a ng-href="https://cs.console.aliyun.com" target="_self" aliyun-console-spm="" spm-id="30cs" data-spm-click="gostr=/aliyun;locaid=d30cs;;" href="https://cs.console.aliyun.com" data-spm-anchor-id="5176.2020520001.101.6">
+					<span class="topbar-nav-item-icon icon-cs icon-logo1"></span>
+					<span class="ng-binding">容器服务</span>
+					<span class="topbar-nav-item-short ng-binding"></span>
+				</a>
+			</li>
+			<!-- end ngRepeat: product in category.products -->
+			<li ng-repeat="product in category.products" ng-class="{'topbar-unservice':!product.openStatus}" class="ng-scope">
+				<a ng-href="https://ros.console.aliyun.com" target="_self" aliyun-console-spm="" spm-id="30ros" data-spm-click="gostr=/aliyun;locaid=d30ros;;" href="https://ros.console.aliyun.com" data-spm-anchor-id="5176.2020520001.101.7">
+					<span class="topbar-nav-item-icon icon-ros icon-logo1"></span>
+					<span class="ng-binding">资源编排</span>
+					<span class="topbar-nav-item-short ng-binding"></span>
+				</a>
+			</li>
+			<!-- end ngRepeat: product in category.products -->
+			<li ng-repeat="product in category.products" ng-class="{'topbar-unservice':!product.openStatus}" class="ng-scope">
+				<a ng-href="https://hpc.console.aliyun.com" target="_self" aliyun-console-spm="" spm-id="30hpc" data-spm-click="gostr=/aliyun;locaid=d30hpc;;" href="https://hpc.console.aliyun.com" data-spm-anchor-id="5176.2020520001.101.8">
+					<span class="topbar-nav-item-icon icon-hpc icon-logo1"></span>
+					<span class="ng-binding">高性能计算</span>
+					<span class="topbar-nav-item-short ng-binding"></span>
+				</a>
+			</li>
+			<!-- end ngRepeat: product in category.products -->
+		</ul>
+		<!-- ngIf: $index < col.length -1 -->
+		<div class="topbar-nav-gap ng-scope" ng-if="$index < col.length -1"></div>
+		<!-- end ngIf: $index < col.length -1 --></div>
+	<!-- end ngRepeat: category in col -->
+	<div ng-repeat="category in col" class="topbar-nav-item ng-scope">
+		<p class="topbar-nav-item-title ng-binding">数据库</p>
+		<ul>
+			<!-- ngRepeat: product in category.products -->
+			<li ng-repeat="product in category.products" ng-class="{'topbar-unservice':!product.openStatus}" class="ng-scope">
+				<a ng-href="https://rdsnew.console.aliyun.com" target="_self" aliyun-console-spm="" spm-id="30rds" data-spm-click="gostr=/aliyun;locaid=d30rds;;" href="https://rdsnew.console.aliyun.com" data-spm-anchor-id="5176.2020520001.101.9">
+					<span class="topbar-nav-item-icon icon-rds"></span>
+					<span class="ng-binding">云数据库 RDS 版</span>
+					<span class="topbar-nav-item-short ng-binding"></span>
+				</a>
+			</li>
+			<!-- end ngRepeat: product in category.products -->
+			<li ng-repeat="product in category.products" ng-class="{'topbar-unservice':!product.openStatus}" class="ng-scope">
+				<a ng-href="https://mongodb.console.aliyun.com" target="_self" aliyun-console-spm="" spm-id="30dds" data-spm-click="gostr=/aliyun;locaid=d30dds;;" href="https://mongodb.console.aliyun.com" data-spm-anchor-id="5176.2020520001.101.10">
+					<span class="topbar-nav-item-icon icon-logo2 icon-mongodb"></span>
+					<span class="ng-binding">云数据库 MongoDB 版</span>
+					<span class="topbar-nav-item-short ng-binding"></span>
+				</a>
+			</li>
+			<!-- end ngRepeat: product in category.products -->
+			<li ng-repeat="product in category.products" ng-class="{'topbar-unservice':!product.openStatus}" class="ng-scope">
+				<a ng-href="https://kvstore.console.aliyun.com" target="_self" aliyun-console-spm="" spm-id="30kvstore" data-spm-click="gostr=/aliyun;locaid=d30kvstore;;" href="https://kvstore.console.aliyun.com" data-spm-anchor-id="5176.2020520001.101.11">
+					<span class="topbar-nav-item-icon icon-redisa"></span>
+					<span class="ng-binding">云数据库 Redis 版</span>
+					<span class="topbar-nav-item-short ng-binding"></span>
+				</a>
+			</li>
+			<!-- end ngRepeat: product in category.products -->
+			<li ng-repeat="product in category.products" ng-class="{'topbar-unservice':!product.openStatus}" class="ng-scope">
+				<a ng-href="https://ocsnew.console.aliyun.com" target="_self" aliyun-console-spm="" spm-id="30ocs" data-spm-click="gostr=/aliyun;locaid=d30ocs;;" href="https://ocsnew.console.aliyun.com" data-spm-anchor-id="5176.2020520001.101.12">
+					<span class="topbar-nav-item-icon icon-ocs"></span>
+					<span class="ng-binding">云数据库 Memcache 版</span>
+					<span class="topbar-nav-item-short ng-binding"></span>
+				</a>
+			</li>
+			<!-- end ngRepeat: product in category.products -->
+			<li ng-repeat="product in category.products" ng-class="{'topbar-unservice':!product.openStatus}" class="ng-scope">
+				<a ng-href="https://ads.console.aliyun.com" target="_self" aliyun-console-spm="" spm-id="30ads" data-spm-click="gostr=/aliyun;locaid=d30ads;;" href="https://ads.console.aliyun.com" data-spm-anchor-id="5176.2020520001.101.13">
+					<span class="topbar-nav-item-icon icon-ads"></span>
+					<span class="ng-binding">分析型数据库</span>
+					<span class="topbar-nav-item-short ng-binding"></span>
+				</a>
+			</li>
+			<!-- end ngRepeat: product in category.products -->
+			<li ng-repeat="product in category.products" ng-class="{'topbar-unservice':!product.openStatus}" class="ng-scope">
+				<a ng-href="https://dts.console.aliyun.com" target="_self" aliyun-console-spm="" spm-id="30dts" data-spm-click="gostr=/aliyun;locaid=d30dts;;" href="https://dts.console.aliyun.com" data-spm-anchor-id="5176.2020520001.101.14">
+					<span class="topbar-nav-item-icon icon-dts"></span>
+					<span class="ng-binding">数据传输</span>
+					<span class="topbar-nav-item-short ng-binding"></span>
+				</a>
+			</li>
+			<!-- end ngRepeat: product in category.products -->
+			<li ng-repeat="product in category.products" ng-class="{'topbar-unservice':!product.openStatus}" class="ng-scope">
+				<a ng-href="https://dms.console.aliyun.com" target="_self" aliyun-console-spm="" spm-id="30dms" data-spm-click="gostr=/aliyun;locaid=d30dms;;" href="https://dms.console.aliyun.com" data-spm-anchor-id="5176.2020520001.101.15">
+					<span class="topbar-nav-item-icon icon-logo2  icon-dms"></span>
+					<span class="ng-binding">数据管理</span>
+					<span class="topbar-nav-item-short ng-binding"></span>
+				</a>
+			</li>
+			<!-- end ngRepeat: product in category.products -->
+		</ul>
+		<!-- ngIf: $index < col.length -1 --></div>
+	<!-- end ngRepeat: category in col -->
+</div>
+{% endblock %}

@@ -396,3 +396,34 @@ tfoot, .bg-color-f56 {
     border: 1px solid #ddd;
     background-color: #fff;
 }
+
+
+
+.topbar-nav-col {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0 10px;
+}
+.topbar-nav-item .topbar-nav-item-title {
+    margin: 3px 0px;
+    color: #999;
+    font-weight: 600;
+}
+.topbar-nav-item ul {
+    padding: 0;
+    margin: 8px 0 0 0;
+    list-style: none;
+}
+.topbar-nav-item ul li {
+    min-width: 160px;
+    height: 28px;
+    line-height: 28px;
+    margin-bottom: 2px;
+}
+.topbar-nav-item ul li a {
+    display: block;
+    height: 100%;
+    padding: 0 10px;
+    text-decoration: none;
+    color: #333;
+}

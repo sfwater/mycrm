@@ -469,3 +469,6 @@ tfoot, .bg-color-f56 {
     background-color: #FFF;
     color: #09C;
 }
+.tab-content {
+  margin-top: 10px;
+}

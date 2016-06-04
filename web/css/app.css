@@ -427,3 +427,6 @@ tfoot, .bg-color-f56 {
     text-decoration: none;
     color: #333;
 }
+.topbar-nav-item ul li a:hover {
+    background-color: #f2f2f2;
+}

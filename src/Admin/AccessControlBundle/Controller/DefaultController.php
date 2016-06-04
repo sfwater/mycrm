@@ -23,6 +23,8 @@ class DefaultController extends AdminAclController
      */
     public function indexAction()
     {
-        return array();
+        $routes = $this->getUserRoutes();
+        $routes = $this->resolveUserRoutes($routes);
+        return array('routes'=>$routes);
     }
 }

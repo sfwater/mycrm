@@ -157,7 +157,9 @@ body {
 .nav-sidebar > li > a, .nav-sidebar .nav > li > a {
   color: #fff;
 }
-.nav-sidebar > li > a:hover, .nav-sidebar .nav > li > a:hover {
+.nav-sidebar > li > a:hover, .nav-sidebar .nav > li > a:hover,
+.nav-sidebar > li > a:focus, .nav-sidebar .nav > li > a:focus
+{
   background-color: #37424f;
 }
 .nav-sidebar > .active > a, .nav-sidebar .nav > .active > a {

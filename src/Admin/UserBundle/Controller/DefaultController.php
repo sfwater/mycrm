@@ -146,7 +146,7 @@ class DefaultController extends AdminBaseController
             return $this->success();
         }
         else{
-            $editForm["state"]->setData($entity->getUser()->getIsActive());
+            $editForm["isActive"]->setData($entity->getUser()->getIsActive());
         }
 
         return array(

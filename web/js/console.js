@@ -294,7 +294,7 @@ function _getPagerForm($parent, args) {
 		},
 		hideLoading: function(){
 			// this.loader.hide();
-			// layer.closeAll('loading');
+			layer.closeAll('loading');
 		},
 		init:function(pageFrag, options){
 			var op = $.extend({

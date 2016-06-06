@@ -32,7 +32,17 @@ class LoginController extends AdminBaseController
     public function loginAction()
     {
         $configs = $this->container->getParameter('admin_console');
-        return array('configs'=>$configs);
+        $authenticationUtils = $this->get('security.authentication_utils');
+
+        // get the login error if there is one
+        $error = $authenticationUtils->getLastAuthenticationError();
+
+        // last username entered by the user
+        $lastUsername = $authenticationUtils->getLastUsername();
+        return array('configs'=>$configs,
+                'last_username' => $lastUsername,
+                'error'         => $error,
+            );
     }
     /**
      * 退出登陆

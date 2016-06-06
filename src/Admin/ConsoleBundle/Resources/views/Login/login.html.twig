@@ -52,6 +52,9 @@
                     <input type="password" class="form-control" id="password" name="_password" placeholder="登陆密码">
                   </div>
                   <button type="submit" class="btn btn-primary">登陆</button>
+                  {% if error %}
+                  <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData) }}</div>
+                  {% endif %}
                 </form>
               </div>
             </td>

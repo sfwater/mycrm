@@ -11,6 +11,16 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 class LoginController extends AdminBaseController
 {
+    /**
+     * 登陆
+     * @Route(
+     *      "/login_check", name="admin_login_check"
+     *   )
+     */
+    public function loginAction()
+    {
+        return array();
+    }
 
     /**
      * 登陆

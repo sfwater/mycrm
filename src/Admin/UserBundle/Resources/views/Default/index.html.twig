@@ -29,5 +29,6 @@
 	{% endfor %}
 {% endblock %}
 {% block tableAction %}
-<button type="button" href="{{ path('admin_users_disabled') }}" class="btn btn-default" target="selectedTodo" action="delete" method="DELETE" title="确定要禁用选中的用户吗？">批量禁用！</button>
+<button type="button" href="{{ path('admin_users_disabled') }}" class="btn btn-default" target="selectedTodo" action="disable" method="DELETE" title="确定要禁用选中的用户吗？">批量禁用！</button>
+<button type="button" href="{{ path('admin_users_disabled') }}" class="btn btn-danger" target="selectedTodo" action="delete" method="DELETE" title="确定要删除选中的用户吗？">批量删除！</button>
 {% endblock %}

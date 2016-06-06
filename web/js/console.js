@@ -289,10 +289,12 @@ function _getPagerForm($parent, args) {
 			return this.container;
 		},
 		showLoading: function(){
-			this.loader.show();
+			// this.loader.show();
+			layer.load(2);
 		},
 		hideLoading: function(){
-			this.loader.hide();
+			// this.loader.hide();
+			layer.closeAll('loading');
 		},
 		init:function(pageFrag, options){
 			var op = $.extend({

@@ -13,7 +13,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 class DefaultController extends AdminBaseController
 {
     /**
-     * @Route("/")
+     * @Route("/", name="admin_index")
      */
     public function indexAction()
     {

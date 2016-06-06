@@ -139,7 +139,7 @@ class AdminBaseController extends Controller
 	}
 
     protected function translate($msg){
-        return $this->get('translater')->trans($msg);
+        return $this->get('translator')->trans($msg);
     }
 
 	/**

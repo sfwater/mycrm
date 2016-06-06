@@ -31,7 +31,7 @@ class UserRepository extends EntityRepository implements UserLoaderInterface
             throw new UsernameNotFoundException($message);
         }
         //如果设置了过期时间，用户账号过期
-        if( $user->getExpireTime && $user->getExpireTime() < time() ){
+        if( $user->getExpireTime() && $user->getExpireTime() < time() ){
             $ex = new AccountExpiredException();
             $ex->setUser($user);
             throw $ex;

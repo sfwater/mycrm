@@ -834,7 +834,7 @@ function _getPagerForm($parent, args) {
 		}
 	});
 	$.pdialog = {
-		_op:{height:300, width:580, minH:40, minW:50, total:20, max:false, mask:false, resizable:true, drawable:true, maxable:true,minable:true,fresh:true},
+		_op:{height:300, width:580, minH:40, minW:50, total:20, max:false, mask:false, resizable:true, drawable:true, maxable:true,minable:true,fresh:true,type:"POST"},
 		_current:null,
 		_zIndex:42,
 		getCurrent:function(){
@@ -864,11 +864,13 @@ function _getPagerForm($parent, args) {
 			var dialog = $("body").data(dlgid);
 	        BootstrapDialog.show({
 	            title: title,
+	            draggable: true,
 	            message: function(){
 	            	var $message = $("<div></div>");
-	            	$message.loadUrl(url, null, function(response){
+	            	var callback = function(response){
 	            		$message.html(response);
-	            	});
+	            	};
+	            	$message.ajaxUrl({url:url, data:null, callback:callback, type:options.type});
 	            	return $message;
 	            },
 	            cssClass: 'middel-dialog',

@@ -31,7 +31,8 @@ class LoginController extends AdminBaseController
      */
     public function loginAction()
     {
-        return array();
+        $configs = $this->container->getParameter('admin_console');
+        return array('configs'=>$configs);
     }
     /**
      * 退出登陆

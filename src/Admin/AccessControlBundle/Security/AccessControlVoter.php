@@ -3,6 +3,7 @@ namespace Admin\AccessControlBundle\Security;
 
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
+use Admin\UserBundle\Entity\User;
 
 class AccessControlVoter extends Voter
 {

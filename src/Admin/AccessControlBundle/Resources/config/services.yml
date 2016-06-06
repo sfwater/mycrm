@@ -1,6 +1,6 @@
 services:
     admin_accesscontrol.accesscontrol_voter:
-        class: Admin\AccessControlBundle\Security
+        class: Admin\AccessControlBundle\Security\AccessControlVoter
         tags:
             - { name: security.voter }
         public: false

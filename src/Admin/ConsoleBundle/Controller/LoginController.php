@@ -27,7 +27,7 @@ class LoginController extends AdminBaseController
      * @Route(
      *      "/login", name="admin_login"
      *   )
-     * @Template("AdminConsoleBundle:Default:login.html.twig")
+     * @Template("AdminConsoleBundle:Login:login.html.twig")
      */
     public function loginAction()
     {

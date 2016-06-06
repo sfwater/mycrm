@@ -803,13 +803,15 @@ function _getPagerForm($parent, args) {
 							type:method, url:href, dataType:'json', cache: false,
 							data: function(){
 								if (postType == 'map'){
-									return $.map(ids.split(','), function(val, i) {
+									var data = $.map(ids.split(','), function(val, i) {
 										return {name: selectedIds, value: val};
-									})
+									});
+									data.push({name:'action', value:action});
+									return data;
 								} else {
 									var _data = {};
 									_data[selectedIds] = ids;
-									_data['action'] = action;
+									_data.action = action;
 									return _data;
 								}
 							}(),

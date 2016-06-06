@@ -31,17 +31,17 @@ class UserRepository extends EntityRepository implements UserLoaderInterface
             throw new UsernameNotFoundException($message);
         }
         //如果设置了过期时间，用户账号过期
-        if( $user->getExpireTime() && $user->getExpireTime() < time() ){
-            $ex = new AccountExpiredException();
-            $ex->setUser($user);
-            throw $ex;
-        }
+        // if( $user->getExpireTime() && $user->getExpireTime() < time() ){
+        //     $ex = new AccountExpiredException();
+        //     $ex->setUser($user);
+        //     throw $ex;
+        // }
         //用户状态禁用
-        if( !$user->getIsActive() ){
-            $ex = new AccountStatusException();
-            $ex->setUser($user);
-            throw $ex;
-        }
+        // if( !$user->getIsActive() ){
+        //     $ex = new AccountStatusException();
+        //     $ex->setUser($user);
+        //     throw $ex;
+        // }
 
         return $user;
     }

@@ -307,7 +307,7 @@ class User implements AdvancedUserInterface, \Serializable
 
     public function isAccountNonExpired()
     {
-        return time() <= $this->expireTime;
+        return !$this->expireTime || time() <= $this->expireTime;
     }
 
     public function isAccountNonLocked()

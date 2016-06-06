@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * UserTree
  *
- * @ORM\Table(name="user_tree")
+ * @ORM\Table(name="user_trees")
  * @ORM\Entity(repositoryClass="Admin\AccessControlBundle\Repository\UserTreeRepository")
  */
 class UserTree

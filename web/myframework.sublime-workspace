@@ -60,34 +60,10 @@
 	"buffers":
 	[
 		{
-			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+			"file": "/E/workspace/myframework-php/src/Admin/AccessControlBundle/Security/AccessControlVoter.php",
 			"settings":
 			{
-				"buffer_size": 5863,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/base.html.twig",
-			"settings":
-			{
-				"buffer_size": 4261,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/console.js",
-			"settings":
-			{
-				"buffer_size": 27393,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Entity/User.php",
-			"settings":
-			{
-				"buffer_size": 7192,
+				"buffer_size": 2000,
 				"line_ending": "Windows"
 			}
 		}
@@ -120,7 +96,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 402.0
+		"width": 386.0
 	},
 	"console":
 	{
@@ -144,10 +120,10 @@
 		"/E/workspace/myframework-php",
 		"/E/workspace/myframework-php/src",
 		"/E/workspace/myframework-php/src/Admin",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views",
-		"/E/workspace/myframework-php/src/Admin/UserBundle",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/config",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Security",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources",
 		"/E/workspace/myframework-php/src/AppBundle",
 		"/E/workspace/myframework-php/src/AppBundle/Controller",
@@ -157,6 +133,17 @@
 	],
 	"file_history":
 	[
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/config/services.yml",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Security/AccessControlVoter.php",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Entity/UserTree.php",
+		"/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
+		"/E/workspace/submission/src/Admin/DWZBackendBundle/Security/Authorization/Voter/UserRouteVoter.php",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Repository/UserTreeRepository.php",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Repository/UserRepository.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/base.html.twig",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/User.php",
+		"/E/workspace/myframework-php/web/js/console.js",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/RoleController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/UserType.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/RoleType.php",
@@ -164,9 +151,7 @@
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Role/index.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/RoleSearchType.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/UserSearchType.php",
-		"/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/page_list.html.twig",
-		"/E/workspace/myframework-php/web/js/console.js",
 		"/E/workspace/myframework-php/web/js/dwz.min.js",
 		"/E/workspace/myframework-php/web/css/bootstrap-dialog.min.css",
 		"/E/workspace/myframework-php/web/js/bootstrap-dialog.min.js",
@@ -189,12 +174,9 @@
 		"/E/workspace/submission/src/Admin/DWZBackendBundle/Resources/views/dwz_list.html.twig",
 		"/E/workspace/myframework-php/vendor/doctrine/orm/lib/Doctrine/ORM/Tools/Pagination/Paginator.php",
 		"/E/workspace/submission/src/Admin/DWZBackendBundle/Controller/MainController.php",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/base.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/ConsoleController.php",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Extension/TwigFilterExtension.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/UserRepository.php",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/User.php",
 		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/Form/FormErrorIterator.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Role/create.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/create.html.twig",
@@ -311,24 +293,24 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+					"file": "/E/workspace/myframework-php/src/Admin/AccessControlBundle/Security/AccessControlVoter.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5863,
+						"buffer_size": 2000,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5297,
-								5297
+								401,
+								401
 							]
 						],
 						"settings":
@@ -338,99 +320,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3234.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/base.html.twig",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4261,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3597,
-								3597
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Twig/Syntaxes/HTML (Twig).tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1826.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "js/console.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 27393,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								8825,
-								8825
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": -0.0,
-						"translation.y": 6006.0,
+						"translation.y": 858.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Entity/User.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7192,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4182,
-								4182
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 4797.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
 					"type": "text"
 				}
 			]
@@ -484,6 +377,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"consol",
+				"web\\js\\console.js"
+			],
 			[
 				"console.js",
 				"web\\js\\console.js"

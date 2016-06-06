@@ -187,10 +187,10 @@ class DefaultController extends AdminBaseController
                 $em->flush();
             }
 
-            return $this->success("submit_success");
+            return $this->success();
         }
 
-        return $this->error("submit_failure");   
+        return $this->error();   
     }
 
 }

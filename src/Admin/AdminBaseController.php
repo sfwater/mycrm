@@ -141,7 +141,7 @@ class AdminBaseController extends Controller
 	/**
 	* 执行成功方法
 	*/
-	protected function success($info='数据保存成功'){
+	protected function success($info='submit_success'){
 		$data = new \StdClass();
 		$data->statusCode = 200;
 		$data->message = $info;
@@ -151,7 +151,7 @@ class AdminBaseController extends Controller
 	/**
 	* 执行失败方法
 	*/
-	protected function error($info='数据保存失败'){
+	protected function error($info='submit_failure'){
 		$data = new \StdClass();
 		$data->statusCode = 500;
 		$data->message = $info;

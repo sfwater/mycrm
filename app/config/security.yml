@@ -25,9 +25,9 @@ security:
             provider: admin_db_provider
             form_login:
                 target_path_parameter: redirect_url
-                csrf_parameter: csrf_token
+                #csrf_parameter: csrf_token
                 # intention: bjh
-                csrf_provider: form.csrf_provider
+                #csrf_provider: form.csrf_provider
                 check_path: admin_console_login_check
                 login_path: admin_console_login
                 # authenticator: admin_dwz_backend_authcode_authenticator

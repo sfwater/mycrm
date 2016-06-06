@@ -862,15 +862,32 @@ function _getPagerForm($parent, args) {
 		open:function(url, dlgid, title, options) {
 			var op = $.extend({},$.pdialog._op, options);
 			var dialog = $("body").data(dlgid);
-			//重复打开一个层
-			layer.open({
-			  type: 1,
-			  title: title,
-			  closeBtn: 0,
-			  shadeClose: true,
-			  skin: 'yourclass',
-			  content: '自定义HTML内容'
-			});
+	        BootstrapDialog.show({
+	            title: title,
+	            message: function(){
+	            	var $message = $("<div></div>");
+	            	$message.loadUrl(url, null, function(response){
+	            		$message.html(response);
+	            	});
+	            	return $message;
+	            },
+	            cssClass: 'middel-dialog',
+	            buttons: [
+		            {
+		                label: $.regional.alertMsg.butMsg.ok,
+		                cssClass: 'btn-primary',
+		                action: function(dialog){
+		                    dialog.close();
+		                }
+		            },
+		            {
+		                label: $.regional.alertMsg.butMsg.cancel,
+		                action: function(dialog){
+		                    dialog.close();
+		                }
+		            }
+	            ]
+	        });
 		},
 		/**
 		 * 切换当前层

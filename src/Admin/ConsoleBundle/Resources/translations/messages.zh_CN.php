@@ -5,5 +5,6 @@ return array(
 	'Invalid credentials.'=>'错误的用户名或密码',
 	'submit_success'=>'数据保存成功',
 	'submit_failure'=>'数据保存失败！',
+	'delete_success'=>'删除成功!',
 );
 ?>

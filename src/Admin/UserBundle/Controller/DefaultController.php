@@ -87,6 +87,13 @@ class DefaultController extends AdminBaseController
                 }
                 $entity->setIsLocked(FALSE);
                 $entity->setRegisterTime(time());
+
+
+                //pasword
+                $encoder = $this->get("security.password_encoder");
+                $encoded = $encoder->encodePassword($entity,$entity->getPassword());
+                $entity->setPassword($encoded);
+
                 $em->persist($entity);
                 $em->flush();
                 $em->getConnection()->commit();
@@ -127,6 +134,10 @@ class DefaultController extends AdminBaseController
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $encoder = $this->get("security.password_encoder");
+            $encoded = $encoder->encodePassword($entity,$entity->getPassword());
+            $entity->setPassword($encoded);
+            
             $em->persist($entity);
             $em->flush();
             return $this->success();

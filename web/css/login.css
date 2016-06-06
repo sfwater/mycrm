@@ -10,4 +10,5 @@ body.system, html {
 }
 #login {
 	background-color: white;
+	margin: 10px;
 }

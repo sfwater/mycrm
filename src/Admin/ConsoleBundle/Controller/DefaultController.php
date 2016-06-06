@@ -38,18 +38,6 @@ class DefaultController extends AdminBaseController
     }
 
     /**
-     * 退出登陆
-     * @Route(
-     *      "/logout", name="admin_logout",
-     *      options = {"name":"退出","description":"退出登陆","category":"console","order":9, "type":"console","show":true,"target":""} 
-     *   )
-     * @Method("GET")
-     */
-    public function logoutAction()
-    {
-    }
-
-    /**
     * @Route("/test",name="console_test")
     */
     public function testAction(){

@@ -23,7 +23,7 @@
 			<td>{{ entity.registerTime|date("Y-m-d H:i:s") }}</td>
 			<td>{{ entity.isActive|userActive }}</td>
             <td class="text-right">
-            <a href="{{ path('admin_users_edit',{id:entity.id}) }}" target="dialog" width="500" height="600" method="POST">编辑</a>
+            <a href="{{ path('admin_users_edit',{id:entity.id}) }}" target="dialog" width="500" height="600" method="POST" title="编辑用户 {{ entity.nickname }}">编辑</a>
             </td>
 		</tr>
 	{% endfor %}

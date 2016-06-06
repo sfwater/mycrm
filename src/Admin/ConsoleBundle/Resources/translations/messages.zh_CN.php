@@ -6,5 +6,6 @@ return array(
 	'submit_success'=>'数据保存成功',
 	'submit_failure'=>'数据保存失败！',
 	'delete_success'=>'删除成功!',
+	'Account has expired.'=>'账号过期了',
 );
 ?>

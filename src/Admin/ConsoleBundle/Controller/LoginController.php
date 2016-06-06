@@ -17,7 +17,7 @@ class LoginController extends AdminBaseController
      *      "/login_check", name="admin_login_check"
      *   )
      */
-    public function loginAction()
+    public function loginCheckAction()
     {
         return array();
     }

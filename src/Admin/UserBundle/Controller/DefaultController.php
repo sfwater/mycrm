@@ -130,7 +130,10 @@ class DefaultController extends AdminBaseController
         }
 
 
-        $editForm = $this->createEditForm($entity);
+        $editForm = $this->createForm('Admin\UserBundle\Form\UserType',$entity,array(
+            'attr'=>array('class'=>'pageForm required-validate'),
+            'action'=>$this->generateUrl('admin_users_edit',array('id'=>$entity->getId()))
+            ));
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {

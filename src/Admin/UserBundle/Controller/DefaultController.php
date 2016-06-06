@@ -123,7 +123,7 @@ class DefaultController extends AdminBaseController
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AdminConsoleBundle:User')->find($id);
+        $entity = $em->getRepository('AdminUserBundle:User')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find User entity.');

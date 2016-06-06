@@ -12,7 +12,7 @@ class AccessControlVoter extends Voter
 
     protected function supports($attribute, $subject)
     {
-        return true;
+        return false;
     }
 
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)

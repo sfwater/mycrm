@@ -809,6 +809,7 @@ function _getPagerForm($parent, args) {
 								} else {
 									var _data = {};
 									_data[selectedIds] = ids;
+									_data.action = action;
 									return _data;
 								}
 							}(),

@@ -360,6 +360,7 @@ function _getPagerForm($parent, args) {
 				var options = {};
 				var w = $this.attr("width");
 				var h = $this.attr("height");
+				var type = $this.attr("method") || "POST";
 				if (w) options.width = w;
 				if (h) options.height = h;
 				options.max = eval($this.attr("max") || "false");
@@ -371,6 +372,7 @@ function _getPagerForm($parent, args) {
 				options.drawable = eval($this.attr("drawable") || "true");
 				options.close = eval($this.attr("close") || "");
 				options.param = $this.attr("param") || "";
+				options.type = type;
 
 				var url = unescape($this.attr("href"));
 				if (!url.isFinishedTm()) {

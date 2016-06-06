@@ -21,7 +21,7 @@ security:
 
         admin_security:
             anonymous: ~
-            pattern: ^/(admin|login_check|logout)
+            # pattern: ^/(admin|login_check|logout)
             provider: admin_db_provider
             form_login:
                 target_path_parameter: redirect_url

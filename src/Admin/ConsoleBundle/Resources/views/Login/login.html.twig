@@ -45,7 +45,7 @@
                 <h4>登陆系统</h4>
                 <form method="post" action="{{ path('admin_login_check')}}">
                 <input type="hidden" name="redirect_url" value="admin_index" />
-                <input type="hidden" name="csrf_token" value="{{csrf_token('authenticate')}}" />
+                <input type="hidden" name="_csrf_token" value="{{csrf_token('authenticate')}}" />
                   <div class="form-group">
                     <label for="username">用户名：</label>
                     <input type="text" class="form-control" id="username" name="_username" placeholder="用户名、邮箱">

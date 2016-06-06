@@ -60,10 +60,74 @@
 	"buffers":
 	[
 		{
-			"file": "/E/workspace/myframework-php/src/Admin/AccessControlBundle/Security/AccessControlVoter.php",
+			"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/LoginController.php",
 			"settings":
 			{
-				"buffer_size": 2000,
+				"buffer_size": 1580,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Login/login.html.twig",
+			"settings":
+			{
+				"buffer_size": 2603,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/workspace/submission/src/Admin/DWZBackendBundle/Controller/MainController.php",
+			"settings":
+			{
+				"buffer_size": 39208,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/app.css",
+			"settings":
+			{
+				"buffer_size": 9318,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "css/login.css",
+			"settings":
+			{
+				"buffer_size": 300,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Default/index.html.twig",
+			"settings":
+			{
+				"buffer_size": 51,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/ConsoleController.php",
+			"settings":
+			{
+				"buffer_size": 1723,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/workspace/myframework-php/app/config/security.yml",
+			"settings":
+			{
+				"buffer_size": 1839,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
+			"settings":
+			{
+				"buffer_size": 1429,
 				"line_ending": "Windows"
 			}
 		}
@@ -75,7 +139,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 310.0,
+		"height": 375.0,
 		"last_filter": ":w",
 		"selected_items":
 		[
@@ -84,19 +148,27 @@
 				":w - Save"
 			],
 			[
+				":sw",
+				":w - Save"
+			],
+			[
 				":W",
 				":w - Save"
 			],
 			[
-				":install",
-				"Package Control: Install Package"
+				":auto",
+				"Tag: Auto-Format Tags on Document"
 			],
 			[
 				"install",
 				"Package Control: Install Package"
+			],
+			[
+				":install",
+				"Package Control: Install Package"
 			]
 		],
-		"width": 386.0
+		"width": 418.0
 	},
 	"console":
 	{
@@ -118,30 +190,45 @@
 	"expanded_folders":
 	[
 		"/E/workspace/myframework-php",
+		"/E/workspace/myframework-php/app",
+		"/E/workspace/myframework-php/app/config",
 		"/E/workspace/myframework-php/src",
 		"/E/workspace/myframework-php/src/Admin",
-		"/E/workspace/myframework-php/src/Admin/AccessControlBundle",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/config",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Security",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources",
-		"/E/workspace/myframework-php/src/AppBundle",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Default",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Login",
+		"/E/workspace/myframework-php/src/Admin/UserBundle",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller",
 		"/E/workspace/myframework-php/src/AppBundle/Controller",
 		"/E/workspace/myframework-php/web",
+		"/E/workspace/myframework-php/web/css",
 		"/E/workspace/myframework-php/web/js",
 		"/E/workspace/myframework-php/web/js/layer"
 	],
 	"file_history":
 	[
-		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/config/services.yml",
-		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Security/AccessControlVoter.php",
-		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Entity/UserTree.php",
+		"/E/workspace/submission/src/Admin/DWZBackendBundle/Resources/views/Main/login.html.twig",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/base.html.twig",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Login/index.html.twig",
 		"/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/LoginController.php",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/app/config/security.yml",
+		"/E/workspace/submission/app/config/security.yml",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Security/AccessControlVoter.php",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/AdminAccessControlBundle.php",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/config/services.yml",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Entity/UserTree.php",
 		"/E/workspace/submission/src/Admin/DWZBackendBundle/Security/Authorization/Voter/UserRouteVoter.php",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Repository/UserTreeRepository.php",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Repository/UserRepository.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/base.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/User.php",
 		"/E/workspace/myframework-php/web/js/console.js",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/RoleController.php",
@@ -160,7 +247,6 @@
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/config/system.yml",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/config/services.yml",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/config/services.yml",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/Form/FormConfigBuilder.php",
 		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/Form/FormBuilder.php",
 		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Controller/Controller.php",
@@ -249,6 +335,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"login",
+			"body",
+			"    /**\n     * 系统配置\n     * @Route(\n     *      \"/config\", name=\"admin_configuration\",\n     *      options = {\"name\":\"系统配置\",\"description\":\"修改系统配置\",\"category\":\"console\",\"order\":7, \"type\":\"console\",\"show\":true} \n     *   )\n     * @Method(\"POST\")\n     */\n    public function configAction()\n    {\n    }",
+			"        // you know $subject is a Post object, thanks to supports\n        /** @var Post $post */\n        $post = $subject;\n\n        switch($attribute) {\n            case self::VIEW:\n                return $this->canView($post, $user);\n            case self::EDIT:\n                return $this->canEdit($post, $user);\n        }",
+			"    private function canView(Post $post, User $user)\n    {\n        // if they can edit, they can view\n        if ($this->canEdit($post, $user)) {\n            return true;\n        }\n\n        // the Post object could have, for example, a method isPrivate()\n        // that checks a boolean $private property\n        return !$post->isPrivate();\n    }\n\n    private function canEdit(Post $post, User $user)\n    {\n        // this assumes that the data object has a getOwner() method\n        // to get the entity of the user who owns this data object\n        return $user === $post->getOwner();\n    }",
 			"selectedTo",
 			"checkboxCtrl",
 			"selectall",
@@ -293,24 +384,203 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 7,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/E/workspace/myframework-php/src/Admin/AccessControlBundle/Security/AccessControlVoter.php",
+					"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/LoginController.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2000,
+						"buffer_size": 1580,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								401,
-								401
+								1182,
+								1182
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 462.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Login/login.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2603,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1866,
+								1866
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/Twig/Syntaxes/HTML (Twig).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 685.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/E/workspace/submission/src/Admin/DWZBackendBundle/Controller/MainController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 39208,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								8000,
+								7908
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 5105.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "css/app.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9318,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								523,
+								523
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 132.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "css/login.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 300,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								231,
+								231
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Default/index.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 51,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								51
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Twig/Syntaxes/HTML (Twig).tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/ConsoleController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1723,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								547,
+								547
 							]
 						],
 						"settings":
@@ -320,10 +590,71 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 858.0,
+						"translation.y": 462.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "/E/workspace/myframework-php/app/config/security.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1839,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1839,
+								1839
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 264.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1429,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								806,
+								806
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 264.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]

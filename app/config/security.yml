@@ -33,7 +33,7 @@ security:
                 # authenticator: admin_dwz_backend_authcode_authenticator
                 # success_handler: admin_dwz_backend.loginSuccess
             logout:
-                path: admin_console_logout
+                path: admin_logout
                 target: /login
             # activate different ways to authenticate
 

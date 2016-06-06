@@ -154,6 +154,12 @@ class DefaultController extends AdminBaseController
 
         $ids = $request->request->get("ids");
 
+        $action = $request->request->get('action');
+
+        if( empty($action) ){
+            return $this->error('missing action');
+        }
+
         if( $id > 0 ){
             $ids[] = $id;
         }
@@ -169,14 +175,22 @@ class DefaultController extends AdminBaseController
             $result = $query->getResult();
 
             foreach($result as $item){
-                $item->setIsActive(FALSE);
+                if( $action == 'delete' ){
+                    $em->remove($item);
+                }
+                else if( $action == 'disable' ){
+                    $item->setIsActive(FALSE);
+                }
+                else if( $action == 'enable' ){
+                    $item->setIsActive(TRUE);
+                }
                 $em->flush();
             }
 
-            return $this->success("multi_action_success");
+            return $this->success("submit_success");
         }
 
-        return $this->error("multi_action_failure");   
+        return $this->error("submit_failure");   
     }
 
 }

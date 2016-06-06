@@ -11,4 +11,6 @@ body.system, html {
 #login {
 	background-color: white;
 	padding: 10px 20px;
+	-moz-box-shadow: 3px 3px 5px #888888; /* 老的 Firefox */
+	box-shadow: 3px 3px 5px #888888;
 }

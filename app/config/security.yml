@@ -25,6 +25,7 @@ security:
             provider: admin_db_provider
             form_login:
                 target_path_parameter: redirect_url
+                csrf_token_generator: security.csrf.token_manager
                 #csrf_parameter: csrf_token
                 # intention: bjh
                 #csrf_provider: form.csrf_provider

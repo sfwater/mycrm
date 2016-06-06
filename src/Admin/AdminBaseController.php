@@ -138,13 +138,17 @@ class AdminBaseController extends Controller
 		return $groups;
 	}
 
+    protected function translate($msg){
+        return $this->get('translater')->trans($msg);
+    }
+
 	/**
 	* 执行成功方法
 	*/
 	protected function success($info='submit_success'){
 		$data = new \StdClass();
 		$data->statusCode = 200;
-		$data->message = $info;
+		$data->message = $this->translate($info);
 		return new JsonResponse($data);
 	}
 
@@ -154,7 +158,7 @@ class AdminBaseController extends Controller
 	protected function error($info='submit_failure'){
 		$data = new \StdClass();
 		$data->statusCode = 500;
-		$data->message = $info;
+		$data->message = $this->translate($info);
 		return new JsonResponse($data, 500);
 	}
 }

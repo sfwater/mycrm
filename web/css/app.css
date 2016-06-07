@@ -407,6 +407,7 @@ tfoot, .bg-color-f56 {
     margin: 3px 0px;
     color: #999;
     font-weight: 600;
+    width: 180px;
     float: left;
 }
 .topbar-nav-item ul {

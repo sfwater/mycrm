@@ -863,7 +863,6 @@ function _getPagerForm($parent, args) {
 		//打开一个层
 		open:function(url, dlgid, title, options) {
 			var op = $.extend({},$.pdialog._op, options);
-			var dialog = $("body").data(dlgid);
 	        BootstrapDialog.show({
 	            title: title,
 	            draggable: true,
@@ -874,6 +873,11 @@ function _getPagerForm($parent, args) {
 	            	};
 	            	$message.ajaxUrl({url:url, data:null, callback:callback, type:options.type});
 	            	return $message;
+	            },
+	            onshown: function(dialog){
+	               	var $body = dialog.getModalBody();
+	            	dialog.data(dlgid);
+	            	$body.ajaxUrl({url:url, data:null, callback:callback, type:options.type});
 	            },
 	            cssClass: 'middel-dialog',
 	            buttons: [

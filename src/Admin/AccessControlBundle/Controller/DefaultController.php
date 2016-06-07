@@ -53,7 +53,7 @@ class DefaultController extends AdminAclController
             $one = $query->getOneOrNullResult();
 
             if( !$one ){
-                throw new UsernameNotFoundException($username);
+                throw new \Exception($username);
             }
             $result = $em->getRepository('AdminAccessControlBundle:PagePrivilege')->findByUserId($one->getId());
 

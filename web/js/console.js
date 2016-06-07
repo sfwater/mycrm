@@ -35,8 +35,9 @@ function validateCallback(form, callback, confirmMsg) {
 /**
 * 对话框保存成功
 */
-function dialogCallback(form){
+function dialogCallback(json){
 	$.pdialog.closeCurrent();
+	alertMsg.ajaxDone(json);
 }
 /**
  * 带文件上传的ajax表单提交

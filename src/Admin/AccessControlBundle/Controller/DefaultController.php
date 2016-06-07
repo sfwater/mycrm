@@ -71,5 +71,6 @@ class DefaultController extends AdminAclController
 
             return $this->jsonResponse($result);
         }
+        return $this->jsonResponse(array());
     }
 }

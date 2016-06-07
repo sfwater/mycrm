@@ -882,7 +882,11 @@ function _getPagerForm($parent, args) {
 		                cssClass: 'btn-primary',
 		                action: function(dialog){
 		                	var body = dialog.getModalBody();
-		                	body.find('form.required-validate').submit();
+		                	var form = body.find('form.required-validate').get(0);
+		                	if( form ){
+		                		form.submit();
+		                	}
+		                	dialog.close();
 		                }
 		            },
 		            {

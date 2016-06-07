@@ -36,8 +36,9 @@ function validateCallback(form, callback, confirmMsg) {
 * 对话框保存成功
 */
 function dialogCallback(json){
-	$.pdialog.closeCurrent();
+	CONSOLE.realod();
 	CONSOLE.ajaxDone(json);
+	$.pdialog.closeCurrent();
 }
 /**
  * 带文件上传的ajax表单提交
@@ -291,6 +292,7 @@ function _getPagerForm($parent, args) {
 			});
 		},
 		realod:function(){
+			this.container.reload();
 		},
 		getCurrentPanel: function(){
 			return this.container;

@@ -121,7 +121,7 @@ class RoleController extends AdminBaseController
         $editForm= $this->createForm('Admin\UserBundle\Form\RoleType',$entity,array(
             'attr'=>array('class'=>'pageForm required-validate','onsuccess'=>'dialogCallback'),
             'action'=>$this->generateUrl('admin_roles_edit',array('id'=>$entity->getId()))
-            );
+            ));
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {

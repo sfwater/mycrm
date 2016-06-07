@@ -431,7 +431,7 @@ function _getPagerForm($parent, args) {
 						$('#btnSubmit',$form).button('reset');
 						if( callback ){
 							CONSOLE.hideLoading();
-							callback(json);
+							callback(json,$form);
 						}
 						else{
 							CONSOLE.ajaxDone(json);

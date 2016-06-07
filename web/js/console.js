@@ -881,7 +881,7 @@ function _getPagerForm($parent, args) {
 		                label: $.regional.alertMsg.butMsg.ok,
 		                cssClass: 'btn-primary',
 		                action: function(dialog){
-		                    dialog.close();
+		                	dialog.find('form.required-validate').submit();
 		                }
 		            },
 		            {

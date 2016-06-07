@@ -15,6 +15,16 @@ class RoleType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $entity = $options['data'];
+        $mask = array();
+
+        if( $entity->getId() > 0 ){
+            foreach (array(1,2,4) as $value) {
+                if( ($value & $entity->getMask()) > 0 ){
+                    $mask[] = $value;
+                }
+            }
+        }
         $builder
             ->add("name",TextType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'中文组名','label'=>'中文组名'),
@@ -35,7 +45,7 @@ class RoleType extends AbstractType
                 'expanded'=>true,
                 'mapped'=>false,
                 'label_attr'=>array('class'=>'checkbox-inline'),
-                'data'=>array(1,2,4)
+                'data'=>$mask
                 ))
             ;
     }

@@ -9,19 +9,19 @@
 	<th>用户数</th>
 {% endblock %}
 {% block tableBody %}
-	{% for role in results %}
+	{% for entity in results %}
 		<tr>
-			<td> <input type="checkbox" name="ids[]"  value="{{ role.id }}" /> </td>
-			<td>{{ role.name }}</td>
-			<td>{{ role.role }}</td>
-			<td>{{ role.mask| printUserMask }}</td>
-			<td>{{ role.users|length }}</td>
+			<td> <input type="checkbox" name="ids[]"  value="{{ entity.id }}" /> </td>
+			<td>{{ entity.name }}</td>
+			<td>{{ entity.entity }}</td>
+			<td>{{ entity.mask| printUserMask }}</td>
+			<td>{{ entity.users|length }}</td>
             <td class="text-right">
-            <a href="{{ path('admin_roles_edit',{id:entity.id}) }}" method="POST" title="编辑 {{ entity.name }}" target="dialog" width="500" height="600">编辑</a>
+            <a href="{{ path('admin_entitys_edit',{id:entity.id}) }}" method="POST" title="编辑 {{ entity.name }}" target="dialog" width="500" height="600">编辑</a>
             </td>
 		</tr>
 	{% endfor %}
 {% endblock %}
 {% block tableAction %}
-<button type="button" href="{{ path('admin_roles_delete') }}" class="btn btn-default" target="selectedTodo" action="delete" method="DELETE" title="确定要删除选中的用户组吗？">批量删除！</button>
+<button type="button" href="{{ path('admin_entitys_delete') }}" class="btn btn-default" target="selectedTodo" action="delete" method="DELETE" title="确定要删除选中的用户组吗？">批量删除！</button>
 {% endblock %}

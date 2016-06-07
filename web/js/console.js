@@ -849,7 +849,7 @@ function _getPagerForm($parent, args) {
 	            title: title,
 	            draggable: true,
 	            onshown: function(dialog){
-	            	$this._current = dialog;
+	            	this._current = dialog;
 	               	var $body = dialog.getModalBody();
 	            	$body.data(dlgid);
 	            	$body.ajaxUrl({url:url, data:null, callback:options.callback, type:options.type});

@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * PagePrivilege
  *
- * @ORM\Table(name="page_privilege")
+ * @ORM\Table(name="page_privileges")
  * @ORM\Entity(repositoryClass="Admin\AccessControlBundle\Repository\PagePrivilegeRepository")
  */
 class PagePrivilege
@@ -28,6 +28,19 @@ class PagePrivilege
      */
     private $routeName;
 
+    /**
+     * @var integer 
+     *
+     * @ORM\Column(name="user_id", type="integer")
+     */
+    private $userId;
+
+    /**
+     * @var integer 
+     *
+     * @ORM\Column(name="group_id", type="integer")
+     */
+    private $groupId;
 
     /**
      * Get id

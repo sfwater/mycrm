@@ -142,6 +142,17 @@ class AdminBaseController extends Controller
         return $this->get('translator')->trans($msg);
     }
 
+
+    /**
+    * 返回JSON数据
+    */
+    protected function jsonResponse($json){
+        $data = new \StdClass();
+        $data->statusCode = 200;
+        $data->message = '';
+        $data->data = $json;
+        return new JsonResponse($data);
+    }
 	/**
 	* 执行成功方法
 	*/

@@ -7,6 +7,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Admin\AdminAclController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 /**
 * @Route("/acls")
 */
@@ -26,5 +28,50 @@ class DefaultController extends AdminAclController
         $routes = $this->getUserRoutes();
         $routes = $this->resolveUserRoutes($routes);
         return array('routes'=>$routes);
+    }
+
+    /**
+     * 查询用户、用户组的权限
+     * @Route(
+     *      "/privileges/", name="admin_acls_privileges",
+     *      options = {"name":"权限列表","description":"查看用户、用户组权限列表","category":"访问控制","order":2}
+     *   )
+     * @Method("POST") 
+     * @Template("AdminAccessControlBundle:Default:index.html.twig")
+     */
+    public function privilegesAction(Request $request)
+    {
+        $username = $request->request->get('username');
+        $groupname = $request->request->get('groupname');
+        $em = $this->getDoctrine()->getManager();
+
+
+
+
+        //如果是查询用户的权限
+        if( !empty($username) ){
+            $dql = 'SELECT dist FROM AdminUserBundle:User dist WHERE dist.id=:id OR dist.username LIKE :name OR dist.nickname   LIKE :name';
+            $query = $em->createQuery($dql)->setParameters(array('id'=>intval($username),'name'=>"%$username%"));
+            $one = $query->getOneOrNullResult();
+
+            if( !$one ){
+                throw new UsernameNotFoundException($username);
+            }
+            $result = $em->getRepository('AdminAccessControlBundle:PagePrivilege')->findByUserId($one->getId());
+
+            return $this->jsonResponse($result);
+        }
+        else if( !empty($groupname) ){
+            $dql = 'SELECT dist FROM AdminUserBundle:Role dist WHERE dist.name LIKE :name OR dist.role LIKE :name';
+            $query = $em->createQuery($dql)->setParameters(array('name'=>"%$groupname%"));
+            $one = $query->getOneOrNullResult();
+
+            if( !$one ){
+                throw new \Exception("group $groupname not found.");
+            }
+            $result = $em->getRepository('AdminAccessControlBundle:PagePrivilege')->findByGroupId($one->getId());
+
+            return $this->jsonResponse($result);
+        }
     }
 }

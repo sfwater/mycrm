@@ -138,8 +138,11 @@ class DefaultController extends AdminBaseController
 
         if ($editForm->isValid()) {
             $encoder = $this->get("security.password_encoder");
-            $encoded = $encoder->encodePassword($entity,$entity->getPassword());
-            $entity->setPassword($encoded);
+
+            if( $newPassword = $entity->getPassword() ){
+                $encoded = $encoder->encodePassword($entity,$newPassword);
+                $entity->setPassword($encoded);
+            }
             
             $em->persist($entity);
             $em->flush();

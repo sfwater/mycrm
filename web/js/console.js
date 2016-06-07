@@ -525,6 +525,7 @@ function _getPagerForm($parent, args) {
 
 		$(":button.checkbox-all, :checkbox.checkbox-all", $p).checkboxCtrl($p);
 		$(":button[target=selectedTodo], a[target=selectedTodo]", $p).selectedTodo($p);
+		$('[data-toggle="tooltip"]').tooltip();
 	}
 	var alertMsg = {
 		_closeTimer: null,

@@ -1,0 +1,9 @@
+{% extends 'AdminConsoleBundle::page.html.twig' %}
+{% form_theme form 'bootstrap_3_horizontal_layout.html.twig' %}
+{% block pageContent %}
+	{{ form_start(form) }}	
+		<div class="pageFormContent">
+			{% block formContent %} {% endblock %}
+		</div>
+	{{ form_end(form) }}	
+{% endblock %}

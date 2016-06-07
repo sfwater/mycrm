@@ -37,7 +37,6 @@ class DefaultController extends AdminAclController
      *      options = {"name":"权限列表","description":"查看用户、用户组权限列表","category":"访问控制","order":2}
      *   )
      * @Method("POST") 
-     * @Template("AdminAccessControlBundle:Default:index.html.twig")
      */
     public function privilegesAction(Request $request)
     {

@@ -139,7 +139,7 @@ class DefaultController extends AdminBaseController
         if ($editForm->isValid()) {
             $encoder = $this->get("security.password_encoder");
             //過期時間
-            if( $expireTime = $form->get('expireTime')->getData() ){
+            if( $expireTime = $editForm->get('expireTime')->getData() ){
                 $entity->setExpireTime(strtotime($expireTime));
             }
             if( $newPassword = $entity->getPassword() ){

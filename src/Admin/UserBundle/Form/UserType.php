@@ -19,6 +19,7 @@ class UserType extends AbstractType
     }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        $data = $options['data'];
         $builder
             ->add("username",TextType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'6-16位英文与数字组合','label'=>'6-16位英文与数字组合'),
@@ -29,13 +30,15 @@ class UserType extends AbstractType
                 'label'=>'昵称',
                 ))
             ->add("password",PasswordType::class,array(
-                'attr'=>array('class'=>'form-control','placeholder'=>'6-16位密码','label'=>'6-16位密码'),
+                'attr'=>array('class'=>'form-control','placeholder'=>'6-16位密码','label'=>'6-16位密码','id'=>'user_password'),
                 'label'=>'密码',
+                'required'=> $data->getId() == 0
                 ))
             ->add("repassword",PasswordType::class,array(
-                'attr'=>array('class'=>'form-control','placeholder'=>'确认密码','label'=>'确认密码'),
+                'attr'=>array('class'=>'form-control','placeholder'=>'确认密码','label'=>'确认密码','equalTo'=>'user_password'),
                 'label'=>'确认密码',
                 'mapped'=>false,
+                'required'=>false,
                 ))
             ->add('roles',ChoiceType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'选择一个用户组','label'=>'选择一个用户组'),

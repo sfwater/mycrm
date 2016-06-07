@@ -32,6 +32,9 @@ function validateCallback(form, callback, confirmMsg) {
 	
 	return false;
 }
+function dialogCallback(form){
+	$.pdialog.closeCurrent();
+}
 /**
  * 带文件上传的ajax表单提交
  * @param {Object} form

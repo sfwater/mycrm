@@ -422,8 +422,8 @@ function _getPagerForm($parent, args) {
 			unhighlight:function(element,errorClass,validClass){
 				$(element).parent().removeClass(errorClass);
 			},
-			submitHandler: function(form){
-				var $form = $(form);
+			submitHandler: function(){
+				var $form = $(this);
 				var confirmMsg = $form.attr('confirm');
 				var callback = eval($form.attr('onsuccess'));
 

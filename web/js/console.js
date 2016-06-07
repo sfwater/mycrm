@@ -32,6 +32,9 @@ function validateCallback(form, callback, confirmMsg) {
 	
 	return false;
 }
+/**
+* 对话框保存成功
+*/
 function dialogCallback(form){
 	$.pdialog.closeCurrent();
 }

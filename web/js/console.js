@@ -422,7 +422,7 @@ function _getPagerForm($parent, args) {
 			submitHandler: function(form){
 				var $form = $(form);
 				var confirmMsg = $form.attr('confirm');
-				var callback = $form.attr('onsuccess');
+				var callback = eval($form.attr('onsuccess'));
 
 				var	_callback = function(json){
 						$('#btnSubmit',$form).button('reset');

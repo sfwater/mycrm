@@ -35,6 +35,7 @@ class RoleType extends AbstractType
                 'expanded'=>true,
                 'mapped'=>false,
                 'label_attr'=>array('class'=>'checkbox-inline'),
+                'choice_value'=>'1'
                 ))
             ;
     }

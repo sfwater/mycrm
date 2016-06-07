@@ -125,6 +125,14 @@ class RoleController extends AdminBaseController
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+
+            $masks = $editForm->get('mask')->getData();
+            $mask = 0;
+            foreach ($masks as $value) {
+                $mask |= $value;
+            }
+            $entity->setMask($mask);
+
             $em->persist($entity);
             $em->flush();
             return $this->success();

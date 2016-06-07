@@ -20,8 +20,8 @@ security:
             security: false
 
         admin_security:
-            anonymous: ~
-            # pattern: ^/(admin|login_check|logout)
+            # anonymous: ~
+            pattern: ^/(admin|login_check|logout)
             provider: admin_db_provider
             form_login:
                 target_path_parameter: redirect_url
@@ -44,4 +44,4 @@ security:
             # form_login: ~
             # http://symfony.com/doc/current/cookbook/security/form_login_setup.html
     access_control:
-        # - { path:^/admin, roles: IS_AUTHENTICATED_FULLY }
+        - { path:^/admin, roles: IS_AUTHENTICATED_FULLY }

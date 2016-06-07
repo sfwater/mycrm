@@ -111,7 +111,7 @@ class RoleController extends AdminBaseController
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AdminConsoleBundle:Role')->find($id);
+        $entity = $em->getRepository('AdminUserBundle:Role')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Role entity.');

@@ -30,28 +30,24 @@ class ConsoleController extends AdminBaseController
     public function indexAction()
     {
         $em = $this->getDoctrine()->getManager();
+        $user = $this->getUser();
 
-        $entity = $em->getRepository('AdminConsoleBundle:User')->find($id);
-
-        if (!$entity) {
-            throw $this->createNotFoundException('Unable to find Role entity.');
+        if (!$user) {
+            throw $this->createNotFoundException('Unable to find user entity.');
         }
 
 
-        $editForm= $this->createForm('Admin\UserBundle\Form\UserType',$entity);
-        $editForm->handleRequest($request);
+        $form= $this->createFormBuilder()
 
-        if ($editForm->isValid()) {
-            $em->persist($entity);
+            ->getForm();
+        $form->handleRequest($request);
+
+        if ($form->isValid()) {
             $em->flush();
             return $this->success();
         }
-        else{
-            $editForm["state"]->setData($entity->getUser()->getIsActive());
-        }
 
         return array(
-            'entity'      => $entity,
             'form'   => $editForm->createView(),
         );
     }

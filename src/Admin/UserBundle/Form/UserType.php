@@ -35,7 +35,7 @@ class UserType extends AbstractType
                 'required'=> $data->getId() == 0
                 ))
             ->add("repassword",PasswordType::class,array(
-                'attr'=>array('class'=>'form-control','placeholder'=>'确认密码','label'=>'确认密码','equalTo'=>'user_password'),
+                'attr'=>array('class'=>'form-control','placeholder'=>'确认密码','label'=>'确认密码','equalTo'=>'#user_password'),
                 'label'=>'确认密码',
                 'mapped'=>false,
                 'required'=>false,

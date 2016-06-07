@@ -836,7 +836,7 @@ function _getPagerForm($parent, args) {
 		}
 	});
 	$.pdialog = {
-		_op:{height:300, width:580, minH:40, minW:50, total:20, max:false, mask:false, resizable:true, drawable:true, maxable:true,minable:true,fresh:true,type:"POST"},
+		_op:{callback:null,height:300, width:580, minH:40, minW:50, total:20, max:false, mask:false, resizable:true, drawable:true, maxable:true,minable:true,fresh:true,type:"POST"},
 		_current:null,
 		_zIndex:42,
 		getCurrent:function(){
@@ -869,7 +869,7 @@ function _getPagerForm($parent, args) {
 	            onshown: function(dialog){
 	               	var $body = dialog.getModalBody();
 	            	$body.data(dlgid);
-	            	$body.ajaxUrl({url:url, data:null, callback:callback, type:options.type});
+	            	$body.ajaxUrl({url:url, data:null, callback:options.callback, type:options.type});
 	            },
 	            cssClass: 'middel-dialog',
 	            buttons: [

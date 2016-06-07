@@ -20,7 +20,7 @@
 	<!-- Tab panes -->
 	<div class="tab-content">
 		<div role="tabpanel" class="tab-pane active" id="home">
-			<div data-ng-repeat="col in categories" class="topbar-nav-col ng-scope">
+			<div class="topbar-nav-col clearfix">
 				{% for k,routes in routes %}
 				<!-- ngRepeat: category in col -->
 				<div ng-repeat="category in col" class="topbar-nav-item ng-scope">
@@ -47,7 +47,7 @@
 			</div>
 		</div>
 		<div role="tabpanel" class="tab-pane" id="profile">
-			<div data-ng-repeat="col in categories" class="topbar-nav-col ng-scope">
+			<div class="topbar-nav-col clearfix">
 				{% for k,routes in routes %}
 				<!-- ngRepeat: category in col -->
 				<div ng-repeat="category in col" class="topbar-nav-item ng-scope">

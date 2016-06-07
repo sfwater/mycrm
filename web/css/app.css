@@ -399,14 +399,15 @@ tfoot, .bg-color-f56 {
 
 
 .topbar-nav-col {
-    display: inline-block;
     vertical-align: top;
     padding: 0 10px;
+    position: relative;
 }
 .topbar-nav-item .topbar-nav-item-title {
     margin: 3px 0px;
     color: #999;
     font-weight: 600;
+    float: left;
 }
 .topbar-nav-item ul {
     padding: 0;

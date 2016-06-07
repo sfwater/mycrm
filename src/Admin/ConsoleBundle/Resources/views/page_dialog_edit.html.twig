@@ -4,6 +4,12 @@
 	{{ form_start(form) }}	
 		<div class="pageFormContent">
 			{% block formContent %} {% endblock %}
+			<div class="form-group">
+			    <div class="col-sm-offset-2 col-sm-10">
+				<button type="submit" id="btnSubmit" class="btn btn-primary">提交</button>
+				<button type="button" id="btnReset" class="btn btn-default">重置</button>
+			    </div>
+			</div>
 		</div>
 	{{ form_end(form) }}	
 {% endblock %}

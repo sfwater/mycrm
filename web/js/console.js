@@ -882,7 +882,9 @@ function _getPagerForm($parent, args) {
 		                	if( form ){
 		                		form.submit();
 		                	}
-		                	dialog.close();
+		                	else{
+			                	dialog.close();
+		                	}
 		                }
 		            },
 		            {

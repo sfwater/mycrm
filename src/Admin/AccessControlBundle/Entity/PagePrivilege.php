@@ -75,5 +75,52 @@ class PagePrivilege
     {
         return $this->routeName;
     }
-}
 
+    /**
+     * Set userId
+     *
+     * @param integer $userId
+     *
+     * @return PagePrivilege
+     */
+    public function setUserId($userId)
+    {
+        $this->userId = $userId;
+
+        return $this;
+    }
+
+    /**
+     * Get userId
+     *
+     * @return integer
+     */
+    public function getUserId()
+    {
+        return $this->userId;
+    }
+
+    /**
+     * Set groupId
+     *
+     * @param integer $groupId
+     *
+     * @return PagePrivilege
+     */
+    public function setGroupId($groupId)
+    {
+        $this->groupId = $groupId;
+
+        return $this;
+    }
+
+    /**
+     * Get groupId
+     *
+     * @return integer
+     */
+    public function getGroupId()
+    {
+        return $this->groupId;
+    }
+}

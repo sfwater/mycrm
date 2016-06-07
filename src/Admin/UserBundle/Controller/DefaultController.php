@@ -14,7 +14,7 @@ use Admin\UserBundle\Form\UserSearchType;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
-* @Route("/users")
+* @Route("/admin/users")
 */
 class DefaultController extends AdminBaseController
 {

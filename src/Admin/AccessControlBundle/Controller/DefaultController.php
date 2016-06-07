@@ -10,7 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Security\Core\Exception\UsernameNotFoundException;
 /**
-* @Route("/acls")
+* @Route("/admin/acls")
 */
 class DefaultController extends AdminAclController
 {

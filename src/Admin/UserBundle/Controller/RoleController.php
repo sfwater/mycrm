@@ -14,7 +14,7 @@ use Admin\UserBundle\Form\RoleSearchType;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
-* @Route("/roles")
+* @Route("/admin/roles")
 */
 class RoleController extends AdminBaseController
 {

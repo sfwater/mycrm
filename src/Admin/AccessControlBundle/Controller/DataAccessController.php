@@ -8,7 +8,7 @@ use Admin\AdminAclController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 /**
-* @Route("/acls")
+* @Route("/admin/acls")
 */
 class DataAccessController extends AdminAclController
 {

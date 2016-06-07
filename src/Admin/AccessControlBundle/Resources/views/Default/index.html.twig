@@ -23,7 +23,7 @@
 			<div class="topbar-nav-col clearfix">
 				{% for k,routes in routes %}
 				<!-- ngRepeat: category in col -->
-				<div ng-repeat="category in col" class="topbar-nav-item ng-scope">
+				<div class="topbar-nav-item">
 					<p class="topbar-nav-item-title ng-binding">{{ k }}</p>
 					<ul>
 						{% for r in routes %}
@@ -50,7 +50,7 @@
 			<div class="topbar-nav-col clearfix">
 				{% for k,routes in routes %}
 				<!-- ngRepeat: category in col -->
-				<div ng-repeat="category in col" class="topbar-nav-item ng-scope">
+				<div class="topbar-nav-item">
 					<p class="topbar-nav-item-title ng-binding">{{ k }}</p>
 					<ul>
 						{% for r in routes %}

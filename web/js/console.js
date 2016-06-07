@@ -851,11 +851,12 @@ function _getPagerForm($parent, args) {
 		//打开一个层
 		open:function(url, dlgid, title, options) {
 			var op = $.extend({},$.pdialog._op, options);
+			var $this = this;
 	        BootstrapDialog.show({
 	            title: title,
 	            draggable: true,
 	            onshown: function(dialog){
-	            	this._current = dialog;
+	            	$this._current = dialog;
 	               	var $body = dialog.getModalBody();
 	            	$body.data(dlgid);
 	            	$body.ajaxUrl({url:url, data:null, callback:options.callback, type:options.type});

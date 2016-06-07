@@ -29,7 +29,7 @@
 						{% for r in routes %}
 						<!-- ngRepeat: product in category.products -->
 						<li> 
-							<a href="javascript:void(0);" for="route_{{ r.name }}">
+							<a href="javascript:void(0);" for="route_{{ r.name }}" data-toggle="tooltip" data-placement="right" title="{{ r.options.description }}">
 								<input type="checkbox" value="{{ r.name }}" name="names[]" id="route_{{ r.name }}" />
 								<span class="topbar-nav-item-icon icon-ecs"></span>
 								<span class="ng-binding">{{ r.options.name }}</span>

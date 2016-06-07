@@ -148,8 +148,6 @@ class DefaultController extends AdminBaseController
             $em->flush();
             return $this->success();
         }
-        else{
-        }
 
         return array(
             'entity'      => $entity,

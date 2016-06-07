@@ -866,17 +866,9 @@ function _getPagerForm($parent, args) {
 	        BootstrapDialog.show({
 	            title: title,
 	            draggable: true,
-	            message: function(){
-	            	var $message = $("<div></div>");
-	            	var callback = function(response){
-	            		$message.html(response);
-	            	};
-	            	$message.ajaxUrl({url:url, data:null, callback:callback, type:options.type});
-	            	return $message;
-	            },
 	            onshown: function(dialog){
 	               	var $body = dialog.getModalBody();
-	            	dialog.data(dlgid);
+	            	$body.data(dlgid);
 	            	$body.ajaxUrl({url:url, data:null, callback:callback, type:options.type});
 	            },
 	            cssClass: 'middel-dialog',

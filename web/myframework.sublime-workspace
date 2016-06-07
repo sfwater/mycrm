@@ -72,10 +72,26 @@
 			}
 		},
 		{
+			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+			"settings":
+			{
+				"buffer_size": 6838,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Form/UserType.php",
+			"settings":
+			{
+				"buffer_size": 3393,
+				"line_ending": "Windows"
+			}
+		},
+		{
 			"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/page_dialog_edit.html.twig",
 			"settings":
 			{
-				"buffer_size": 536,
+				"buffer_size": 284,
 				"line_ending": "Windows"
 			}
 		},
@@ -83,7 +99,7 @@
 			"file": "js/console.js",
 			"settings":
 			{
-				"buffer_size": 36835,
+				"buffer_size": 29195,
 				"line_ending": "Windows"
 			}
 		},
@@ -103,7 +119,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 310.0,
+		"height": 375.0,
 		"last_filter": ":w",
 		"selected_items":
 		[
@@ -164,6 +180,7 @@
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/translations",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views",
 		"/E/workspace/myframework-php/src/Admin/UserBundle",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources",
@@ -301,6 +318,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"		restore:function(dialog) {\n			var original = $(dialog).data(\"original\");\n			var dwidth = parseInt(original.width);\n			var dheight = parseInt(original.height);\n			$(dialog).css({\n				top:original.top,\n				left:original.left,\n				width:dwidth,\n				height:dheight\n			});\n			$.pdialog._resizeContent(dialog,dwidth,dheight);\n			$(\"a.maximize\",dialog).show();\n			$(\"a.restore\",dialog).hide();\n			$.pdialog.attachShadow(dialog);\n		},",
+			"		_init:function(dialog, options) {\n			var op = $.extend({}, this._op, options);\n			var height = op.height>op.minH?op.height:op.minH;\n			var width = op.width>op.minW?op.width:op.minW;\n			if(isNaN(dialog.height()) || dialog.height() < height){\n				$(dialog).height(height+\"px\");\n				$(\".dialogContent\",dialog).height(height - $(\".dialogHeader\", dialog).outerHeight() - $(\".dialogFooter\", dialog).outerHeight() - 6);\n			}\n			if(isNaN(dialog.css(\"width\")) || dialog.width() < width) {\n				$(dialog).width(width+\"px\");\n			}\n			\n			var iTop = ($(window).height()-dialog.height())/2;\n			dialog.css({\n				left: ($(window).width()-dialog.width())/2,\n				top: iTop > 0 ? iTop : 0\n			});\n		},\n		/**\n		 * 初始化半透明层\n		 * @param {Object} resizable\n		 * @param {Object} dialog\n		 * @param {Object} target\n		 */\n		initResize:function(resizable, dialog,target) {\n			$(\"body\").css(\"cursor\", target + \"-resize\");\n			resizable.css({\n				top: $(dialog).css(\"top\"),\n				left: $(dialog).css(\"left\"),\n				height:$(dialog).css(\"height\"),\n				width:$(dialog).css(\"width\")\n			});\n			resizable.show();\n		},\n		/**\n		 * 改变阴隐层\n		 * @param {Object} target\n		 * @param {Object} options\n		 */\n		repaint:function(target,options){\n			var shadow = $(\"div.shadow\");\n			if(target != \"w\" && target != \"e\") {\n				shadow.css(\"height\", shadow.outerHeight() + options.tmove);\n				$(\".shadow_c\", shadow).children().andSelf().each(function(){\n					$(this).css(\"height\", $(this).outerHeight() + options.tmove);\n				});\n			}\n			if(target == \"n\" || target ==\"nw\" || target == \"ne\") {\n				shadow.css(\"top\", options.otop - 2);\n			}\n			if(options.owidth && (target != \"n\" || target != \"s\")) {\n				shadow.css(\"width\", options.owidth + 8);\n			}\n			if(target.indexOf(\"w\") >= 0) {\n				shadow.css(\"left\", options.oleft - 4);\n			}\n		},\n		/**\n		 * 改变左右拖动层的高度\n		 * @param {Object} target\n		 * @param {Object} tmove\n		 * @param {Object} dialog\n		 */\n		resizeTool:function(target, tmove, dialog) {\n			$(\"div[class^='resizable']\", dialog).filter(function(){\n				return $(this).attr(\"tar\") == 'w' || $(this).attr(\"tar\") == 'e';\n			}).each(function(){\n				$(this).css(\"height\", $(this).outerHeight() + tmove);\n			});\n		},\n		/**\n		 * 改变原始层的大小\n		 * @param {Object} obj\n		 * @param {Object} dialog\n		 * @param {Object} target\n		 */\n		resizeDialog:function(obj, dialog, target) {\n			var oleft = parseInt(obj.style.left);\n			var otop = parseInt(obj.style.top);\n			var height = parseInt(obj.style.height);\n			var width = parseInt(obj.style.width);\n			if(target == \"n\" || target == \"nw\") {\n				tmove = parseInt($(dialog).css(\"top\")) - otop;\n			} else {\n				tmove = height - parseInt($(dialog).css(\"height\"));\n			}\n			$(dialog).css({left:oleft,width:width,top:otop,height:height});\n			$(\".dialogContent\", dialog).css(\"width\", (width-12) + \"px\");\n			$(\".pageContent\", dialog).css(\"width\", (width-14) + \"px\");\n			if (target != \"w\" && target != \"e\") {\n				var content = $(\".dialogContent\", dialog);\n				content.css({height:height - $(\".dialogHeader\", dialog).outerHeight() - $(\".dialogFooter\", dialog).outerHeight() - 6});\n				content.find(\"[layoutH]\").layoutH(content);\n				$.pdialog.resizeTool(target, tmove, dialog);\n			}\n			$.pdialog.repaint(target, {oleft:oleft,otop: otop,tmove: tmove,owidth:width});\n			\n			$(window).trigger(DWZ.eventType.resizeGrid);\n		},",
+			"	            message: function(){\n	            	var $message = $(\"<div></div>\");\n	            	var callback = function(response){\n	            		$message.html(response);\n	            	};\n	            	$message.ajaxUrl({url:url, data:null, callback:callback, type:options.type});\n	            	return $message;\n	            },",
 			"login",
 			"body",
 			"    /**\n     * 系统配置\n     * @Route(\n     *      \"/config\", name=\"admin_configuration\",\n     *      options = {\"name\":\"系统配置\",\"description\":\"修改系统配置\",\"category\":\"console\",\"order\":7, \"type\":\"console\",\"show\":true} \n     *   )\n     * @Method(\"POST\")\n     */\n    public function configAction()\n    {\n    }",
@@ -350,7 +370,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -366,8 +386,8 @@
 						"selection":
 						[
 							[
-								647,
-								395
+								455,
+								455
 							]
 						],
 						"settings":
@@ -377,26 +397,88 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6838,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4853,
+								4853
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2706.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/page_dialog_edit.html.twig",
+					"buffer": 2,
+					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Form/UserType.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 536,
+						"buffer_size": 3393,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								483,
-								483
+								2226,
+								2226
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 469.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/page_dialog_edit.html.twig",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 284,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								284,
+								284
 							]
 						],
 						"settings":
@@ -408,24 +490,24 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 2,
+					"buffer": 4,
 					"file": "js/console.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 36835,
+						"buffer_size": 29195,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								26435,
-								26435
+								665,
+								665
 							]
 						],
 						"settings":
@@ -434,14 +516,14 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 19078.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 5,
 					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/edit.html.twig",
 					"semi_transient": false,
 					"settings":
@@ -465,7 +547,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]

@@ -29,8 +29,8 @@ class DefaultController extends AdminBaseController
      */
     public function indexAction(Request $request)
     {
-        $form = $this->createForm(new UserSearchType($this->get('router'), $action), $request->query->all());
         $action = $request->query->get('action');
+        $form = $this->createForm(new UserSearchType($this->get('router'), $action), $request->query->all());
 
         $conditions = '';
         $parameters = array();

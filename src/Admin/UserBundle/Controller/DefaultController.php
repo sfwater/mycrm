@@ -31,7 +31,7 @@ class DefaultController extends AdminBaseController
     {
         $action = $request->query->get('action');
         $targetType = $action == "lookup" ? "dialog":"navTab";
-        $options['attr'] = array('targetType'=>$targetType);
+        $options['attr']['targetType'] = $targetType;
         $options['action'] = $this->generateUrl('admin_users_index',array('action'=>$action));
         $form = $this->createForm(UserSearchType::class, $request->query->all(), $options);
 

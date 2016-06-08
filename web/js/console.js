@@ -688,7 +688,7 @@ function _getPagerForm($parent, args) {
 	};
 	$.extend({
 		bringBackSuggest: function(args){
-			var $box = _lookup['$target'].parents(".unitBox:first");
+			var $box = _lookup['$target'].parents(".modal-body:first");
 			$box.find(":input").each(function(){
 				var $input = $(this), inputName = $input.attr("id"), acceptName = $input.attr("accept");
 				for (var key in args) {

@@ -8,12 +8,13 @@
 			data: args,
 			cache: false,
 			success: function(response){
+				var data = response.data;
 				CONSOLE.hideLoading();
 				//绑定数据
-				if( response.type == 'user' ){
+				if( data.type == 'user' ){
 					var $parent = $("#home");
 					$.checkbox.unSelectAll("names[]", $parent);
-					$.each(response.privileges,function(){
+					$.each(data.privileges,function(){
 						$("route_"+this.name, $parent).attr("checked",true);
 						$("route_"+this.name, $parent).prop("checked",true);
 					});
@@ -21,7 +22,7 @@
 				else{
 					var $parent = $("#profile");
 					$.checkbox.unSelectAll("names[]", $parent);
-					$.each(response.privileges,function(){
+					$.each(data.privileges,function(){
 						$("route_"+this.name, $parent).attr("checked",true);
 						$("route_"+this.name, $parent).prop("checked",true);
 					});

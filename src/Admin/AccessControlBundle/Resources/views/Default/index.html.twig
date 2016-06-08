@@ -32,7 +32,7 @@
 					<div class="form-group">
 						<input type="text" id="user.username" lookupgroup="user" name="username" required="required" class="disabled ipt form-control" placeholder="ID、用户名、昵称" label="ID、用户名、昵称" disabled>
 					</div>
-					<a class="btn btn-default" id="btnSearch" lookupgroup="user" href="{{ path('admin_users_lookup') }}">选择用户</a>
+					<a class="btn btn-default" id="btnSearch" lookupgroup="user" href="{{ path('admin_users_index', {action:'lookup'}) }}">选择用户</a>
 					</form>
 				</div>
 			</div>

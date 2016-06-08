@@ -23,7 +23,7 @@
 			<td>{{ entity.registerTime|date("Y-m-d H:i:s") }}</td>
 			<td>{{ entity.isActive|userActive }}</td>
             <td class="text-right">
-			<a class="btnSelect" href="javascript:$.bringBack({id:'{{ entity.id }}', username:'{{ entity.username }}', nickanme:'{{ entity.nickanme }}'})" title="查找带回">选择</a>
+			<a class="btnSelect" href="javascript:$.bringBack({id:'{{ entity.id }}', username:'{{ entity.username }}', nickanme:'{{ entity.nickname }}'})" title="查找带回">选择</a>
             </td>
 		</tr>
 	{% endfor %}

@@ -4,7 +4,7 @@
 	var bringBackCallback = function(args){
 		$.ajax({
 			type: 'POST',
-			url: {{ path('admin_acls_privileges') }},
+			url: "{{ path('admin_acls_privileges') }}",
 			data: args,
 			cache: false,
 			success: function(response){

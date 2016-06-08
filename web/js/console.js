@@ -1,4 +1,17 @@
 var CONSOLE;
+var _lookup = {currentGroup:"", suffix:"", $target:null, pk:"id"};
+var _util = {
+	_lookupPrefix: function(key){
+		var strDot = _lookup.currentGroup ? "." : "";
+		return _lookup.currentGroup + strDot + key + _lookup.suffix;
+	},
+	lookupPk: function(key){
+		return this._lookupPrefix(key);
+	},
+	lookupField: function(key){
+		return this.lookupPk(key);
+	}
+};
 /**
  * 普通ajax表单提交
  * @param {Object} form

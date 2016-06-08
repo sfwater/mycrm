@@ -70,46 +70,6 @@
 				"buffer_size": 3942,
 				"line_ending": "Windows"
 			}
-		},
-		{
-			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/RoleController.php",
-			"settings":
-			{
-				"buffer_size": 5755,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/ConsoleController.php",
-			"settings":
-			{
-				"buffer_size": 1485,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
-			"settings":
-			{
-				"buffer_size": 7466,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/dwz.min.js",
-			"settings":
-			{
-				"buffer_size": 171128,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/console.js",
-			"settings":
-			{
-				"buffer_size": 35802,
-				"line_ending": "Windows"
-			}
 		}
 	],
 	"build_system": "",
@@ -184,6 +144,7 @@
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views",
 		"/E/workspace/myframework-php/src/Admin/UserBundle",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default",
@@ -192,17 +153,19 @@
 	],
 	"file_history":
 	[
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/RoleController.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/ConsoleController.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/web/js/dwz.min.js",
+		"/E/workspace/myframework-php/web/js/console.js",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/User.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/base.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/lookup.html.twig",
 		"/E/workspace/myframework-php/src/AppBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/index.html.twig",
-		"/E/workspace/myframework-php/web/js/console.js",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/views/Default/index.html.twig",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/ConsoleController.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/LoginController.php",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/RoleController.php",
 		"/E/workspace/myframework-php/web/css/app.css",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/RoleType.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Role/edit.html.twig",
@@ -238,10 +201,8 @@
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/config/services.yml",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Entity/UserTree.php",
 		"/E/workspace/submission/src/Admin/DWZBackendBundle/Security/Authorization/Voter/UserRouteVoter.php",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/User.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/RoleSearchType.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/UserSearchType.php",
-		"/E/workspace/myframework-php/web/js/dwz.min.js",
 		"/E/workspace/myframework-php/web/css/bootstrap-dialog.min.css",
 		"/E/workspace/myframework-php/web/js/bootstrap-dialog.min.js",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Extension/PagerExtension.php",
@@ -389,7 +350,7 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 0,
 			"sheets":
 			[
 				{
@@ -405,8 +366,8 @@
 						"selection":
 						[
 							[
-								1345,
-								1345
+								1324,
+								1324
 							]
 						],
 						"settings":
@@ -417,157 +378,6 @@
 						},
 						"translation.x": 0.0,
 						"translation.y": 396.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/RoleController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5755,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								668,
-								668
-							]
-						],
-						"settings":
-						{
-							"is_xml": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 792.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/ConsoleController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1485,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								852,
-								852
-							]
-						],
-						"settings":
-						{
-							"is_xml": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 462.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7466,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2134,
-								2134
-							]
-						],
-						"settings":
-						{
-							"is_xml": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 909.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "js/dwz.min.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 171128,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								134262,
-								133610
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 97097.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "js/console.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 35802,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								26809,
-								26809
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 20081.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,

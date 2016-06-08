@@ -1080,7 +1080,7 @@ function _getPagerForm($parent, args) {
 	        BootstrapDialog.show({
 	            title: title,
 	            draggable: true,
-	            size: _op.size,
+	            size: op.size,
 	            onshown: function(dialog){
 	            	$this._current = dialog;
 	               	var $body = dialog.getModalBody();

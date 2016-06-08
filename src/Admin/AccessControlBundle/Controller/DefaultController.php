@@ -57,7 +57,7 @@ class DefaultController extends AdminAclController
             }
             $result = $em->getRepository('AdminAccessControlBundle:PagePrivilege')->findByUserId($one->getId());
 
-            return $this->jsonResponse($result);
+            return $this->jsonResponse(array('type'=>'user','privileges'=>$result));
         }
         else if( !empty($groupname) ){
             $dql = 'SELECT dist FROM AdminUserBundle:Role dist WHERE dist.name LIKE :name OR dist.role LIKE :name';

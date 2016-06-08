@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"dia",
+				"dialogPageBreak"
+			],
+			[
+				"tar",
+				"targetType"
+			],
+			[
 				"required",
 				"required-validate"
 			],
@@ -67,7 +75,15 @@
 			"file": "/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/views/Default/index.html.twig",
 			"settings":
 			{
-				"buffer_size": 3942,
+				"buffer_size": 5100,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/workspace/myframework-php/src/Admin/AccessControlBundle/Controller/DefaultController.php",
+			"settings":
+			{
+				"buffer_size": 3082,
 				"line_ending": "Windows"
 			}
 		},
@@ -80,18 +96,18 @@
 			}
 		},
 		{
-			"file": "js/dwz.min.js",
+			"file": "js/console.js",
 			"settings":
 			{
-				"buffer_size": 171128,
+				"buffer_size": 37559,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "js/console.js",
+			"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Form/UserSearchType.php",
 			"settings":
 			{
-				"buffer_size": 36243,
+				"buffer_size": 1591,
 				"line_ending": "Windows"
 			}
 		}
@@ -103,7 +119,7 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 310.0,
+		"height": 375.0,
 		"last_filter": ":w",
 		"selected_items":
 		[
@@ -116,12 +132,12 @@
 				":w - Save"
 			],
 			[
-				":sw",
-				":w - Save"
-			],
-			[
 				":auto",
 				"Tag: Auto-Format Tags on Document"
+			],
+			[
+				":sw",
+				":w - Save"
 			],
 			[
 				"install",
@@ -132,7 +148,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 410.0
+		"width": 418.0
 	},
 	"console":
 	{
@@ -159,6 +175,7 @@
 		"/E/workspace/myframework-php/src",
 		"/E/workspace/myframework-php/src/Admin",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Controller",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/views",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/views/DataAccess",
@@ -169,7 +186,9 @@
 		"/E/workspace/myframework-php/src/Admin/UserBundle",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Form",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/config",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default",
 		"/E/workspace/myframework-php/src/AppBundle",
@@ -177,10 +196,12 @@
 	],
 	"file_history":
 	[
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/RoleController.php",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/ConsoleController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/web/js/dwz.min.js",
+		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Controller/Controller.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/config/services.yml",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/RoleController.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/ConsoleController.php",
 		"/E/workspace/myframework-php/web/js/console.js",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/User.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/base.html.twig",
@@ -231,11 +252,9 @@
 		"/E/workspace/myframework-php/web/js/bootstrap-dialog.min.js",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Extension/PagerExtension.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/config/system.yml",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/config/services.yml",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/config/services.yml",
 		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/Form/FormConfigBuilder.php",
 		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/Form/FormBuilder.php",
-		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Controller/Controller.php",
 		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/FormBuilderTest.php",
 		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/Form/Tests/FormConfigTest.php",
 		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Routing/Router.php",
@@ -312,6 +331,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"				$this.data(\"url\",op.url);\n				$this.data(\"options\", op);\n				var json = CONSOLE.jsonEval(response);\n				\n				if (json[CONSOLE.keys.statusCode]==CONSOLE.statusCode.error){\n					if (json[CONSOLE.keys.message]) alertMsg.error(json[CONSOLE.keys.message]);\n				} else {\n					$this.html(response).initUI();\n					if ($.isFunction(op.callback)) op.callback(response, $this);\n				}\n				\n				if (json[CONSOLE.keys.statusCode]==CONSOLE.statusCode.timeout){\n					if ($.pdialog) $.pdialog.checkTimeout();\n					if (navTab) navTab.checkTimeout();\n\n					alertMsg.error(json[CONSOLE.keys.message] || CONSOLE.msg(\"sessionTimout\"), {okCall:function(){\n						CONSOLE.loadLogin();\n					}});\n				} ",
 			"lookup",
 			"DWZ",
 			"jsonEval",
@@ -375,7 +395,7 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -384,15 +404,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3942,
+						"buffer_size": 5100,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1324,
-								1324
+								609,
+								609
 							]
 						],
 						"settings":
@@ -410,6 +430,37 @@
 				},
 				{
 					"buffer": 1,
+					"file": "/E/workspace/myframework-php/src/Admin/AccessControlBundle/Controller/DefaultController.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3082,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2116,
+								2116
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 792.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
 					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/lookup.html.twig",
 					"semi_transient": false,
 					"settings":
@@ -421,8 +472,8 @@
 						"selection":
 						[
 							[
-								874,
-								874
+								271,
+								271
 							]
 						],
 						"settings":
@@ -434,35 +485,6 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "js/dwz.min.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 171128,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								133220,
-								133220
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 96437.0,
-						"zoom_level": 1.0
-					},
 					"stack_index": 3,
 					"type": "text"
 				},
@@ -472,15 +494,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 36243,
+						"buffer_size": 37559,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3246,
-								3246
+								21002,
+								21002
 							]
 						],
 						"settings":
@@ -489,10 +511,41 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 2399.0,
+						"translation.y": 15180.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/E/workspace/myframework-php/src/Admin/UserBundle/Form/UserSearchType.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1591,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1564,
+								1564
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 264.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -500,7 +553,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 40.0
+		"height": 436.0
 	},
 	"input":
 	{
@@ -537,7 +590,7 @@
 	"project": "myframework.sublime-project",
 	"replace":
 	{
-		"height": 72.0
+		"height": 864.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -546,6 +599,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"controller.php",
+				"vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller.php"
+			],
 			[
 				"console.js",
 				"web\\js\\console.js"
@@ -569,10 +626,6 @@
 			[
 				"pager",
 				"src\\Admin\\ConsoleBundle\\Extension\\PagerExtension.php"
-			],
-			[
-				"controller.php",
-				"vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller.php"
 			],
 			[
 				"formbuildertest",

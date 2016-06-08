@@ -1,26 +1,45 @@
 {% extends 'AdminConsoleBundle::page.html.twig' %}
 {% block pageContent %}
 <script type="text/javascript">
-	var bringBackCallback = null;
-	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-		var target = $(e.target).attr('href');
-		if( target == '#home'){
-			bringBackCallback = function(args){
-				var data = {username:args.username};
-				$.postJSON("{{ path('admin_acls_privileges') }}", data, function(json){
+	var bringBackCallback = function(args){
+		$.ajax({
+			type: 'POST',
+			url: {{ path('admin_acls_privileges') }},
+			data: args,
+			cache: false,
+			success: function(response){
+				CONSOLE.hideLoading();
+				//绑定数据
+				if( response.type == 'user' ){
+					var $parent = $("#home");
+					$.checkbox.unSelectAll("names[]", $parent);
+					$.each(response.privileges,function(){
+						$("route_"+this.name, $parent).attr("checked",true);
+						$("route_"+this.name, $parent).prop("checked",true);
+					});
+				}
+				else{
+					var $parent = $("#profile");
+					$.checkbox.unSelectAll("names[]", $parent);
+					$.each(response.privileges,function(){
+						$("route_"+this.name, $parent).attr("checked",true);
+						$("route_"+this.name, $parent).prop("checked",true);
+					});
+				}
+			},
+			beforeSend: function(){
+				CONSOLE.showLoading();
+			},
+			error: CONSOLE.ajaxError,
+			timeout: CONSOLE.ajaxTimeout,
+			statusCode: {
+				503: function(xhr, ajaxOptions, thrownError) {
+					alert(CONSOLE.msg("statusCode_503") || thrownError);
+				}
+			}
+		});
+	};
 
-				});
-			}
-		}
-		else{
-			bringBackCallback = function(args){
-				var data = {groupname:args.groupname};
-				$.postJSON("{{ path('admin_acls_privileges') }}", data, function(json){
-					
-				});
-			}
-		}
-	});
 </script>
 <div class="alert alert-info alert-dismissible" role="alert">
 	<button type="button" class="close" data-dismiss="alert" aria-label="Close">

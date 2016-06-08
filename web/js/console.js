@@ -140,6 +140,33 @@ function consolePageBreak(options){
 	}
 }
 /**
+ * 处理dialog中的分页和排序
+ * targetType: dialog
+ * rel: 可选 用于局部刷新div id号
+ * data: pagerForm参数 {pageNum:"n", numPerPage:"n", orderField:"xxx", orderDirection:""}
+ * callback: 加载完成回调函数
+ */
+function dialogPageBreak(options){
+	var op = $.extend({ rel:"", data:{pageNum:"", orderField:"", orderDirection:""}, callback:null}, options);
+	var $box = op.rel == "" ? $.pdialog.getCurrent() : $(op.rel);
+	var form = _getPagerForm($box, op.data);
+
+	var callback = function(response){
+		if( $.isFunction(op.callback) ){
+			op.callback(response);
+		}
+		var _callback = $(form).attr('onsuccess');
+		if( $.isFunction(_callback) ){
+			_callback(response);
+		}
+	}
+
+	if (form) {
+		$box.ajaxUrl({type:$(form).attr("method"), url:$(form).attr("action"), data: $(form).serializeArray(), callback:callback});
+	}
+}
+
+/**
  * 
  * @param {Object} args {pageNum:"",numPerPage:"",orderField:"",orderDirection:""}
  * @param String formId 分页表单选择器，非必填项默认值是 "pagerForm"
@@ -494,20 +521,36 @@ function _getPagerForm($parent, args) {
 		//搜索表单
 		$("form.searchForm", $p).submit(function(){
 			var $this = $(this);
-			consolePageBreak({data:{pageNum:1}});
+			var targetType = $(this).attr("targetType") || "navTab";
+
+			if( targetType == "navTab" )
+				consolePageBreak({data:{pageNum:1}});
+			else
+				dialogPageBreak({data:{pageNum:1}});
 			return false;
 		});
 
 		//分页
 		$(".pagination a", $p).click(function(ev){
 			var page = $(this).attr("page-index");
-			consolePageBreak({data:{pageNum:page}});
+			var targetType = $(this).attr("targetType") || "navTab";
+
+			if( targetType == "navTab" ){
+				consolePageBreak({data:{pageNum:page}});
+			}
+			else{
+				dialogPageBreak({data:{pageNum:page}});
+			}
 			ev.preventDefault();
 		});
 		$(".pagination-goto button").click(function(){
 			var page = parseInt($("#gotoPageNo").val());
+			var targetType = $(this).attr("targetType") || "navTab";
 			if( page > 0 ){
-				consolePageBreak({data:{pageNum:page}});
+				if( targetType == "navTab" )
+					consolePageBreak({data:{pageNum:page}});
+				else
+					dialogPageBreak({data:{pageNum:page}});
 			}
 		});
 		//排序

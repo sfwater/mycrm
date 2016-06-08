@@ -30,7 +30,10 @@ class DefaultController extends AdminBaseController
     public function indexAction(Request $request)
     {
         $action = $request->query->get('action');
-        $form = $this->createForm(new UserSearchType($this->get('router'), $action), $request->query->all());
+        $targetType = $action == "lookup" ? "dialog":"navTab";
+        $options['attr'] = array('targetType'=>$targetType);
+        $options['action'] = $this->generateUrl('admin_users_index',array('action'=>$action));
+        $form = $this->createForm(UserSearchType::class, $request->query->all(), $options);
 
         $conditions = '';
         $parameters = array();

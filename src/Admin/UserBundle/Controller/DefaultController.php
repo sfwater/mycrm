@@ -30,6 +30,7 @@ class DefaultController extends AdminBaseController
     public function indexAction(Request $request)
     {
         $form = $this->createForm(UserSearchType::class, $request->query->all());
+        $action = $request->query->get('action');
 
         $conditions = '';
         $parameters = array();
@@ -45,10 +46,19 @@ class DefaultController extends AdminBaseController
         if( !empty($orderField) && !empty($orderDirection) ){
             $sort = "dist.$orderField $orderDirection";
         }
-        return array_merge(
+
+        $data = array_merge(
             array('searchForm'=>$form->createView()),
             $this->getPagedEntities(User::class, $conditions, $parameters, $sort)
             );
+        if( empty($action) ){
+            return $this->render('AdminUserBundle:Default:index.html.twig', $data);
+        }
+        elseif( $action == 'lookup' ){
+            $mult = $request->query->get('mult');
+            $data['mult'] = ($mult == 'mult');
+            return $this->render('AdminUserBundle:Default:lookup.html.twig', $data);
+        }
     }
 
     /**

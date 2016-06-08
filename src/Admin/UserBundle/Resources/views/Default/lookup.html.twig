@@ -1,0 +1,35 @@
+{% extends 'AdminConsoleBundle::page_list.html.twig' %}
+{% block searchContent %}
+{{ form_row(searchForm.name) }}
+{% endblock %}
+{% block tableHeader %}
+	<th class="sortable" order-field="username">用户名</th>
+	<th class="sortable" order-field="nickname">别名</th>
+	<th>邮箱</th>
+	<th>用户组</th>
+	<th>过期时间</th>
+	<th>注册时间</th>
+	<th>激活</th>
+{% endblock %}
+{% block tableBody %}
+	{% for entity in results %}
+		<tr>
+			<td> <input type="checkbox" name="ids[]"  value="{{ entity.id }}" /> </td>
+			<td>{{ entity.username }}</td>
+			<td>{{ entity.nickname }}</td>
+			<td>{{ entity.email }}</td>
+			<td>{{ entity.roles[0].name }}</td>
+			<td>{% if entity.expireTime is not empty %}{{ entity.expireTime|date("Y-m-d H:i:s") }}{% else %}--{% endif %}</td>
+			<td>{{ entity.registerTime|date("Y-m-d H:i:s") }}</td>
+			<td>{{ entity.isActive|userActive }}</td>
+            <td class="text-right">
+			<a class="btnSelect" href="javascript:$.bringBack({id:'{{ entity.id }}', username:'{{ entity.username }}', nickanme:'{{ entity.nickanme }}'})" title="查找带回">选择</a>
+            </td>
+		</tr>
+	{% endfor %}
+{% endblock %}
+{% block tableAction %}
+{% if mult %}
+<button type="button" multLookup="user" warn="请选择用户">选择带回</button>
+{% endif %}
+{% endblock %}

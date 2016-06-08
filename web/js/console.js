@@ -19,8 +19,8 @@ function validateCallback(form, callback, confirmMsg) {
 			data:$form.serializeArray(),
 			dataType:"json",
 			cache: false,
-			success: callback || DWZ.ajaxDone,
-			error: DWZ.ajaxError
+			success: callback || CONSOLE.ajaxDone,
+			error: CONSOLE.ajaxError
 		});
 	}
 	
@@ -57,7 +57,7 @@ function iframeCallback(form, callback){
 	}
 	form.target = "callbackframe";
 	
-	_iframeResponse($iframe[0], callback || DWZ.ajaxDone);
+	_iframeResponse($iframe[0], callback || CONSOLE.ajaxDone);
 }
 function _iframeResponse(iframe, callback){
 	var $iframe = $(iframe), $document = $(document);
@@ -526,6 +526,9 @@ function _getPagerForm($parent, args) {
 		$(":button.checkbox-all, :checkbox.checkbox-all", $p).checkboxCtrl($p);
 		$(":button[target=selectedTodo], a[target=selectedTodo]", $p).selectedTodo($p);
 		$('[data-toggle="tooltip"]').tooltip();
+		if ($.fn.lookup) $("a[lookupGroup],button[lookupGroup]", $p).lookup();
+		if ($.fn.multLookup) $("[multLookup]:button", $p).multLookup();
+
 	}
 	var alertMsg = {
 		_closeTimer: null,
@@ -670,6 +673,29 @@ function _getPagerForm($parent, args) {
 			}
 		}
 	};
+	$.extend({
+		bringBackSuggest: function(args){
+			var $box = _lookup['$target'].parents(".unitBox:first");
+			$box.find(":input").each(function(){
+				var $input = $(this), inputName = $input.attr("id"), acceptName = $input.attr("accept");
+				for (var key in args) {
+					var name = (_lookup.pk == key) ? _util.lookupPk(key) : _util.lookupField(key);
+
+					if (name == inputName || name == acceptName) {
+						$input.val(args[key]);
+						break;
+					}
+				}
+			});
+		},
+		bringBack: function(args){
+			$.bringBackSuggest(args);
+			$.pdialog.closeCurrent();
+			if( typeof(bringBackCallback) == "function" ){
+				bringBackCallback(args);
+			}
+		}
+	});
 	$.fn.extend({
 		/**
 		 * @param {Object} op: {type:GET/POST, url:ajax请求地址, data:ajax请求参数列表, callback:回调函数 }
@@ -843,10 +869,191 @@ function _getPagerForm($parent, args) {
 				});
 				
 			});
+		},
+		lookup: function(){
+			return this.each(function(){
+				var $this = $(this), options = {mask:true, 
+					width:$this.attr('width')||820, height:$this.attr('height')||400,
+					maxable:eval($this.attr("maxable") || "true"),
+					resizable:eval($this.attr("resizable") || "true"),
+					size: BootstrapDialog.SIZE_WIDE
+				};
+				$this.click(function(event){
+					_lookup = $.extend(_lookup, {
+						currentGroup: $this.attr("lookupGroup") || "",
+						suffix: $this.attr("suffix") || "",
+						$target: $this,
+						pk: $this.attr("lookupPk") || "id"
+					});
+					
+					var url = unescape($this.attr("href"));
+					if (!url.isFinishedTm()) {
+						alertMsg.error($this.attr("warn") || CONSOLE.msg("alertSelectMsg"));
+						return false;
+					}
+					
+					$.pdialog.open(url, "_blank", $this.attr("title") || $this.text(), options);
+					return false;
+				});
+			});
+		},
+		multLookup: function(){
+			return this.each(function(){
+				var $this = $(this), args={};
+				$this.click(function(event){
+					var $unitBox = $this.parents(".modal-body:first");
+					$unitBox.find("[name='"+$this.attr("multLookup")+"']").filter(":checked").each(function(){
+						var _args = CONSOLE.jsonEval($(this).val());
+						for (var key in _args) {
+							var value = args[key] ? args[key]+"," : "";
+							args[key] = value + _args[key];
+						}
+					});
+
+					if ($.isEmptyObject(args)) {
+						alertMsg.error($this.attr("warn") || CONSOLE.msg("alertSelectMsg"));
+						return false;
+					}
+					$.bringBack(args);
+				});
+			});
+		},
+		suggest: function(){
+			var op = {suggest$:"#suggest", suggestShadow$: "#suggestShadow"};
+			var selectedIndex = -1;
+			return this.each(function(){
+				var $input = $(this).attr('autocomplete', 'off').keydown(function(event){
+					if (event.keyCode == CONSOLE.keyCode.ENTER && $(op.suggest$).is(':visible')) return false; //屏蔽回车提交
+				});
+				
+				var suggestFields=$input.attr('suggestFields').split(",");
+				
+				function _show(event){
+					var offset = $input.offset();
+					var iTop = offset.top+this.offsetHeight;
+					var $suggest = $(op.suggest$);
+					if ($suggest.size() == 0) $suggest = $('<div id="suggest"></div>').appendTo($('body'));
+
+					$suggest.css({
+						left:offset.left+'px',
+						top:iTop+'px'
+					}).show();
+					
+					_lookup = $.extend(_lookup, {
+						currentGroup: $input.attr("lookupGroup") || "",
+						suffix: $input.attr("suffix") || "",
+						$target: $input,
+						pk: $input.attr("lookupPk") || "id"
+					});
+
+					var url = unescape($input.attr("suggestUrl")).replaceTmById($(event.target).parents(".unitBox:first"));
+					if (!url.isFinishedTm()) {
+						alertMsg.error($input.attr("warn") || CONSOLE.msg("alertSelectMsg"));
+						return false;
+					}
+					
+					var postData = {};
+					postData[$input.attr("postField")||"inputValue"] = $input.val();
+
+					$.ajax({
+						global:false,
+						type:'POST', dataType:"json", url:url, cache: false,
+						data: postData,
+						success: function(response){
+							if (!response) return;
+							var html = '';
+
+							$.each(response, function(i){
+								var liAttr = '', liLabel = '';
+								
+								for (var i=0; i<suggestFields.length; i++){
+									var str = this[suggestFields[i]];
+									if (str) {
+										if (liLabel) liLabel += '-';
+										liLabel += str;
+									}
+								}
+								for (var key in this) {
+									if (liAttr) liAttr += ',';
+									liAttr += key+":'"+this[key]+"'";
+								}
+								html += '<li lookupAttrs="'+liAttr+'">' + liLabel + '</li>';
+							});
+							
+							var $lis = $suggest.html('<ul>'+html+'</ul>').find("li");
+							$lis.hoverClass("selected").click(function(){
+								_select($(this));
+							});
+							if ($lis.size() == 1 && event.keyCode != CONSOLE.keyCode.BACKSPACE) {
+								_select($lis.eq(0));
+							} else if ($lis.size() == 0){
+								var jsonStr = "";
+								for (var i=0; i<suggestFields.length; i++){
+									if (_util.lookupField(suggestFields[i]) == event.target.name) {
+										break;
+									}
+									if (jsonStr) jsonStr += ',';
+									jsonStr += suggestFields[i]+":''";
+								}
+								jsonStr = "{"+_lookup.pk+":''," + jsonStr +"}";
+								$.bringBackSuggest(CONSOLE.jsonEval(jsonStr));
+							}
+						},
+						error: function(){
+							$suggest.html('');
+						}
+					});
+
+					$(document).bind("click", _close);
+					return false;
+				}
+				function _select($item){
+					var jsonStr = "{"+ $item.attr('lookupAttrs') +"}";
+					
+					$.bringBackSuggest(CONSOLE.jsonEval(jsonStr));
+				}
+				function _close(){
+					$(op.suggest$).html('').hide();
+					selectedIndex = -1;
+					$(document).unbind("click", _close);
+				}
+				
+				$input.focus(_show).click(false).keyup(function(event){
+					var $items = $(op.suggest$).find("li");
+					switch(event.keyCode){
+						case CONSOLE.keyCode.ESC:
+						case CONSOLE.keyCode.TAB:
+						case CONSOLE.keyCode.SHIFT:
+						case CONSOLE.keyCode.HOME:
+						case CONSOLE.keyCode.END:
+						case CONSOLE.keyCode.LEFT:
+						case CONSOLE.keyCode.RIGHT:
+							break;
+						case CONSOLE.keyCode.ENTER:
+							_close();
+							break;
+						case CONSOLE.keyCode.DOWN:
+							if (selectedIndex >= $items.size()-1) selectedIndex = -1;
+							else selectedIndex++;
+							break;
+						case CONSOLE.keyCode.UP:
+							if (selectedIndex < 0) selectedIndex = $items.size()-1;
+							else selectedIndex--;
+							break;
+						default:
+							_show(event);
+					}
+					$items.removeClass("selected");
+					if (selectedIndex>=0) {
+						var $item = $items.eq(selectedIndex).addClass("selected");
+						_select($item);
+					}
+				});
+			});
 		}
 	});
 	$.pdialog = {
-		_op:{callback:null,height:300, width:580, minH:40, minW:50, total:20, max:false, mask:false, resizable:true, drawable:true, maxable:true,minable:true,fresh:true,type:"POST"},
+		_op:{callback:null,height:300, width:580, minH:40, minW:50, total:20, max:false, mask:false, resizable:true, drawable:true, maxable:true,minable:true,fresh:true,type:"POST",size:BootstrapDialog.SIZE_NORMAL},
 		_current:null,
 		_zIndex:42,
 		getCurrent:function(){
@@ -859,6 +1066,7 @@ function _getPagerForm($parent, args) {
 	        BootstrapDialog.show({
 	            title: title,
 	            draggable: true,
+	            size: _op.size,
 	            onshown: function(dialog){
 	            	$this._current = dialog;
 	               	var $body = dialog.getModalBody();

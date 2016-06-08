@@ -1,8 +1,10 @@
 {% extends 'AdminConsoleBundle::page.html.twig' %}
 {% block pageContent %}
 <script type="text/javascript">
-	var bringBackCallback = function(args){
-	}
+	var bringBackCallback = null;
+	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+		alert(e.target.attr('id'));
+	});
 </script>
 <div class="alert alert-info alert-dismissible" role="alert">
 	<button type="button" class="close" data-dismiss="alert" aria-label="Close">

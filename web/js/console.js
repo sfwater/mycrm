@@ -889,7 +889,8 @@ function _getPagerForm($parent, args) {
 					width:$this.attr('width')||820, height:$this.attr('height')||400,
 					maxable:eval($this.attr("maxable") || "true"),
 					resizable:eval($this.attr("resizable") || "true"),
-					size: BootstrapDialog.SIZE_WIDE
+					size: BootstrapDialog.SIZE_WIDE,
+					buttons:[]
 				};
 				$this.click(function(event){
 					event.preventDefault();
@@ -1077,18 +1078,7 @@ function _getPagerForm($parent, args) {
 		open:function(url, dlgid, title, options) {
 			var op = $.extend({},$.pdialog._op, options);
 			var $this = this;
-	        BootstrapDialog.show({
-	            title: title,
-	            draggable: true,
-	            size: op.size,
-	            onshown: function(dialog){
-	            	$this._current = dialog;
-	               	var $body = dialog.getModalBody();
-	            	$body.data(dlgid);
-	            	$body.ajaxUrl({url:url, data:null, callback:options.callback, type:options.type});
-	            },
-	            cssClass: 'middel-dialog',
-	            buttons: [
+			var buttons = op.buttons || [
 		            {
 		                label: $.regional.alertMsg.butMsg.ok,
 		                cssClass: 'btn-primary',
@@ -1109,7 +1099,19 @@ function _getPagerForm($parent, args) {
 		                    dialog.close();
 		                }
 		            }
-	            ]
+	            ];
+	        BootstrapDialog.show({
+	            title: title,
+	            draggable: true,
+	            size: op.size,
+	            onshown: function(dialog){
+	            	$this._current = dialog;
+	               	var $body = dialog.getModalBody();
+	            	$body.data(dlgid);
+	            	$body.ajaxUrl({url:url, data:null, callback:options.callback, type:options.type});
+	            },
+	            cssClass: 'middel-dialog',
+	            buttons: buttons 
 	        });
 		},
 

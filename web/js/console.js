@@ -1148,8 +1148,8 @@ function _getPagerForm($parent, args) {
 	            draggable: true,
 	            size: op.size,
 	            onshown: function(dialog){
-	            	$this._current = dialog;
 	               	var $body = dialog.getModalBody();
+	            	$this._current = $body;
 	            	$body.data(dlgid);
 	            	$body.ajaxUrl({url:url, data:null, callback:options.callback, type:options.type});
 	            },

@@ -892,6 +892,7 @@ function _getPagerForm($parent, args) {
 					size: BootstrapDialog.SIZE_WIDE
 				};
 				$this.click(function(event){
+					event.preventDefault();
 					_lookup = $.extend(_lookup, {
 						currentGroup: $this.attr("lookupGroup") || "",
 						suffix: $this.attr("suffix") || "",

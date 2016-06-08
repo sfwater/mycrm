@@ -3,7 +3,23 @@
 <script type="text/javascript">
 	var bringBackCallback = null;
 	$('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-		alert($(e.target).attr('href'));
+		var target = $(e.target).attr('href');
+		if( target == '#home'){
+			bringBackCallback = function(args){
+				var data = {username:args.username};
+				$.postJSON("{{ path('admin_acls_privileges') }}", data, function(json){
+
+				});
+			}
+		}
+		else{
+			bringBackCallback = function(args){
+				var data = {groupname:args.groupname};
+				$.postJSON("{{ path('admin_acls_privileges') }}", data, function(json){
+					
+				});
+			}
+		}
 	});
 </script>
 <div class="alert alert-info alert-dismissible" role="alert">

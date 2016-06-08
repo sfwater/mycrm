@@ -36,8 +36,8 @@ class UserSearchType extends AbstractType
         $resolver->setDefaults(array(
             'data_class' => NULL,
             'method'=>'GET',
-            'attr'=>array('class'=>'form-inline searchForm','id'=>'searchForm','targetType'=>$targetType),
-            'action'=>$this->router->generate('admin_users_index', array("action"=>$action))
+            'attr'=>array('class'=>'form-inline searchForm','id'=>'searchForm'),
+            'action'=>$this->router->generate('admin_users_index')
         ));
     }
 }

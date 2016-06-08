@@ -14,8 +14,10 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 class UserSearchType extends AbstractType
 {
     var $router;
-    public function __construct($router){
+    var $action;
+    public function __construct($router, $action=""){
         $this->router = $router;
+        $this->action = $action;
     }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -33,11 +35,12 @@ class UserSearchType extends AbstractType
     }
     public function configureOptions(OptionsResolver $resolver)
     {
+        $targetType = $action == "lookup" ? "dialog":"navTab";
         $resolver->setDefaults(array(
             'data_class' => NULL,
             'method'=>'GET',
-            'attr'=>array('class'=>'form-inline searchForm','id'=>'searchForm'),
-            'action'=>$this->router->generate('admin_users_index')
+            'attr'=>array('class'=>'form-inline searchForm','id'=>'searchForm','targetType'=>$targetType),
+            'action'=>$this->router->generate('admin_users_index', array("action"=>$this->action))
         ));
     }
 }

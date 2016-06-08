@@ -28,7 +28,7 @@
 
 			<div class="margin-top clearfix">
 				<div class="searchForm pull-left">
-					<form>
+					<form class="form-inline">
 					<div class="form-group">
 						<input type="text" id="role_search_name" name="username" required="required" class="disabled ipt form-control" placeholder="ID、用户名、昵称" label="ID、用户名、昵称" disabled>
 					</div>
@@ -64,10 +64,11 @@
 		<div role="tabpanel" class="tab-pane" id="profile">
 			<div class="margin-top clearfix">
 				<div class="searchForm pull-left">
+				<form class="form-inline">
 					<div class="form-group">
 						<input type="text" id="role_search_group_name" name="groupname" required="required" class="form-control ipt disabled" placeholder="组名" label="组名" disabled="">
-						<button type="submit" class="btn btn-default" id="btnGroupSearch">选择用户组</button>
 					</div>
+					<button type="button" class="btn btn-default" id="btnGroupSearch">选择用户组</button>
 				</form>
 			</div>
 		</div>

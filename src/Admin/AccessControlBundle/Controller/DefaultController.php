@@ -69,7 +69,7 @@ class DefaultController extends AdminAclController
             }
             $result = $em->getRepository('AdminAccessControlBundle:PagePrivilege')->findByGroupId($one->getId());
 
-            return $this->jsonResponse($result);
+            return $this->jsonResponse(array('type'=>'gorup','privileges'=>$result));
         }
         return $this->jsonResponse(array());
     }

@@ -41,7 +41,8 @@ class ConsoleController extends AdminBaseController
 
         $form= $this->createFormBuilder()
             ->setMethod('POST')
-            ->setAttribute('attr', array('class'=>'required-validate searchForm','onsuccess'=>'dialogCallback'))
+            ->setAttribute('attr', array('class'=>'required-validate pageForm'))
+            ->setAction($this->generateUrl('admin_change_password'))
             ->getForm();
         $form->handleRequest($request);
 

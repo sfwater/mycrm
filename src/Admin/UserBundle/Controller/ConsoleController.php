@@ -48,7 +48,7 @@ class ConsoleController extends AdminBaseController
 
             $oldPassword = $request->request->get('oldPassword');
             $oldPassword = $encoder->encodePassword($user,$oldPassword);
-            if( $encoder->isPasswordValid($user, $oldPassword) ){
+            if( !$encoder->isPasswordValid($user, $oldPassword) ){
                 $this->throwException('Old password invalid');
             }
 

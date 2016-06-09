@@ -39,11 +39,7 @@ class ConsoleController extends AdminBaseController
         }
 
 
-        $form= $this->createFormBuilder()
-            ->setMethod('POST')
-            ->setAttributes(array('class'=>'required-validate pageForm'))
-            ->setAction($this->generateUrl('admin_change_password'))
-            ->getForm();
+        $form= $this->createForm(ChangePasswordType::class, array());
         $form->handleRequest($request);
 
         if ($form->isValid()) {

@@ -19,3 +19,8 @@ services:
         arguments: ["@router"]
         tags:
             - { name: form.type }
+    admin_user.form.type.changepassword:
+        class: Admin\UserBundle\Form\ChangePasswordType
+        arguments: ["@router"]
+        tags:
+            - { name: form.type }

@@ -292,7 +292,7 @@ function _getPagerForm($parent, args) {
 			CONSOLE.hideLoading();
 			if (alertMsg) {
 				json = CONSOLE.jsonEval(xhr.responseText);
-				alertMsg.error(CONSOLE.keys.message);
+				alertMsg.error(json[CONSOLE.keys.message]);
 			} else {
 				alert("Http status: " + xhr.status + " " + xhr.statusText + "\najaxOptions: " + ajaxOptions + "\nthrownError:"+thrownError + "\n" +xhr.responseText);
 			}

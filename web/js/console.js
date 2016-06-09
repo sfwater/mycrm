@@ -33,7 +33,7 @@ function validateCallback(form, callback, confirmMsg) {
 			dataType:"json",
 			cache: false,
 			success: callback || CONSOLE.ajaxDone,
-			error: CONSOLE.ajaxError
+			error: CONSOLE.ajaxDone
 		});
 	}
 	
@@ -808,7 +808,7 @@ function _getPagerForm($parent, args) {
 				beforeSend: function(){
 					CONSOLE.showLoading();
 				},
-				error: CONSOLE.ajaxError,
+				error: CONSOLE.ajaxDone,
 				timeout: CONSOLE.ajaxTimeout,
 				statusCode: {
 					503: function(xhr, ajaxOptions, thrownError) {
@@ -933,7 +933,7 @@ function _getPagerForm($parent, args) {
 									$box.reload();
 								_callback(response);
 							},
-							error: CONSOLE.ajaxError
+							error: CONSOLE.ajaxDone
 						});
 					}
 					var title = $this.attr("title");

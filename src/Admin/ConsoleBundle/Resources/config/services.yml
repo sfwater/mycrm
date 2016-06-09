@@ -14,3 +14,8 @@ services:
         arguments: ["@router"]
         tags:
             - { name: form.type }
+    admin_dwz_backend.exception_listener:
+        class: Admin\ConsoleBundle\Extension\ConsoleExceptionListener
+        arguments: [@translator]
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }

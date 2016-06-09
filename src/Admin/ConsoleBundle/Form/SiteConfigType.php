@@ -25,7 +25,7 @@ class SiteConfigType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => NULL,
-            'attr'=>array('onsuccess'=>'dialogCallback'),
+            'attr'=>array('class'=>'pageForm required-validate','onsuccess'=>'dialogCallback'),
             'action'=>$this->router->generate('admin_configuration')
         ));
     }

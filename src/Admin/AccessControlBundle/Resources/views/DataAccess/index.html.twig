@@ -12,14 +12,13 @@
 				var data = response.data;
 				CONSOLE.hideLoading();
 				//绑定数据
-				var $parent = $("#home");
 				saveUrl += args.id;
 				$.checkbox.unSelectAll("ids[]", $parent);
 				$.each(data,function(){
 					$("#user_"+this.id, $parent).attr("checked",true);
 					$("#user_"+this.id, $parent).prop("checked",true);
 				});
-				$parent.find('[target=selectedTodo]').attr('href',saveUrl);
+				$('#btnSave').attr('href',saveUrl);
 			},
 			beforeSend: function(){
 				CONSOLE.showLoading();
@@ -79,7 +78,7 @@
 		{% endfor %}
 		<!-- end ngRepeat: category in col -->
 	</div>
-	<button class="btn btn-primary pull-right" target="selectedTodo" reload="false" action="save" group="ids[]">保存用户关系</button>
+	<button id="btnSave" class="btn btn-primary pull-right" target="selectedTodo" reload="false" action="save" group="ids[]">保存用户关系</button>
 
 </div>
 {% endblock %}

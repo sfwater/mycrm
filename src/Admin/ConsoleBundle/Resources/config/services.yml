@@ -14,7 +14,7 @@ services:
         arguments: ["@router"]
         tags:
             - { name: form.type }
-    admin_dwz_backend.exception_listener:
+    admin_console.exception_listener:
         class: Admin\ConsoleBundle\Extension\ConsoleExceptionListener
         arguments: [@translator]
         tags:

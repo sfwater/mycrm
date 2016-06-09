@@ -53,7 +53,7 @@ class DataAccessController extends AdminAclController
      */
     public function relationsAction(Request $request)
     {
-        $userId = intval($request->request->get('userId'));
+        $userId = intval($request->request->get('id'));
         $em = $this->getDoctrine()->getManager();
 
 

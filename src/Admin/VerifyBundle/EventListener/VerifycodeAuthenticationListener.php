@@ -3,7 +3,7 @@
 namespace Admin\VerifyBundle\EventListener;
 
 
-use Symfony\Component\Security\Core\Event\InteractiveLoginEvent;
+use Symfony\Component\Security\Http\Event\InteractiveLoginEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Admin\VerifyBundle\Exception\BadVerifycodeException;

@@ -40,10 +40,32 @@
         </a>
       </div>
       <div class="topbar-nav topbar-left dropdown">
-        <a href="#" class="dropdown-toggle topbar-btn topbar-nav-btn" data-toggle="dropdown">
+        <a href="javascript:void(0);" class="dropdown-toggle topbar-btn topbar-nav-btn" data-toggle="dropdown">
           <span class="ng-binding">快捷菜单</span>
           <span class="icon-arrow-down"></span>
         </a>
+        <div class="dropdown-menu" style="width:600px;">
+        {% for k,routes in routes %}
+        <!-- ngRepeat: category in col -->
+        <div class="topbar-nav-item" >
+          <p class="topbar-nav-item-title ng-binding">{{ k }}</p>
+          <ul>
+            {% for r in routes %}
+            <!-- ngRepeat: product in category.products -->
+            <li>
+              <a href="{{ path(r.name) }}" title="{{ r.options.description }}" target="{{ r.target }}" method="{{ r.methods[0] }}" for="route_{{ r.name }}" data-placement="right">
+                <span class="topbar-nav-item-icon icon-ecs"></span>
+                <span class="ng-binding">{{ r.options.name }}</span>
+                <span class="topbar-nav-item-short ng-binding"></span>
+              </a>
+            </li>
+            {% endfor %}
+          </ul>
+          <!-- ngIf: $index < col.length -1 -->
+          <div class="topbar-nav-gap ng-scope" ng-if="$index < col.length -1"></div>
+          <!-- end ngIf: $index < col.length -1 --></div>
+        {% endfor %}
+        </div>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">

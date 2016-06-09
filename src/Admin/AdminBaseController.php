@@ -13,6 +13,7 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 class AdminBaseController extends Controller
 {
     protected $targetType = 'navTab';
+    protected $adminUser = 'admin';
 	/**
 	* 获取用户所有的路由，在options选项中设置了category的为用户路由
 	*/
@@ -105,6 +106,15 @@ class AdminBaseController extends Controller
             'targetType'=>$this->targetType
             );
 	}
+
+    /**
+    * 获取系统可用用户，除去admin账号
+    */
+    protected function getSystemAvaliableUsers(){
+        $em = $this->getDoctrine()->getManager();
+        $dql = "SELETE dist FROM AdminUserBundle:User dist WHERE dist.username<>'{$this->adminUser}'";
+        return $em->createQuery($dql)->getResult();
+    }
 
     protected function setNavtabMode(){
         $this->targetType = 'navTab';

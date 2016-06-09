@@ -1,0 +1,56 @@
+{% extends 'AdminConsoleBundle::page.html.twig' %}
+{% block pageContent %}
+<script type="text/javascript">
+	var bringBackCallback = function(args){
+
+	};
+
+</script>
+<div class="alert alert-info alert-dismissible" role="alert">
+	<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+		<span aria-hidden="true">&times;</span>
+	</button>
+	为 <strong>用户</strong>
+	分配子用户，子用户的数据该用户均可管理
+</div>
+<div>
+	<!-- Tab panes -->
+
+	<div class="margin-top clearfix">
+		<div class="searchForm pull-left">
+			<form class="form-inline">
+				<div class="form-group">
+					<input type="text" id="user.username" lookupgroup="user" name="username" required="required" class="disabled ipt form-control" placeholder="ID、用户名、昵称" label="ID、用户名、昵称" disabled></div>
+				<a class="btn btn-default" id="btnSearch" lookupgroup="user" href="{{ path('admin_users_index', {action:'lookup'}) }}">选择用户</a>
+			</form>
+		</div>
+	</div>
+	<div class="topbar-nav-col clearfix margin-top">
+		{% for k,users in result %}
+		<!-- ngRepeat: category in col -->
+		<div class="topbar-nav-item">
+			<p class="topbar-nav-item-title ng-binding">{{ k }}</p>
+			<ul>
+				{% for u in users %}
+				<!-- ngRepeat: product in category.products -->
+				<li>
+					<a href="javascript:void(0);" for="route_{{ u.id }}" data-toggle="tooltip" data-placement="right" title="{{ u.username }}">
+						<input type="checkbox" value="{{ u.id }}" name="ids[]" id="user_{{ u.id }}" />
+						<span class="topbar-nav-item-icon icon-ecs"></span>
+						<span class="ng-binding">{{ u.nickname }}</span>
+						<span class="topbar-nav-item-short ng-binding"></span>
+					</a>
+				</li>
+				{% endfor %}
+			</ul>
+			<!-- ngIf: $index < col.length -1 -->
+			<div class="topbar-nav-gap ng-scope"></div>
+			<!-- end ngIf: $index < col.length -1 -->
+		</div>
+		{% endfor %}
+		<!-- end ngRepeat: category in col -->
+	</div>
+	<button class="btn btn-primary pull-right" target="selectedTodo" reload="false" action="save" group="ids[]">保存用户关系</button>
+
+</div>
+{% endblock %}

@@ -25,6 +25,7 @@ class ChangePasswordType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => NULL,
+            'method'=>'PUT',
             'attr'=>array('class'=>'pageForm required-validate'),
             'action'=>$this->router->generate('admin_change_password')
         ));

@@ -1,6 +1,6 @@
 <?php
 
-namespace Admin\DWZBackendBundle\EventListener;
+namespace Admin\ConsoleBundle\Extension;
 
 use Symfony\Component\HttpKernel\Event\GetResponseForExceptionEvent;
 use Symfony\Component\HttpFoundation\Response;

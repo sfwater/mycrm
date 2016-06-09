@@ -29,12 +29,40 @@ class DefaultController extends AdminBaseController
      * 系统配置
      * @Route(
      *      "/config", name="admin_configuration",
-     *      options = {"name":"系统配置","description":"修改系统配置","category":"console","order":7, "type":"console","show":true} 
+     *      options = {"name":"系统配置","description":"修改系统配置","category":"console","order":7, "type":"console","show":true,target="dialog"} 
      *   )
      * @Method("POST")
+     * @Template("AdminConsoleBundle:Default:config.html.twig")
      */
     public function configAction()
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $entity = $em->getRepository('AdminConsoleBundle:SiteConfig')->findOne();
+
+        if (!$entity) {
+            $entity = new SiteConfig();
+        }
+
+
+        $editForm= $this->createForm('Admin\ConsoleBundle\Form\SiteConfigType',$entity,array(
+            'attr'=>array('class'=>'pageForm required-validate','onsuccess'=>'dialogCallback'),
+            'action'=>$this->generateUrl('admin_configuration')
+            ));
+        $editForm->handleRequest($request);
+
+        if ($editForm->isValid()) {
+            $settings = $request->request->get('settings');
+            $entity->setConfig(json_encode($settings));
+            $em->persist($entity);
+            $em->flush();
+            return $this->success();
+        }
+
+        return array(
+            'entity'      => $entity,
+            'form'   => $editForm->createView(),
+        );
     }
 
     /**

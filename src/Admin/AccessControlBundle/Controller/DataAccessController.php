@@ -90,17 +90,13 @@ class DataAccessController extends AdminAclController
      */
     public function relationsSaveAction(Request $request)
     {
-        $to = $request->query->get('to');
+        $userId = intval($request->query->get('userId'));
         $action = $request->request->get('action');
         $ids = $request->request->get('ids');
 
-        if( empty($to) || empty($action) ){
-            $this->throwException('Params error');
-        }
-
         $em = $this->getDoctrine()->getManager();
         //如果是给用户分配权限
-        $toUser = $em->getRepository('AdminUserBundle:User')->loadUserByUsername($to);
+        $toUser = $em->getRepository('AdminUserBundle:User')->find($userId);
         if( !$toUser ){
             $this->throwException('User not found');
         }

@@ -27,8 +27,8 @@
 					saveUrl += args.groupname;
 					$.checkbox.unSelectAll("names[]", $parent);
 					$.each(data.privileges,function(){
-						$("route_"+this.name, $parent).attr("checked",true);
-						$("route_"+this.name, $parent).prop("checked",true);
+						$("#route_"+this.name, $parent).attr("checked",true);
+						$("#route_"+this.name, $parent).prop("checked",true);
 					});
 					$parent.find('[target=selectedTodo]').attr('href',saveUrl);
 				}

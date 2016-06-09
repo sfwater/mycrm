@@ -11,6 +11,7 @@ use Admin\AdminBaseController;
 use Admin\UserBundle\Entity\Role;
 use Admin\UserBundle\Form\UserType;
 use Admin\UserBundle\Form\RoleSearchType;
+use Admin\UserBundle\Form\ChangePasswordType;
 use Symfony\Component\HttpFoundation\Request;
 
 /**

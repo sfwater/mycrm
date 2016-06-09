@@ -586,7 +586,7 @@ function _getPagerForm($parent, args) {
 			var $this = $(this);
 			var showPreview = eval($this.attr('showPreview') || "false");
 			var allowedExtensions = eval($this.attr('allowed') || "['jpg','gif','png']");
-			$this.fileinput({showPreview:showPreview, allowedExtensions:allowedExtensions});
+			$this.fileinput({showPreview:showPreview, allowedExtensions:allowedExtensions,language:'zh'});
 		});
 		if ($.fn.lookup) $("a[lookupGroup],button[lookupGroup]", $p).lookup();
 		if ($.fn.multLookup) $("[multLookup]:button", $p).multLookup();

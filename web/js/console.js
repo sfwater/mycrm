@@ -597,7 +597,7 @@ function _getPagerForm($parent, args) {
 			});
 			$this.on("fileuploaded",function(event, data, previewId, index){
 				var response = data.response;	
-				$this.sublings("input:hidden").val(response.webPath);
+				$this.sublings("input:hidden").val(response.data.webPath);
 			});
 		});
 		if ($.fn.lookup) $("a[lookupGroup],button[lookupGroup]", $p).lookup();

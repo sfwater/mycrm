@@ -39,7 +39,7 @@ class DefaultController extends AdminBaseController
         $form = $this->createForm(UserSearchType::class, $request->query->all(), $options);
 
         $conditions = "dist.username<>:admin";
-        $parameters = array('admin', $this->adminUser);
+        $parameters = array('admin'=>$this->adminUser);
         if( $form->get('name')->getData() ){
             $conditions .= ' AND (dist.username LIKE :name OR dist.nickname LIKE :name OR dist.email LIKE :name)';
             $parameters['name'] = '%'.$form->get('name')->getData().'%';

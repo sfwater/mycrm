@@ -22,7 +22,7 @@ class ConsoleController extends AdminBaseController
      * 修改密码
      * @Route(
      *      "/password", name="admin_change_password",
-     *      options = {"name":"修改密码","description":"修改当前用户密码","category":"console","order":8, "type":"console","show":true,target:"dialog"} 
+     *      options = {"name":"修改密码","description":"修改当前用户密码","category":"console","order":8, "type":"console","show":true,"target":"dialog"} 
      *   )
      * @Method("PUT")
      * @Template("AdminUserBundle:Role:edit.html.twig")

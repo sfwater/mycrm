@@ -19,6 +19,8 @@ class MainController extends Controller
 		"font"	=> "fonts/georgia.ttf",
 		"authkey" => "authcode",
 		);
+
+	var $im;
 	/**
 	* @Route("/verify", name="admin_verify")
 	*/
@@ -89,12 +91,13 @@ class MainController extends Controller
 		 imagettftext($im,$fontsize,mt_rand(-30,30),$i*$_x+3,$_y,$randcolor,$font,$authstr[$i]);
 		}
 
+		$this->im = $im;
 		//生成图像
 		$response = new StreamedResponse();
 		$response->headers->set("Content-Type", "image/png");
 		$response->setCallback(function(){
-			imagepng($im);
-			imagedestroy($im);
+			imagepng($this->im);
+			imagedestroy($this->im);
 		});
 		// $response->send();
 		return $response;

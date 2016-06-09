@@ -64,7 +64,7 @@ class ConsoleController extends AdminBaseController
         }
 
         return array(
-            'form'   => $editForm->createView(),
+            'form'   => $form->createView(),
         );
     }
 }

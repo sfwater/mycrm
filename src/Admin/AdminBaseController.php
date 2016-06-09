@@ -121,9 +121,15 @@ class AdminBaseController extends Controller
         return $em->createQuery($dql)->getResult();
     }
 
+    /**
+    * 设置表单模式为控制台
+    */
     protected function setNavtabMode(){
         $this->targetType = 'navTab';
     }
+    /**
+    * 设置表单模式为对话框
+    */
     protected function setDialogMode(){
         $this->targetType = 'dialog';
     }
@@ -162,7 +168,29 @@ class AdminBaseController extends Controller
 		return $groups;
 	}
 
+    /**
+    * 获取系统设置
+    */
+    protected function getSystemSettings(){
+        $em = $this->getDoctrine()->getManager();
+        $settings = $em->getRepository('AdminConsoleBundle:SiteConfig')->findOne();
+        if( $settings ){
+            $settings = json_decode($settings->getConfig());
+        }
+        return $settings;
+    }
 
+    /**
+    * 获取系统配置
+    */
+    protected function getSystemConfigs(){
+        $configs = $this->container->getParameter('admin_console');
+        return $configs;
+    }
+
+    /**
+    * 抛出异常
+    */
     protected function throwException($msg){
         throw new \Exception($this->translate($msg));
     }

@@ -7,6 +7,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Admin\AdminBaseController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Admin\ConsoleBundle\Form\SiteConfigType;
+use Symfony\Component\HttpFoundation\Request;
 /**
 * @Route("/admin")
 */
@@ -17,11 +19,13 @@ class DefaultController extends AdminBaseController
      */
     public function indexAction()
     {
-        $configs = $this->container->getParameter('admin_console');
+        $configs = $this->getSystemConfigs();
         $routes = $this->resolveUserRoutes($this->getUserRoutes());
+        $settings = $this->getSystemSettings();
         return $this->render('AdminConsoleBundle:Default:index.html.twig', array(
             'userRoutes'=>$routes,
             'configs'=>$configs,
+            'settings'=>$settings
             ));
     }
 
@@ -34,7 +38,7 @@ class DefaultController extends AdminBaseController
      * @Method("POST")
      * @Template("AdminConsoleBundle:Default:config.html.twig")
      */
-    public function configAction()
+    public function configAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
 
@@ -45,10 +49,7 @@ class DefaultController extends AdminBaseController
         }
 
 
-        $editForm= $this->createForm('Admin\ConsoleBundle\Form\SiteConfigType',$entity,array(
-            'attr'=>array('class'=>'pageForm required-validate','onsuccess'=>'dialogCallback'),
-            'action'=>$this->generateUrl('admin_configuration')
-            ));
+        $editForm= $this->createForm(SiteConfigType::class,$entity);
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {

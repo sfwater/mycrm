@@ -109,7 +109,9 @@ class DefaultController extends AdminAclController
             if( !$toUser ){
                 $this->throwException('User not found');
             }
-
+            $dql = "DELETE FROM AdminAccessControlBundle:PagePrivilege dist WHERE dist.userId=:userId";
+            $query = $em->createQuery($dql)->setParameter("userId", $toUser->getId());
+            $query->execute();
             foreach ($names as $value) {
                 $entity = new PagePrivilege();
                 $entity->setRouteName($value);
@@ -125,6 +127,9 @@ class DefaultController extends AdminAclController
                 $this->throwException('Group not found');
             }
 
+            $dql = "DELETE FROM AdminAccessControlBundle:PagePrivilege dist WHERE dist.groupId=:groupId";
+            $query = $em->createQuery($dql)->setParameter("groupId", $toGroup->getId());
+            $query->execute();
             foreach ($names as $value) {
                 $entity = new PagePrivilege();
                 $entity->setRouteName($value);

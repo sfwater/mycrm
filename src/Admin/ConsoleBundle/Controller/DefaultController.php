@@ -33,7 +33,7 @@ class DefaultController extends AdminBaseController
      * 系统配置
      * @Route(
      *      "/config", name="admin_configuration",
-     *      options = {"name":"系统配置","description":"修改系统配置","category":"console","order":7, "type":"console","show":true,target="dialog"} 
+     *      options = {"name":"系统配置","description":"修改系统配置","category":"console","order":7, "type":"console","show":true,target:"dialog"} 
      *   )
      * @Method("POST")
      * @Template("AdminConsoleBundle:Default:config.html.twig")

@@ -33,7 +33,7 @@ function validateCallback(form, callback, confirmMsg) {
 			dataType:"json",
 			cache: false,
 			success: callback || CONSOLE.ajaxDone,
-			error: CONSOLE.ajaxDone
+			error: CONSOLE.ajaxError
 		});
 	}
 	
@@ -291,10 +291,8 @@ function _getPagerForm($parent, args) {
 		ajaxError:function(xhr, ajaxOptions, thrownError){
 			CONSOLE.hideLoading();
 			if (alertMsg) {
-				alertMsg.error("<div>Http status: " + xhr.status + " " + xhr.statusText + "</div>" 
-					+ "<div>ajaxOptions: "+ajaxOptions + "</div>"
-					+ "<div>thrownError: "+thrownError + "</div>"
-					+ "<div>"+xhr.responseText+"</div>");
+				json = CONSOLE.jsonEval(xhr.responseText);
+				alertMsg.error(CONSOLE.keys.message);
 			} else {
 				alert("Http status: " + xhr.status + " " + xhr.statusText + "\najaxOptions: " + ajaxOptions + "\nthrownError:"+thrownError + "\n" +xhr.responseText);
 			}
@@ -808,7 +806,7 @@ function _getPagerForm($parent, args) {
 				beforeSend: function(){
 					CONSOLE.showLoading();
 				},
-				error: CONSOLE.ajaxDone,
+				error: CONSOLE.ajaxError,
 				timeout: CONSOLE.ajaxTimeout,
 				statusCode: {
 					503: function(xhr, ajaxOptions, thrownError) {
@@ -933,7 +931,7 @@ function _getPagerForm($parent, args) {
 									$box.reload();
 								_callback(response);
 							},
-							error: CONSOLE.ajaxDone
+							error: CONSOLE.ajaxError
 						});
 					}
 					var title = $this.attr("title");

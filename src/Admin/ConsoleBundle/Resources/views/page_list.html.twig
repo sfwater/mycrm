@@ -43,9 +43,9 @@
                     {{ pager|raw }}
                     </ul>
                     <div class="pagination-goto">
-                        <input type="text" class="ipt form-control" id="gotoPageNo">
-                        <button type="button" class="btn btn-default" id="goBtn">GO</button>
-                        <input type="hidden" id="totalCount" name="totalCount" value="2">
+                        <input type="text" class="ipt form-control" id="gotoPageNo" targetType="{{ targetType }}">
+                        <button type="button" class="btn btn-default" id="goBtn" targetType="{{ targetType }}">GO</button>
+                        <input type="hidden" id="totalCount" name="totalCount">
                     </div>
                 </div>
             </td>

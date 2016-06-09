@@ -49,6 +49,7 @@ class PagerExtension
     private $preText = '上一页';
     private $firstText = '首页';
     private $lastText = '尾页';
+    private $targetType = 'navTab';
      
     //初始化当前页码，记录总条数，每页多少条记录
     public function __construct($param)
@@ -65,8 +66,12 @@ class PagerExtension
         $this->lastText = $param['lastText'];
         $this->preText = $param['preText'];
         $this->nextText = $param['nextText'];
+        $this->targetType = $param['navTab'];
     }
 
+    public function setTargetType($type){
+        $this->targetType = $type;
+    }
     public function setBaseUrl($url){
         $this->url = $url;
     }
@@ -164,9 +169,9 @@ class PagerExtension
 
     private function buildLink($url, $page, $text){
         if( $page == $this->currentPage){
-            return '<li class="active"><a>'.$text.'</a></li>';
+            return '<li class="active" targetType="'.$this->targetType.'"><a>'.$text.'</a></li>';
         }
-        return '<li><a href="javascript:void(0);" page-index="'.$page.'">'.$text.'</a></li>';
+        return '<li><a href="javascript:void(0);" targetType="'.$this->targetType.'" page-index="'.$page.'">'.$text.'</a></li>';
     }
     /**
      * 判断基准链接是否携带参数

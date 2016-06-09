@@ -29,6 +29,9 @@ class DefaultController extends AdminBaseController
     public function indexAction(Request $request)
     {
         $action = $request->query->get('action');
+        if( $action == 'lookup' ){
+            $this->setDialogMode();
+        }
         $targetType = $action == "lookup" ? "dialog":"navTab";
         $options['attr']['targetType'] = $targetType;
         $options['attr']['class'] = 'form-inline searchForm';

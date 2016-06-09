@@ -12,6 +12,7 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 */
 class AdminBaseController extends Controller
 {
+    protected $targetType = 'navTab';
 	/**
 	* 获取用户所有的路由，在options选项中设置了category的为用户路由
 	*/
@@ -88,6 +89,7 @@ class AdminBaseController extends Controller
         	}
         }
         $pager->setBaseUrl($baseUrl);
+        $pager->setTargetType($this->targetType);
 
         $route = $router->matchRequest($request);
         $action = $router->generate($route['_route']);
@@ -100,9 +102,16 @@ class AdminBaseController extends Controller
             'pager'=>$pager->pagination('1'),
             'pageLength'=>$pager->pageAmount(),
             'query'=>$request->query->all(),
+            'targetType'=>$this->targetType
             );
 	}
 
+    protected function setNavtabMode(){
+        $this->targetType = 'navTab';
+    }
+    protected function setDialogMode(){
+        $this->targetType = 'dialog';
+    }
 
 	/**
 	* 分组、排序用户路由

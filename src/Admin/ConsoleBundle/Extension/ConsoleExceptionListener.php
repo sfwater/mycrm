@@ -43,7 +43,6 @@ class ConsoleExceptionListener{
 
         //重新设置StatusCode
         $response->setStatusCode(Response::HTTP_OK);
-        $exception instanceof HttpExceptionInterface && $exception->setStatusCode(Response::HTTP_OK);
 
 		$response->headers->set('Content-Type', 'application/json');
         // Send the modified response object to the event

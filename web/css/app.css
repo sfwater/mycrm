@@ -181,7 +181,7 @@ body {
   height: 100%;
 }
 
-[class^="icon-"],[class*="icon-"] {
+[class^="icon-"] {
   font-family: 'aliyun-console-font';
   speak: none;
   font-style: normal;

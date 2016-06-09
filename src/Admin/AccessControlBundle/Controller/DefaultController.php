@@ -37,6 +37,7 @@ class DefaultController extends AdminAclController
      *      "/privileges/", name="admin_acls_privileges",
      *      options = {"name":"权限列表","description":"查看用户、用户组权限列表","category":"访问控制","order":2}
      *   )
+     * @Method('POST')
      */
     public function privilegesAction(Request $request)
     {
@@ -80,6 +81,7 @@ class DefaultController extends AdminAclController
      *      "/privileges/", name="admin_acls_privileges_save",
      *      options = {"name":"保存权限","description":"保存用户、用户组权限列表","category":"访问控制","order":3}
      *   )
+     * @Method('DELETE')
      */
     public function privilegesSaveAction(Request $request)
     {

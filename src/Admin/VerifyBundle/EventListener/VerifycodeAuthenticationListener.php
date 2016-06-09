@@ -3,7 +3,7 @@
 namespace Admin\VerifyBundle\EventListener;
 
 
-use Symfony\Component\Security\Core\Event\AuthenticationEvent;
+use Symfony\Component\Security\Core\Event\InteractiveLoginEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Admin\VerifyBundle\Exception\BadVerifycodeException;
@@ -18,7 +18,7 @@ class VerifycodeAuthenticationListener
 			$this->authKey = $options["authkey"];
 		}
 	}
-	public function onPreAuthentication(AuthenticationEvent $event){
+	public function onPreAuthentication(InteractiveLoginEvent $event){
 		$token = $event->getAuthenticationToken();
 		if( $token ){
 			$request = Request::createFromGlobals();

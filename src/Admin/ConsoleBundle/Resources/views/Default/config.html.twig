@@ -9,7 +9,7 @@
 <div class="form-group">
 	<label class="col-sm-2 control-label" for="settings_logo">LOGO</label>
 	<div class="col-sm-10">
-		<input type="text" id="settings_logo" name="settings[logo]" required="required" class="form-control form-control" placeholder="系统LOGO" label="系统LOGO" value="{% if settings.logo is defined %}{{ settings.logo }}{% endif %}">
+		<input type="file" id="settings_logo" name="settings[logo]" required="required" class="file form-control form-control" placeholder="系统LOGO" label="系统LOGO" value="{% if settings.logo is defined %}{{ settings.logo }}{% endif %}" data-preview-file-type="text">
 	</div>
 </div>
 <div class="form-group">

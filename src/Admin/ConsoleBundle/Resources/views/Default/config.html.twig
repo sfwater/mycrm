@@ -1,19 +1,19 @@
 {% extends 'AdminConsoleBundle::page_dialog_edit.html.twig' %}
 {% block formContent %}
 <div class="form-group">
-	<label class="col-sm-2 control-label required" for="settings_systemname">系统名称：</label>
+	<label class="col-sm-2 control-label" for="settings_systemname">系统名称</label>
 	<div class="col-sm-10">
 		<input type="text" id="settings_systemname" name="settings[systemname]" required="required" class="form-control form-control" placeholder="系统名称" label="系统名称" value="{% if settings.systemname is defined %}{{ settings.systemname }}{% endif %}">
 	</div>
 </div>
 <div class="form-group">
-	<label class="col-sm-2 control-label required" for="settings_logo">LOGO：</label>
+	<label class="col-sm-2 control-label" for="settings_logo">LOGO</label>
 	<div class="col-sm-10">
 		<input type="text" id="settings_logo" name="settings[logo]" required="required" class="form-control form-control" placeholder="系统LOGO" label="系统LOGO" value="{% if settings.logo is defined %}{{ settings.logo }}{% endif %}">
 	</div>
 </div>
 <div class="form-group">
-	<label class="col-sm-2 control-label required" for="settings_copyright">版权信息：</label>
+	<label class="col-sm-2 control-label" for="settings_copyright">版权信息</label>
 	<div class="col-sm-10">
 		<input type="text" id="settings_copyright" name="settings[copyright]" required="required" class="form-control form-control" placeholder="版权信息" label="版权信息" value="{% if settings.copyright is defined %}{{ settings.copyright }}{% endif %}">
 	</div>

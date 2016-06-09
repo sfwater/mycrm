@@ -262,6 +262,9 @@ li.collapsed .sidebar-title-icon{
 .pageFormContent {
   margin-right: 13%;
 }
+.modal-body .pageFormContent {
+  margin-right: 25px;
+}
 .form-control {
   display: inline-block;
   border-radius: 0px;

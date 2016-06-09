@@ -587,7 +587,7 @@ function _getPagerForm($parent, args) {
 			var showPreview = eval($this.attr('showPreview') || "false");
 			var allowedExtensions = eval($this.attr('allowed') || "['jpg','gif','png']");
 			var uploadUrl = $this.attr('uploadUrl') || '/admin/upload';
-			var uploadExtraData = $this.attr('uploadExtraData') || null;
+			var uploadExtraData = $this.attr('uploadExtraData') || {};
 			$this.fileinput({
 				showPreview:showPreview, 
 				allowedExtensions:allowedExtensions,

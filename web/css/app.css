@@ -84,6 +84,9 @@ body {
 .topbar-nav a {
     text-decoration: none;
 }
+.topbar-btn:hover, .topbar-btn.topbar-btn-dark {
+    background: #008fbf;
+}
 
 .loading {
   width: 110px;

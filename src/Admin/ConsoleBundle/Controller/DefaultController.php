@@ -8,6 +8,7 @@ use Admin\AdminBaseController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Admin\ConsoleBundle\Form\SiteConfigType;
+use Admin\ConsoleBundle\Entity\SiteConfig;
 use Symfony\Component\HttpFoundation\Request;
 /**
 * @Route("/admin")
@@ -66,6 +67,7 @@ class DefaultController extends AdminBaseController
         return array(
             'entity'      => $entity,
             'form'   => $editForm->createView(),
+            'settings'=> json_decode($entity->getConfig())
         );
     }
 

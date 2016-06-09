@@ -2,6 +2,7 @@
 {% block pageContent %}
 <script type="text/javascript">
 	var bringBackCallback = function(args){
+		var saveUrl = "{{ path('admin_acls_privileges_save') }}/";
 		$.ajax({
 			type: 'POST',
 			url: "{{ path('admin_acls_privileges') }}",
@@ -13,19 +14,23 @@
 				//绑定数据
 				if( data.type == 'user' ){
 					var $parent = $("#home");
+					saveUrl += args.username;
 					$.checkbox.unSelectAll("names[]", $parent);
 					$.each(data.privileges,function(){
 						$("route_"+this.name, $parent).attr("checked",true);
 						$("route_"+this.name, $parent).prop("checked",true);
 					});
+					$parent.find('[targetType=selectedTodo]').attr('href',saveUrl);
 				}
 				else{
 					var $parent = $("#profile");
+					saveUrl += args.groupname;
 					$.checkbox.unSelectAll("names[]", $parent);
 					$.each(data.privileges,function(){
 						$("route_"+this.name, $parent).attr("checked",true);
 						$("route_"+this.name, $parent).prop("checked",true);
 					});
+					$parent.find('[targetType=selectedTodo]').attr('href',saveUrl);
 				}
 			},
 			beforeSend: function(){
@@ -97,7 +102,7 @@
 				{% endfor %}
 				<!-- end ngRepeat: category in col -->
 			</div>
-			<button class="btn btn-primary pull-right">保存用户权限</button>
+			<button class="btn btn-primary pull-right" targetType="selectedTodo" action="user" group="names[]">保存用户权限</button>
 		</div>
 		<div role="tabpanel" class="tab-pane" id="profile">
 			<div class="margin-top clearfix">
@@ -133,7 +138,7 @@
 				{% endfor %}
 				<!-- end ngRepeat: category in col -->
 			</div>
-			<button class="btn btn-primary pull-right">保存用户组权限</button>
+			<button class="btn btn-primary pull-right" targetType="selectedTodo" action="group" group="names[]">保存用户组权限</button>
 		</div>
 	</div>
 

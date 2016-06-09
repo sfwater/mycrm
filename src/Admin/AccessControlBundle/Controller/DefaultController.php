@@ -105,6 +105,7 @@ class DefaultController extends AdminAclController
                 $entity = new PagePrivilege();
                 $entity->setRouteName($value);
                 $entity->setUserId($toUser->getId());
+                $entity->setGroupId(0);
                 $em->persist($entity);
                 $em->flush();
             }
@@ -119,6 +120,7 @@ class DefaultController extends AdminAclController
                 $entity = new PagePrivilege();
                 $entity->setRouteName($value);
                 $entity->setGroupId($toGroup->getId());
+                $entity->setUserId(0);
                 $em->persist($entity);
                 $em->flush();
             }

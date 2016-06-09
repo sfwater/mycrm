@@ -25,7 +25,7 @@ class SiteConfigType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => NULL,
-            'attr'=>array('class'=>'form-inline searchForm','id'=>'searchForm','onsuccess'=>'dialogCallback'),
+            'attr'=>array('onsuccess'=>'dialogCallback'),
             'action'=>$this->router->generate('admin_configuration')
         ));
     }

@@ -15,6 +15,7 @@ use Symfony\Component\HttpFoundation\Request;
 */
 class DefaultController extends AdminBaseController
 {
+    var $uploadDir = 'file/attachment';
     /**
      * @Route("/", name="admin_index")
      */
@@ -69,6 +70,35 @@ class DefaultController extends AdminBaseController
             'form'   => $editForm->createView(),
             'settings'=> json_decode($entity->getConfig())
         );
+    }
+    /**
+     * 文件上传 
+     * @Route(
+     *      "/upload", name="admin_file_upload",
+     *      options = {"name":"文件上传","description":"文件上传接口","category":"console","order":8, "type":"console"} 
+     *   )
+     * @Method("POST")
+     */
+    public function uploadAction(Request $request){
+       //处理上传文件 
+        $file = $request->file->get('attachment');
+
+        if( !is_dir($this->uploadDir) ){
+            mkdir($this->uploadDir, 0777, true);
+        }
+
+        $ext = $file->guessExtension();
+        if( !$ext ){
+            $ext =  "bin";
+        }
+        $filename = $this->randomName().".".$ext;
+        $file->move($this->uploadDir, $filename);
+
+        $ret = new \StdClass();
+        $ret->realPath = $this->uploadDir."/".$filename;
+        $ret->webPath = "/".$this->uploadDir."/".$filename;
+
+        return $this->success($ret);
     }
 
     /**

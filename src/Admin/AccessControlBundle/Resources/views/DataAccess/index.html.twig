@@ -15,8 +15,8 @@
 				saveUrl += args.id;
 				$.checkbox.unSelectAll("ids[]");
 				$.each(data,function(){
-					$("#user_"+this.id).attr("checked",true);
-					$("#user_"+this.id).prop("checked",true);
+					$("#user_"+this.userId).attr("checked",true);
+					$("#user_"+this.userId).prop("checked",true);
 				});
 				$('#btnSave').attr('href',saveUrl);
 			},

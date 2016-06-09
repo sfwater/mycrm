@@ -112,7 +112,7 @@ class AdminBaseController extends Controller
     */
     protected function getSystemAvaliableUsers(){
         $em = $this->getDoctrine()->getManager();
-        $dql = "SELETE dist FROM AdminUserBundle:User dist WHERE dist.username<>'{$this->adminUser}'";
+        $dql = "SELECT dist FROM AdminUserBundle:User dist WHERE dist.username<>'{$this->adminUser}'";
         return $em->createQuery($dql)->getResult();
     }
 

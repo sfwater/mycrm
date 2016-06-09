@@ -25,16 +25,7 @@ class DataAccessController extends AdminAclController
     {
         $users = $this->getSystemAvaliableUsers();
 
-        $groups = array();
-
-        foreach ($users as $key => $value) {
-            $name = $value->getNickname();
-            $index = $this->getFirstCharter($name);
-            if( !in_array($index, $groups) ){
-                $groups[] = $index;
-            }
-        }
-        sort($groups);
+        $groups = array('A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z');
 
         $groupedUsers = array();
         foreach ($groups as $group) {

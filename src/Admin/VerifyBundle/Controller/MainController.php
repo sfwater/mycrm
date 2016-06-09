@@ -95,7 +95,7 @@ class MainController extends Controller
 		$response->setCallback(function($im){
 			imagepng($im);
 			imagedestroy($im);
-		},array($im));
+		});
 		// $response->send();
 		return $response;
     }

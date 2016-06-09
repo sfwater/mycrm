@@ -70,3 +70,12 @@ swiftmailer:
     username:  "%mailer_user%"
     password:  "%mailer_password%"
     spool:     { type: memory }
+admin_verify:
+    options:
+        width: 80
+        height: 30
+        codelen: 4 
+        font: "fonts/georgia.ttf"
+        charset: "0123456789"
+        authkey: "authcode"
+        fontsize: 16 

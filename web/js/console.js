@@ -874,6 +874,7 @@ function _getPagerForm($parent, args) {
 					var ids = _getIds(selectedIds, rel);
 					var href= $this.attr('href');
 					var $box = rel == undefined ? $parent : $(rel);
+					var reload = $this.attr("reload") || "true";
 					if (!ids) {
 						alertMsg.error($this.attr("warn") || CONSOLE.msg("alertSelectMsg"));
 						return false;
@@ -909,7 +910,8 @@ function _getPagerForm($parent, args) {
 								}
 							}(),
 							success: function(response){
-								$box.reload();
+								if( reload == "true" )
+									$box.reload();
 								_callback(response);
 							},
 							error: CONSOLE.ajaxError

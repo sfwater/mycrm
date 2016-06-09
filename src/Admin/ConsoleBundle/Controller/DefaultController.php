@@ -111,4 +111,9 @@ class DefaultController extends AdminBaseController
         dump($router->generate($route['_route']));
         exit;
     }
+    //生成随机文件名
+    private function randomName(){
+        srand((double)microtime()*1000000); 
+        return date("YmdHis").rand(0,1000);
+    }
 }

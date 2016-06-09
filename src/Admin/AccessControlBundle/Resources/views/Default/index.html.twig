@@ -109,8 +109,8 @@
 				<div class="searchForm pull-left">
 					<form class="form-inline">
 						<div class="form-group">
-							<input type="text" id="role_search_group_name" name="groupname" required="required" class="form-control ipt disabled" placeholder="组名" label="组名" disabled=""></div>
-						<button type="button" class="btn btn-default" id="btnGroupSearch">选择用户组</button>
+							<input type="text" id="group.groupname" lookupgroup="group" name="groupname" required="required" class="form-control ipt disabled" placeholder="组名" label="组名" disabled=""></div>
+						<a class="btn btn-default" lookupgroup="group" href="{{ path('admin_roles_index',{action:'lookup'}) }}" id="btnGroupSearch">选择用户组</button>
 					</form>
 				</div>
 			</div>

@@ -25,7 +25,6 @@ class DefaultController extends AdminBaseController
      *      options = {"name":"用户管理","description":"列出系统中所有管理员用户","category":"系统管理员","order":2, "show":true}
      *   )
      * @Method("GET") 
-     * @Template("AdminUserBundle:Default:index.html.twig")
      */
     public function indexAction(Request $request)
     {

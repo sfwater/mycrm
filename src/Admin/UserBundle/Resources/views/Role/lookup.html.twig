@@ -1,0 +1,29 @@
+{% extends 'AdminConsoleBundle::page_list.html.twig' %}
+{% block searchContent %}
+{{ form_row(searchForm.name) }}
+{% endblock %}
+{% block tableHeader %}
+	<th class="sortable" order-field="name">组名</th>
+	<th>用户组标识</th>
+	<th>权限</th>
+	<th>用户数</th>
+{% endblock %}
+{% block tableBody %}
+	{% for entity in results %}
+		<tr>
+			<td> <input type="checkbox" name="ids[]"  value="{{ entity.id }}" /> </td>
+			<td>{{ entity.name }}</td>
+			<td>{{ entity.role }}</td>
+			<td>{{ entity.mask| printUserMask }}</td>
+			<td>{{ entity.users|length }}</td>
+            <td class="text-right">
+			<a class="btnSelect" href="javascript:$.bringBack({id:'{{ entity.id }}', groupname:'{{ entity.name }}', role:'{{ entity.role }}'})" title="查找带回">选择</a>
+            </td>
+		</tr>
+	{% endfor %}
+{% endblock %}
+{% block tableAction %}
+{% if mult %}
+<button type="button" multLookup="group" warn="请选择用户组">选择带回</button>
+{% endif %}
+{% endblock %}

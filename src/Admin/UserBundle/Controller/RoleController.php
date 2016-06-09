@@ -25,10 +25,15 @@ class RoleController extends AdminBaseController
      *      options = {"name":"用户组管理","description":"列出系统中所有用户组","category":"系统管理员","order":6, "show":true}
      *   )
      * @Method("GET") 
-     * @Template("AdminUserBundle:Role:index.html.twig")
      */
     public function indexAction(Request $request)
     {
+        $action = $request->query->get('action');
+        $targetType = $action == "lookup" ? "dialog":"navTab";
+        $options['attr']['targetType'] = $targetType;
+        $options['attr']['class'] = 'form-inline searchForm';
+        $options['action'] = $this->generateUrl('admin_roles_index',array('action'=>$action));
+
         $form = $this->createForm(RoleSearchType::class, $request->query->all());
 
         $conditions = '';
@@ -45,10 +50,18 @@ class RoleController extends AdminBaseController
         if( !empty($orderField) && !empty($orderDirection) ){
             $sort = "dist.$orderField $orderDirection";
         }
-        return array_merge(
+        $data = array_merge(
             array('searchForm'=>$form->createView()),
             $this->getPagedEntities(Role::class, $conditions, $parameters, $sort)
             );
+        if( empty($action) ){
+            return $this->render('AdminUserBundle:Role:index.html.twig', $data);
+        }
+        elseif( $action == 'lookup' ){
+            $mult = $request->query->get('mult');
+            $data['mult'] = ($mult == 'mult');
+            return $this->render('AdminUserBundle:Role:lookup.html.twig', $data);
+        }
     }
 
     /**

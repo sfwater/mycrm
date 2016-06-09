@@ -582,6 +582,7 @@ function _getPagerForm($parent, args) {
 		$(":button.checkbox-all, :checkbox.checkbox-all", $p).checkboxCtrl($p);
 		$(":button[target=selectedTodo], a[target=selectedTodo]", $p).selectedTodo($p);
 		$('[data-toggle="tooltip"]').tooltip();
+		$('input:file').fileinput();
 		if ($.fn.lookup) $("a[lookupGroup],button[lookupGroup]", $p).lookup();
 		if ($.fn.multLookup) $("[multLookup]:button", $p).multLookup();
 

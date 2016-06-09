@@ -18,6 +18,9 @@ class MainController extends Controller
 		"font"	=> "fonts/georgia.ttf",
 		"authkey" => "authcode",
 		);
+	/**
+	* @Route("/verify", name="admin_verify")
+	*/
     public function indexAction(Request $request)
     {
     	$options = $this->container->getParameter("admin_verify.options");

@@ -9,13 +9,13 @@
 			data: args,
 			cache: false,
 			success: function(response){
-				var data = response;
+				var data = response.data;
 				CONSOLE.hideLoading();
 				//绑定数据
 				var $parent = $("#home");
 				saveUrl += args.id;
 				$.checkbox.unSelectAll("ids[]", $parent);
-				$.each(data.privileges,function(){
+				$.each(data,function(){
 					$("#user_"+this.id, $parent).attr("checked",true);
 					$("#user_"+this.id, $parent).prop("checked",true);
 				});

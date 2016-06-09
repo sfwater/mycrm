@@ -14,6 +14,10 @@ use Symfony\Component\Form\Extension\Core\Type\HiddenType;
 
 class SiteConfigType extends AbstractType
 {
+    var $router;
+    public function __construct($router){
+        $this->router = $router;
+    }
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
     }

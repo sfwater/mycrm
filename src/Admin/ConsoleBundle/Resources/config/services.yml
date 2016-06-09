@@ -9,3 +9,8 @@ services:
         public: true 
         arguments:
           - {pageSize: 20, firstText: '&lt;&lt;', lastText: '&gt;&gt;', preText: '&lt;', nextText: '&gt;', className: ''}
+    admin_console.form.type.siteconfig:
+        class: Admin\ConsoleBundle\Form\SiteConfigType
+        arguments: ["@router"]
+        tags:
+            - { name: form.type }

@@ -81,7 +81,7 @@ class DefaultController extends AdminBaseController
      */
     public function uploadAction(Request $request){
        //处理上传文件 
-        $file = $request->file->get('attachment');
+        $file = $request->files->get('attachment');
 
         if( !is_dir($this->uploadDir) ){
             mkdir($this->uploadDir, 0777, true);

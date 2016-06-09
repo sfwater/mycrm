@@ -12,3 +12,7 @@ admin_user:
     resource: "@AdminUserBundle/Controller/"
     type:     annotation
     prefix:   /
+admin_verfiy:
+    resource: "@AdminVerfiyBundle/Controller/"
+    type: annotation
+    prefix:   /

@@ -1,0 +1,3 @@
+admin_verify:
+    path:     /verify
+    defaults: { _controller: AdminVerifyBundle:Main:index }

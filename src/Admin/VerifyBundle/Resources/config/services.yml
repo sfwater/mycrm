@@ -1,0 +1,6 @@
+services:
+   admin_verify_authentication:
+       class: Admin\VerifyBundle\EventListener\VerifycodeAuthenticationListener
+       arguments: ["%admin_verify.options%"]
+       tags:
+          - { name:kernel.event_listener, event: security.authentication.preauth, method: onPreAuthentication }

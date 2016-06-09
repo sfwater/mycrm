@@ -76,11 +76,11 @@ class DefaultController extends AdminAclController
     /**
      * 保存用户、用户组的权限
      * @Route(
-     *      "/privileges/{to}", name="admin_acls_privileges_save",
+     *      "/privileges/", name="admin_acls_privileges_save",
      *      options = {"name":"保存权限","description":"保存用户、用户组权限列表","category":"访问控制","order":3}
      *   )
      */
-    public function privilegesSaveAction(Request $request, $to)
+    public function privilegesSaveAction(Request $request)
     {
         return $this->success();
     }

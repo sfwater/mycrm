@@ -87,6 +87,9 @@ class PagerExtension
     public function getPageSize(){
         return $this->pageSize;
     }
+    public function setPageSize($size){
+        $this->pageSize = $size;
+    }
      
     /**
      * 创建分页链接

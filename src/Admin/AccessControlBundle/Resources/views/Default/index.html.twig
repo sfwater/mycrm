@@ -74,7 +74,7 @@
 					<form class="form-inline">
 						<div class="form-group">
 							<input type="text" id="user.username" lookupgroup="user" name="username" required="required" class="disabled ipt form-control" placeholder="ID、用户名、昵称" label="ID、用户名、昵称" disabled></div>
-						<a class="btn btn-default" id="btnSearch" lookupgroup="user" href="{{ path('admin_users_index', {action:'lookup'}) }}">选择用户</a>
+						<a class="btn btn-default" id="btnSearch" lookupgroup="user" href="{{ path('admin_users_index', {action:'lookup',pageSize:8}) }}">选择用户</a>
 					</form>
 				</div>
 			</div>
@@ -110,7 +110,7 @@
 					<form class="form-inline">
 						<div class="form-group">
 							<input type="text" id="group.groupname" lookupgroup="group" name="groupname" required="required" class="form-control ipt disabled" placeholder="组名" label="组名" disabled=""></div>
-						<a class="btn btn-default" lookupgroup="group" href="{{ path('admin_roles_index',{action:'lookup'}) }}" id="btnGroupSearch">选择用户组</a>
+						<a class="btn btn-default" lookupgroup="group" href="{{ path('admin_roles_index',{action:'lookup',pageSize:8}) }}" id="btnGroupSearch">选择用户组</a>
 					</form>
 				</div>
 			</div>

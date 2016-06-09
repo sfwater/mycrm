@@ -50,6 +50,11 @@ class AdminBaseController extends Controller
         if( $page < 1 ){
         	$page = 1;
         }
+        //分页大小
+        $pageSize = intval($request->query->get('pageSize'));
+        if( $pageSize > 0 ){
+            $pager->setPageSize($pageSize);
+        }
         $pageSize = $pager->getPageSize();
 
         if( $conditions == '' ){

@@ -42,10 +42,13 @@ class DefaultController extends AdminBaseController
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('AdminConsoleBundle:SiteConfig')->findOne();
+        $entity = $em->getRepository('AdminConsoleBundle:SiteConfig')->findAll();
 
         if (!$entity) {
             $entity = new SiteConfig();
+        }
+        else{
+            $entity = $entity[0];
         }
 
 

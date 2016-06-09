@@ -173,9 +173,9 @@ class AdminBaseController extends Controller
     */
     protected function getSystemSettings(){
         $em = $this->getDoctrine()->getManager();
-        $settings = $em->getRepository('AdminConsoleBundle:SiteConfig')->findOne();
+        $settings = $em->getRepository('AdminConsoleBundle:SiteConfig')->findAll();
         if( $settings ){
-            $settings = json_decode($settings->getConfig());
+            $settings = json_decode($settings[0]->getConfig());
         }
         return $settings;
     }

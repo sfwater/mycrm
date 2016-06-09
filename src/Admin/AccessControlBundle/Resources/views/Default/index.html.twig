@@ -2,7 +2,7 @@
 {% block pageContent %}
 <script type="text/javascript">
 	var bringBackCallback = function(args){
-		var saveUrl = "{{ path('admin_acls_privileges_save') }}/?to=";
+		var saveUrl = "{{ path('admin_acls_privileges_save') }}?to=";
 		$.ajax({
 			type: 'POST',
 			url: "{{ path('admin_acls_privileges') }}",

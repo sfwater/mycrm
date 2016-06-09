@@ -138,6 +138,14 @@ class AdminBaseController extends Controller
 		return $groups;
 	}
 
+
+    protected function throwException($msg){
+        throw new \Exception($this->translate($msg));
+    }
+
+    /**
+    * 翻译
+    */
     protected function translate($msg){
         return $this->get('translator')->trans($msg);
     }

@@ -92,7 +92,7 @@ class MainController extends Controller
 		//生成图像
 		$response = new StreamedResponse();
 		$response->headers->set("Content-Type", "image/png");
-		$response->setCallback(function($im){
+		$response->setCallback(function(){
 			imagepng($im);
 			imagedestroy($im);
 		});

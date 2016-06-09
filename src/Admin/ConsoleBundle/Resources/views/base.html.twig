@@ -45,12 +45,12 @@
           <span class="icon-arrow-down"></span>
         </a>
         <div class="dropdown-menu clearfix" style="width:600px;">
-        {% for k,routes in userRoutes|showRoutes %}
+        {% for k,routes in userRoutes %}
         <!-- ngRepeat: category in col -->
         <div class="topbar-nav-item" >
           <p class="topbar-nav-item-title ng-binding">{{ k }}</p>
           <ul>
-            {% for r in routes %}
+            {% for r in routes|showRoutes %}
             <!-- ngRepeat: product in category.products -->
             <li>
               <a href="{{ path(r.name) }}" title="{{ r.options.description }}" target="{{ r.target }}" method="{{ r.methods[0] }}" for="route_{{ r.name }}" data-placement="right">

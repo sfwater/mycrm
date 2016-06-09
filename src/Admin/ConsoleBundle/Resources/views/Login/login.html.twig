@@ -47,7 +47,7 @@
             <td>
               <div id="login">
                 {% if error %}
-                <div class="alert alert-danger">{{ error.messageKey|trans(error.messageData) }}</div>
+                <div class="alert alert-danger">{{ trans(error.messageKey)|trans(error.messageData) }}</div>
                 {% endif %}
                 <h4>登陆系统</h4>
                 <form method="post" action="{{ path('admin_login_check') }}">

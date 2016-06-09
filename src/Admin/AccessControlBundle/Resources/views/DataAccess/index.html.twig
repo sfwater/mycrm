@@ -13,7 +13,7 @@
 				CONSOLE.hideLoading();
 				//绑定数据
 				saveUrl += args.id;
-				$.checkbox.unSelectAll("ids[]", $parent);
+				$.checkbox.unSelectAll("ids[]");
 				$.each(data,function(){
 					$("#user_"+this.id).attr("checked",true);
 					$("#user_"+this.id).prop("checked",true);

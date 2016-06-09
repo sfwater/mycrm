@@ -13,6 +13,6 @@ admin_user:
     type:     annotation
     prefix:   /
 admin_verfiy:
-    resource: "@AdminVerfiyBundle/Controller/"
+    resource: "@AdminVerifyBundle/Controller/"
     type: annotation
     prefix:   /

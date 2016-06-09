@@ -59,7 +59,12 @@ class DefaultController extends AdminAclController
             }
             $result = $em->getRepository('AdminAccessControlBundle:PagePrivilege')->findByUserId($one->getId());
 
-            return $this->jsonResponse(array('type'=>'user','privileges'=>$result));
+            $arr = array();
+            foreach ($result as $key => $value) {
+                $arr[] = $this->resolvePagePrivilege($value);
+            }
+
+            return $this->jsonResponse(array('type'=>'user','privileges'=>$arr));
         }
         else if( !empty($groupname) ){
             $dql = 'SELECT dist FROM AdminUserBundle:Role dist WHERE dist.name LIKE :name OR dist.role LIKE :name';
@@ -70,8 +75,12 @@ class DefaultController extends AdminAclController
                 throw new \Exception("group $groupname not found.");
             }
             $result = $em->getRepository('AdminAccessControlBundle:PagePrivilege')->findByGroupId($one->getId());
+            $arr = array();
+            foreach ($result as $key => $value) {
+                $arr[] = $this->resolvePagePrivilege($value);
+            }
 
-            return $this->jsonResponse(array('type'=>'gorup','privileges'=>$result));
+            return $this->jsonResponse(array('type'=>'gorup','privileges'=>$arr));
         }
         return $this->jsonResponse(array());
     }
@@ -128,5 +137,13 @@ class DefaultController extends AdminAclController
 
 
         return $this->success();
+    }
+
+    private function resolvePagePrivilege($item){
+        $result = array();
+        $result["name"] = $item->getRouteName();
+        $result["userId"] = $item->getUserId();
+        $result["groupId"] = $item->getGroupId();
+        return $result;
     }
 }

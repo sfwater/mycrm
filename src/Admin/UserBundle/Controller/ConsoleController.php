@@ -25,9 +25,9 @@ class ConsoleController extends AdminBaseController
      *      options = {"name":"修改密码","description":"修改当前用户密码","category":"console","order":8, "type":"console","show":true,"target":"dialog"} 
      *   )
      * @Method("PUT")
-     * @Template("AdminUserBundle:Role:edit.html.twig")
+     * @Template("AdminUserBundle:Console:edit.html.twig")
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
         $user = $this->getUser();

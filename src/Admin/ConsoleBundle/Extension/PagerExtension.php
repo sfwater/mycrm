@@ -66,7 +66,7 @@ class PagerExtension
         $this->lastText = $param['lastText'];
         $this->preText = $param['preText'];
         $this->nextText = $param['nextText'];
-        $this->targetType = $param['navTab'];
+        $this->targetType = !empty($param['targetType']) ? $param['targetType'] : 'navTab';
     }
 
     public function setTargetType($type){

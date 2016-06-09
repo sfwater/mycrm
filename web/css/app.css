@@ -88,7 +88,18 @@ body {
     background: #008fbf;
     color: #fff;
 }
-
+.topbar-nav.open .topbar-nav-btn {
+    background: #fff;
+    color: #333;
+}
+.dropdown.open .icon-arrow-down {
+    vertical-align: text-top;
+    transform: rotate(180deg);
+    -webkit-transform: rotate(180deg);
+    -moz-transform: rotate(180deg);
+    -ms-transform: rotate(180deg);
+    -o-transform: rotate(180deg);
+}
 .dropdown .dropdown-menu {
     z-index: 1;
     font-size: 12px;

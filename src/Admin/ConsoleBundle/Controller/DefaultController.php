@@ -98,7 +98,7 @@ class DefaultController extends AdminBaseController
         $ret->realPath = $this->uploadDir."/".$filename;
         $ret->webPath = "/".$this->uploadDir."/".$filename;
 
-        return $this->success($ret);
+        return $this->jsonResponse($ret);
     }
 
     /**

@@ -808,7 +808,8 @@ function _getPagerForm($parent, args) {
 		reload: function(){
 			var url = $(this).data("url");
 			var options = $(this).data("options");
-			this.loadUrl(url, options.data, options.callback);
+			if( options )
+				this.loadUrl(url, options.data, options.callback);
 		},
 		loadUrl: function(url,data,callback){
 			$(this).ajaxUrl({url:url, data:data, callback:callback});

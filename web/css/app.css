@@ -86,6 +86,7 @@ body {
 }
 .topbar-btn:hover, .topbar-btn.topbar-btn-dark {
     background: #008fbf;
+    color: #fff;
 }
 
 .loading {

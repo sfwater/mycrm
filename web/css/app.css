@@ -71,6 +71,19 @@ body {
 .topbar-left {
     float: left;
 }
+.topbar-nav-btn {
+    padding: 0 20px;
+    display: inline-block;
+    height: 50px;
+}
+.topbar-btn {
+    color: #fff;
+    font-size: 14px;
+    line-height: 50px;
+}
+.topbar-nav a {
+    text-decoration: none;
+}
 
 .loading {
   width: 110px;

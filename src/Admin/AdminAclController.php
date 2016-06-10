@@ -55,7 +55,7 @@ class AdminAclController extends AdminBaseController
 	protected function getEntities($class, $conditions='', $parameters=array(), $sort='dist.id DESC', $join=''){
 		$user = $this->getUser();
 		if( !$this->isSuperAdmin($user) ){
-			$aclCondition = 'dist.id IN (SELECT acls.identifier FROM AdminAccessControlBundle:DataPrivilege acls WHERE acls.userId IN (SELECT tree.userId FROM AdminAccessControlBundle:UserTree tree WHERE tree.parentId=:userId))';
+			$aclCondition = 'dist.id IN (SELECT acls.identifier FROM AdminAccessControlBundle:DataPrivilege acls WHERE acls.userId IN (SELECT tree.userId FROM AdminAccessControlBundle:UserTree tree WHERE tree.parentId=:userId) OR acls.userId=:userId)';
 			if( empty($conditions) ){
 				$conditions = $aclCondition;
 			}
@@ -73,7 +73,7 @@ class AdminAclController extends AdminBaseController
 	protected function getPagedEntities($class, $conditions='', $parameters = array(), $sort='dist.id DESC', $join=''){
 		$user = $this->getUser();
 		if( !$this->isSuperAdmin($user) ){
-			$aclCondition = 'dist.id IN (SELECT acls.identifier FROM AdminAccessControlBundle:DataPrivilege acls WHERE acls.userId IN (SELECT tree.userId FROM AdminAccessControlBundle:UserTree tree WHERE tree.parentId=:userId))';
+			$aclCondition = 'dist.id IN (SELECT acls.identifier FROM AdminAccessControlBundle:DataPrivilege acls WHERE acls.userId IN (SELECT tree.userId FROM AdminAccessControlBundle:UserTree tree WHERE tree.parentId=:userId) OR acls.userId=:userId)';
 			if( empty($conditions) ){
 				$conditions = $aclCondition;
 			}

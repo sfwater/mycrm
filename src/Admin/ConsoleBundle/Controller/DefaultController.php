@@ -11,6 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Admin\ConsoleBundle\Form\SiteConfigType;
 use Admin\ConsoleBundle\Entity\SiteConfig;
 use Symfony\Component\HttpFoundation\Request;
+use Doctrine\Common\Persistence\Proxy\ClassUtils;
 /**
 * @Route("/admin")
 */
@@ -107,7 +108,7 @@ class DefaultController extends AdminAclController
     */
     public function testAction(){
         $user = $this->getUser();
-        dump(get_class($user));
+        dump(ClassUtils::getRealClass("AdminUserBundle:User"));
         exit;
     }
     //生成随机文件名

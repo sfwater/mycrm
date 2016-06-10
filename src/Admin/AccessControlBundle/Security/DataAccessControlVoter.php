@@ -44,6 +44,54 @@ class DataAccessControlVoter extends Voter
             return true;
         }
 
+        $em = $this->doctrine->getManager();
+        //如果是查看的权限，则判断用户关系树中是否有权限
+        if( $attribute == self::VIEW ){
+            //找到数据所属的用户ID
+            $acl = $em->getRepository(DataPrivilege::class)->findOneBy(array('className'=>ClassUtils::getClass($subject),'identifier'=>$subject->getId()));
+            //如果没有权限则拒绝访问
+            if(!$acl){
+                return false;
+            }
+
+            //如果是自己的数据则授权
+            if( $user->getId() == $acl->getUserId() ){
+                return true;
+            }
+            //如果有子用户权限，则授权
+            $childUsers = $em->getRepository(UserTree::class)->findByParentId($user->getId());
+
+            if( $childUsers ){
+                foreach ($childUsers as $key => $value) {
+                    if( $value->getUserId() == $acl->getUserId() ){
+                        return true;
+                    }
+                }
+            }
+        }
+        elseif( $attribute == self::ADD ){
+            //添加数据则验证所在用户组的权限
+            $role = $user->getRoles()[0];
+            if( $role ){
+                $mask = $role->getMask();
+                return (1 & $mask) > 0;
+            }
+        }
+        elseif( $attribute == self::EDIT ){
+            $role = $user->getRoles()[0];
+            if( $role ){
+                $mask = $role->getMask();
+                return (2 & $mask) > 0;
+            }
+        }
+        elseif ($attribute == self::DELETE) {
+            $role = $user->getRoles()[0];
+            if( $role ){
+                $mask = $role->getMask();
+                return (4 & $mask) > 0;
+            }
+        }
+
         return false;
     }
 

@@ -134,6 +134,7 @@ class RoleController extends AdminAclController
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Role entity.');
         }
+        $this->denyAccessUnlessGranted('VIEW', $entity);
 
 
         $editForm= $this->createForm('Admin\UserBundle\Form\RoleType',$entity,array(

@@ -558,6 +558,9 @@ tfoot, .bg-color-f56 {
 .modal-backdrop {
   background-color: #fff;
 }
-.modal-content, .modal-header {
+.modal-content, .bootstrap-dialog .modal-header {
   border-radius: 0px;
+}
+.modal-dialog-title {
+  font-size: 14px;
 }

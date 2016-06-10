@@ -4,6 +4,9 @@ namespace Admin\AccessControlBundle\Security;
 use Symfony\Component\Security\Core\Authentication\Token\TokenInterface;
 use Symfony\Component\Security\Core\Authorization\Voter\Voter;
 use Admin\UserBundle\Entity\User;
+use Admin\AccessControlBundle\Entity\DataPrivilege;
+use Admin\AccessControlBundle\Entity\PagePrivilege;
+use Doctrine\Common\Util\ClassUtils;
 
 class DataAccessControlVoter extends Voter
 {

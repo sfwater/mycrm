@@ -90,6 +90,7 @@ class RoleController extends AdminAclController
             if( !$form->isValid() ){
                 return $this->error($form->getErrors()->__toString());
             }
+            $this->denyAccessUnlessGranted('ADD', NULL);
             $em = $this->getDoctrine()->getManager();
             $em->getConnection()->beginTransaction();
             try{
@@ -144,6 +145,7 @@ class RoleController extends AdminAclController
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $this->denyAccessUnlessGranted('EDIT', $entity);
 
             $masks = $editForm->get('mask')->getData();
             $mask = 0;
@@ -186,6 +188,7 @@ class RoleController extends AdminAclController
             $result = $query->getResult();
 
             foreach($result as $item){
+                $this->denyAccessUnlessGranted('DELETE', $item);
                 $em->remove($item);
                 $em->flush();
             }

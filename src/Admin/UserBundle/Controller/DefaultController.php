@@ -90,6 +90,7 @@ class DefaultController extends AdminAclController
             if( !$form->isValid() ){
                 return $this->error($form->getErrors()->__toString());
             }
+            $this->denyAccessUnlessGranted('ADD', NULL);
             $em = $this->getDoctrine()->getManager();
             $em->getConnection()->beginTransaction();
 
@@ -146,6 +147,7 @@ class DefaultController extends AdminAclController
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find User entity.');
         }
+        $this->denyAccessUnlessGranted('VIEW', $entity);
 
 
         $editForm = $this->createForm('Admin\UserBundle\Form\UserType',$entity,array(
@@ -155,6 +157,7 @@ class DefaultController extends AdminAclController
         $editForm->handleRequest($request);
 
         if ($editForm->isValid()) {
+            $this->denyAccessUnlessGranted('EDIT', $entity);
             $encoder = $this->get("security.password_encoder");
             //過期時間
             if( $expireTime = $editForm->get('expireTime')->getData() ){
@@ -210,6 +213,7 @@ class DefaultController extends AdminAclController
             $result = $query->getResult();
 
             foreach($result as $item){
+                $this->denyAccessUnlessGranted('DELETE', $item);
                 if( $action == 'delete' ){
                     $em->remove($item);
                 }

@@ -36,9 +36,14 @@ class RoleController extends AdminAclController
         $targetType = $action == "lookup" ? "dialog":"navTab";
         $options['attr']['targetType'] = $targetType;
         $options['attr']['class'] = 'form-inline searchForm';
-        $options['action'] = $this->generateUrl('admin_roles_index',array('action'=>$action));
+        $params = array('action'=>$action);
+        $pageSize = intval($request->query->get('pageSize'));
+        if( $pageSize > 0 ){
+            $params['pageSize'] = $pageSize;
+        }
+        $options['action'] = $this->generateUrl('admin_roles_index',$params);
 
-        $form = $this->createForm(RoleSearchType::class, $request->query->all());
+        $form = $this->createForm(RoleSearchType::class, $request->query->all(), $options);
 
         $conditions = '';
         $parameters = array();

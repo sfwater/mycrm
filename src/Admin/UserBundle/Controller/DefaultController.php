@@ -36,7 +36,12 @@ class DefaultController extends AdminAclController
         $targetType = $action == "lookup" ? "dialog":"navTab";
         $options['attr']['targetType'] = $targetType;
         $options['attr']['class'] = 'form-inline searchForm';
-        $options['action'] = $this->generateUrl('admin_users_index',array('action'=>$action));
+        $params = array('action'=>$action);
+        $pageSize = intval($request->query->get('pageSize'));
+        if( $pageSize > 0 ){
+            $params['pageSize'] = $pageSize;
+        }
+        $options['action'] = $this->generateUrl('admin_users_index',$params);
         $form = $this->createForm(UserSearchType::class, $request->query->all(), $options);
 
         $conditions = "dist.username<>:admin";

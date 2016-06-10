@@ -11,11 +11,16 @@ class AccessControlVoter extends Voter
     const VIEW = 'view';
     const EDIT = 'edit';
 
+    private $router;
+    private $ignores = array('admin_index');
+    public function __construct($router){
+        $this->router = $router;
+    }
+
     protected function supports($attribute, $subject)
     {
-        dump(get_class($subject));
-        exit;
-        return get_class($subject) == '';
+        //访问控制
+        return get_class($subject) == 'Symfony\Component\HttpFoundation\Request';
     }
 
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)
@@ -23,11 +28,16 @@ class AccessControlVoter extends Voter
         $user = $token->getUser();
 
         if (!$user instanceof User) {
-            // the user must be logged in; if not, deny access
             return false;
         }
 
-        throw new \LogicException('This code should not be reached!');
+        if( $route = $this->router->matchRequest($subject) ){
+            if( in_array($route->name, $this->ignores) ){
+                return true;
+            }
+        }
+
+        return false;
     }
 }
 ?>

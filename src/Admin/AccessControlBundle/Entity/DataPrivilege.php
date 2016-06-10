@@ -43,9 +43,9 @@ class DataPrivilege
     private $userId;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="mask", type="string", length=255)
+     * @ORM\Column(name="mask", type="integer", nullable=true)
      */
     private $mask;
 
@@ -135,7 +135,7 @@ class DataPrivilege
     /**
      * Set mask
      *
-     * @param string $mask
+     * @param integer $mask
      *
      * @return DataPrivilege
      */
@@ -149,7 +149,7 @@ class DataPrivilege
     /**
      * Get mask
      *
-     * @return string
+     * @return integer 
      */
     public function getMask()
     {

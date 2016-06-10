@@ -38,8 +38,18 @@ class AdminBaseController extends Controller
     	return $routes;
 	}
 
+    /**
+    * 获取不带访问控制条件的数据
+    */
+    protected function getEntities($class, $conditions='', $parameters=array(), $sort='dist.id DESC', $join=''){
+        $em = $this->getDoctrine()->getManager();
+        $dql = "SELECT dist FROM $class dist $join WHERE $conditions ORDER BY $sort";
+        $query = $em->createQuery($dql)->setParameters($parameters);        
+        $results = $query->getResult();
+        return $results;
+    }
 	/**
-	* 获取不带访问控制条件的数据列表
+	* 获取不带访问控制条件的分页数据列表
 	*/
 	protected function getPagedEntities($class, $conditions='', $parameters = array(), $sort='dist.id DESC', $join=''){
         $request = $this->get('request_stack')->getCurrentRequest();

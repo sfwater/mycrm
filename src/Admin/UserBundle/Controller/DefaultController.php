@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Admin\AdminBaseController;
+use Admin\AdminAclController;
 use Admin\UserBundle\Entity\User;
 use Admin\UserBundle\Form\UserType;
 use Admin\UserBundle\Form\UserSearchType;
@@ -16,7 +17,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
 * @Route("/admin/users")
 */
-class DefaultController extends AdminBaseController
+class DefaultController extends AdminAclController
 {
     /**
      * 所有用户列表 

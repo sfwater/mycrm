@@ -14,10 +14,11 @@ class AdminBaseController extends Controller
 {
     protected $targetType = 'navTab';
     protected $adminUser = 'admin';
+
 	/**
 	* 获取用户所有的路由，在options选项中设置了category的为用户路由
 	*/
-	protected function getUserRoutes(){
+	protected function getUserRoutes($user = NULL){
     	$router = $this->get('router');
     	$allRoutes = $router->getRouteCollection();
     	$userRoutes = $allRoutes->all();
@@ -31,7 +32,7 @@ class AdminBaseController extends Controller
     		$value->type = isset($options['type']) ? $options['type'] : 'menu';
     		$value->target = isset($options['target']) ? $options['target'] : 'navTab';
     		if( array_key_exists('category', $options) ){
-    			$routes[] = $value;
+    			$routes[$key] = $value;
     		}
     	}
     	return $routes;
@@ -111,6 +112,17 @@ class AdminBaseController extends Controller
             'targetType'=>$this->targetType
             );
 	}
+
+
+    /**
+    * 判断一个用户是否为超级管理员
+    */
+    protected function isSuperAdmin($user = NULL){
+        if( $user == NULL ){
+            $user = $this->getUser();
+        }
+        return $user->getUsername() == $this->adminUser;
+    }
 
     /**
     * 获取系统可用用户，除去admin账号

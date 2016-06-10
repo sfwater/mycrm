@@ -556,8 +556,8 @@ tfoot, .bg-color-f56 {
   z-index: 100000 !important;
 }
 .modal-backdrop {
-  color: #fff;
+  background-color: #fff;
 }
-.modal-content {
+.modal-content, .modal-header {
   border-radius: 0px;
 }

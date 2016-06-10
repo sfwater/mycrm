@@ -14,6 +14,7 @@ class AccessControlVoter extends Voter
     protected function supports($attribute, $subject)
     {
         dump(get_class($subject));
+        exit;
         return get_class($subject) == '';
     }
 

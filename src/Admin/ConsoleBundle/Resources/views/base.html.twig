@@ -69,6 +69,7 @@
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
+          <li><a href="javascript:void(0);">欢迎，{{ app.user.username }}</a></li>
           {% for key,routes in userRoutes|inGroup %}
             {% for r in routes|showRoutes('console') %}
           <li>
@@ -76,7 +77,6 @@
           </li>
             {% endfor %}
           {% endfor %}
-          <li><a href="javascript:void(0);">欢迎，{{ app.user.username }}</a></li>
         </ul>
       </div>
     </div>

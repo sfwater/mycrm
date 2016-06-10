@@ -7,13 +7,11 @@ use Admin\UserBundle\Entity\User;
 
 class AccessControlVoter extends Voter
 {
-    // these strings are just invented: you can use anything
-    const VIEW = 'view';
-    const EDIT = 'edit';
 
     private $router;
     private $ignores = array('admin_index');
     private $doctrine;
+    private $adminUser = 'admin';
 
     public function __construct($router,$doctrine){
         $this->router = $router;
@@ -34,6 +32,11 @@ class AccessControlVoter extends Voter
             return false;
         }
 
+        if( $this->isSuperAdmin($user) ){
+            return true;
+        }
+
+
         if( $route = $this->router->matchRequest($subject) ){
             $matchedRouteName = $route['_route'];
             if( in_array($matchedRouteName, $this->ignores) ){
@@ -52,6 +55,12 @@ class AccessControlVoter extends Voter
         }
 
         return false;
+    }
+    /**
+    * 判断一个用户是否为超级管理员
+    */
+    protected function isSuperAdmin($user){
+        return $user->getUsername() == $this->adminUser;
     }
 }
 ?>

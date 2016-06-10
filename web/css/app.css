@@ -561,6 +561,6 @@ tfoot, .bg-color-f56 {
 .modal-content, .bootstrap-dialog .modal-header {
   border-radius: 0px;
 }
-.bootstrap-dialog .modal-dialog-title {
+.bootstrap-dialog .modal-dialog-title, .bootstrap-dialog .bootstrap-dialog-title {
   font-size: 14px;
 }

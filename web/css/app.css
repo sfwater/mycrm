@@ -555,3 +555,9 @@ tfoot, .bg-color-f56 {
 .datepicker {
   z-index: 100000 !important;
 }
+.modal-backdrop {
+  color: #fff;
+}
+.modal-content {
+  border-radius: 0px;
+}

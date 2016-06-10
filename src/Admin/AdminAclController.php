@@ -89,7 +89,7 @@ class AdminAclController extends AdminBaseController
 	/**
 	* 创建数据权限
 	*/
-	protected function creatAcl($entity, $user = NULL){
+	protected function createAcl($entity, $user = NULL){
 		if( $user == NULL ){
 			$user = $this->getUser();
 		}

@@ -13,8 +13,11 @@ class AccessControlVoter extends Voter
 
     private $router;
     private $ignores = array('admin_index');
-    public function __construct($router){
+    private $doctrine;
+
+    public function __construct($router,$doctrine){
         $this->router = $router;
+        $this->doctrine = $doctrine;
     }
 
     protected function supports($attribute, $subject)
@@ -34,6 +37,16 @@ class AccessControlVoter extends Voter
         if( $route = $this->router->matchRequest($subject) ){
             if( in_array($route->name, $this->ignores) ){
                 return true;
+            }
+
+            $privileges = $this->doctrine->getManager()->getRepository('AdminAccessControlBundle:PagePrivilege')->findByUserId($user->getId());
+
+            foreach ($privileges as $key => $value) {
+                $name = $value->getRouteName();
+                //用户权限列表中有
+                if( $name == $route->name ){
+                    return true;
+                }
             }
         }
 

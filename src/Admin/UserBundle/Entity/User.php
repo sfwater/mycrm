@@ -13,7 +13,7 @@ use Admin\AdminModel;
  * @ORM\Table(name="admins")
  * @ORM\Entity(repositoryClass="Admin\UserBundle\Entity\UserRepository")
  */
-class User extends AdminModel implements AdvancedUserInterface, \Serializable
+class User implements AdvancedUserInterface, \Serializable
 {
     /**
      * @var integer

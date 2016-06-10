@@ -6,3 +6,10 @@ services:
         tags:
             - { name: security.voter }
         public: false
+    admin_accesscontrol.dataaccesscontrol_voter:
+        class: Admin\AccessControlBundle\Security\DataAccessControlVoter
+        arguments:
+          ["@router","@doctrine"]
+        tags:
+            - { name: security.voter }
+        public: false

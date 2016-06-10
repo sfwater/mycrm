@@ -32,7 +32,7 @@ class AdminBaseController extends Controller
     		$value->type = isset($options['type']) ? $options['type'] : 'menu';
     		$value->target = isset($options['target']) ? $options['target'] : 'navTab';
     		if( array_key_exists('category', $options) ){
-    			$routes[$key] = $value;
+    			$routes[] = $value;
     		}
     	}
     	return $routes;

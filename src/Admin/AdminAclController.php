@@ -27,11 +27,19 @@ class AdminAclController extends AdminBaseController
 			$result = $em->getRepository('AdminAccessControlBundle:PagePrivilege')->findByUserId($user->getId());
 			foreach ($result as $key => $value) {
 				$name = $value->getRouteName();
-				if( array_key_exists($name, $routes) ){
-					$_routes[$name] = $routes[$name];
+				if( $route = $this->findRouteByName($routes,$name) ){
+					$_routes[] = $route;
 				}
 			}
 			return $_routes;
 		}
+	}
+	private function findRouteByName($routes, $name){
+		foreach ($routes as $key => $value) {
+			if( $name == $value->name ){
+				return $value;
+			}
+		}
+		return FALSE;
 	}
 }

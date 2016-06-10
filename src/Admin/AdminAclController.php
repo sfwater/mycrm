@@ -54,7 +54,6 @@ class AdminAclController extends AdminBaseController
 			$user = $this->getUser();
 		}
 
-
 	}
 	/**
 	* 根据名称获取路由信息

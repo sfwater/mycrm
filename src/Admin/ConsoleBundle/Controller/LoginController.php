@@ -5,11 +5,12 @@ namespace Admin\ConsoleBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Admin\AdminBaseController;
+use Admin\AdminAclController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
 
-class LoginController extends AdminBaseController
+class LoginController extends AdminAclController
 {
     /**
      * 登陆

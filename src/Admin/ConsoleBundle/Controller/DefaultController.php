@@ -5,6 +5,7 @@ namespace Admin\ConsoleBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Admin\AdminBaseController;
+use Admin\AdminAclController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Admin\ConsoleBundle\Form\SiteConfigType;
@@ -13,7 +14,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
 * @Route("/admin")
 */
-class DefaultController extends AdminBaseController
+class DefaultController extends AdminAclController 
 {
     var $uploadDir = 'file/attachment';
     /**

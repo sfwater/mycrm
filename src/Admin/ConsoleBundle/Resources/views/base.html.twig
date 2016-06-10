@@ -74,8 +74,9 @@
           <li>
             <a href="{{ path(r.name) }}" title="{{ r.options.description }}" target="{{ r.target }}" method="{{ r.methods[0] }}">{{ r.options.name }}</a>
           </li>
-          {% endfor %}
             {% endfor %}
+          {% endfor %}
+          <li><a href="javascript:void(0);">{{ app.user.nickname }}</a></li>
         </ul>
       </div>
     </div>
@@ -115,6 +116,7 @@
             </h2>
           </div>
           <div id="consoleContainer">{% block body %}This is the body container.{% endblock %}</div>
+          <div id="consoleFooter">{% if settings is defined %}{{ settings.copyright }}{% endif %} 技术支持：薄金宏</div>
         </div>
       </div>
     </div>

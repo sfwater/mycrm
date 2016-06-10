@@ -70,7 +70,7 @@ class AccessControlVoter extends Voter
             $role = $user->getRoles()[0];
             $groupId = $role->getId();
         }
-        $query = $em->createQuery($dql)->setParamaters(array('userId'=>$userId, 'groupId'=>$groupId));
+        $query = $em->createQuery($dql)->setParameters(array('userId'=>$userId, 'groupId'=>$groupId));
         return $query->getResult();
     }
     /**

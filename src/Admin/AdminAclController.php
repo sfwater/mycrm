@@ -24,7 +24,15 @@ class AdminAclController extends AdminBaseController
 		else{
 			$_routes = array();
 			$em = $this->getDoctrine()->getManager();
-			$result = $em->getRepository('AdminAccessControlBundle:PagePrivilege')->findByUserId($user->getId());
+			$userId = $user->getId();
+			$groupId = 0;
+			if( count($user->getRoles()) > 0 ){
+				$role = $user->getRoles()[0];
+				$groupId = $role->getId();
+			}
+			$dql = "SELECT dist FROM AdminAccessControlBundle:PagePrivilege dist WHERE dist.userId=:userId OR dist.groupId=:groupId";
+			$query = $em->createQuery($dql)->setParameters(array('userId'=>$userId, 'groupId'=>$groupId));
+			$result = $query->getResult();
 			foreach ($result as $key => $value) {
 				$name = $value->getRouteName();
 				if( $route = $this->findRouteByName($routes,$name) ){

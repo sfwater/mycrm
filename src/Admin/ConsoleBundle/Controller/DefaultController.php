@@ -108,7 +108,7 @@ class DefaultController extends AdminAclController
     */
     public function testAction(){
         $user = $this->getUser();
-        dump(ClassUtils::newReflectionObject($user));
+        dump(ClassUtils::newReflectionClass(get_class($user)));
         exit;
     }
     //生成随机文件名

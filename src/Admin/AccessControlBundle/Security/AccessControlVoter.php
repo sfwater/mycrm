@@ -35,9 +35,8 @@ class AccessControlVoter extends Voter
         }
 
         if( $route = $this->router->matchRequest($subject) ){
-            dump($route);
-            exit;
-            if( in_array($route->name, $this->ignores) ){
+            $matchedRouteName = $route['_route'];
+            if( in_array($matchedRouteName, $this->ignores) ){
                 return true;
             }
 
@@ -46,7 +45,7 @@ class AccessControlVoter extends Voter
             foreach ($privileges as $key => $value) {
                 $name = $value->getRouteName();
                 //用户权限列表中有
-                if( $name == $route->name ){
+                if( $name == $matchedRouteName ){
                     return true;
                 }
             }

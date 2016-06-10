@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * DataPrivilege
  *
- * @ORM\Table(name="data_privilege")
+ * @ORM\Table(name="data_privileges")
  * @ORM\Entity(repositoryClass="Admin\AccessControlBundle\Repository\DataPrivilegeRepository")
  */
 class DataPrivilege

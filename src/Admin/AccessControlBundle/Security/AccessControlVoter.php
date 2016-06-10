@@ -35,6 +35,8 @@ class AccessControlVoter extends Voter
         }
 
         if( $route = $this->router->matchRequest($subject) ){
+            dump($route);
+            exit;
             if( in_array($route->name, $this->ignores) ){
                 return true;
             }

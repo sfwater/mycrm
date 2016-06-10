@@ -51,7 +51,7 @@ class DefaultController extends AdminAclController
         //如果是查询用户的权限
         if( !empty($username) ){
             $dql = 'SELECT dist FROM AdminUserBundle:User dist WHERE dist.id=:id OR dist.username=:name OR dist.nickname   =:name';
-            $query = $em->createQuery($dql)->setParameters(array('id'=>intval($username),'name'=>"%$username%"));
+            $query = $em->createQuery($dql)->setParameters(array('id'=>intval($username),'name'=>$username));
             $one = $query->getOneOrNullResult();
 
             if( !$one ){
@@ -68,7 +68,7 @@ class DefaultController extends AdminAclController
         }
         else if( !empty($groupname) ){
             $dql = 'SELECT dist FROM AdminUserBundle:Role dist WHERE dist.name=:name OR dist.role=:name';
-            $query = $em->createQuery($dql)->setParameters(array('name'=>"%$groupname%"));
+            $query = $em->createQuery($dql)->setParameters(array('name'=>$groupname));
             $one = $query->getOneOrNullResult();
 
             if( !$one ){

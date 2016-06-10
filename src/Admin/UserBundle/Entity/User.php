@@ -5,6 +5,7 @@ namespace Admin\UserBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\AdvancedUserInterface;
 use Doctrine\Common\Collections\ArrayCollection;
+use Admin\AdminModel;
 
 /**
  * User
@@ -12,7 +13,7 @@ use Doctrine\Common\Collections\ArrayCollection;
  * @ORM\Table(name="admins")
  * @ORM\Entity(repositoryClass="Admin\UserBundle\Entity\UserRepository")
  */
-class User implements AdvancedUserInterface, \Serializable
+class User extends AdminModel implements AdvancedUserInterface, \Serializable
 {
     /**
      * @var integer

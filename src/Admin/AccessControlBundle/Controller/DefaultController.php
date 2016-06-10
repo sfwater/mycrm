@@ -96,7 +96,6 @@ class DefaultController extends AdminAclController
     {
         $to = $request->query->get('to');
         $action = $request->request->get('action');
-        $names = $request->request->get('names');
 
         if( empty($to) || empty($action) ){
             $this->throwException('Params error');
@@ -105,6 +104,7 @@ class DefaultController extends AdminAclController
         $em = $this->getDoctrine()->getManager();
         //如果是给用户分配权限
         if( $action == 'user' ){
+            $names = $request->request->get('names');
             $toUser = $em->getRepository('AdminUserBundle:User')->loadUserByUsername($to);
             if( !$toUser ){
                 $this->throwException('User not found');
@@ -122,6 +122,7 @@ class DefaultController extends AdminAclController
             }
         }
         else{
+            $names = $request->request->get('names2');
             $toGroup = $em->getRepository('AdminUserBundle:Role')->findOneByName($to);
             if( !$toGroup ){
                 $this->throwException('Group not found');

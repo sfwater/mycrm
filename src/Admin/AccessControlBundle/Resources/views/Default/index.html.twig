@@ -25,7 +25,7 @@
 				else{
 					var $parent = $("#profile");
 					saveUrl += args.groupname;
-					$.checkbox.unSelectAll("names[]", $parent);
+					$.checkbox.unSelectAll("names2[]", $parent);
 					$.each(data.privileges,function(){
 						$("#route_"+this.name, $parent).attr("checked",true);
 						$("#route_"+this.name, $parent).prop("checked",true);
@@ -124,7 +124,7 @@
 						<!-- ngRepeat: product in category.products -->
 						<li>
 							<a href="javascript:void(0);" for="route_{{ r.name }}" data-toggle="tooltip" data-placement="right" title="{{ r.options.description }}">
-								<input type="checkbox" value="{{ r.name }}" name="names[]" id="route_{{ r.name }}" />
+								<input type="checkbox" value="{{ r.name }}" name="names2[]" id="route_{{ r.name }}" />
 								<span class="topbar-nav-item-icon icon-ecs"></span>
 								<span class="ng-binding">{{ r.options.name }}</span>
 								<span class="topbar-nav-item-short ng-binding"></span>
@@ -138,7 +138,7 @@
 				{% endfor %}
 				<!-- end ngRepeat: category in col -->
 			</div>
-			<button class="btn btn-primary pull-right" target="selectedTodo" reload="false" action="group" group="names[]">保存用户组权限</button>
+			<button class="btn btn-primary pull-right" target="selectedTodo" reload="false" action="group" group="names2[]">保存用户组权限</button>
 		</div>
 	</div>
 

@@ -25,8 +25,11 @@ class DataAccessControlVoter extends Voter
 
     protected function supports($attribute, $subject)
     {
-        dump($attribute);
-        return false;
+        // if the attribute isn't one we support, return false
+        if (!in_array($attribute, array(self::VIEW, self::EDIT, self::ADD, self::DELETE))) {
+            return false;
+        }
+        return true;
     }
 
     protected function voteOnAttribute($attribute, $subject, TokenInterface $token)

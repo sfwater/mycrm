@@ -11,7 +11,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Admin\ConsoleBundle\Form\SiteConfigType;
 use Admin\ConsoleBundle\Entity\SiteConfig;
 use Symfony\Component\HttpFoundation\Request;
-use Doctrine\Common\Persistence\Proxy\ClassUtils;
+use Doctrine\Common\Util\ClassUtils;
 /**
 * @Route("/admin")
 */

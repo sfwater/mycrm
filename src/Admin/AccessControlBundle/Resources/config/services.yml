@@ -1,6 +1,8 @@
 services:
     admin_accesscontrol.accesscontrol_voter:
         class: Admin\AccessControlBundle\Security\AccessControlVoter
+        arguments:
+          ["@router","@doctrine"]
         tags:
             - { name: security.voter }
         public: false

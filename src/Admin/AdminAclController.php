@@ -12,6 +12,9 @@ use Doctrine\ORM\Tools\Pagination\Paginator;
 */
 class AdminAclController extends AdminBaseController
 {
+	/**
+	* 获取用户权限列表
+	*/
 	protected function getUserRoutes($user = NULL){
 		if( $user == NULL ){
 			$user = $this->getUser();
@@ -42,6 +45,20 @@ class AdminAclController extends AdminBaseController
 			return $_routes;
 		}
 	}
+
+	/**
+	* 创建数据权限
+	*/
+	protected function creatAcl($entity, $user = NULL){
+		if( $user == NULL ){
+			$user = $this->getUser();
+		}
+
+
+	}
+	/**
+	* 根据名称获取路由信息
+	*/
 	private function findRouteByName($routes, $name){
 		foreach ($routes as $key => $value) {
 			if( $name == $value->name ){

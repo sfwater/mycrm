@@ -106,10 +106,8 @@ class DefaultController extends AdminAclController
     * @Route("/test",name="console_test")
     */
     public function testAction(){
-        $router = $this->get("router");
-        $request = $this->get("request_stack")->getCurrentRequest();
-        $route = $router->matchRequest($request);
-        dump($router->generate($route['_route']));
+        $user = $this->getUser();
+        dump(get_class($user));
         exit;
     }
     //生成随机文件名

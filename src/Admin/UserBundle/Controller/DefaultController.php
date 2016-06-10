@@ -179,7 +179,7 @@ class DefaultController extends AdminAclController
      * 禁用用户 
      * @Route(
      *      "/", name="admin_users_disabled",
-     *      options = {"name":"编辑用户","description":"编辑一个管理员用户账号","category":"系统管理员","order":4 }
+     *      options = {"name":"用户状态","description":"删除、启用、禁用一个管理员用户账号","category":"系统管理员","order":4 }
      *   )
      * @Method("DELETE")
      */

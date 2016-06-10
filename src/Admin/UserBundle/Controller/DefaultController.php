@@ -113,6 +113,7 @@ class DefaultController extends AdminAclController
 
                 $em->persist($entity);
                 $em->flush();
+                $this->createAcl($entity);
                 $em->getConnection()->commit();
                 return $this->success();
             }catch(Exception $e){

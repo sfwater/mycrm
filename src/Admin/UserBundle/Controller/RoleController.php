@@ -101,6 +101,7 @@ class RoleController extends AdminAclController
                 $entity->setMask($mask);
                 $em->persist($entity);
                 $em->flush();
+                $this->createAcl($entity);
                 $em->getConnection()->commit();
                 return $this->success();
             }catch(Exception $e){

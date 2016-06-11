@@ -20,6 +20,10 @@ class UserType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $data = $options['data'];
+        $role = NULL;
+        if( $data->getId() > 0 ){
+            $role = $data->getRoles()[0];
+        }
         $builder
             ->add("username",TextType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'6-16位英文与数字组合','label'=>'6-16位英文与数字组合'),
@@ -48,6 +52,7 @@ class UserType extends AbstractType
                 'choice_label'=>function($role,$key,$index){
                     return $role->getName();
                 },
+                'data'=>$role == NULL ? NULL : $role->getId(),
                 'mapped'=>false,
                 ))
             ->add("isActive",CheckboxType::class,array(
@@ -66,7 +71,7 @@ class UserType extends AbstractType
                     ),
                 'label'=>'过期时间',
                 'required'=>false,
-                'data'=>$data->getId() == 0 ? '' : date('Y-m-d', $data->getExpireTime()),
+                'data'=>$data->getId() == 0 ? NULL : date('Y-m-d', $data->getExpireTime()),
                 'mapped'=>false,
                 ))
             ;

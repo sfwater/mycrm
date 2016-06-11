@@ -10,6 +10,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Admin\AdminBaseController;
 use Admin\AdminAclController;
 use Admin\ClientBundle\Entity\Client;
+use Admin\UserBundle\Entity\User;
 use Admin\ClientBundle\Form\ClientType;
 use Admin\ClientBundle\Form\ClientSearchType;
 use Symfony\Component\HttpFoundation\Request;

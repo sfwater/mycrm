@@ -108,8 +108,8 @@ class AdminBaseController extends Controller
         $pager->setBaseUrl($baseUrl);
         $pager->setTargetType($this->targetType);
 
-        $route = $router->matchRequest($request);
-        $action = $router->generate($route['_route']);
+        // $route = $router->matchRequest($request);
+        // $action = $router->generate($route['_route']);
 
 
         return array(

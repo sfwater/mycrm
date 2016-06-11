@@ -19,7 +19,6 @@ class AppKernel extends Kernel
             new Admin\VerifyBundle\AdminVerifyBundle(),
             new Admin\AccessControlBundle\AdminAccessControlBundle(),
             new Admin\ConsoleBundle\AdminConsoleBundle(),
-            new AdminClientBundle\AdminClientBundle(),
             new Admin\ClientBundle\AdminClientBundle(),
         ];
 

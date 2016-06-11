@@ -62,7 +62,7 @@ class ClientAccessRecordController extends AdminBaseController
 
         $data = array_merge(
             array('searchForm'=>$form->createView(),'clientId'=>$id),
-            $this->getPagedEntities(Client::class, $conditions, $parameters, $sort)
+            $this->getPagedEntities(ClientAccessRecord::class, $conditions, $parameters, $sort)
             );
         return $this->render('AdminClientBundle:ClientAccessRecord:index.html.twig', $data);
     }

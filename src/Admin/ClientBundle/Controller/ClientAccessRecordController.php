@@ -105,6 +105,7 @@ class ClientAccessRecordController extends AdminBaseController
                     $client->setWtime(strtotime($wtime));
                 }
                 $entity->setCtime(time());
+                $entity->setClient($client);
 
                 $em->persist($entity);
                 $em->flush();

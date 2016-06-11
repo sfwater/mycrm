@@ -1,4 +1,11 @@
 services:
-#    admin_client.example:
-#        class: Admin\ClientBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
+    admin_client.form.type.client:
+        class: Admin\ClientBundle\Form\ClientType
+        arguments: ["@doctrine"]
+        tags:
+            - { name: form.type }
+    admin_client.form.type.clientsearch:
+        class: Admin\ClientBundle\Form\ClientSearchType
+        arguments: ["@router"]
+        tags:
+            - { name: form.type }

@@ -1185,6 +1185,13 @@ function _getPagerForm($parent, args) {
 	            	$body.data(dlgid);
 	            	$body.ajaxUrl({url:url, data:null, callback:options.callback, type:options.type});
 	            },
+	            onhidden: function(dialog){
+	            	//还原上一个
+	            	if( $this._current == dialog ){
+	            		$this._current = $this._prev;
+	            		$this._prev = null;
+	            	}
+	            }
 	            cssClass: 'middel-dialog',
 	            buttons: buttons 
 	        });

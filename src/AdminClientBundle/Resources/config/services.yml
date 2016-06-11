@@ -1,0 +1,4 @@
+services:
+#    admin_client.example:
+#        class: AdminClientBundle\Example
+#        arguments: ["@service_id", "plain_value", %parameter%]

@@ -19,6 +19,7 @@ class AppKernel extends Kernel
             new Admin\VerifyBundle\AdminVerifyBundle(),
             new Admin\AccessControlBundle\AdminAccessControlBundle(),
             new Admin\ConsoleBundle\AdminConsoleBundle(),
+            new AdminClientBundle\AdminClientBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

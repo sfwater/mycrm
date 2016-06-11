@@ -1204,7 +1204,7 @@ function _getPagerForm($parent, args) {
 			this.close($.pdialog._current);
 		},
 		reload: function(){
-			this.getCurrentBody().realod();
+			this.getCurrentBody().reload();
 		},
 		reloadPrev: function(){
 			this.getPrevBody() != null && this.getPrevBody().reload();

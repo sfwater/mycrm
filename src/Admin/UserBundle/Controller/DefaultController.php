@@ -104,6 +104,9 @@ class DefaultController extends AdminAclController
                 if( $expireTime = $form->get('expireTime')->getData() ){
                     $entity->setExpireTime(strtotime($expireTime));
                 }
+                else{
+                    $entity->setExpireTime(NULL);
+                }
                 if( $roleId = $form->get('roles')->getData() ){
                     $role = $em->getRepository('AdminUserBundle:Role')->find($roleId);
                     $entity->addRole($role);
@@ -167,6 +170,9 @@ class DefaultController extends AdminAclController
             //過期時間
             if( $expireTime = $editForm->get('expireTime')->getData() ){
                 $entity->setExpireTime(strtotime($expireTime));
+            }
+            else{
+                $entity->setExpireTime(NULL);
             }
             if( $newPassword = $entity->getPassword() ){
                 $encoded = $encoder->encodePassword($entity,$newPassword);

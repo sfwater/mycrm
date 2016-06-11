@@ -154,6 +154,9 @@ class DefaultController extends AdminAclController
                 }
                 $entity->setWtime(strtotime($wtime));
             }
+            else{
+                $entity->setWtime(NULL);
+            }
             
             $em->persist($entity);
             $em->flush();

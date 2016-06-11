@@ -3,7 +3,7 @@
 {{ form_row(searchForm.name) }}
 {% endblock %}
 {% block actions %}
-	<a href="{{ path('admin_client_access_records_create', {id:clientId}) }}" target="dialog" width="500" height="600" method="POST" title="录入回访记录">录入回访</a>
+	<a href="{{ path('admin_client_access_records_create', {id:clientId}) }}" target="dialog" width="500" height="600" method="POST" title="录入回访记录" class="btn btn-primary">录入回访</a>
 {% endblock %}
 {% block tableHeader %}
 	<th>回访内容</th>

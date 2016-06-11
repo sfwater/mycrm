@@ -180,6 +180,9 @@ class DefaultController extends AdminAclController
             }
             if( $roleId = $editForm->get('roles')->getData() ){
                 $role = $em->getRepository('AdminUserBundle:Role')->find($roleId);
+                foreach ($entity->getRoles() as $key => $value) {
+                    $entity->removeRole($value);
+                }
                 $entity->addRole($role);
             } 
             $em->persist($entity);

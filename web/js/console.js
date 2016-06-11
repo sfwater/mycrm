@@ -421,7 +421,7 @@ function _getPagerForm($parent, args) {
 				options.param = $this.attr("param") || "";
 				options.type = type;
 				options.size = eval($this.attr("size")) || BootstrapDialog.SIZE_NORMAL;
-				options.buttons = eval($this.attr('buttons'));
+				options.buttons = eval($this.attr('hide-buttons'));
 
 				var url = unescape($this.attr("href"));
 				if (!url.isFinishedTm()) {

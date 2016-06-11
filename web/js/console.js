@@ -1134,11 +1134,18 @@ function _getPagerForm($parent, args) {
 		_op:{callback:null,height:300, width:580, minH:40, minW:50, total:20, max:false, mask:false, resizable:true, drawable:true, maxable:true,minable:true,fresh:true,type:"POST",size:BootstrapDialog.SIZE_NORMAL},
 		_current:null,
 		_zIndex:42,
+		_prev:null,
 		getCurrent:function(){
 			return this._current;
 		},
+		getPrev:function(){
+			return this._prev;
+		}
 		getCurrentBody:function(){
 			return this._current.getModalBody();
+		},
+		getPrevBody: function(){
+			return this._prev.getModalBody();
 		},
 		//打开一个层
 		open:function(url, dlgid, title, options) {
@@ -1171,6 +1178,8 @@ function _getPagerForm($parent, args) {
 	            draggable: true,
 	            size: op.size,
 	            onshown: function(dialog){
+	            	//备份上一个
+	            	$this._prev = $this._current;
 	            	$this._current = dialog;
 	               	var $body = dialog.getModalBody();
 	            	$body.data(dlgid);
@@ -1186,7 +1195,13 @@ function _getPagerForm($parent, args) {
 		},
 		closeCurrent:function(){
 			this.close($.pdialog._current);
-		}
+		},
+		reload: function(){
+			this.getCurrentBody().realod();
+		},
+		realodPrev: function(){
+			this.getPrevBody().reload();
+		},
 	};
 	/**
 	 * 扩展String方法

@@ -1,7 +1,9 @@
 {% extends 'AdminConsoleBundle::page_dialog_edit.html.twig' %}
 {% block pageScript %}
-	var recordsUpdated = function(){
-	
+	var recordsUpdated = function(json){
+		$.pdialog.closeCurrent();
+		$.pdialog.reloadPrev();
+		CONSOLE.reload();
 	}
 {% endblock %}
 {% block formContent %}

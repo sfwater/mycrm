@@ -329,7 +329,7 @@ function _getPagerForm($parent, args) {
 				}
 			});
 		},
-		realod:function(){
+		reload:function(){
 			this.container.reload();
 		},
 		getCurrentPanel: function(){

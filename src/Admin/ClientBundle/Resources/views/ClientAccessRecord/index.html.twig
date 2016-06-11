@@ -22,5 +22,5 @@
 	{% endfor %}
 {% endblock %}
 {% block tableAction %}
-<button type="button" href="{{ path('admin_client_access_records_disabled',{cid:clientId}) }}" class="btn btn-default" target="selectedTodo" action="disable" method="DELETE" title="确定要删除选中的回访记录吗？">批量删除！</button>
+<button type="button" href="{{ path('admin_client_access_records_disabled',{cid:clientId}) }}" class="btn btn-default" target="selectedTodo" action="disable" method="DELETE" title="确定要删除选中的回访记录吗？" callback="recordsUpdated">批量删除！</button>
 {% endblock %}

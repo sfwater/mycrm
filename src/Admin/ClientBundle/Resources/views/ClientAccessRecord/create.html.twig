@@ -1,4 +1,9 @@
 {% extends 'AdminConsoleBundle::page_dialog_edit.html.twig' %}
+{% block pageScript %}
+	var recordsUpdated = function(){
+	
+	}
+{% endblock %}
 {% block formContent %}
     {{ form_row(form.description) }}
     {{ form_row(form.wtime) }}

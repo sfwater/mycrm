@@ -78,7 +78,7 @@ class ClientAccessRecordController extends AdminBaseController
     public function createAction(Request $request,$id){
         $entity = new ClientAccessRecord();
         $form = $this->createForm(ClientAccessRecordType::class,$entity,array(
-            'attr'=>array('class'=>'pageForm required-validate'),
+            'attr'=>array('class'=>'pageForm required-validate','onsuccess'=>'recordsUpdated'),
             'action'=>$this->generateUrl('admin_client_access_records_create',array('id'=>$id))
             ));
         $form->handleRequest($request);
@@ -145,7 +145,7 @@ class ClientAccessRecordController extends AdminBaseController
 
 
         $editForm = $this->createForm(ClientAccessRecordType::class,$entity,array(
-            'attr'=>array('class'=>'pageForm required-validate','onsuccess'=>'dialogCallback'),
+            'attr'=>array('class'=>'pageForm required-validate','onsuccess'=>'recordsUpdated'),
             'action'=>$this->generateUrl('admin_client_access_records_edit',array('cid'=>$cid,'id'=>$entity->getId()))
             ));
         $editForm->handleRequest($request);

@@ -18,6 +18,9 @@ class TwigFilterExtension extends \Twig_Extension{
 
 	public function groups($result, $columns=5){
 		$max = (count($result) % $columns) == 0 ? (count($result) / $columns) : (count($result) / $columns + 1);
+		if( $max < 2 ){
+			$max = 2;
+		}
 		$newGroups = array();
 		$keys = array_keys($result);
 		$values = array_values($result);

@@ -81,8 +81,9 @@
 				<button class="btn btn-primary pull-right" target="selectedTodo" reload="false" action="user" group="names[]">保存用户权限</button>
 				</div>
 			</div>
+			{% for newRoutes in routes|groups %}
 			<div class="topbar-nav-col clearfix margin-top">
-				{% for k,routes in routes %}
+				{% for k,routes in newRoutes %}
 				<!-- ngRepeat: category in col -->
 				<div class="topbar-nav-item">
 					<p class="topbar-nav-item-title ng-binding">{{ k }}</p>
@@ -105,7 +106,7 @@
 				{% endfor %}
 				<!-- end ngRepeat: category in col -->
 			</div>
-
+			{% endfor %}
 		</div>
 		<div role="tabpanel" class="tab-pane" id="profile">
 			<div class="margin-top clearfix">
@@ -120,8 +121,9 @@
 					<button class="btn btn-primary pull-right" target="selectedTodo" reload="false" action="group" group="names2[]">保存用户组权限</button>
 				</div>
 			</div>
+			{% for newRoutes in routes|groups %}
 			<div class="topbar-nav-col clearfix margin-top">
-				{% for k,routes in routes %}
+				{% for k,routes in newRoutes %}
 				<!-- ngRepeat: category in col -->
 				<div class="topbar-nav-item">
 					<p class="topbar-nav-item-title ng-binding">{{ k }}</p>
@@ -144,7 +146,7 @@
 				{% endfor %}
 				<!-- end ngRepeat: category in col -->
 			</div>
-
+			{% endfor %}
 		</div>
 	</div>
 

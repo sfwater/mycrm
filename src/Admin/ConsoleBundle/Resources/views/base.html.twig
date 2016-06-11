@@ -45,7 +45,9 @@
           <span class="icon-arrow-down"></span>
         </a>
         <div class="dropdown-menu clearfix topbar-nav-list topbar-clearfix" style="width:700px;">
-        {% for k,routes in userRoutes %}
+        {% for newRoutes in userRoutes|groups %}
+        <div class="topbar-nav-col">
+        {% for k,routes in newRoutes %}
         <!-- ngRepeat: category in col -->
         <div class="topbar-nav-item" >
           <p class="topbar-nav-item-title ng-binding">{{ k }}</p>

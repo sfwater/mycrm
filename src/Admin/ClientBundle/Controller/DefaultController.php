@@ -145,7 +145,7 @@ class DefaultController extends AdminAclController
 
         if ($editForm->isValid()) {
             $this->denyAccessUnlessGranted('EDIT', $entity);
-            if( $wtime = $form->get('wtime')->getData() ){
+            if( $wtime = $editForm->get('wtime')->getData() ){
                 $entity->setWtime(strtotime($wtime));
             }
             

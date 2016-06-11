@@ -76,7 +76,7 @@
 				{% endfor %}
 			</ul>
 			<!-- ngIf: $index < col.length -1 -->
-			<div class="topbar-nav-gap ng-scope"></div>
+			{% if not loop.last %} <div class="topbar-nav-gap"></div>{% endif %}
 			<!-- end ngIf: $index < col.length -1 -->
 		</div>
 		{% endfor %}

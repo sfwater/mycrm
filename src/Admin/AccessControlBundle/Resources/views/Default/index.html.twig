@@ -101,8 +101,9 @@
 						{% endfor %}
 					</ul>
 					<!-- ngIf: $index < col.length -1 -->
-					<div class="topbar-nav-gap ng-scope" ng-if="$index < col.length -1"></div>
-					<!-- end ngIf: $index < col.length -1 --></div>
+					{% if not loop.last %} <div class="topbar-nav-gap"></div>{% endif %}
+					<!-- end ngIf: $index < col.length -1 -->
+					</div>
 				{% endfor %}
 				<!-- end ngRepeat: category in col -->
 			</div>
@@ -141,8 +142,9 @@
 						{% endfor %}
 					</ul>
 					<!-- ngIf: $index < col.length -1 -->
-					<div class="topbar-nav-gap ng-scope" ng-if="$index < col.length -1"></div>
-					<!-- end ngIf: $index < col.length -1 --></div>
+					{% if not loop.last %} <div class="topbar-nav-gap"></div>{% endif %}
+					<!-- end ngIf: $index < col.length -1 -->
+					</div>
 				{% endfor %}
 				<!-- end ngRepeat: category in col -->
 			</div>

@@ -77,6 +77,9 @@
 						<a class="btn btn-default" id="btnSearch" lookupgroup="user" href="{{ path('admin_users_index', {action:'lookup',pageSize:8}) }}">选择用户</a>
 					</form>
 				</div>
+				<div class="pull-right">
+				<button class="btn btn-primary pull-right" target="selectedTodo" reload="false" action="user" group="names[]">保存用户权限</button>
+				</div>
 			</div>
 			<div class="topbar-nav-col clearfix margin-top">
 				{% for k,routes in routes %}
@@ -102,7 +105,7 @@
 				{% endfor %}
 				<!-- end ngRepeat: category in col -->
 			</div>
-			<button class="btn btn-primary pull-right" target="selectedTodo" reload="false" action="user" group="names[]">保存用户权限</button>
+
 		</div>
 		<div role="tabpanel" class="tab-pane" id="profile">
 			<div class="margin-top clearfix">
@@ -112,6 +115,9 @@
 							<input type="text" id="group.groupname" lookupgroup="group" name="groupname" required="required" class="form-control ipt disabled" placeholder="组名" label="组名" disabled=""></div>
 						<a class="btn btn-default" lookupgroup="group" href="{{ path('admin_roles_index',{action:'lookup',pageSize:8}) }}" id="btnGroupSearch">选择用户组</a>
 					</form>
+				</div>
+				<div class="pull-right">
+					<button class="btn btn-primary pull-right" target="selectedTodo" reload="false" action="group" group="names2[]">保存用户组权限</button>
 				</div>
 			</div>
 			<div class="topbar-nav-col clearfix margin-top">
@@ -138,7 +144,7 @@
 				{% endfor %}
 				<!-- end ngRepeat: category in col -->
 			</div>
-			<button class="btn btn-primary pull-right" target="selectedTodo" reload="false" action="group" group="names2[]">保存用户组权限</button>
+
 		</div>
 	</div>
 

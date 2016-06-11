@@ -75,6 +75,7 @@
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
           <li><a href="javascript:void(0);">欢迎，{{ app.user.username }}</a></li>
+          <li><a href="{{ path('admin_index') }}">系统主页</a></li>
           {% for key,routes in userRoutes|inGroup %}
             {% for r in routes|showRoutes('console') %}
           <li>
@@ -116,7 +117,7 @@
         <div class="unitBox">
           <div class="page-header">
             <h2 id="consoleHeader" class="consoleTitle">
-              Dashboard
+              系统主页
               <small></small>
             </h2>
           </div>

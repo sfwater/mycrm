@@ -9,7 +9,7 @@
 	<th>联系方式</th>
 	<th class="sortable" order-field="wtime">划维护</th>
 	<th>录入时间</th>
-	<th>状态</th>
+	<th>回访次数</th>
 {% endblock %}
 {% block tableBody %}
 	{% for entity in results %}
@@ -21,7 +21,7 @@
 			<td>{{ entity.contact }}</td>
 			<td>{% if entity.wtime is not empty %}{{ entity.wtime|date("Y-m-d") }}{% else %}--{% endif %}</td>
 			<td>{{ entity.ctime|date("Y-m-d H:i:s") }}</td>
-			<td>{{ entity.status }}</td>
+			<td>{{ entity.records|length }}</td>
             <td class="text-right">
             <a href="{{ path('admin_clients_edit',{id:entity.id}) }}" target="dialog" width="500" height="600" method="POST" title="编辑用户 {{ entity.name }}">编辑</a>
             <a href="{{ path('admin_client_access_records_index',{id:entity.id,pageSize:8}) }}" target="dialog" width="500" height="600" method="GET" title="查看{{ entity.name }}的回访记录" size="BootstrapDialog.SIZE_WIDE">回访</a>

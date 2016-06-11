@@ -44,6 +44,7 @@ class DefaultController extends AdminAclController
         $form = $this->createForm(ClientSearchType::class, $request->query->all(), $options);
 
         $conditions = "";
+        $parameters = array();
         if( $form->get('name')->getData() ){
             $conditions .= '(dist.name LIKE :name OR dist.contactor LIKE :name OR dist.contact LIKE :name)';
             $parameters['name'] = '%'.$form->get('name')->getData().'%';

@@ -1,11 +1,5 @@
 {% extends 'AdminConsoleBundle::page_dialog_edit.html.twig' %}
-{% block pageScript %}
-	var recordsUpdated = function(){
-		$.pdialog.closeCurrent();
-		$.pdialog.reloadPrev();
-		CONSOLE.reload();
-	}
-{% endblock %}
+
 {% block formContent %}
     {{ form_row(form.description) }}
     {{ form_row(form.wtime) }}

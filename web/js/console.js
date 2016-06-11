@@ -1145,7 +1145,7 @@ function _getPagerForm($parent, args) {
 			return this._current.getModalBody();
 		},
 		getPrevBody: function(){
-			return this._prev.getModalBody();
+			return this._prev == null ? null : this._prev.getModalBody();
 		},
 		//打开一个层
 		open:function(url, dlgid, title, options) {
@@ -1206,8 +1206,8 @@ function _getPagerForm($parent, args) {
 		reload: function(){
 			this.getCurrentBody().realod();
 		},
-		realodPrev: function(){
-			this.getPrevBody().reload();
+		reloadPrev: function(){
+			this.getPrevBody() != null && this.getPrevBody().reload();
 		},
 	};
 	/**

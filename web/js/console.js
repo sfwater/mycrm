@@ -1191,7 +1191,7 @@ function _getPagerForm($parent, args) {
 	            		$this._current = $this._prev;
 	            		$this._prev = null;
 	            	}
-	            }
+	            },
 	            cssClass: 'middel-dialog',
 	            buttons: buttons 
 	        });

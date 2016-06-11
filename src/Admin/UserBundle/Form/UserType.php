@@ -66,6 +66,7 @@ class UserType extends AbstractType
                     ),
                 'label'=>'过期时间',
                 'required'=>false,
+                'data'=>$data->getId() == 0 ? '' : date('Y-m-d', $data->getExpireTime()),
                 'mapped'=>false,
                 ))
             ;

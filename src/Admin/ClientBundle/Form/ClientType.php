@@ -48,6 +48,7 @@ class ClientType extends AbstractType
                     'data-date-format'=>'yyyy-mm-dd'
                     ),
                 'label'=>'计划维护',
+                'data'=>$data->getId() == 0 ? '' : date('Y-m-d', $data->getWtime()),
                 'required'=>false,
                 'mapped'=>false,
                 ))

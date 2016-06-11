@@ -26,7 +26,7 @@ class DefaultController extends AdminAclController
      *   )
      * @Method("GET") 
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
         $action = $request->query->get('action');
         if( $action == 'lookup' ){

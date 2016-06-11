@@ -64,8 +64,9 @@
             {% endfor %}
           </ul>
           <!-- ngIf: $index < col.length -1 -->
-          <div class="topbar-nav-gap ng-scope" ng-if="$index < col.length -1"></div>
-          <!-- end ngIf: $index < col.length -1 --></div>
+          {% if loop.last is not true %} <div class="topbar-nav-gap ng-scope"></div>{% endif %}
+          <!-- end ngIf: $index < col.length -1 -->
+          </div>
         {% endfor %}
         </div>
         {% endfor %}

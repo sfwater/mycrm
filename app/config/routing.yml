@@ -1,3 +1,8 @@
+admin_client:
+    resource: "@AdminClientBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 admin_console:
     resource: "@AdminConsoleBundle/Controller/"
     type:     annotation

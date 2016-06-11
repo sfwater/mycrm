@@ -66,7 +66,7 @@ class Client
     /**
      * @var int
      *
-     * @ORM\Column(name="wtime", type="integer")
+     * @ORM\Column(name="wtime", type="integer", nullable=true)
      */
     private $wtime;
 

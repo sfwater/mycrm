@@ -18,13 +18,13 @@ class TwigFilterExtension extends \Twig_Extension{
 
 	public function groups($result, $max=2){
 		$newGroups = array();
-		foreach ($result as $index=>$item) {
-			$mod = $index % $max;
+		for ($i = 0; $i < count($result); $i++){
+			$mod = $i % $max;
 			if( $mod == 0 ){
 				$group = array();
 				$newGroups[] = $group;
 			}
-			$newGroups[count($newGroups)-1][] = $item;
+			$newGroups[count($newGroups)-1][$key] = $item;
 		}
 		return $newGroups;
 	}

@@ -1,0 +1,11 @@
+{% extends 'AdminConsoleBundle::page_edit.html.twig' %}
+{% block formContent %}
+    {{ form_row(form.username ) }}
+    {{ form_row(form.nickname) }}
+    {{ form_row(form.password) }}
+    {{ form_row(form.repassword) }}
+    {{ form_row(form.roles) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.expireTime) }}
+    {{ form_row(form.isActive) }}
+{% endblock %}

@@ -37,7 +37,6 @@ class ClientAccessSearchType extends AbstractType
             'data_class' => NULL,
             'method'=>'GET',
             'attr'=>array('class'=>'form-inline searchForm','id'=>'searchForm'),
-            'action'=>$this->router->generate('admin_client_access_records_index')
         ));
     }
 }

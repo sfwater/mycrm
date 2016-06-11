@@ -420,6 +420,7 @@ function _getPagerForm($parent, args) {
 				options.close = eval($this.attr("close") || "");
 				options.param = $this.attr("param") || "";
 				options.type = type;
+				options.size = eval($this.attr("size")) || BootstrapDialog.SIZE_NORMAL;
 
 				var url = unescape($this.attr("href"));
 				if (!url.isFinishedTm()) {

@@ -24,7 +24,7 @@
 			<td>{{ entity.records|length }}</td>
             <td class="text-right">
             <a href="{{ path('admin_clients_edit',{id:entity.id}) }}" target="dialog" width="500" height="600" method="POST" title="编辑用户 {{ entity.name }}">编辑</a>
-            <a href="{{ path('admin_client_access_records_index',{action:'lookup',id:entity.id,pageSize:8}) }}" target="dialog" width="500" height="600" method="GET" title="查看{{ entity.name }}的回访记录" size="BootstrapDialog.SIZE_WIDE">回访</a>
+            <a href="{{ path('admin_client_access_records_index',{action:'lookup',id:entity.id,pageSize:8}) }}" target="dialog" width="500" height="600" method="GET" title="查看{{ entity.name }}的回访记录" size="BootstrapDialog.SIZE_WIDE" buttons="{}">回访</a>
             </td>
 		</tr>
 	{% endfor %}

@@ -27,7 +27,7 @@
 			<td>{{ entity.description|nl2br }}</td>
 			<td>{{ entity.ctime|date("Y-m-d H:i:s") }}</td>
             <td class="text-right">
-            <a href="{{ path('admin_client_access_records_edit',{cid:clientId,id:entity.id}) }}" target="dialog" width="500" height="600" method="POST" title="编辑回访记录{{ entity.id }}" buttons="{}">编辑</a>
+            <a href="{{ path('admin_client_access_records_edit',{cid:clientId,id:entity.id}) }}" target="dialog" width="500" height="600" method="POST" title="编辑回访记录{{ entity.id }}">编辑</a>
             </td>
 		</tr>
 	{% endfor %}

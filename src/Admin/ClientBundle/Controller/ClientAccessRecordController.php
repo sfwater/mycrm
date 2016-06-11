@@ -37,7 +37,7 @@ class ClientAccessRecordController extends AdminBaseController
         $targetType = $action == "lookup" ? "dialog":"navTab";
         $options['attr']['targetType'] = $targetType;
         $options['attr']['class'] = 'form-inline searchForm';
-        $params = array('action'=>$action);
+        $params = array('action'=>$action,'id'=>$id);
         $pageSize = intval($request->query->get('pageSize'));
         if( $pageSize > 0 ){
             $params['pageSize'] = $pageSize;

@@ -49,7 +49,7 @@ function validateCallback(form, callback, confirmMsg) {
 * 对话框保存成功
 */
 function dialogCallback(json){
-	CONSOLE.realod();
+	CONSOLE.reload();
 	CONSOLE.ajaxDone(json);
 	$.pdialog.closeCurrent();
 }

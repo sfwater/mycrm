@@ -137,7 +137,7 @@ class DefaultController extends AdminAclController
         $this->denyAccessUnlessGranted('VIEW', $entity);
 
 
-        $editForm = $this->createForm(Client::class,$entity,array(
+        $editForm = $this->createForm(ClientType::class,$entity,array(
             'attr'=>array('class'=>'pageForm required-validate','onsuccess'=>'dialogCallback'),
             'action'=>$this->generateUrl('admin_clients_edit',array('id'=>$entity->getId()))
             ));

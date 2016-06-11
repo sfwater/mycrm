@@ -1,11 +1,9 @@
-{% extends 'AdminConsoleBundle::page_dialog_edit.html.twig' %}
+{% extends 'AdminConsoleBundle::page_edit.html.twig' %}
 {% block formContent %}
-    {{ form_row(form.username ) }}
-    {{ form_row(form.nickname) }}
-    {{ form_row(form.password) }}
-    {{ form_row(form.repassword) }}
-    {{ form_row(form.roles) }}
-    {{ form_row(form.email) }}
-    {{ form_row(form.expireTime) }}
-    {{ form_row(form.isActive) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.address) }}
+    {{ form_row(form.contactor) }}
+    {{ form_row(form.contact) }}
+    {{ form_row(form.note) }}
+    {{ form_row(form.wtime) }}
 {% endblock %}

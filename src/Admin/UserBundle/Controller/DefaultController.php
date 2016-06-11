@@ -178,7 +178,10 @@ class DefaultController extends AdminAclController
                 $encoded = $encoder->encodePassword($entity,$newPassword);
                 $entity->setPassword($encoded);
             }
-            
+            if( $roleId = $editForm->get('roles')->getData() ){
+                $role = $em->getRepository('AdminUserBundle:Role')->find($roleId);
+                $entity->addRole($role);
+            } 
             $em->persist($entity);
             $em->flush();
             return $this->success();

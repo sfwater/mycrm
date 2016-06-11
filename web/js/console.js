@@ -1140,7 +1140,7 @@ function _getPagerForm($parent, args) {
 		},
 		getPrev:function(){
 			return this._prev;
-		}
+		},
 		getCurrentBody:function(){
 			return this._current.getModalBody();
 		},

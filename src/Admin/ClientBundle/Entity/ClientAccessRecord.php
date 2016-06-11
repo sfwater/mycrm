@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * ClientAccessRecord
  *
- * @ORM\Table(name="client_access_record")
+ * @ORM\Table(name="client_access_records")
  * @ORM\Entity(repositoryClass="Admin\ClientBundle\Repository\ClientAccessRecordRepository")
  */
 class ClientAccessRecord
@@ -35,6 +35,15 @@ class ClientAccessRecord
      */
     private $ctime;
 
+    /**
+    * @ORM\ManyToOne(targetEntity="Client", inversedBy="records")
+    */
+    private $client;
+
+    /**
+    * @ORM\ManyToOne(targetEntity="Admin\UserBundle\Entity\User")
+    */
+    private $user;
 
     /**
      * Get id

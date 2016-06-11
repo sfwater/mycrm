@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Client
  *
- * @ORM\Table(name="client")
+ * @ORM\Table(name="clients")
  * @ORM\Entity(repositoryClass="Admin\ClientBundle\Repository\ClientRepository")
  */
 class Client
@@ -77,6 +77,10 @@ class Client
      */
     private $ctime;
 
+    /**
+    * @ORM\OneToMany(targetEntity="ClientAccessRecord", mappedBy="client")
+    */
+    private $records;
 
     /**
      * Get id

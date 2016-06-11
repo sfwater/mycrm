@@ -45,43 +45,48 @@
           <span class="icon-arrow-down"></span>
         </a>
         <div class="dropdown-menu clearfix topbar-nav-list topbar-clearfix">
-        {% for newRoutes in userRoutes|groups %}
-        <div class="topbar-nav-col">
-        {% for k,routes in newRoutes %}
-        <!-- ngRepeat: category in col -->
-        <div class="topbar-nav-item" >
-          <p class="topbar-nav-item-title ng-binding">{{ k }}</p>
-          <ul>
-            {% for r in routes|showRoutes %}
-            <!-- ngRepeat: product in category.products -->
-            <li>
-              <a href="{{ path(r.name) }}" title="{{ r.options.description }}" target="{{ r.target }}" method="{{ r.methods[0] }}" for="route_{{ r.name }}" data-placement="right">
-                <span class="topbar-nav-item-icon icon-ecs"></span>
-                <span class="ng-binding">{{ r.options.name }}</span>
-                <span class="topbar-nav-item-short ng-binding"></span>
-              </a>
-            </li>
+          {% for newRoutes in userRoutes|groups %}
+          <div class="topbar-nav-col">
+            {% for k,routes in newRoutes %}
+            <!-- ngRepeat: category in col -->
+            <div class="topbar-nav-item" >
+              <p class="topbar-nav-item-title ng-binding">{{ k }}</p>
+              <ul>
+                {% for r in routes|showRoutes %}
+                <!-- ngRepeat: product in category.products -->
+                <li>
+                  <a href="{{ path(r.name) }}" title="{{ r.options.description }}" target="{{ r.target }}" method="{{ r.methods[0] }}" for="route_{{ r.name }}" data-placement="right">
+                    <span class="topbar-nav-item-icon icon-ecs"></span>
+                    <span class="ng-binding">{{ r.options.name }}</span>
+                    <span class="topbar-nav-item-short ng-binding"></span>
+                  </a>
+                </li>
+                {% endfor %}
+              </ul>
+              <!-- ngIf: $index < col.length -1 -->
+              {% if not loop.last %}
+              <div class="topbar-nav-gap"></div>
+              {% endif %}
+              <!-- end ngIf: $index < col.length -1 --></div>
             {% endfor %}
-          </ul>
-          <!-- ngIf: $index < col.length -1 -->
-          {% if not loop.last %} <div class="topbar-nav-gap"></div>{% endif %}
-          <!-- end ngIf: $index < col.length -1 -->
           </div>
-        {% endfor %}
-        </div>
-        {% endfor %}
+          {% endfor %}
         </div>
       </div>
       <div id="navbar" class="navbar-collapse collapse">
         <ul class="nav navbar-nav navbar-right">
-          <li><a href="javascript:void(0);">欢迎，{{ app.user.username }}</a></li>
-          <li><a href="{{ path('admin_index') }}">系统主页</a></li>
+          <li>
+            <a href="javascript:void(0);">欢迎，{{ app.user.username }}</a>
+          </li>
+          <li>
+            <a href="{{ path('admin_index') }}">系统主页</a>
+          </li>
           {% for key,routes in userRoutes|inGroup %}
             {% for r in routes|showRoutes('console') %}
           <li>
             <a href="{{ path(r.name) }}" title="{{ r.options.description }}" target="{{ r.target }}" method="{{ r.methods[0] }}">{{ r.options.name }}</a>
           </li>
-            {% endfor %}
+          {% endfor %}
           {% endfor %}
         </ul>
       </div>
@@ -121,8 +126,86 @@
               <small></small>
             </h2>
           </div>
-          <div id="consoleContainer">{% block body %}This is the body container.{% endblock %}</div>
-          <div id="consoleFooter" class="text-muted">版权所有：{% if settings is defined %}{{ settings.copyright }}{% endif %} 技术支持：薄金宏</div>
+          <div id="consoleContainer">
+            {% block body %}
+            <div style="background-color:##eaedf1">
+              <div class="home-section-wrap">
+                <div class="home-section-user clearfix">
+                  <!-- 头像,会员权益,云溪社区 -->
+                  <div class="user-part-header pull-left">
+                    <a class="user-header ng-scope" href="javascript:void(0);">
+                      <img width="50" height="50" src="/images/default_family.jpg">
+                      <span class="user-level ng-binding">U</span>
+                    </a>
+                    <div class="user-name">
+                      <span class="text-muted">Hi,</span>
+                      <a class="text-primary">{{ app.user.nickname }}</a>
+                    </div>
+                    </div>
+                  <div class="user-part-body">
+                    <!-- 账号,费用,推荐码 -->
+                    <div class="user-part-account">
+                      <div class="user-body-title">
+                        余额
+                        <span class="home-colon">:</span>
+                      </div>
+                      <div class="user-body-main">
+                        <div class="user-balance">
+                          <span class="ng-binding">0</span>
+                          <span class="user-balance-small ng-binding">.00</span>
+                          <span class="user-small">元</span>
+                        </div>
+                        <!-- ngIf: accountInfo.amountOwed >0 --></div>
+                    </div>
+                    <div class="user-part-identity">
+                      <!-- ngIf: netcnInfo.level --> 
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="home-section-wrap">
+                <div class="home-section-product">
+                  <div class="product-container">
+                    <div class="product-section">
+                    <div class="section-head"><span class="title-strong ng-binding">快速导航</span></div>
+                    </div>
+                    <div class="section-content">
+                      {% for newRoutes in userRoutes|groups %}
+                      <div class="topbar-nav-col">
+                        {% for k,routes in newRoutes %}
+                        <!-- ngRepeat: category in col -->
+                        <div class="topbar-nav-item" >
+                          <p class="topbar-nav-item-title ng-binding">{{ k }}</p>
+                          <ul>
+                            {% for r in routes|showRoutes %}
+                            <!-- ngRepeat: product in category.products -->
+                            <li>
+                              <a href="{{ path(r.name) }}" title="{{ r.options.description }}" target="{{ r.target }}" method="{{ r.methods[0] }}" for="route_{{ r.name }}" data-placement="right">
+                                <span class="topbar-nav-item-icon icon-ecs"></span>
+                                <span class="ng-binding">{{ r.options.name }}</span>
+                                <span class="topbar-nav-item-short ng-binding"></span>
+                              </a>
+                            </li>
+                            {% endfor %}
+                          </ul>
+                          <!-- ngIf: $index < col.length -1 -->
+                          {% if not loop.last %}
+                          <div class="topbar-nav-gap"></div>
+                          {% endif %}
+                          <!-- end ngIf: $index < col.length -1 --></div>
+                        {% endfor %}
+                      </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {% endblock %}
+          </div>
+          <div id="consoleFooter" class="text-muted">
+            版权所有：{% if settings is defined %}{{ settings.copyright }}{% endif %} 技术支持：薄金宏
+          </div>
         </div>
       </div>
     </div>

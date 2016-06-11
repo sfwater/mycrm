@@ -563,3 +563,130 @@ tfoot, .bg-color-f56 {
 .bootstrap-dialog .modal-dialog-title, .bootstrap-dialog .bootstrap-dialog-title {
   font-size: 14px;
 }
+
+
+
+/*main*/
+.home-section-wrap {
+    padding: 8px;
+}
+.home-section-user {
+    position: relative;
+}
+
+.home-section-notice, .home-section-user, .home-section-topic, .home-section-trends, .home-section-product, .home-section-situation {
+    background: #fff;
+}
+.home-section-user, .home-section-topic {
+    height: 180px;
+}
+.home-section-user .user-part-header {
+    width: 180px;
+    height: 100%;
+    background: #f9fafc;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.home-section-user .user-part-body {
+    height: 100%;
+    width: 100%;
+    padding-left: 180px;
+}
+.home-section-user .user-header {
+    position: relative;
+    display: block;
+    width: 50px;
+    height: 50px;
+    margin: 36px auto 0;
+}
+.home-section-user .user-header img {
+    border-radius: 25px;
+    display: block;
+}
+img {
+    vertical-align: middle;
+}
+img {
+    border: 0;
+}
+.home-section-user .user-header .user-level {
+    position: absolute;
+    padding: 0px 4px;
+    background: #f90;
+    border-radius: 4px;
+    color: #fff;
+    line-height: 13px;
+    left: 14px;
+    bottom: 0;
+    left: 14px;
+    margin-bottom: -6px;
+}
+.home-section-user .user-name {
+    margin-top: 6px;
+    text-align: center;
+    font-size: 18px;
+}
+.home-section-user .user-yq {
+    text-align: center;
+    margin-top: 10px;
+}
+.home-section-user .user-hot {
+    font-size: 8px;
+    color: #fff;
+    background: #ff9900;
+    border-radius: 3px;
+    padding: 1px 2px;
+    display: inline-block;
+    line-height: 12px;
+    vertical-align: text-bottom;
+    text-align: center;
+    margin-left: 3px;
+}
+.home-section-user .user-part-body {
+    height: 100%;
+    width: 100%;
+    padding-left: 180px;
+}
+.home-section-user .user-part-account, .home-section-user .user-part-todo {
+    float: left;
+    width: 50%;
+    height: 100%;
+    padding: 30px;
+}
+.home-section-user .user-part-body .user-body-title {
+    margin: 6px 0 18px;
+}
+.home-section-user .user-body-main {
+    height: 60px;
+}
+.home-section-user .user-balance, .home-section-user .user-renew {
+    font-size: 30px;
+    line-height: 24px;
+    margin-bottom: 2px;
+}
+.home-section-user .user-balance .user-balance-small, .home-section-user .user-renew .user-balance-small {
+    font-size: 16px;
+}
+.home-section-user .user-balance .user-small, .home-section-user .user-renew .user-small {
+    font-size: 12px;
+    margin-left: 4px;
+    color: #999;
+}
+.home-section-product .product-container .product-section {
+    overflow: hidden;
+    position: relative;
+}
+.home-section-product .product-container .product-section .section-head {
+    margin: 0 16px;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #eaedf1;
+}
+.home-section-product .product-container .product-section .title-strong {
+    font-weight: bold;
+    margin-right: 3px;
+}
+.home-section-product .product-container .product-section .section-content {
+    padding: 8px;
+}

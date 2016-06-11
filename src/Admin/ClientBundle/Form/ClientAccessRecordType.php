@@ -21,7 +21,7 @@ class ClientAccessRecordType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add("note",TextareaType::class,array(
+            ->add("description",TextareaType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'回访内容','label'=>'回访内容'),
                 'label'=>'回访内容',
                 ))

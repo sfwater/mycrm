@@ -79,7 +79,7 @@ class ClientAccessRecordController extends AdminBaseController
         $entity = new ClientAccessRecord();
         $form = $this->createForm(ClientAccessRecordType::class,$entity,array(
             'attr'=>array('class'=>'pageForm required-validate'),
-            'action'=>$this->generateUrl('admin_clients_create',array('id'=>$id))
+            'action'=>$this->generateUrl('admin_client_access_records_create',array('id'=>$id))
             ));
         $form->handleRequest($request);
 

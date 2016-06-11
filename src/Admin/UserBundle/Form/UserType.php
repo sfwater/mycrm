@@ -52,7 +52,7 @@ class UserType extends AbstractType
                 'choice_label'=>function($role,$key,$index){
                     return $role->getName();
                 },
-                'data'=>$role == NULL ? NULL : $role->getId(),
+                'data'=>$role,
                 'mapped'=>false,
                 ))
             ->add("isActive",CheckboxType::class,array(
@@ -71,7 +71,7 @@ class UserType extends AbstractType
                     ),
                 'label'=>'过期时间',
                 'required'=>false,
-                'data'=>$data->getId() == 0 ? NULL : date('Y-m-d', $data->getExpireTime()),
+                'data'=>$data->getExpireTime() == NULL ? NULL : date('Y-m-d', $data->getExpireTime()),
                 'mapped'=>false,
                 ))
             ;

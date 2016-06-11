@@ -102,5 +102,52 @@ class ClientAccessRecord
     {
         return $this->ctime;
     }
-}
 
+    /**
+     * Set client
+     *
+     * @param \Admin\ClientBundle\Entity\Client $client
+     *
+     * @return ClientAccessRecord
+     */
+    public function setClient(\Admin\ClientBundle\Entity\Client $client = null)
+    {
+        $this->client = $client;
+
+        return $this;
+    }
+
+    /**
+     * Get client
+     *
+     * @return \Admin\ClientBundle\Entity\Client
+     */
+    public function getClient()
+    {
+        return $this->client;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \Admin\UserBundle\Entity\User $user
+     *
+     * @return ClientAccessRecord
+     */
+    public function setUser(\Admin\UserBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \Admin\UserBundle\Entity\User
+     */
+    public function getUser()
+    {
+        return $this->user;
+    }
+}

@@ -283,5 +283,45 @@ class Client
     {
         return $this->ctime;
     }
-}
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->records = new \Doctrine\Common\Collections\ArrayCollection();
+    }
 
+    /**
+     * Add record
+     *
+     * @param \Admin\ClientBundle\Entity\ClientAccessRecord $record
+     *
+     * @return Client
+     */
+    public function addRecord(\Admin\ClientBundle\Entity\ClientAccessRecord $record)
+    {
+        $this->records[] = $record;
+
+        return $this;
+    }
+
+    /**
+     * Remove record
+     *
+     * @param \Admin\ClientBundle\Entity\ClientAccessRecord $record
+     */
+    public function removeRecord(\Admin\ClientBundle\Entity\ClientAccessRecord $record)
+    {
+        $this->records->removeElement($record);
+    }
+
+    /**
+     * Get records
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getRecords()
+    {
+        return $this->records;
+    }
+}

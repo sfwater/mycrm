@@ -75,7 +75,7 @@ class DefaultController extends AdminAclController
      * @Template("AdminClientBundle:Default:create.html.twig")
      */
     public function createAction(Request $request){
-        $entity = new User();
+        $entity = new Client();
         $form = $this->createForm(ClientType::class,$entity,array(
             'attr'=>array('class'=>'pageForm required-validate'),
             'action'=>$this->generateUrl('admin_clients_create')

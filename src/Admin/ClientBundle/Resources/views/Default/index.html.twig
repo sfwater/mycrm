@@ -19,7 +19,7 @@
 			<td>{{ entity.address }}</td>
 			<td>{{ entity.contactor }}</td>
 			<td>{{ entity.contact }}</td>
-			<td>{% if entity.wtime is not empty %}{{ entity.wtime|date("Y-m-d H:i:s") }}{% else %}--{% endif %}</td>
+			<td>{% if entity.wtime is not empty %}{{ entity.wtime|date("Y-m-d") }}{% else %}--{% endif %}</td>
 			<td>{{ entity.ctime|date("Y-m-d H:i:s") }}</td>
 			<td>{{ entity.status }}</td>
             <td class="text-right">

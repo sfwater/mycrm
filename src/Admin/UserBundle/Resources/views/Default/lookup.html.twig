@@ -19,7 +19,7 @@
 			<td>{{ entity.nickname }}</td>
 			<td>{{ entity.email }}</td>
 			<td>{{ entity.roles[0].name }}</td>
-			<td>{% if entity.expireTime is not empty %}{{ entity.expireTime|date("Y-m-d H:i:s") }}{% else %}--{% endif %}</td>
+			<td>{% if entity.expireTime is not empty %}{{ entity.expireTime|date("Y-m-d") }}{% else %}--{% endif %}</td>
 			<td>{{ entity.registerTime|date("Y-m-d H:i:s") }}</td>
 			<td>{{ entity.isActive|userActive }}</td>
             <td class="text-right">

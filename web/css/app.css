@@ -467,7 +467,7 @@ tfoot, .bg-color-f56 {
 .topbar-nav-col {
     vertical-align: top;
     padding: 0 10px;
-    position: relative;
+    display: inline-block;
 }
 .topbar-nav-item {
     width: 180px;

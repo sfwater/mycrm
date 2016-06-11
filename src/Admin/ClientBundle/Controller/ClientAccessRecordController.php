@@ -24,7 +24,7 @@ class ClientAccessRecordController extends AdminBaseController
      * 客户回访记录
      * @Route(
      *      "/{id}/records", name="admin_client_access_records_index",
-     *      options = {"name":"回访跟踪","description":"列出客户的回访记录","category":"客户管理","order":2, "show":true}
+     *      options = {"name":"回访跟踪","description":"列出客户的回访记录","category":"客户管理","order":2}
      *   )
      * @Method("GET") 
      */
@@ -70,7 +70,7 @@ class ClientAccessRecordController extends AdminBaseController
      * 创建一个回访记录
      * @Route(
      *      "/{id}/records", name="admin_client_access_records_create",
-     *      options = {"name":"录入回访","description":"录入一个客户的回访记录","category":"客户管理","order":1, "show":true}
+     *      options = {"name":"录入回访","description":"录入一个客户的回访记录","category":"客户管理","order":1}
      *   )
      * @Method("POST")
      * @Template("AdminClientBundle:ClientAccessRecord:create.html.twig")

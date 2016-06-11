@@ -92,7 +92,7 @@ class DefaultController extends AdminAclController
             $em->getConnection()->beginTransaction();
 
             try{
-                if( $expireTime = $form->get('wtime')->getData() ){
+                if( $wtime = $form->get('wtime')->getData() ){
                     $entity->setWtime(strtotime($wtime));
                 }
                 $entity->setCtime(time());
@@ -145,7 +145,7 @@ class DefaultController extends AdminAclController
 
         if ($editForm->isValid()) {
             $this->denyAccessUnlessGranted('EDIT', $entity);
-            if( $expireTime = $form->get('wtime')->getData() ){
+            if( $wtime = $form->get('wtime')->getData() ){
                 $entity->setWtime(strtotime($wtime));
             }
             

@@ -13,7 +13,7 @@ services:
         tags:
             - { name: security.voter }
         public: false
-    admin_console.twig_filter_extesion:
+    admin_accesscontrol.twig_filter_extesion:
         class: Admin\AccessControlBundle\Extension\TwigFilterExtension
         public: true 
         tags:

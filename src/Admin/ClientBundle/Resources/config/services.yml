@@ -9,3 +9,13 @@ services:
         arguments: ["@router"]
         tags:
             - { name: form.type }
+    admin_client.form.type.client_access_record:
+        class: Admin\ClientBundle\Form\ClientAccessRecordType
+        arguments: ["@doctrine"]
+        tags:
+            - { name: form.type }
+    admin_client.form.type.client_access_search:
+        class: Admin\ClientBundle\Form\ClientAccessSearchType
+        arguments: ["@router"]
+        tags:
+            - { name: form.type }

@@ -1,0 +1,26 @@
+{% extends 'AdminConsoleBundle::page_list.html.twig' %}
+{% block searchContent %}
+{{ form_row(searchForm.name) }}
+{% endblock %}
+{% block actions %}
+	<a href="{{ path('admin_client_access_records_create', {id:clientId}) }}" target="dialog" width="500" height="600" method="POST" title="录入回访记录">录入回访</a>
+{% endblock %}
+{% block tableHeader %}
+	<th>回访内容</th>
+	<th>时间</th>
+{% endblock %}
+{% block tableBody %}
+	{% for entity in results %}
+		<tr>
+			<td> <input type="checkbox" name="ids[]"  value="{{ entity.id }}" /> </td>
+			<td>{{ entity.description|nl2br }}</td>
+			<td>{{ entity.ctime|date("Y-m-d H:i:s") }}</td>
+            <td class="text-right">
+            <a href="{{ path('admin_client_access_records_edit',{cid:clientId,id:entity.id}) }}" target="dialog" width="500" height="600" method="POST" title="编辑回访记录{{ entity.id }}">编辑</a>
+            </td>
+		</tr>
+	{% endfor %}
+{% endblock %}
+{% block tableAction %}
+<button type="button" href="{{ path('admin_client_access_records_disabled',{id:clientId}) }}" class="btn btn-default" target="selectedTodo" action="disable" method="DELETE" title="确定要删除选中的回访记录吗？">批量删除！</button>
+{% endblock %}

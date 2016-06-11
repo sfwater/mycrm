@@ -10,24 +10,25 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\ParamConverter;
 use Admin\AdminBaseController;
 use Admin\AdminAclController;
 use Admin\ClientBundle\Entity\Client;
+use Admin\ClientBundle\Entity\ClientAccessRecord;
 use Admin\UserBundle\Entity\User;
-use Admin\ClientBundle\Form\ClientType;
-use Admin\ClientBundle\Form\ClientSearchType;
+use Admin\ClientBundle\Form\ClientAccessRecordType;
+use Admin\ClientBundle\Form\ClientAccessSearchType;
 use Symfony\Component\HttpFoundation\Request;
 /**
 * @Route("/admin/clients")
 */
-class DefaultController extends AdminAclController
+class ClientAccessRecordController extends AdminBaseController
 {
     /**
-     * 所有客户列表
+     * 客户回访记录
      * @Route(
-     *      "/", name="admin_clients_index",
-     *      options = {"name":"我的客户","description":"列出系统中所有客户","category":"客户管理","order":2, "show":true}
+     *      "/{id}/records", name="admin_client_access_records_index",
+     *      options = {"name":"回访跟踪","description":"列出客户的回访记录","category":"客户管理","order":2, "show":true}
      *   )
      * @Method("GET") 
      */
-    public function indexAction(Request $request)
+    public function indexAction(Request $request, $id)
     {
         $action = $request->query->get('action');
         if( $action == 'lookup' ){
@@ -41,11 +42,11 @@ class DefaultController extends AdminAclController
         if( $pageSize > 0 ){
             $params['pageSize'] = $pageSize;
         }
-        $options['action'] = $this->generateUrl('admin_clients_index',$params);
-        $form = $this->createForm(ClientSearchType::class, $request->query->all(), $options);
+        $options['action'] = $this->generateUrl('admin_client_access_records_index',$params);
+        $form = $this->createForm(ClientAccessSearchType::class, $request->query->all(), $options);
 
-        $conditions = "";
-        $parameters = array();
+        $conditions = "dist.client=:client";
+        $parameters = array('client'=>$id);
         if( $form->get('name')->getData() ){
             $conditions .= '(dist.name LIKE :name OR dist.contactor LIKE :name OR dist.contact LIKE :name)';
             $parameters['name'] = '%'.$form->get('name')->getData().'%';
@@ -60,23 +61,23 @@ class DefaultController extends AdminAclController
         }
 
         $data = array_merge(
-            array('searchForm'=>$form->createView()),
+            array('searchForm'=>$form->createView(),'clientId'=>$id),
             $this->getPagedEntities(Client::class, $conditions, $parameters, $sort)
             );
-        return $this->render('AdminClientBundle:Default:index.html.twig', $data);
+        return $this->render('AdminClientBundle:ClientAccessRecord:index.html.twig', $data);
     }
     /**
-     * 创建一个客户
+     * 创建一个回访记录
      * @Route(
-     *      "/", name="admin_clients_create",
-     *      options = {"name":"创建客户","description":"创建一个客户","category":"客户管理","order":1, "show":true}
+     *      "/{id}/records", name="admin_client_access_records_create",
+     *      options = {"name":"录入回访","description":"录入一个客户的回访记录","category":"客户管理","order":1, "show":true}
      *   )
      * @Method("POST")
-     * @Template("AdminClientBundle:Default:create.html.twig")
+     * @Template("AdminClientBundle:ClientAccessRecord:create.html.twig")
      */
-    public function createAction(Request $request){
-        $entity = new Client();
-        $form = $this->createForm(ClientType::class,$entity,array(
+    public function createAction(Request $request,$id){
+        $entity = new ClientAccessRecord();
+        $form = $this->createForm(ClientAccessRecordType::class,$entity,array(
             'attr'=>array('class'=>'pageForm required-validate'),
             'action'=>$this->generateUrl('admin_clients_create')
             ));
@@ -89,22 +90,24 @@ class DefaultController extends AdminAclController
             }
             $this->denyAccessUnlessGranted('ADD', NULL);
             $em = $this->getDoctrine()->getManager();
+            $client = $em->getRepository(Client::class)->find($id);
+            if( !$client ){
+                $this->throwException('Client not found'); 
+            }
             $em->getConnection()->beginTransaction();
 
             try{
                 if( $wtime = $form->get('wtime')->getData() ){
+                    //设置客户的下次回访时间
                     if(time()>strtotime($wtime)){
                         $this->throwException('time is too neer');
                     }
-                    $entity->setWtime(strtotime($wtime));
+                    $client->setWtime(strtotime($wtime));
                 }
                 $entity->setCtime(time());
-                $entity->setStatus(0);
-
 
                 $em->persist($entity);
                 $em->flush();
-                $this->createAcl($entity);
                 $em->getConnection()->commit();
                 return $this->success();
             }catch(Exception $e){
@@ -120,19 +123,19 @@ class DefaultController extends AdminAclController
         );
     }
     /**
-     * 编辑一个客户 
+     * 编辑一个回访记录
      * @Route(
-     *      "/{id}", name="admin_clients_edit",
-     *      options = {"name":"编辑客户","description":"编辑一个客户","category":"客户管理","order":3 }
+     *      "/{cid}/records/{id}", name="admin_client_access_records_edit",
+     *      options = {"name":"编辑回访","description":"编辑一个回访记录","category":"客户管理","order":3 }
      *   )
      * @Method("POST")
-     * @Template("AdminClientBundle:Default:edit.html.twig")
+     * @Template("AdminClientBundle:ClientAccessRecord:edit.html.twig")
      */
-    public function updateAction(Request $request, $id)
+    public function updateAction(Request $request, $cid, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository(Client::class)->find($id);
+        $entity = $em->getRepository(ClientAccessRecord::class)->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Client entity.');
@@ -140,9 +143,9 @@ class DefaultController extends AdminAclController
         $this->denyAccessUnlessGranted('VIEW', $entity);
 
 
-        $editForm = $this->createForm(ClientType::class,$entity,array(
+        $editForm = $this->createForm(ClientAccessRecordType::class,$entity,array(
             'attr'=>array('class'=>'pageForm required-validate','onsuccess'=>'dialogCallback'),
-            'action'=>$this->generateUrl('admin_clients_edit',array('id'=>$entity->getId()))
+            'action'=>$this->generateUrl('admin_client_access_records_edit',array('id'=>$entity->getId()))
             ));
         $editForm->handleRequest($request);
 
@@ -152,7 +155,7 @@ class DefaultController extends AdminAclController
                 if(time()>strtotime($wtime)){
                     $this->throwException('time is too neer');
                 }
-                $entity->setWtime(strtotime($wtime));
+                $entity->getClient()->setWtime(strtotime($wtime));
             }
             
             $em->persist($entity);
@@ -166,14 +169,14 @@ class DefaultController extends AdminAclController
         );
     }
     /**
-     * 禁用客户 
+     * 删除回访记录
      * @Route(
-     *      "/", name="admin_clients_disabled",
-     *      options = {"name":"客户状态","description":"删除、启用、禁用一个客户","category":"客户管理","order":4 }
+     *      "/{cid}/records", name="admin_client_access_records_disabled",
+     *      options = {"name":"删除回访","description":"删除一条回访记录","category":"客户管理","order":4 }
      *   )
      * @Method("DELETE")
      */
-    public function deleteAction(Request $request)
+    public function deleteAction(Request $request,$cid)
     {
         $id = intval($request->query->get("id"));
 
@@ -191,7 +194,7 @@ class DefaultController extends AdminAclController
         if( count($ids)>0 ){
             $doctrine = $this->getDoctrine();
             $em = $doctrine->getManager();
-            $repo = $doctrine->getRepository(Client::class);
+            $repo = $doctrine->getRepository(ClientAccessRecord::class);
             $query = $repo->createQueryBuilder("r")
                 ->where("r.id in (:ids)")
                 ->setParameter(":ids", $ids)

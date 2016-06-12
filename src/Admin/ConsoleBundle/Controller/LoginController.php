@@ -15,6 +15,16 @@ use Symfony\Component\HttpFoundation\RedirectResponse;
 class LoginController extends AdminAclController
 {
     /**
+     * 默认页面
+     * @Route(
+     *      "/", name="default_index"
+     *   )
+     */
+    public function defaultlIndexAction()
+    {
+        return new RedirectResponse($this->generateUrl('admin_index'));
+    }
+    /**
      * 登陆
      * @Route(
      *      "/login_check", name="admin_login_check"

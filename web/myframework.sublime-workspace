@@ -71,30 +71,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/views/Default/index.html.twig",
-			"settings":
-			{
-				"buffer_size": 5118,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/E/workspace/myframework-php/src/Admin/AccessControlBundle/Controller/DefaultController.php",
-			"settings":
-			{
-				"buffer_size": 3119,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "js/console.js",
-			"settings":
-			{
-				"buffer_size": 37559,
-				"line_ending": "Windows"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -132,7 +108,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 418.0
+		"width": 410.0
 	},
 	"console":
 	{
@@ -154,48 +130,43 @@
 	"expanded_folders":
 	[
 		"/E/workspace/myframework-php",
-		"/E/workspace/myframework-php/app",
+		"/E/workspace/myframework-php/app/config",
 		"/E/workspace/myframework-php/app/Resources",
 		"/E/workspace/myframework-php/src",
 		"/E/workspace/myframework-php/src/Admin",
-		"/E/workspace/myframework-php/src/Admin/AccessControlBundle",
-		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Controller",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/views",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/views/DataAccess",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/views/Default",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views",
 		"/E/workspace/myframework-php/src/Admin/UserBundle",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Form",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/config",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default",
-		"/E/workspace/myframework-php/src/AppBundle",
-		"/E/workspace/myframework-php/src/AppBundle/Controller"
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default"
 	],
 	"file_history":
 	[
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/LoginController.php",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/base.html.twig",
+		"/E/workspace/myframework-php/app/config/security.yml",
+		"/C/Users/bufan/.ssh/id_rsa.pub",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/views/Default/index.html.twig",
+		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/web/js/console.js",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/lookup.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/UserSearchType.php",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/web/js/dwz.min.js",
 		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Controller/Controller.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/config/services.yml",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/RoleController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/ConsoleController.php",
-		"/E/workspace/myframework-php/web/js/console.js",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/User.php",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/base.html.twig",
 		"/E/workspace/myframework-php/src/AppBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/index.html.twig",
-		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/views/Default/index.html.twig",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/LoginController.php",
 		"/E/workspace/myframework-php/web/css/app.css",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/RoleType.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Role/edit.html.twig",
@@ -205,7 +176,6 @@
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/UserType.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/page_dialog_edit.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/edit.html.twig",
-		"/E/workspace/myframework-php/app/config/security.yml",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/page_list.html.twig",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/page.html.twig",
 		"/E/workspace/myframework-php/app/config/config.yml",
@@ -379,105 +349,14 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/views/Default/index.html.twig",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5118,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								342,
-								342
-							]
-						],
-						"settings":
-						{
-							"is_xml": false,
-							"syntax": "Packages/Twig/Syntaxes/HTML (Twig).tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "/E/workspace/myframework-php/src/Admin/AccessControlBundle/Controller/DefaultController.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3119,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2792,
-								2792
-							]
-						],
-						"settings":
-						{
-							"is_xml": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 990.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "js/console.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 37559,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								20957,
-								20957
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 15114.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 436.0
+		"height": 30.0
 	},
 	"input":
 	{
@@ -514,7 +393,7 @@
 	"project": "myframework.sublime-project",
 	"replace":
 	{
-		"height": 864.0
+		"height": 56.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -523,6 +402,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"base.",
+				"src\\Admin\\ConsoleBundle\\Resources\\views\\base.html.twig"
+			],
 			[
 				"controller.php",
 				"vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller.php"
@@ -594,10 +477,6 @@
 			[
 				"datepi",
 				"web\\js\\bootstrap-datepicker.js"
-			],
-			[
-				"base.",
-				"src\\Admin\\ConsoleBundle\\Resources\\views\\base.html.twig"
 			],
 			[
 				"page_edit",

@@ -8,6 +8,7 @@ use Admin\AdminBaseController;
 use Admin\AdminAclController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Admin\UserBundle\Entity\User;
 
 
 class LoginController extends AdminAclController

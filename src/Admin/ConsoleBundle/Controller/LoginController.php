@@ -56,4 +56,18 @@ class LoginController extends AdminAclController
     public function logoutAction()
     {
     }
+
+    /**
+    * @Route("/test",name="console_test")
+    */
+    public function testAction(){
+        $em = $this->getDoctrine()->getManager();
+        $admin = $em->getRepository(User::class)->findOneByUsername('admin');
+        //pasword
+        $encoder = $this->get("security.password_encoder");
+        $encoded = $encoder->encodePassword($entity,'123456');
+        $admin->setPassword($encoded);
+        $em->flush();
+        exit;
+    }
 }

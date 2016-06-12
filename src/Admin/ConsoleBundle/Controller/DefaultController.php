@@ -103,19 +103,6 @@ class DefaultController extends AdminAclController
         return $this->jsonResponse($ret);
     }
 
-    /**
-    * @Route("/test",name="console_test")
-    */
-    public function testAction(){
-        $em = $this->getDoctrine()->getManager();
-        $admin = $em->getRepository(User::class)->findOneByUsername('admin');
-        //pasword
-        $encoder = $this->get("security.password_encoder");
-        $encoded = $encoder->encodePassword($entity,'123456');
-        $admin->setPassword($encoded);
-        $em->flush();
-        exit;
-    }
     //生成随机文件名
     private function randomName(){
         srand((double)microtime()*1000000); 

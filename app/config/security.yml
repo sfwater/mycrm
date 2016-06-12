@@ -4,7 +4,7 @@ security:
     access_decision_manager:
         strategy: unanimous
     encoders:
-        Admin\UserBundle\Entity\User: bcrypt
+        Admin\UserBundle\Entity\User: md5
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
         admin_db_provider:

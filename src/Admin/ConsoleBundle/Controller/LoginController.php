@@ -81,6 +81,6 @@ class LoginController extends AdminAclController
             $em->flush();
         }
 
-        return new RedirectResponse('admin_index');
+        return new RedirectResponse($this->generateUrl('admin_index'));
     }
 }

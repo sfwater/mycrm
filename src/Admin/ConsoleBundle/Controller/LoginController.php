@@ -9,6 +9,7 @@ use Admin\AdminAclController;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Admin\UserBundle\Entity\User;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 
 class LoginController extends AdminAclController
@@ -59,16 +60,27 @@ class LoginController extends AdminAclController
     }
 
     /**
-    * @Route("/test",name="console_test")
+    * @Route("/install",name="console_test")
     */
     public function testAction(){
+        //创建超级管理员账号
         $em = $this->getDoctrine()->getManager();
         $admin = $em->getRepository(User::class)->findOneByUsername('admin');
-        //pasword
-        $encoder = $this->get("security.password_encoder");
-        $encoded = $encoder->encodePassword($admin,'123456');
-        $admin->setPassword($encoded);
-        $em->flush();
-        exit;
+        if( !$admin ){
+            $admin = new User();
+            //pasword
+            $encoder = $this->get("security.password_encoder");
+            $encoded = $encoder->encodePassword($admin,'123456');
+            $admin->setPassword($encoded);
+
+            $admin->setUsername('admin');
+            $admin->setNickname('超管');
+            $admin->setRegisterTime(time());
+            $admin->setIsActive(TRUE);
+            $admin->setIsLocked(FALSE);
+            $em->flush();
+        }
+
+        return new RedirectResponse('admin_index');
     }
 }

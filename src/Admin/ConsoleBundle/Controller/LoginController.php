@@ -66,7 +66,7 @@ class LoginController extends AdminAclController
         $admin = $em->getRepository(User::class)->findOneByUsername('admin');
         //pasword
         $encoder = $this->get("security.password_encoder");
-        $encoded = $encoder->encodePassword($entity,'123456');
+        $encoded = $encoder->encodePassword($admin,'123456');
         $admin->setPassword($encoded);
         $em->flush();
         exit;

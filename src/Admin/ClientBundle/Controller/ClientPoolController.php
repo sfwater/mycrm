@@ -79,12 +79,6 @@ class ClientPoolController extends AdminBaseController
 
         $ids = $request->request->get("ids");
 
-        $action = $request->request->get('action');
-
-        if( empty($action) ){
-            return $this->error('missing action');
-        }
-
         if( $id > 0 ){
             $ids[] = $id;
         }
@@ -100,11 +94,19 @@ class ClientPoolController extends AdminBaseController
             $result = $query->getResult();
 
             foreach($result as $item){
+                $this->protectClient($item);
             }
 
             return $this->success();
         }
 
         return $this->error();   
+    }
+
+    /**
+    * 执行客户保护操作
+    */
+    private function protectClient($client){
+
     }
 }

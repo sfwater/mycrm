@@ -267,7 +267,7 @@ class DefaultController extends AdminAclController
             'contact'=>$client->getContact(),
             'contactor'=>$client->getContactor()
             ));
-        $one = $query->getOneOrNullResult();
-        return $one == NULL;
+        $one = $query->getResult();
+        return !$one || count($one) == 0;
     }
 }

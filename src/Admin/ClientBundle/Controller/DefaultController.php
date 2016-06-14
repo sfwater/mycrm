@@ -14,6 +14,7 @@ use Admin\UserBundle\Entity\User;
 use Admin\ClientBundle\Form\ClientType;
 use Admin\ClientBundle\Form\ClientSearchType;
 use Symfony\Component\HttpFoundation\Request;
+use Admin\ClientBundle\Entity\ClientAccessRecord;
 /**
 * @Route("/admin/clients")
 */
@@ -115,6 +116,15 @@ class DefaultController extends AdminAclController
                     $entity->setOuttime($this->getProtectionTime($this->getUser()));
                     $this->createAcl($entity);
                 }
+
+                //加入回访记录
+                $record = new ClientAccessRecord();
+                $record->setUser($this->getUser());
+                $record->setClient($entity);
+                $record->setCtime(time());
+                $record->setDescription(sprintf('客户信息创建'));
+                $em->flush();
+
                 $em->getConnection()->commit();
                 return $this->success();
             }catch(Exception $e){

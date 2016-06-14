@@ -12,6 +12,18 @@ var _util = {
 		return this.lookupPk(key);
 	}
 };
+function ajaxTodo(url, callback){
+	var $callback = callback || CONSOLE.ajaxDone;
+	if (! $.isFunction($callback)) $callback = eval('(' + callback + ')');
+	$.ajax({
+		type:'POST',
+		url:url,
+		dataType:"json",
+		cache: false,
+		success: $callback,
+		error: CONSOLE.ajaxError
+	});
+}
 /**
  * 普通ajax表单提交
  * @param {Object} form
@@ -602,7 +614,7 @@ function _getPagerForm($parent, args) {
 		});
 		if ($.fn.lookup) $("a[lookupGroup],button[lookupGroup]", $p).lookup();
 		if ($.fn.multLookup) $("[multLookup]:button", $p).multLookup();
-
+		if ($.fn.ajaxTodo) $("a[target=ajaxTodo]", $p).ajaxTodo();
 	}
 	var alertMsg = {
 		_closeTimer: null,
@@ -771,6 +783,29 @@ function _getPagerForm($parent, args) {
 		}
 	});
 	$.fn.extend({
+		ajaxTodo:function(){
+			return this.each(function(){
+				var $this = $(this);
+				$this.click(function(event){
+					var url = unescape($this.attr("href"));
+					if (!url.isFinishedTm()) {
+						alertMsg.error($this.attr("warn") || CONSOLE.msg("alertSelectMsg"));
+						return false;
+					}
+					var title = $this.attr("title");
+					if (title) {
+						alertMsg.confirm(title, {
+							okCall: function(){
+								ajaxTodo(url, $this.attr("callback"));
+							}
+						});
+					} else {
+						ajaxTodo(url, $this.attr("callback"));
+					}
+					event.preventDefault();
+				});
+			});
+		},
 		/**
 		 * @param {Object} op: {type:GET/POST, url:ajax请求地址, data:ajax请求参数列表, callback:回调函数 }
 		 */

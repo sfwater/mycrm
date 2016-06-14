@@ -78,6 +78,13 @@ class Client
     private $ctime;
 
     /**
+     * @var int
+     *
+     * @ORM\Column(name="outtime", type="integer", nullable=true)
+     */
+    private $outtime;
+
+    /**
     * @ORM\OneToMany(targetEntity="ClientAccessRecord", mappedBy="client")
     */
     private $records;

@@ -1,0 +1,32 @@
+{% extends 'AdminConsoleBundle::page_list.html.twig' %}
+{% block searchContent %}
+{{ form_row(searchForm.name) }}
+{% endblock %}
+{% block tableHeader %}
+	<th class="sortable" order-field="name">客户名称</th>
+	<th>地址</th>
+	<th>联系人</th>
+	<th>联系方式</th>
+	<th class="sortable" order-field="wtime">计划维护</th>
+	<th>录入时间</th>
+	<th>回访次数</th>
+{% endblock %}
+{% block tableBody %}
+	{% for entity in results %}
+		<tr>
+			<td> <input type="checkbox" name="ids[]"  value="{{ entity.id }}" /> </td>
+			<td>{{ entity.name }}</td>
+			<td>{{ entity.address }}</td>
+			<td>{{ entity.contactor }}</td>
+			<td>{{ entity.contact }}</td>
+			<td>{% if entity.wtime is not empty %}{{ entity.wtime|date("Y-m-d") }}{% else %}--{% endif %}</td>
+			<td>{{ entity.ctime|date("Y-m-d H:i:s") }}</td>
+			<td>{{ entity.records|length }}</td>
+            <td class="text-right">
+            <a href="{{ path('admin_clientpool_disabled',{id:entity.id}) }}" target="ajaxTodo" method="POST" title="确定要保护客户吗？">保护</a>
+            <span class="text-explode">|</span>
+            <a href="{{ path('admin_client_access_records_index',{action:'lookup',id:entity.id,pageSize:8}) }}" target="dialog" width="500" height="600" method="GET" title="查看{{ entity.name }}的回访记录" size="BootstrapDialog.SIZE_WIDE" hide-buttons="true">回访</a>
+            </td>
+		</tr>
+	{% endfor %}
+{% endblock %}

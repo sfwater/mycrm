@@ -108,7 +108,7 @@ class DefaultController extends AdminAclController
                 $em->flush();
 
                 //立即保护
-                if( intval($form->get('protection')) == 1 ){
+                if( intval($form->get('protection')->getData()) == 1 ){
                     $entity->setStatus(self::CLIENT_PROTECTING);
                     $this->createAcl($entity);
                 }

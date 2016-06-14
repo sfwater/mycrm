@@ -106,6 +106,10 @@ class DefaultController extends AdminAclController
                 }
                 $entity->setCtime(time());
                 $entity->setStatus(self::CLIENT_NO_PROTECTION);
+
+                if(!$this->checkUnique($entity)){
+                    $this->throwException('client exists');
+                }
                 $em->persist($entity);
                 $em->flush();
 
@@ -238,6 +242,9 @@ class DefaultController extends AdminAclController
     }
 
 
+    /**
+    * 获取最大保护时间
+    */
     private function getProtectionTime($user){
         $settings = $this->getSystemSettings();
         $day = self::MAX_PROECTION_DAY;
@@ -246,5 +253,20 @@ class DefaultController extends AdminAclController
         }
 
         return time() + $day * 86400;
+    }
+
+    /**
+    * 检测客户信息是否唯一
+    */
+    private function checkUnique($client){
+        $em = $this->getDoctrine()->getManager();
+        $dql = "SELECT dist FROM AdminClientBundle:Client dist WHERE dist.name LIKE :name OR dist.contact=:contact OR dist.contactor=:contactor";
+        $query = $em->createQuery($dql)->setParameters(array(
+            'name'=>'%'.$client->getName().'%',
+            'contact'=>$client->getContact(),
+            'contactor'=>$client->getContactor()
+            ));
+        $one = $query->getOneOrNullResult();
+        return !$one;
     }
 }

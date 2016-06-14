@@ -230,10 +230,10 @@ class DefaultController extends AdminAclController
                 $em->flush();
             }
 
-            return $this->success();
+            return $this->success('delete_success');
         }
 
-        return $this->error();   
+        return $this->error('delete_failure');   
     }
 
 

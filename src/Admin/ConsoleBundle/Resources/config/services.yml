@@ -14,8 +14,8 @@ services:
         arguments: ["@router"]
         tags:
             - { name: form.type }
-    # admin_console.exception_listener:
-    #     class: Admin\ConsoleBundle\Extension\ConsoleExceptionListener
-    #     arguments: ["@translator"]
-    #     tags:
-    #         - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }
+    admin_console.exception_listener:
+        class: Admin\ConsoleBundle\Extension\ConsoleExceptionListener
+        arguments: ["@translator"]
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception, method: onKernelException }

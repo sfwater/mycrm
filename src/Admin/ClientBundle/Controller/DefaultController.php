@@ -108,7 +108,8 @@ class DefaultController extends AdminAclController
                 $entity->setStatus(self::CLIENT_NO_PROTECTION);
 
                 if(!$this->checkUnique($entity)){
-                    return $this->error('client exists');
+                    // return $this->error('client exists');
+                    $this->throwException('client exists');
                 }
                 $em->persist($entity);
                 $em->flush();
@@ -266,7 +267,7 @@ class DefaultController extends AdminAclController
             'contact'=>$client->getContact(),
             'contactor'=>$client->getContactor()
             ));
-        $one = $query->getOneOrNullResult();
+        $one = $query->geNullOrOneResult();
         return !$one;
     }
 }

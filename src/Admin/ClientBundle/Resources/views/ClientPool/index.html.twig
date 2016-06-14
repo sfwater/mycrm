@@ -23,7 +23,7 @@
 			<td>{{ entity.ctime|date("Y-m-d H:i:s") }}</td>
 			<td>{{ entity.records|length }}</td>
             <td class="text-right">
-            <a href="{{ path('admin_clientpool_disabled',{id:entity.id}) }}" target="ajaxTodo" method="POST" title="确定要保护客户吗？">保护</a>
+            <a href="{{ path('admin_clientpool_disabled',{id:entity.id}) }}" target="ajaxTodo" method="DELETE" title="确定要保护客户吗？">保护</a>
             <span class="text-explode">|</span>
             <a href="{{ path('admin_client_access_records_index',{action:'lookup',id:entity.id,pageSize:8}) }}" target="dialog" width="500" height="600" method="GET" title="查看{{ entity.name }}的回访记录" size="BootstrapDialog.SIZE_WIDE" hide-buttons="true">回访</a>
             </td>

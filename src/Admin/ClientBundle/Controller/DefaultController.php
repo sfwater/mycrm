@@ -123,6 +123,7 @@ class DefaultController extends AdminAclController
                 $record->setClient($entity);
                 $record->setCtime(time());
                 $record->setDescription(sprintf('客户信息创建'));
+                $em->persist($record);
                 $em->flush();
 
                 $em->getConnection()->commit();

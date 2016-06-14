@@ -109,7 +109,7 @@ class DefaultController extends AdminAclController
 
                 if(!$this->checkUnique($entity)){
                     // return $this->error('client exists');
-                    $this->throwException('client exists');
+                    // $this->throwException('client exists');
                 }
                 $em->persist($entity);
                 $em->flush();

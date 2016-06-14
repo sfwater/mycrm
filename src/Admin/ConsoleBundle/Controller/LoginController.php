@@ -88,6 +88,7 @@ class LoginController extends AdminAclController
             $admin->setRegisterTime(time());
             $admin->setIsActive(TRUE);
             $admin->setIsLocked(FALSE);
+            $em->persist($admin);
             $em->flush();
         }
 

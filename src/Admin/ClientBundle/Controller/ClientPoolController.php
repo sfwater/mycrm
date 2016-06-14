@@ -44,7 +44,7 @@ class ClientPoolController extends AdminBaseController
         $options['action'] = $this->generateUrl('admin_clients_index',$params);
         $form = $this->createForm(ClientSearchType::class, $request->query->all(), $options);
 
-        $conditions = "status=:status";
+        $conditions = "dist.status=:status";
         $parameters = array('status'=>0);
         if( $form->get('name')->getData() ){
             $conditions .= '(dist.name LIKE :name OR dist.contactor LIKE :name OR dist.contact LIKE :name)';

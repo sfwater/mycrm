@@ -19,6 +19,8 @@ use Symfony\Component\HttpFoundation\Request;
 */
 class DefaultController extends AdminAclController
 {
+    const CLIENT_NO_PROTECTION = 0;
+    const CLIENT_PROTECTING = 1;
     /**
      * 所有客户列表
      * @Route(
@@ -92,6 +94,8 @@ class DefaultController extends AdminAclController
             $em->getConnection()->beginTransaction();
 
             try{
+
+                //预计维护时间
                 if( $wtime = $form->get('wtime')->getData() ){
                     if(time()>strtotime($wtime)){
                         $this->throwException('time is too neer');
@@ -99,12 +103,15 @@ class DefaultController extends AdminAclController
                     $entity->setWtime(strtotime($wtime));
                 }
                 $entity->setCtime(time());
-                $entity->setStatus(0);
-
-
+                $entity->setStatus(self::CLIENT_NO_PROTECTION);
                 $em->persist($entity);
                 $em->flush();
-                $this->createAcl($entity);
+
+                //立即保护
+                if( intval($form->get('protection')) == 1 ){
+                    $entity->setStatus(self::CLIENT_PROTECTING);
+                    $this->createAcl($entity);
+                }
                 $em->getConnection()->commit();
                 return $this->success();
             }catch(Exception $e){

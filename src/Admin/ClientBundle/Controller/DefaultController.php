@@ -21,6 +21,7 @@ class DefaultController extends AdminAclController
 {
     const CLIENT_NO_PROTECTION = 0;
     const CLIENT_PROTECTING = 1;
+    const MAX_PROECTION_DAY = 30;
     /**
      * 所有客户列表
      * @Route(
@@ -110,6 +111,8 @@ class DefaultController extends AdminAclController
                 //立即保护
                 if( intval($form->get('protection')->getData()) == 1 ){
                     $entity->setStatus(self::CLIENT_PROTECTING);
+                    //设置过期时间
+                    $entity->setOuttime($this->getProtectionTime($this->getUser()));
                     $this->createAcl($entity);
                 }
                 $em->getConnection()->commit();
@@ -221,5 +224,16 @@ class DefaultController extends AdminAclController
         }
 
         return $this->error();   
+    }
+
+
+    private function getProtectionTime($user){
+        $settings = $this->getSystemSettings();
+        $day = self::MAX_PROECTION_DAY;
+        if( intval($settings->maxprotection) > 0 ){
+            $day = intval($settings->maxprotection);
+        }
+
+        return time() + $day * 86400;
     }
 }

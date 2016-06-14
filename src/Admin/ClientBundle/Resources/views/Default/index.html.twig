@@ -9,6 +9,7 @@
 	<th>联系方式</th>
 	<th class="sortable" order-field="wtime">计划维护</th>
 	<th>录入时间</th>
+	<th>保护期限</th>
 	<th>回访次数</th>
 {% endblock %}
 {% block tableBody %}
@@ -21,6 +22,7 @@
 			<td>{{ entity.contact }}</td>
 			<td>{% if entity.wtime is not empty %}{{ entity.wtime|date("Y-m-d") }}{% else %}--{% endif %}</td>
 			<td>{{ entity.ctime|date("Y-m-d H:i:s") }}</td>
+			<td>{% if entity.outtime is not empty %}{{ entity.outtime|date("Y-m-d") }}{% else %}--{% endif %}</td>
 			<td>{{ entity.records|length }}</td>
             <td class="text-right">
             <a href="{{ path('admin_clients_edit',{id:entity.id}) }}" target="dialog" width="500" height="600" method="POST" title="编辑用户 {{ entity.name }}">编辑</a>

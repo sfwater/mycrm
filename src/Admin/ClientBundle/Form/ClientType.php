@@ -52,13 +52,15 @@ class ClientType extends AbstractType
                 'required'=>false,
                 'mapped'=>false,
                 ))
-            ->add("protection",CheckboxType::class,array(
+            ;
+        if( $data->getId() == 0 ){
+            $builder->add("protection",CheckboxType::class,array(
                 'label'=>'立即保护',
                 'value'=>1,
                 'required'=>false,
                 'mapped'=>false,
-                ))
-            ;
+                ));
+        }
     }
     public function configureOptions(OptionsResolver $resolver)
     {

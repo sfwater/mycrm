@@ -107,10 +107,10 @@ class DefaultController extends AdminAclController
                 $entity->setCtime(time());
                 $entity->setStatus(self::CLIENT_NO_PROTECTION);
 
-                if(!$this->checkUnique($entity)){
+                // if(!$this->checkUnique($entity)){
                     // return $this->error('client exists');
                     // $this->throwException('client exists');
-                }
+                // }
                 $em->persist($entity);
                 $em->flush();
 

@@ -331,4 +331,28 @@ class Client
     {
         return $this->records;
     }
+
+    /**
+     * Set outtime
+     *
+     * @param integer $outtime
+     *
+     * @return Client
+     */
+    public function setOuttime($outtime)
+    {
+        $this->outtime = $outtime;
+
+        return $this;
+    }
+
+    /**
+     * Get outtime
+     *
+     * @return integer
+     */
+    public function getOuttime()
+    {
+        return $this->outtime;
+    }
 }

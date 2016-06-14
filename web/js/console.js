@@ -16,7 +16,7 @@ function ajaxTodo(url, callback){
 	var $callback = callback || CONSOLE.ajaxDone;
 	if (! $.isFunction($callback)) $callback = eval('(' + callback + ')');
 	$.ajax({
-		type:'POST',
+		type:'DELETE',
 		url:url,
 		dataType:"json",
 		cache: false,

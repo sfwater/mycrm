@@ -240,7 +240,7 @@ class DefaultController extends AdminAclController
     private function getProtectionTime($user){
         $settings = $this->getSystemSettings();
         $day = self::MAX_PROECTION_DAY;
-        if( intval($settings->maxprotection) > 0 ){
+        if( isset($settings) && intval($settings->maxprotection) > 0 ){
             $day = intval($settings->maxprotection);
         }
 

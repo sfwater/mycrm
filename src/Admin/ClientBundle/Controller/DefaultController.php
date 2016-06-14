@@ -48,8 +48,8 @@ class DefaultController extends AdminAclController
         $options['action'] = $this->generateUrl('admin_clients_index',$params);
         $form = $this->createForm(ClientSearchType::class, $request->query->all(), $options);
 
-        $conditions = "";
-        $parameters = array();
+        $conditions = "dist.status=:status";
+        $parameters = array('status'=>self::CLIENT_PROTECTING);
         if( $form->get('name')->getData() ){
             $conditions .= '(dist.name LIKE :name OR dist.contactor LIKE :name OR dist.contact LIKE :name)';
             $parameters['name'] = '%'.$form->get('name')->getData().'%';

@@ -26,4 +26,23 @@
 		<input type="text" id="settings_copyright" name="settings[copyright]" required="required" class="form-control form-control" placeholder="版权信息" label="版权信息" value="{% if settings.copyright is defined %}{{ settings.copyright }}{% endif %}">
 	</div>
 </div>
+<div class="divider"></div>
+<div class="form-group">
+	<label class="col-sm-2 control-label" for="settings_enable_protection">客户保护</label>
+	<div class="col-sm-10">
+		<label><input type="checkbox" name="settings[enable_protection]" id="settings_enable_protection" {% if settings.enable_protection is defined %}checked="checked"{% endif %} value="1" />启用</label>
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label" for="settings_client_maxprotection">保护期限</label>
+	<div class="col-sm-10">
+		<input type="text" id="settings_client_maxprotection" name="settings[maxprotection]" required="required" class="form-control form-control" placeholder="客户保护最大时间期限" label="客户保护最大时间期限" value="{% if settings.maxprotection is defined %}{{ settings.maxprotection }}{% endif %}">
+	</div>
+</div>
+<div class="form-group">
+	<label class="col-sm-2 control-label" for="settings_client_maxpcounts">保护数量</label>
+	<div class="col-sm-10">
+		<input type="text" id="settings_client_maxpcounts" name="settings[maxpcounts]" required="required" class="form-control form-control" placeholder="一个人最多可以保护客户的最大数量" label="客户保护最大时间期限" value="{% if settings.maxpcounts is defined %}{{ settings.maxpcounts }}{% endif %}">
+	</div>
+</div>
 {% endblock %}

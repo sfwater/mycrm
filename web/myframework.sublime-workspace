@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"CLIEN",
+				"CLIENT_PROTECTING"
+			],
+			[
+				"CLIENT",
+				"CLIENT_NO_PROTECTION"
+			],
+			[
+				"DEF",
+				"DefaultController"
+			],
+			[
 				"dia",
 				"dialogPageBreak"
 			],
@@ -72,10 +84,18 @@
 	"buffers":
 	[
 		{
-			"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/LoginController.php",
+			"file": "/E/workspace/myframework-php/tests/AppBundle/Controller/DefaultControllerTest.php",
 			"settings":
 			{
-				"buffer_size": 2731,
+				"buffer_size": 460,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Test/WebTestCase.php",
+			"settings":
+			{
+				"buffer_size": 1024,
 				"line_ending": "Windows"
 			}
 		}
@@ -87,16 +107,16 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 375.0,
-		"last_filter": ":w",
+		"height": 310.0,
+		"last_filter": ":W",
 		"selected_items":
 		[
 			[
-				":w",
+				":W",
 				":w - Save"
 			],
 			[
-				":W",
+				":w",
 				":w - Save"
 			],
 			[
@@ -138,15 +158,47 @@
 	"expanded_folders":
 	[
 		"/E/workspace/myframework-php",
-		"/E/workspace/myframework-php/src",
-		"/E/workspace/myframework-php/src/Admin",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller"
+		"/E/workspace/myframework-php/tests/AppBundle",
+		"/E/workspace/myframework-php/tests/AppBundle/Controller",
+		"/E/workspace/myframework-php/vendor",
+		"/E/workspace/myframework-php/vendor/symfony",
+		"/E/workspace/myframework-php/vendor/symfony/symfony",
+		"/E/workspace/myframework-php/vendor/symfony/symfony/src",
+		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony",
+		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle",
+		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component",
+		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/BrowserKit",
+		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/HttpKernel"
 	],
 	"file_history":
 	[
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/LoginController.php",
+		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Client.php",
+		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/HttpKernel/Client.php",
+		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Component/BrowserKit/Client.php",
+		"/E/workspace/myframework-php/vendor/autoload.php",
+		"/E/workspace/myframework-php/vendor/composer/ClassLoader.php",
+		"/E/workspace/myframework-php/src/Admin/ClientBundle/Controller/DefaultController.php",
+		"/E/workspace/myframework-php/src/Admin/ClientBundle/Controller/ClientPoolController.php",
+		"/E/workspace/myframework-php/src/Admin/ClientBundle/Resources/views/ClientPool/index.html.twig",
+		"/E/workspace/myframework-php/web/js/console.js",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/translations/messages.zh_CN.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/translations/messages.zh_CN.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/config/services.yml",
+		"/E/workspace/myframework-php/src/Admin/ClientBundle/Resources/translations/messages.zh_CN.php",
+		"/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/config/services.yml",
+		"/E/workspace/myframework-php/src/Admin/ClientBundle/Entity/Client.php",
+		"/E/workspace/myframework-php/src/Admin/ClientBundle/Controller/ClientAccessRecordController.php",
+		"/E/workspace/myframework-php/web/js/dwz.min.js",
+		"/E/workspace/myframework-php/src/Admin/ClientBundle/Resources/views/Default/index.html.twig",
+		"/E/workspace/myframework-php/src/Admin/ClientBundle/Form/ClientType.php",
+		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/UserType.php",
+		"/E/workspace/myframework-php/src/Admin/ClientBundle/Resources/views/ClientAccessRecord/index.html.twig",
+		"/E/workspace/myframework-php/src/Admin/ClientBundle/Entity/ClientAccessRecord.php",
+		"/E/workspace/myframework-php/src/Admin/ClientBundle/Resources/views/Default/create.html.twig",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Default/config.html.twig",
+		"/E/workspace/myframework-php/web/css/app.css",
+		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/LoginController.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/base.html.twig",
@@ -154,30 +206,24 @@
 		"/C/Users/bufan/.ssh/id_rsa.pub",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/views/Default/index.html.twig",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Controller/DefaultController.php",
-		"/E/workspace/myframework-php/web/js/console.js",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/lookup.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/UserSearchType.php",
-		"/E/workspace/myframework-php/web/js/dwz.min.js",
 		"/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Controller/Controller.php",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/config/services.yml",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/RoleController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Controller/ConsoleController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/User.php",
 		"/E/workspace/myframework-php/src/AppBundle/Controller/DefaultController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/index.html.twig",
-		"/E/workspace/myframework-php/web/css/app.css",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/RoleType.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Role/edit.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Role/index.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Role/create.html.twig",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/page_edit.html.twig",
-		"/E/workspace/myframework-php/src/Admin/UserBundle/Form/UserType.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/page_dialog_edit.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Resources/views/Default/edit.html.twig",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/page_list.html.twig",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/page.html.twig",
 		"/E/workspace/myframework-php/app/config/config.yml",
-		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/translations/messages.zh_CN.php",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Login/login.html.twig",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/UserRepository.php",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Security/AccessControlVoter.php",
@@ -193,7 +239,6 @@
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Default/index.html.twig",
 		"/E/workspace/submission/src/Admin/DWZBackendBundle/Resources/views/Main/login.html.twig",
 		"/E/workspace/myframework-php/src/Admin/ConsoleBundle/Resources/views/Login/index.html.twig",
-		"/E/workspace/myframework-php/src/Admin/AdminBaseController.php",
 		"/E/workspace/submission/app/config/security.yml",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/AdminAccessControlBundle.php",
 		"/E/workspace/myframework-php/src/Admin/AccessControlBundle/Resources/config/services.yml",
@@ -254,20 +299,11 @@
 		"/E/workspace/submission/src/Admin/SubmissionBundle/Controller/ClientController.php",
 		"/E/workspace/myframework-php/src/Admin/UserBundle/Entity/Role.php",
 		"/E/workspace/feizhiyi-dev/.gitignore",
-		"/E/workspace/feizhiyi-dev/Application/Admin/Controller/Article/EvaluationController.class.php",
-		"/E/workspace/feizhiyi-dev/Application/Admin/Controller/AdminController.class.php",
-		"/E/workspace/feizhiyi-dev/Application/Admin/Controller/Card/CardtypeController.class.php",
-		"/E/workspace/feizhiyi-dev/Application/Admin/Controller/Course/ChangeController.class.php",
-		"/C/Users/bufan/Downloads/hosts",
-		"/D/Vagrants/myGentoo/Vagrantfile",
-		"/D/APMServ5.2.6/Apache/conf/httpd.conf",
-		"/D/APMServ5.2.6/Apache/conf/apmserv/vhost.conf",
-		"/E/workspace/feizhiyi-dev/Public/index.php",
-		"/C/Users/bufan/AppData/Roaming/Sublime Text 3/Packages/User/Preferences.sublime-settings"
+		"/E/workspace/feizhiyi-dev/Application/Admin/Controller/Article/EvaluationController.class.php"
 	],
 	"find":
 	{
-		"height": 30.0
+		"height": 128.0
 	},
 	"find_in_files":
 	{
@@ -282,6 +318,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"\n\n        if( empty($action) ){\n            return $this->error('missing action');\n        }",
+			"navTabAjaxDone",
+			"ajaxTodo",
 			"				$this.data(\"url\",op.url);\n				$this.data(\"options\", op);\n				var json = CONSOLE.jsonEval(response);\n				\n				if (json[CONSOLE.keys.statusCode]==CONSOLE.statusCode.error){\n					if (json[CONSOLE.keys.message]) alertMsg.error(json[CONSOLE.keys.message]);\n				} else {\n					$this.html(response).initUI();\n					if ($.isFunction(op.callback)) op.callback(response, $this);\n				}\n				\n				if (json[CONSOLE.keys.statusCode]==CONSOLE.statusCode.timeout){\n					if ($.pdialog) $.pdialog.checkTimeout();\n					if (navTab) navTab.checkTimeout();\n\n					alertMsg.error(json[CONSOLE.keys.message] || CONSOLE.msg(\"sessionTimout\"), {okCall:function(){\n						CONSOLE.loadLogin();\n					}});\n				} ",
 			"lookup",
 			"DWZ",
@@ -346,24 +385,53 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "/E/workspace/myframework-php/src/Admin/ConsoleBundle/Controller/LoginController.php",
-					"semi_transient": true,
+					"file": "/E/workspace/myframework-php/tests/AppBundle/Controller/DefaultControllerTest.php",
+					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2731,
+						"buffer_size": 460,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								493,
-								493
+								406,
+								406
+							]
+						],
+						"settings":
+						{
+							"is_xml": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/E/workspace/myframework-php/vendor/symfony/symfony/src/Symfony/Bundle/FrameworkBundle/Test/WebTestCase.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1024,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								561,
+								561
 							]
 						],
 						"settings":
@@ -374,7 +442,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 132.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -385,7 +453,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 30.0
+		"height": 128.0
 	},
 	"input":
 	{
@@ -422,7 +490,7 @@
 	"project": "myframework.sublime-project",
 	"replace":
 	{
-		"height": 56.0
+		"height": 248.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -431,14 +499,6 @@
 		"last_filter": "",
 		"selected_items":
 		[
-			[
-				"base.",
-				"src\\Admin\\ConsoleBundle\\Resources\\views\\base.html.twig"
-			],
-			[
-				"controller.php",
-				"vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller.php"
-			],
 			[
 				"console.js",
 				"web\\js\\console.js"
@@ -450,6 +510,14 @@
 			[
 				"app.css",
 				"web\\css\\app.css"
+			],
+			[
+				"base.",
+				"src\\Admin\\ConsoleBundle\\Resources\\views\\base.html.twig"
+			],
+			[
+				"controller.php",
+				"vendor\\symfony\\symfony\\src\\Symfony\\Bundle\\FrameworkBundle\\Controller\\Controller.php"
 			],
 			[
 				"consol",

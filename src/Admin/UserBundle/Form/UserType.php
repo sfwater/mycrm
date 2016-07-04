@@ -21,7 +21,7 @@ class UserType extends AbstractType
     {
         $data = $options['data'];
         $role = NULL;
-        if( $data->getId() > 0 ){
+        if( count($data->getRoles()) > 0 ){
             $role = $data->getRoles()[0];
         }
         $builder

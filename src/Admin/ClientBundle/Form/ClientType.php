@@ -34,7 +34,7 @@ class ClientType extends AbstractType
                 'attr'=>array('class'=>'form-control','placeholder'=>'店长姓名','label'=>'店长姓名'),
                 'label'=>'店长姓名',
                 ))
-            ->add("contactor",TextType::class,array(
+            ->add("legal",TextType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'负责人姓名','label'=>'负责人姓名'),
                 'label'=>'负责人姓名',
             ))

@@ -38,6 +38,10 @@ class ClientType extends AbstractType
                 'attr'=>array('class'=>'form-control','placeholder'=>'负责人姓名','label'=>'负责人姓名'),
                 'label'=>'负责人姓名',
             ))
+            ->add("weixin",TextType::class,array(
+                'attr'=>array('class'=>'form-control','placeholder'=>'微信号','label'=>'微信号'),
+                'label'=>'微信号',
+            ))
             ->add("area",TextType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'区域','label'=>'区域'),
                 'label'=>'区域',

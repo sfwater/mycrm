@@ -9,6 +9,7 @@
 	<th>区域</th>
 	<th>座机</th>
 	<th>手机号</th>
+	<th>微信</th>
 	<th>地址</th>
 	<th>备注</th>
 	<th class="sortable" order-field="wtime">计划维护</th>
@@ -26,6 +27,7 @@
 			<td>{{ entity.area }}</td>
 			<td>{{ entity.contact }}</td>
 			<td>{{ entity.mobile }}</td>
+			<td>{{ entity.weixin }}</td>
 			<td>{{ entity.address }}</td>
 			<td>{{ entity.note }}</td>
 			<td>{% if entity.wtime is not empty %}{{ entity.wtime|date("Y-m-d") }}{% else %}--{% endif %}</td>

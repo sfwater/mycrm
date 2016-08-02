@@ -41,6 +41,7 @@ class ClientType extends AbstractType
             ->add("weixin",TextType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'微信号','label'=>'微信号'),
                 'label'=>'微信号',
+                'required'=>false,
             ))
             ->add("area",TextType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'区域','label'=>'区域'),
@@ -53,6 +54,7 @@ class ClientType extends AbstractType
             ->add("mobile",TextType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'手机号','label'=>'手机号'),
                 'label'=>'手机号',
+                'required'=>false,
             ))
             ->add("note",TextareaType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'备注','label'=>'备注'),

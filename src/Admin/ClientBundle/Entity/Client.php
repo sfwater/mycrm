@@ -41,6 +41,24 @@ class Client
      * @ORM\Column(name="contactor", type="string", length=255)
      */
     private $contactor;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="legal", type="string", length=255)
+     */
+    private $legal;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="weixin", type="string", length=255)
+     */
+    private $weixin;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="area", type="string", length=255)
+     */
+    private $area;
 
     /**
      * @var string
@@ -48,6 +66,12 @@ class Client
      * @ORM\Column(name="contact", type="string", length=255)
      */
     private $contact;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="mobile", type="string", length=255)
+     */
+    private $mobile;
 
     /**
      * @var string
@@ -354,5 +378,101 @@ class Client
     public function getOuttime()
     {
         return $this->outtime;
+    }
+
+    /**
+     * Set legal
+     *
+     * @param string $legal
+     *
+     * @return Client
+     */
+    public function setLegal($legal)
+    {
+        $this->legal = $legal;
+    
+        return $this;
+    }
+
+    /**
+     * Get legal
+     *
+     * @return string
+     */
+    public function getLegal()
+    {
+        return $this->legal;
+    }
+
+    /**
+     * Set weixin
+     *
+     * @param string $weixin
+     *
+     * @return Client
+     */
+    public function setWeixin($weixin)
+    {
+        $this->weixin = $weixin;
+    
+        return $this;
+    }
+
+    /**
+     * Get weixin
+     *
+     * @return string
+     */
+    public function getWeixin()
+    {
+        return $this->weixin;
+    }
+
+    /**
+     * Set area
+     *
+     * @param string $area
+     *
+     * @return Client
+     */
+    public function setArea($area)
+    {
+        $this->area = $area;
+    
+        return $this;
+    }
+
+    /**
+     * Get area
+     *
+     * @return string
+     */
+    public function getArea()
+    {
+        return $this->area;
+    }
+
+    /**
+     * Set mobile
+     *
+     * @param string $mobile
+     *
+     * @return Client
+     */
+    public function setMobile($mobile)
+    {
+        $this->mobile = $mobile;
+    
+        return $this;
+    }
+
+    /**
+     * Get mobile
+     *
+     * @return string
+     */
+    public function getMobile()
+    {
+        return $this->mobile;
     }
 }

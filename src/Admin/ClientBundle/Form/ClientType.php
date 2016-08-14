@@ -23,21 +23,39 @@ class ClientType extends AbstractType
         $data = $options['data'];
         $builder
             ->add("name",TextType::class,array(
-                'attr'=>array('class'=>'form-control','placeholder'=>'客户名称','label'=>'客户名称'),
-                'label'=>'客户名称',
+                'attr'=>array('class'=>'form-control','placeholder'=>'店面名字','label'=>'店面名字'),
+                'label'=>'店面名字',
                 ))
             ->add("address",TextType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'地址','label'=>'地址'),
                 'label'=>'地址',
                 ))
             ->add("contactor",TextType::class,array(
-                'attr'=>array('class'=>'form-control','placeholder'=>'联系人','label'=>'联系人'),
-                'label'=>'联系人',
+                'attr'=>array('class'=>'form-control','placeholder'=>'店长姓名','label'=>'店长姓名'),
+                'label'=>'店长姓名',
                 ))
+            ->add("legal",TextType::class,array(
+                'attr'=>array('class'=>'form-control','placeholder'=>'负责人姓名','label'=>'负责人姓名'),
+                'label'=>'负责人姓名',
+            ))
+            ->add("weixin",TextType::class,array(
+                'attr'=>array('class'=>'form-control','placeholder'=>'微信号','label'=>'微信号'),
+                'label'=>'微信号',
+                'required'=>false,
+            ))
+            ->add("area",TextType::class,array(
+                'attr'=>array('class'=>'form-control','placeholder'=>'区域','label'=>'区域'),
+                'label'=>'区域',
+            ))
             ->add("contact",TextType::class,array(
-                'attr'=>array('class'=>'form-control','placeholder'=>'联系方式','label'=>'联系方式'),
-                'label'=>'联系方式',
+                'attr'=>array('class'=>'form-control','placeholder'=>'座机','label'=>'座机'),
+                'label'=>'座机',
                 ))
+            ->add("mobile",TextType::class,array(
+                'attr'=>array('class'=>'form-control','placeholder'=>'手机号','label'=>'手机号'),
+                'label'=>'手机号',
+                'required'=>false,
+            ))
             ->add("note",TextareaType::class,array(
                 'attr'=>array('class'=>'form-control','placeholder'=>'备注','label'=>'备注'),
                 'label'=>'备注',

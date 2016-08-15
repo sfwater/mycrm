@@ -85,7 +85,7 @@ class ClientPoolController extends AdminBaseController
         if( count($ids)>0 ){
             $doctrine = $this->getDoctrine();
             $settings = $this->getSystemSettings();
-            if( !$settings['enable_protection'] ){
+            if( !$settings->enable_protection ){
                 throw new \RuntimeException('protection not enabled');
             }
             $repo = $doctrine->getRepository(Client::class);
@@ -97,7 +97,7 @@ class ClientPoolController extends AdminBaseController
             $result = $query->getResult();
 
             foreach($result as $item){
-                $this->protectClient($item, $settings['maxprotection'], $settings['maxpcounts']);
+                $this->protectClient($item, $settings->maxprotection, $settings->maxpcounts);
             }
 
             return $this->success();

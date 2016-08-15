@@ -7,6 +7,6 @@ return array(
 	'submit_failure'=>'数据保存失败！',
 	'delete_success'=>'删除成功!',
 	'Account has expired.'=>'账号过期了',
-	'Invalid vcode.'=>'验证码不正确',	
+	'Invalid vcode.'=>'验证码不正确',
 );
 ?>

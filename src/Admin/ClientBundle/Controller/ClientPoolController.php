@@ -84,7 +84,10 @@ class ClientPoolController extends AdminBaseController
         }
         if( count($ids)>0 ){
             $doctrine = $this->getDoctrine();
-            $em = $doctrine->getManager();
+            $settings = $this->getSystemSettings();
+            if( !$settings['enable_protection'] ){
+                throw new \RuntimeException('protection not enabled');
+            }
             $repo = $doctrine->getRepository(Client::class);
             $query = $repo->createQueryBuilder("r")
                 ->where("r.id in (:ids)")
@@ -94,7 +97,7 @@ class ClientPoolController extends AdminBaseController
             $result = $query->getResult();
 
             foreach($result as $item){
-                $this->protectClient($item);
+                $this->protectClient($item, $settings['maxprotection'], $settings['maxpcounts']);
             }
 
             return $this->success();
@@ -106,7 +109,15 @@ class ClientPoolController extends AdminBaseController
     /**
     * 执行客户保护操作
     */
-    private function protectClient($client){
-
+    private function protectClient(Client $client,$maxprotection, $maxpcounts){
+        $em = $this->getDoctrine()->getManager();
+        $clients = $em->getRepository('AdminClientBundle:Client')->findByUser($this->getUser());
+        if( count($clients) >= $maxpcounts ){
+            throw new \RuntimeException('overflow maxpcounts');
+        }
+        $outtime = time()*$maxprotection*86400;
+        $client->setOuttime($outtime);
+        $client->setStatus(1);
+        $em->flush();
     }
 }

@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Request;
 /**
 * @Route("/admin/clientpool")
 */
-class ClientPoolController extends AdminBaseController
+class ClientPoolController extends AdminAclController
 {
     /**
      * 所有客户列表
@@ -118,6 +118,7 @@ class ClientPoolController extends AdminBaseController
         $outtime = time()*$maxprotection*86400;
         $client->setOuttime($outtime);
         $client->setStatus(1);
+        $this->createAcl($client, $this->getUser());
         $em->flush();
     }
 }
